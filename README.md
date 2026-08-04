@@ -1,10 +1,10 @@
 # EVChargingLogTrento
-Serie storica aperta dello stato delle colonnine di ricarica per veicoli elettrici del **Comune di Trento**, costruita interrogando periodicamente la [Piattaforma Unica Nazionale (PUN)](https://www.piattaformaunicanazionale.it/idr) e accumulando ogni snapshot in file Parquet.
+Serie storica aperta dello stato delle colonnine di ricarica per veicoli elettrici all'interno del **Comune di Trento**, costruita interrogando periodicamente la [Piattaforma Unica Nazionale (PUN)](https://www.piattaformaunicanazionale.it/idr) e accumulando ogni snapshot in file Parquet.
 
 La PUN espone solo lo stato *attuale*: non esiste un endpoint per interrogare i dati a una certa data, né un archivio storico. Questo progetto colma quel vuoto registrando lo stato nel tempo - l'archivio storico *è* il dato che produce.
 
 > Progetto indipendente e non ufficiale.
-> Non è affiliato né promosso da FBK o Comune di Trento o GSE, MASE o RSE
+> Non è affiliato né promosso da FBK, Comune di Trento, GSE, MASE o RSE.
 
 ## Cosa fa
 Ogni ciclo (default: 5 minuti):
@@ -16,19 +16,22 @@ Ogni ciclo (default: 5 minuti):
    (dedup), così il file non si gonfia di righe ridondanti.
 
 ## La fonte dei dati
-I dati provengono dalla PUN (GSE/MASE). 
+I dati provengono dalla PUN (GSE/MASE). Fino a giugno 2026 esisteva un pulsante "Esporta dati" con un endpoint S3 il cui URL cambiava di continuo; è stato **disabilitato**. \
+Oggi i dati sono accessibili solo tramite l'API REST del portale (`api.pun.piattaformaunicanazionale.it`), autenticata con credenziali **AWS Cognito guest** (nessun login richiesto). Il flusso è:
 
 ```
-/config.json                → region + IdentityPoolId
-Cognito GetId / GetCreds     → credenziali SigV4 temporanee (1h)
-POST /v1/chargepoints/public/map/search   → lista evse_id (paginata)
-POST /v1/chargepoints/group               → dettagli completi (batch da 100)
+/config.json                => region + IdentityPoolId
+Cognito GetId / GetCreds     => credenziali SigV4 temporanee (1h)
+POST /v1/chargepoints/public/map/search   => lista evse_id (paginata)
+POST /v1/chargepoints/group               => dettagli completi (batch da 100)
 ```
 
 Il meccanismo dell'API è stato ricostruito a partire dall'ETL del progetto [`AgID/cruscotto-italia`](https://github.com/AgID/cruscotto-italia), a cui va il credito per il reverse-engineering della sorgente.
 
 ## Schema del Parquet
-Un file per giorno in `data/` (`data_YYYY-MM-DD.parquet`). Ogni riga è lo stato di una colonnina a un dato istante `ts`.
+L'output è un **dataset partizionato per giorno**: ogni snapshot è un file
+Parquet scritto una volta sola, mai riscritto, in
+`data/date=YYYY-MM-DD/<timestamp>.parquet`. Questo mantiene minimo l'impatto su git (ogni file è un blob salvato una volta) e si legge come un unico dataset. Ogni riga è lo stato di una colonnina a un dato istante `ts`. Un nuovo file viene scritto solo quando qualcosa cambia rispetto al ciclo precedente (dedup).
 
 | campo | descrizione |
 |---|---|
@@ -47,18 +50,23 @@ Un file per giorno in `data/` (`data_YYYY-MM-DD.parquet`). Ogni riga è lo stato
 | `open_24h7` | apertura h24 7/7 |
 | `party_id`, `capabilities`, `publication_status` | metadati OCPI |
 
-Esempio di lettura con pandas:
+Lettura come dataset unico. Con DuckDB (la colonna `date` arriva gratis dalla partizione):
 
 ```python
-import pandas as pd, glob
-df = pd.concat(pd.read_parquet(f) for f in glob.glob("data/data_*.parquet"))
+import duckdb
+duckdb.sql("""
+  SELECT date, avg(stato = 'Attivo') * 100 AS pct_attive
+  FROM read_parquet('data/**/*.parquet', hive_partitioning = true)
+  GROUP BY date ORDER BY date
+""")
+```
 
-# stato a un istante specifico
-snap = df[df.ts.str.startswith("2026-08-04T10:")]
+Oppure con pandas / pyarrow:
 
-# % colonnine attive nel tempo
-(df.assign(attiva=df.stato.eq("Attivo"))
-   .groupby("ts").attiva.mean().mul(100).round(1))
+```python
+import pyarrow.dataset as ds
+df = ds.dataset("data", format="parquet", partitioning="hive").to_table().to_pandas()
+snap = df[df.ts.str.startswith("2026-08-04T10:")]   # stato in un dato istante
 ```
 
 ## Uso
@@ -82,16 +90,19 @@ Opzioni principali:
 --interval                 secondi fra i cicli (default: 300)
 --once                     esegue un solo ciclo e termina
 --refresh-discovery        ore fra due discovery complete (default: 24)
+--layout                   partitioned (default, write-once) | daily (file unico)
 --no-dedup                 scrive ogni ciclo anche se identico al precedente
 ```
 
 ## Automazione (GitHub Actions)
 
-Il workflow in `.github/workflows/scrape.yml` gira ogni ora e, con un loop interno, esegue un ciclo ogni 5 minuti committando i dati nel repo (il cron nativo di Actions non è affidabile sui 5 minuti). Serve solo abilitare *Settings → Actions → Workflow permissions → Read and write*. Nessun secret: le credenziali PUN sono guest e il push usa il `GITHUB_TOKEN`.
+Il workflow in `.github/workflows/scrape.yml` gira ogni ora e, con un loop interno, esegue un ciclo ogni 5 minuti committando i dati nel repo (il cron nativo di Actions non è affidabile sui 5 minuti). Serve solo abilitare *Settings => Actions => Workflow permissions => Read and write*.\ Nessun secret:\
+le credenziali PUN sono guest e il push usa il `GITHUB_TOKEN`.
 
 Prima di affidarti alle Actions conviene fare un `--once` in locale e committare `state/discovery_trento.json`, così il job parte con la discovery già pronta.
 
 ## Limiti e note oneste
+
 - **Nessuno storico a monte.** La serie temporale esiste solo se la raccogli:
   non puoi fare backfill del passato, parti da quando accendi lo script.
 - **Il campo `real_time`.** Solo per le colonnine con `real_time=True` lo stato
@@ -104,7 +115,8 @@ Prima di affidarti alle Actions conviene fare un `--once` in locale e committare
 
 ## Licenza
 
-Il **codice** è rilasciato sotto licenza WTFPL
-I **dati** raccolti derivano dalla PUN. Secondo l'interpretazione di AgID (principio *open data by default*, art. 52 c.2 del D.Lgs 82/2005 - CAD, e Linee Guida Open Data AgID), i dati pubblicati dalla PA senza licenza espressa si intendono aperti e riconducibili a **CC BY 4.0** con attribuzione al titolare (GSE). 
-Questa è un'interpretazione giuridica di AgID, non una licenza dichiarata esplicitamente dalla PUN: verifica prima di riusi in contesti sensibili.
+Il **codice** è rilasciato sotto licenza `WTFPL`.
+
+I **dati** raccolti derivano dalla PUN. Secondo l'interpretazione di AgID (principio *open data by default*, art. 52 c.2 del D.Lgs 82/2005 — CAD, e Linee Guida Open Data AgID), i dati pubblicati dalla PA senza licenza espressa si intendono aperti e riconducibili a **CC BY 4.0** con attribuzione al titolare (GSE). attribuzione al titolare (GSE). Questa è un'interpretazione giuridica di AgID, non una licenza dichiarata
+esplicitamente dalla PUN: verifica prima di riusi in contesti sensibili.
 Fonte da attribuire: *GSE — Piattaforma Unica Nazionale (PUN)*.
