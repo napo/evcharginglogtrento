@@ -317,31 +317,54 @@ def snapshot_hash(rows: list[dict]) -> str:
     return hashlib.md5(json.dumps(payload, default=str).encode()).hexdigest()
 
 
-def write_snapshot(rows: list[dict], outdir: Path, statedir: Path, dedup: bool) -> bool:
-    """Accoda le righe al parquet giornaliero (scrittura atomica).
-    Ritorna True se ha scritto, False se saltato per dedup."""
+def _ts_compact(ts: str) -> str:
+    """'2026-08-04T10:05:00+00:00' -> '20260804T100500Z'."""
+    return ts[:19].replace("-", "").replace(":", "") + "Z"
+
+
+def write_snapshot(rows, outdir: Path, statedir: Path, dedup: bool,
+                   layout: str = "partitioned") -> bool:
+    """Scrive lo snapshot. Ritorna True se ha scritto, False se saltato (dedup).
+
+    layout='partitioned' (default): un file write-once per snapshot in
+        data/date=YYYY-MM-DD/<ts>.parquet — non riscrive mai nulla, ideale per
+        il commit su git (ogni blob salvato una volta sola).
+    layout='daily': un unico parquet giornaliero riscritto ad ogni ciclo
+        (data/<outdir>_YYYY-MM-DD.parquet).
+    """
     if not rows:
         log.warning("nessuna riga da scrivere")
         return False
 
-    day = rows[0]["ts"][:10]
+    ts = rows[0]["ts"]
+    day = ts[:10]
     outdir.mkdir(parents=True, exist_ok=True)
     statedir.mkdir(parents=True, exist_ok=True)
-    target = outdir / f"{outdir.name}_{day}.parquet"
-    hash_file = statedir / f"{day}.lasthash"
 
     h = snapshot_hash(rows)
+    hash_file = statedir / ("last.hash" if layout == "partitioned"
+                            else f"{day}.lasthash")
     if dedup and hash_file.exists() and hash_file.read_text().strip() == h:
         log.info("snapshot identico al precedente — salto (dedup)")
         return False
 
     new = pd.DataFrame(rows)
+
+    if layout == "partitioned":
+        part = outdir / f"date={day}"
+        part.mkdir(parents=True, exist_ok=True)
+        target = part / f"{_ts_compact(ts)}.parquet"
+        new.to_parquet(target, index=False, compression="zstd")  # write-once
+        hash_file.write_text(h)
+        log.info("scritte %s righe -> %s", len(new), target.relative_to(outdir.parent))
+        return True
+
+    # layout == "daily"
+    target = outdir / f"{outdir.name}_{day}.parquet"
     if target.exists():
-        old = pd.read_parquet(target)
-        df = pd.concat([old, new], ignore_index=True)
+        df = pd.concat([pd.read_parquet(target), new], ignore_index=True)
     else:
         df = new
-
     tmp = target.with_suffix(".parquet.tmp")
     df.to_parquet(tmp, index=False, compression="zstd")
     tmp.replace(target)
@@ -366,7 +389,8 @@ def run_cycle(sess, args, bbox) -> None:
     rows = [p for p in (parse_record(r, ts) for r in recs) if p]
     attivi = sum(1 for r in rows if r["stato"] == "Attivo")
     log.info("ciclo %s: %s colonnine (%s attive)", ts, len(rows), attivi)
-    write_snapshot(rows, Path(args.outdir), statedir, dedup=not args.no_dedup)
+    write_snapshot(rows, Path(args.outdir), statedir,
+                   dedup=not args.no_dedup, layout=args.layout)
 
 
 def main() -> int:
@@ -383,6 +407,11 @@ def main() -> int:
     ap.add_argument("--once", action="store_true", help="esegui un solo ciclo")
     ap.add_argument("--refresh-discovery", type=float, default=24.0,
                     help="ore fra due discovery complete (default: 24)")
+    ap.add_argument("--layout", choices=["partitioned", "daily"],
+                    default="partitioned",
+                    help="partitioned: un file write-once per snapshot in "
+                         "date=YYYY-MM-DD/ (default, minimo impatto su git); "
+                         "daily: unico parquet giornaliero riscritto ogni ciclo")
     ap.add_argument("--no-dedup", action="store_true",
                     help="scrivi ogni ciclo anche se identico al precedente")
     ap.add_argument("-v", "--verbose", action="store_true")
