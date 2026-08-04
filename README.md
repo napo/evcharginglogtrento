@@ -1,15 +1,10 @@
 # EVChargingLogTrento
-Serie storica aperta dello stato delle colonnine di ricarica per veicoli
-elettrici del **Comune di Trento**, costruita interrogando periodicamente la
-[Piattaforma Unica Nazionale (PUN)](https://www.piattaformaunicanazionale.it/idr)
-e accumulando ogni snapshot in file Parquet.
+Serie storica aperta dello stato delle colonnine di ricarica per veicoli elettrici del **Comune di Trento**, costruita interrogando periodicamente la [Piattaforma Unica Nazionale (PUN)](https://www.piattaformaunicanazionale.it/idr) e accumulando ogni snapshot in file Parquet.
 
-La PUN espone solo lo stato *attuale*: non esiste un endpoint per interrogare i
-dati a una certa data, né un archivio storico. Questo progetto colma quel vuoto
-registrando lo stato nel tempo — l'archivio storico *è* il dato che produce.
+La PUN espone solo lo stato *attuale*: non esiste un endpoint per interrogare i dati a una certa data, né un archivio storico. Questo progetto colma quel vuoto registrando lo stato nel tempo - l'archivio storico *è* il dato che produce.
 
-> Progetto indipendente e non ufficiale. Non è affiliato né promosso da
-> FBK o Comune di Trento o GSE, MASE o RSE
+> Progetto indipendente e non ufficiale.
+> Non è affiliato né promosso da FBK o Comune di Trento o GSE, MASE o RSE
 
 ## Cosa fa
 Ogni ciclo (default: 5 minuti):
@@ -30,14 +25,10 @@ POST /v1/chargepoints/public/map/search   → lista evse_id (paginata)
 POST /v1/chargepoints/group               → dettagli completi (batch da 100)
 ```
 
-Il meccanismo dell'API è stato ricostruito a partire dall'ETL del progetto
-[`AgID/cruscotto-italia`](https://github.com/AgID/cruscotto-italia), a cui va
-il credito per il reverse-engineering della sorgente.
+Il meccanismo dell'API è stato ricostruito a partire dall'ETL del progetto [`AgID/cruscotto-italia`](https://github.com/AgID/cruscotto-italia), a cui va il credito per il reverse-engineering della sorgente.
 
 ## Schema del Parquet
-
-Un file per giorno in `data/` (`data_YYYY-MM-DD.parquet`). Ogni riga è lo stato
-di una colonnina a un dato istante `ts`.
+Un file per giorno in `data/` (`data_YYYY-MM-DD.parquet`). Ogni riga è lo stato di una colonnina a un dato istante `ts`.
 
 | campo | descrizione |
 |---|---|
@@ -96,17 +87,11 @@ Opzioni principali:
 
 ## Automazione (GitHub Actions)
 
-Il workflow in `.github/workflows/scrape.yml` gira ogni ora e, con un loop
-interno, esegue un ciclo ogni 5 minuti committando i dati nel repo (il cron
-nativo di Actions non è affidabile sui 5 minuti). Serve solo abilitare
-*Settings → Actions → Workflow permissions → Read and write*. Nessun secret:
-le credenziali PUN sono guest e il push usa il `GITHUB_TOKEN`.
+Il workflow in `.github/workflows/scrape.yml` gira ogni ora e, con un loop interno, esegue un ciclo ogni 5 minuti committando i dati nel repo (il cron nativo di Actions non è affidabile sui 5 minuti). Serve solo abilitare *Settings → Actions → Workflow permissions → Read and write*. Nessun secret: le credenziali PUN sono guest e il push usa il `GITHUB_TOKEN`.
 
-Prima di affidarti alle Actions conviene fare un `--once` in locale e committare
-`state/discovery_trento.json`, così il job parte con la discovery già pronta.
+Prima di affidarti alle Actions conviene fare un `--once` in locale e committare `state/discovery_trento.json`, così il job parte con la discovery già pronta.
 
 ## Limiti e note oneste
-
 - **Nessuno storico a monte.** La serie temporale esiste solo se la raccogli:
   non puoi fare backfill del passato, parti da quando accendi lo script.
 - **Il campo `real_time`.** Solo per le colonnine con `real_time=True` lo stato
@@ -119,12 +104,7 @@ Prima di affidarti alle Actions conviene fare un `--once` in locale e committare
 
 ## Licenza
 
-Il **codice** è rilasciato sotto licenza WFPL
-
-I **dati** raccolti derivano dalla PUN. Secondo l'interpretazione di AgID
-(principio *open data by default*, art. 52 c.2 del D.Lgs 82/2005 — CAD, e Linee
-Guida Open Data AgID), i dati pubblicati dalla PA senza licenza espressa si
-intendono aperti e riconducibili a **CC BY 4.0** con attribuzione al titolare
-(GSE). Questa è un'interpretazione giuridica di AgID, non una licenza dichiarata
-esplicitamente dalla PUN: verifica prima di riusi in contesti sensibili.
+Il **codice** è rilasciato sotto licenza WTFPL
+I **dati** raccolti derivano dalla PUN. Secondo l'interpretazione di AgID (principio *open data by default*, art. 52 c.2 del D.Lgs 82/2005 - CAD, e Linee Guida Open Data AgID), i dati pubblicati dalla PA senza licenza espressa si intendono aperti e riconducibili a **CC BY 4.0** con attribuzione al titolare (GSE). 
+Questa è un'interpretazione giuridica di AgID, non una licenza dichiarata esplicitamente dalla PUN: verifica prima di riusi in contesti sensibili.
 Fonte da attribuire: *GSE — Piattaforma Unica Nazionale (PUN)*.
