@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-05T20:17:38+00:00",
+  "generated_at": "2026-08-05T20:22:42+00:00",
   "stats": {
     "total": 213,
     "active": 189,
     "inactive": 24,
-    "charging": 10
+    "charging": 8
   },
   "points": [
     {
@@ -766,7 +766,7 @@
     {
       "id_evse": "IT*PLN*EE007295*1",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "BEC",
       "indirizzo": "Via Pranzelores",
@@ -2926,7 +2926,7 @@
     {
       "id_evse": "IT*TSL*EA6H0AV",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "Tesla Italia Srl.",
       "indirizzo": "11, Via Innsbruck",
