@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-05T23:05:09+00:00",
+  "generated_at": "2026-08-05T23:20:23+00:00",
   "stats": {
     "total": 213,
     "active": 190,
     "inactive": 23,
-    "charging": 7
+    "charging": 6
   },
   "points": [
     {
@@ -2620,7 +2620,7 @@
     {
       "id_evse": "IT*ELC*EYMGB",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "Electra Italia s.r.l.",
       "indirizzo": "Via Ragazzi del 99",
