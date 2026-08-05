@@ -8,6 +8,10 @@ const poiProximityTable = document.getElementById('poi-proximity-table');
 
 let statsPayload = null;
 
+// Palette derivata dall'immagine hero (vedi ../styles.css).
+const HERO_GREEN = '#1da542';
+const HERO_BLUE = '#0b98cb';
+
 function renderSummaryCards(data) {
   const cards = [
     { label: 'Colonnine', value: data.summary.total, tone: 'primary' },
@@ -65,7 +69,7 @@ function renderGauge(data) {
           fontSize: 32,
           fontWeight: 'bolder',
           offsetCenter: [0, '10%'],
-          color: '#1f7ae0',
+          color: '#0b98cb',
         },
         data: [{ value: data.summary.share_active }],
       },
@@ -205,8 +209,8 @@ function renderDailyChart(containerId, block) {
     xAxis: { type: 'category', data: block.points.map((p) => p.date) },
     yAxis: { type: 'value', max: 100, axisLabel: { formatter: '{value}%' } },
     series: [
-      { name: 'Attive %', type: 'line', smooth: true, data: block.points.map((p) => p.share_active) },
-      { name: 'In ricarica %', type: 'line', smooth: true, data: block.points.map((p) => p.share_charging) },
+      { name: 'Attive %', type: 'line', smooth: true, itemStyle: { color: HERO_GREEN }, data: block.points.map((p) => p.share_active) },
+      { name: 'In ricarica %', type: 'line', smooth: true, itemStyle: { color: HERO_BLUE }, data: block.points.map((p) => p.share_charging) },
     ],
   });
   window.addEventListener('resize', () => chart.resize());
@@ -254,8 +258,8 @@ function renderMonthlyChart(containerId, block) {
     xAxis: { type: 'category', data: block.points.map((p) => p.month) },
     yAxis: { type: 'value', max: 100, axisLabel: { formatter: '{value}%' } },
     series: [
-      { name: 'Attive %', type: 'bar', data: block.points.map((p) => p.share_active) },
-      { name: 'In ricarica %', type: 'bar', data: block.points.map((p) => p.share_charging) },
+      { name: 'Attive %', type: 'bar', itemStyle: { color: HERO_GREEN }, data: block.points.map((p) => p.share_active) },
+      { name: 'In ricarica %', type: 'bar', itemStyle: { color: HERO_BLUE }, data: block.points.map((p) => p.share_charging) },
     ],
   });
   window.addEventListener('resize', () => chart.resize());
@@ -289,7 +293,7 @@ function renderHourlyProfile(city) {
         name: 'In ricarica %',
         type: 'bar',
         data: city.profilo_orario.map((p) => p.quota_charging),
-        itemStyle: { color: '#1f7ae0' },
+        itemStyle: { color: '#0b98cb' },
       },
     ],
   });

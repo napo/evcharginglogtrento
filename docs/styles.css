@@ -1,5 +1,24 @@
+/* Palette derivata dall'immagine hero (blu del cielo, verde della colonnina,
+   blu-grigio dei vetri dell'auto) — validata con lo skill dataviz (CVD-safe,
+   contrasto testo bianco >= 3:1). Sovrascrive le variabili Bootstrap così la
+   tinta si applica automaticamente a bg-primary/success/danger, badge,
+   pulsanti attivi, ecc. senza toccare ogni componente uno per uno. */
+:root {
+  --bs-primary: #0b98cb;
+  --bs-primary-rgb: 11, 152, 203;
+  --bs-success: #1da542;
+  --bs-success-rgb: 29, 165, 66;
+  --bs-danger: #35528d;
+  --bs-danger-rgb: 53, 82, 141;
+  --hero-blue-pale: #7edcfe;
+}
+
 body {
   background: #f6f8fb;
+}
+
+[data-aos] {
+  transition-duration: 600ms;
 }
 
 .hero-card {
@@ -51,11 +70,11 @@ body {
 }
 
 .marker-pin.active {
-  background: #198754;
+  background: #1da542;
 }
 
 .marker-pin.inactive {
-  background: #dc3545;
+  background: #35528d;
 }
 
 .marker-pin.unknown {
@@ -63,7 +82,7 @@ body {
 }
 
 .marker-pin.charging {
-  background: #0d6efd;
+  background: #0b98cb;
 }
 
 .card {
