@@ -18,8 +18,8 @@ function renderForecast(block) {
   meta.textContent = `Basata su ${block.days_collected} giorni di storico · errore tipico ±${block.mae_storico} punti percentuali.`;
 
   if (typeof echarts === 'undefined') return;
-  const chart = echarts.init(chartEl);
-  const labels = block.punti.map((p) => p.ts.replace('T', ' '));
+  const chart = echarts.init(chartEl, 'evtrento-dark');
+  const labels = block.punti.map((p) => (window.EVFormat ? EVFormat.dateTime(p.ts) : p.ts.replace('T', ' ')));
   chart.setOption({
     tooltip: { trigger: 'axis' },
     legend: { data: ['Stima', 'Intervallo'] },
@@ -47,7 +47,7 @@ function renderForecast(block) {
         stack: 'range',
         symbol: 'none',
         lineStyle: { opacity: 0 },
-        areaStyle: { color: 'rgba(9, 98, 119, 0.15)' },
+        areaStyle: { color: 'rgba(40, 161, 189, 0.18)' },
       },
       {
         name: 'Stima',
@@ -55,7 +55,7 @@ function renderForecast(block) {
         data: block.punti.map((p) => p.share_charging),
         smooth: true,
         symbol: 'none',
-        lineStyle: { color: '#096277', width: 2 },
+        lineStyle: { color: '#28a1bd', width: 2 },
       },
     ],
   });

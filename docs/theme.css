@@ -1,0 +1,293 @@
+/* Tema scuro condiviso da tutte le pagine (docs/, docs/stats/, docs/info/,
+   docs/stats/funfacts/, docs/stats/forecast/) — sostituisce i due fogli di
+   stile duplicati (docs/styles.css, docs/stats/styles.css) che avevano le
+   stesse variabili copiate a mano in due posti.
+
+   Palette ispirata al template Workfolio (bootstrapmade.com), accento
+   ricolorato sul nostro brand: #096277 ha ottimo contrasto come *fill* con
+   testo bianco sopra (badge, card piene) ma fallisce il contrasto minimo
+   come testo/tratto/icona direttamente su sfondo scuro (2.7:1, serve
+   3:1+). --accent-color è una tinta più chiara sulla stessa tonalità
+   (H≈191.5°), validata con lo skill dataviz (validate_palette.js, --mode
+   dark): banda di luminosità, chroma floor, separazione CVD dal verde di
+   stato e contrasto tutti PASS. --bs-primary resta il vecchio hex,
+   invariato, per i ruoli a riempimento pieno dove va ancora benissimo. */
+:root,
+:root[data-bs-theme='dark'] {
+  --bs-body-bg: #0a1020;
+  --bs-body-color: #aeb9cc;
+  --bs-emphasis-color: #ffffff;
+  --bs-border-color: rgba(255, 255, 255, 0.08);
+  --bs-link-color: #28a1bd;
+  --bs-link-color-rgb: 40, 161, 189;
+  --bs-link-hover-color: #4dc1e0;
+  --bs-primary: #096277;
+  --bs-primary-rgb: 9, 98, 119;
+  --bs-success: #1da542;
+  --bs-success-rgb: 29, 165, 66;
+  --bs-danger: #35528d;
+  --bs-danger-rgb: 53, 82, 141;
+  --surface-color: #171f30;
+  --surface-color-alt: #1c2540;
+  --accent-color: #28a1bd;
+  --hero-blue-pale: rgba(255, 255, 255, 0.12);
+  --status-red: #b02a2a;
+  --heading-font: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--bs-body-bg);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+}
+
+a {
+  color: var(--bs-link-color);
+}
+
+a:hover {
+  color: var(--bs-link-hover-color);
+}
+
+/* --- Header ------------------------------------------------------------ */
+
+.site-header {
+  background: rgba(10, 16, 32, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--bs-border-color);
+  padding: 0.65rem 0;
+  z-index: 1030;
+}
+
+.site-logo {
+  text-decoration: none;
+}
+
+.site-logo img {
+  height: 32px;
+  width: auto;
+}
+
+.site-logo-word {
+  font-family: var(--heading-font);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--accent-color);
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  color: var(--bs-body-color);
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--accent-color);
+}
+
+/* --- Card / superfici ---------------------------------------------------- */
+
+.card {
+  --bs-card-bg: var(--surface-color);
+  --bs-card-border-color: var(--bs-border-color);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.75rem;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 0.35rem;
+}
+
+/* --- Hero ---------------------------------------------------------------- */
+
+[data-aos] {
+  transition-duration: 600ms;
+}
+
+.hero-card {
+  border: none;
+  overflow: hidden;
+}
+
+.hero-banner-img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 576px) {
+  .hero-banner-img {
+    height: 200px;
+  }
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  background: rgba(40, 161, 189, 0.12);
+  border: 1px solid rgba(40, 161, 189, 0.35);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* --- Popover / popup contenuto d'uso ------------------------------------- */
+
+/* Popup mappa (MapLibre) e popover Bootstrap (nomi colonnina/operatore
+   ovunque nel sito) restano sempre a sfondo bianco e testo nero,
+   indipendentemente dal tema scuro della pagina: senza questa regola il
+   testo eredita --bs-body-color (grigio chiaro, pensato per sfondo scuro)
+   e diventa quasi illeggibile sul bianco di default di MapLibre/Bootstrap. */
+.maplibregl-popup-content {
+  background: #ffffff;
+  color: #111111;
+  border-radius: 0.5rem;
+}
+
+.maplibregl-popup-content a {
+  color: #096277;
+}
+
+.maplibregl-popup-close-button {
+  color: #111111;
+}
+
+.popover {
+  --bs-popover-bg: #ffffff;
+  --bs-popover-border-color: rgba(0, 0, 0, 0.15);
+  --bs-popover-header-bg: #ffffff;
+  --bs-popover-header-color: #111111;
+  --bs-popover-body-color: #111111;
+}
+
+.popover a {
+  color: #096277;
+}
+
+.popup-usage dt {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #555555;
+}
+
+.popup-usage dd {
+  margin-bottom: 0.35rem;
+}
+
+.station-link {
+  cursor: default;
+  border-bottom: 1px dotted rgba(174, 185, 204, 0.5);
+}
+
+/* --- Tabelle / grafici ---------------------------------------------------- */
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.echart-trend {
+  width: 100%;
+  min-height: 320px;
+}
+
+.stat-card {
+  min-height: 100%;
+}
+
+/* .alert-light è usato per i placeholder "servono più giorni di storico":
+   il grigio chiaro di default di Bootstrap stona sulla superficie scura. */
+.alert-light {
+  background-color: var(--surface-color-alt);
+  border-color: var(--bs-border-color);
+  color: var(--bs-body-color);
+}
+
+/* Riga tabella selezionata dal fly-to tabella→mappa (docs/index.html) —
+   riusa la classe nativa Bootstrap `table-active`, già tematizzata dark
+   via data-bs-theme, invece di introdurne una nuova. */
+#live-table tbody tr[data-id-evse] {
+  cursor: pointer;
+}
+
+/* --- Mappa ----------------------------------------------------------------- */
+
+.map-container {
+  width: 100%;
+  height: 520px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.marker-pin {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.marker-pin.a22 {
+  border-radius: 3px;
+  border: 2px solid #f1b81b;
+  background: #fff3cd;
+}
+
+.marker-pin.charging {
+  background: var(--accent-color);
+}
+
+/* Anello che evidenzia il punto raggiunto dal fly-to tabella→mappa:
+   pointer-events:none per non intercettare i click sui layer/marker
+   sottostanti (cluster, marker in ricarica/A22). */
+.marker-focus-ring {
+  width: 34px;
+  height: 34px;
+  margin-left: -10px;
+  margin-top: -10px;
+  border-radius: 50%;
+  border: 3px solid var(--accent-color);
+  box-shadow: 0 0 0 6px rgba(40, 161, 189, 0.25);
+  pointer-events: none;
+  animation: focus-pulse 1.4s ease-out infinite;
+}
+
+@keyframes focus-pulse {
+  0% {
+    box-shadow: 0 0 0 4px rgba(40, 161, 189, 0.35);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(40, 161, 189, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 4px rgba(40, 161, 189, 0);
+  }
+}

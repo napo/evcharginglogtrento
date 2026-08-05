@@ -12,19 +12,30 @@ const statusLabel = {
 const MALFUNZIONANTE_RAW = ['OUTOFORDER', 'INOPERATIVE', 'BLOCKED'];
 
 // Colore di brand (dal logo) + stato, validati con lo skill dataviz — vedi
-// styles.css per i dettagli. Copie esadecimali qui perché ECharts non legge
-// le variabili CSS.
-const HERO_BLUE = '#096277';
-const HERO_BLUE_PALE = '#b8edfa';
+// theme.css per i dettagli. Copie esadecimali qui perché ECharts non legge
+// le variabili CSS. ACCENT è una tinta chiara della stessa tonalità del
+// brand (#096277): quel colore ha ottimo contrasto come *fill* con testo
+// bianco sopra, ma fallisce (2.7:1) come tratto/testo su sfondo scuro —
+// ACCENT è la versione validata per quel ruolo (vedi shared-echarts-theme.js
+// e il piano di questa iterazione per i numeri).
+const ACCENT = '#28a1bd';
+const TRACK_DIM = 'rgba(255,255,255,0.12)';
 const HERO_GREEN = '#1da542';
 const HERO_BLUEGRAY = '#35528d';
 const STATUS_RED = '#b02a2a';
+const SURFACE_COLOR = '#171f30';
 
 let map;
 let allPoints = [];
 let activeFilter = 'all';
 let stationsUsage = null;
 let a22Markers = [];
+
+// --- Fly-to tabella -> mappa ---------------------------------------------
+let selectedRow = null;
+let focusTimer = null;
+let focusMarker = null;
+let focusPopup = null;
 
 function pointState(point) {
   return point.stato || statusLabel[point.stato_raw] || 'Sconosciuto';
@@ -74,7 +85,7 @@ function renderGaugeOccupied(cityPoints) {
   const totale = cityPoints.length;
   const quota = totale ? Math.round((occupate / totale) * 100) : 0;
 
-  const chart = echarts.init(el);
+  const chart = echarts.init(el, 'evtrento-dark');
   chart.setOption({
     series: [
       {
@@ -84,13 +95,13 @@ function renderGaugeOccupied(cityPoints) {
         min: 0,
         max: 100,
         splitNumber: 5,
-        progress: { show: true, width: 16, itemStyle: { color: HERO_BLUE } },
-        axisLine: { lineStyle: { width: 16, color: [[1, HERO_BLUE_PALE]] } },
-        pointer: { show: true, length: '55%', width: 4, itemStyle: { color: HERO_BLUE } },
-        anchor: { show: true, size: 10, itemStyle: { color: HERO_BLUE, borderColor: '#fff', borderWidth: 2 } },
+        progress: { show: true, width: 16, itemStyle: { color: ACCENT } },
+        axisLine: { lineStyle: { width: 16, color: [[1, TRACK_DIM]] } },
+        pointer: { show: true, length: '55%', width: 4, itemStyle: { color: ACCENT } },
+        anchor: { show: true, size: 10, itemStyle: { color: ACCENT, borderColor: '#fff', borderWidth: 2 } },
         axisTick: { show: false },
-        splitLine: { length: 12, lineStyle: { width: 2, color: '#aaa' } },
-        axisLabel: { distance: 22, fontSize: 12, color: '#888' },
+        splitLine: { length: 12, lineStyle: { width: 2, color: 'rgba(255,255,255,.3)' } },
+        axisLabel: { distance: 22, fontSize: 12, color: '#aeb9cc' },
         title: { show: false },
         detail: {
           valueAnimation: true,
@@ -99,7 +110,7 @@ function renderGaugeOccupied(cityPoints) {
           fontSize: 32,
           fontWeight: 'bolder',
           offsetCenter: [0, '35%'],
-          color: HERO_BLUE,
+          color: ACCENT,
         },
         data: [{ value: quota, name: 'occupate' }],
       },
@@ -124,7 +135,13 @@ function renderStackedBar(cityPoints) {
   // comunque raggiungibile da tooltip e legenda — mai un numero clippato.
   const canLabel = (v) => total > 0 && v / total >= 0.12;
 
-  const chart = echarts.init(el);
+  // Bordo 2px nel colore superficie tra i segmenti: rosso e blu-grigio non
+  // raggiungono da soli il contrasto 3:1 richiesto contro lo sfondo scuro
+  // (validato con lo skill dataviz), il bordo dà comunque un confine
+  // percepibile indipendentemente dal contrasto assoluto del fill.
+  const segmentBorder = { borderColor: SURFACE_COLOR, borderWidth: 2 };
+
+  const chart = echarts.init(el, 'evtrento-dark');
   chart.setOption({
     tooltip: {
       trigger: 'item',
@@ -140,7 +157,7 @@ function renderStackedBar(cityPoints) {
         type: 'bar',
         stack: 'totale',
         barWidth: 40,
-        itemStyle: { color: HERO_GREEN, borderRadius: [4, 0, 0, 4] },
+        itemStyle: { color: HERO_GREEN, borderRadius: [4, 0, 0, 4], ...segmentBorder },
         label: { show: canLabel(active), position: 'insideLeft', color: '#fff', formatter: () => active },
         data: [active],
       },
@@ -149,7 +166,7 @@ function renderStackedBar(cityPoints) {
         type: 'bar',
         stack: 'totale',
         barWidth: 40,
-        itemStyle: { color: HERO_BLUEGRAY },
+        itemStyle: { color: HERO_BLUEGRAY, ...segmentBorder },
         label: { show: canLabel(inactive), position: 'inside', color: '#fff', formatter: () => inactive },
         data: [inactive],
       },
@@ -158,7 +175,7 @@ function renderStackedBar(cityPoints) {
         type: 'bar',
         stack: 'totale',
         barWidth: 40,
-        itemStyle: { color: STATUS_RED, borderRadius: [0, 4, 4, 0] },
+        itemStyle: { color: STATUS_RED, borderRadius: [0, 4, 4, 0], ...segmentBorder },
         label: { show: canLabel(malfunzionanti), position: 'insideRight', color: '#fff', formatter: () => malfunzionanti },
         data: [malfunzionanti],
       },
@@ -217,7 +234,7 @@ function renderTable(items) {
     .map((item) => {
       const state = pointState(item);
       return `
-        <tr>
+        <tr data-id-evse="${item.id_evse}">
           <td><span class="badge rounded-pill bg-${state === 'Attivo' ? 'success' : state === 'In ricarica' ? 'primary' : 'danger'}">${state}</span></td>
           <td>${item.cpo || '—'}${item.is_a22 ? ' <span class="badge bg-warning text-dark ms-1">A22</span>' : ''}</td>
           <td>${item.citta || 'Trento'}</td>
@@ -229,6 +246,70 @@ function renderTable(items) {
     })
     .join('');
   enhanceTable(document.getElementById('live-table'));
+}
+
+// --- Fly-to: click su una riga della tabella porta la mappa sul punto ---
+
+let pendingMoveEndHandler = null;
+
+function clearFocus() {
+  clearTimeout(focusTimer);
+  focusTimer = null;
+  if (pendingMoveEndHandler) {
+    // Un flyTo interrotto da una nuova selezione emette comunque un
+    // 'moveend': senza sganciare l'handler in sospeso, quello vecchio
+    // scatterebbe più tardi ed evidenzierebbe il punto sbagliato.
+    map.off('moveend', pendingMoveEndHandler);
+    pendingMoveEndHandler = null;
+  }
+  if (selectedRow) {
+    selectedRow.classList.remove('table-active');
+    selectedRow = null;
+  }
+  if (focusMarker) {
+    focusMarker.remove();
+    focusMarker = null;
+  }
+  if (focusPopup) {
+    focusPopup.remove();
+    focusPopup = null;
+  }
+}
+
+function highlightMapPoint(point) {
+  const el = document.createElement('div');
+  el.className = 'marker-focus-ring';
+  focusMarker = new maplibregl.Marker({ element: el }).setLngLat([point.lon, point.lat]).addTo(map);
+  focusPopup = new maplibregl.Popup({ offset: 12, maxWidth: '280px' })
+    .setLngLat([point.lon, point.lat])
+    .setHTML(popupHtml(point))
+    .addTo(map);
+}
+
+function flyToPoint(idEvse) {
+  const point = allPoints.find((p) => p.id_evse === idEvse);
+  if (!point || !point.lat || !point.lon || !map) return;
+  document.getElementById('map').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  map.flyTo({ center: [point.lon, point.lat], zoom: 17, duration: 1800, essential: true });
+  pendingMoveEndHandler = () => {
+    pendingMoveEndHandler = null;
+    highlightMapPoint(point);
+  };
+  map.once('moveend', pendingMoveEndHandler);
+}
+
+function selectFromTable(tr) {
+  clearFocus();
+  tr.classList.add('table-active');
+  selectedRow = tr;
+  focusTimer = setTimeout(() => flyToPoint(tr.dataset.idEvse), 1000);
+}
+
+function wireTableFocus() {
+  tableBody.addEventListener('click', (e) => {
+    const tr = e.target.closest('tr[data-id-evse]');
+    if (tr) selectFromTable(tr);
+  });
 }
 
 // --- Popup mappa (contenuto condiviso da shared-usage.js) ---------------
@@ -319,6 +400,7 @@ function addClusterGroup(sourceId, points, color) {
     const feature = e.features[0];
     const point = allPoints.find((p) => p.id_evse === feature.properties.id_evse);
     if (!point) return;
+    clearFocus();
     new maplibregl.Popup({ offset: 10, maxWidth: '280px' })
       .setLngLat(feature.geometry.coordinates)
       .setHTML(popupHtml(point))
@@ -340,6 +422,11 @@ function renderIndividualMarkers(points, className) {
   points.forEach((point) => {
     const pin = document.createElement('div');
     pin.className = `marker-pin ${className}`;
+    // Solo pulizia dello stato di focus da tabella: il toggle del popup è
+    // già gestito da MapLibre stesso via setPopup() — un secondo listener
+    // che lo richiamasse aprirebbe/chiuderebbe il popup due volte (bug già
+    // risolto in una sessione precedente).
+    pin.addEventListener('click', () => clearFocus());
     const popup = new maplibregl.Popup({ offset: 12, maxWidth: '280px' }).setHTML(popupHtml(point));
     const marker = new maplibregl.Marker({ element: pin }).setLngLat([point.lon, point.lat]).setPopup(popup).addTo(map);
     markers.push(marker);
@@ -350,7 +437,7 @@ function renderIndividualMarkers(points, className) {
 function createMap(snapshot) {
   map = new maplibregl.Map({
     container: 'map',
-    style: 'https://styles.maptoolkit.org/street.json',
+    style: 'https://styles.maptoolkit.org/dark.json',
     center: [11.121, 46.074],
     zoom: 11,
     pitch: 0,
@@ -376,8 +463,13 @@ function renderMapLayers(points) {
   const activePoints = cityPoints.filter((p) => pointState(p) === 'Attivo' && p.stato_raw !== 'CHARGING');
   const inactivePoints = cityPoints.filter((p) => pointState(p) === 'Non Attivo');
 
+  // Il filtro "In ricarica" isola le colonnine in uso (marker blu): quando
+  // è selezionato, i cluster attive/non attive spariscono e restano solo
+  // i marker in ricarica. Con "Tutti"/"Attivi" le colonnine in ricarica
+  // restano visibili come già prima (sono comunque colonnine attive).
   const showActive = activeFilter === 'all' || activeFilter === 'Attivo';
   const showInactive = activeFilter === 'all' || activeFilter === 'Non Attivo';
+  const showCharging = activeFilter === 'all' || activeFilter === 'Attivo' || activeFilter === 'Charging';
 
   addClusterGroup('active', showActive ? activePoints : [], HERO_GREEN);
   addClusterGroup('inactive', showInactive ? inactivePoints : [], STATUS_RED);
@@ -386,7 +478,7 @@ function renderMapLayers(points) {
   a22Markers = [];
   document.querySelectorAll('.maplibregl-marker.charging-marker').forEach((el) => el.remove());
 
-  if (showActive) {
+  if (showCharging) {
     renderIndividualMarkers(chargingPoints, 'charging charging-marker');
   }
   a22Markers = renderIndividualMarkers(a22Points, 'a22');
@@ -395,8 +487,7 @@ function renderMapLayers(points) {
 // --- Frase riepilogo hero -------------------------------------------------
 
 function formatSituationDate(iso) {
-  const d = new Date(iso);
-  return d.toLocaleString('it-IT', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+  return window.EVFormat ? EVFormat.dateTime(iso) : iso;
 }
 
 function renderUsageHeadline(points, generatedAt) {
@@ -454,6 +545,7 @@ async function loadDashboard() {
   document.getElementById('table-last-update').textContent = `Aggiornato: ${formatSituationDate(snapshot.generated_at)}`;
   createMap(snapshot);
   wireFilters();
+  wireTableFocus();
 
   if (typeof AOS !== 'undefined') AOS.init({ once: true, duration: 600 });
 }

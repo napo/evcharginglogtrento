@@ -7,9 +7,12 @@ const poiProximityTable = document.getElementById('poi-proximity-table');
 
 let statsPayload = null;
 
-// Palette derivata dall'immagine hero (vedi ../styles.css).
+// Palette derivata dall'immagine hero (vedi ../theme.css). ACCENT è la
+// tinta chiara sulla stessa tonalità del brand (#096277), usata ovunque il
+// colore serve come tratto/testo su sfondo scuro (il brand puro fallisce
+// il contrasto minimo lì) — vedi docs/app.js per i numeri di validazione.
 const HERO_GREEN = '#1da542';
-const HERO_BLUE = '#096277';
+const ACCENT = '#28a1bd';
 
 function renderSummaryCards(data) {
   const cards = [
@@ -36,14 +39,14 @@ function renderSummaryCards(data) {
   summaryBox.innerHTML = `
     <div class="mb-2"><strong>Totale:</strong> ${data.summary.total}</div>
     <div class="mb-2"><strong>Quota attive:</strong> ${data.summary.share_active}%</div>
-    <div class="mb-2"><strong>Ultimo snapshot:</strong> ${new Date(data.summary.generated_at).toLocaleString('it-IT')}</div>
+    <div class="mb-2"><strong>Ultimo snapshot:</strong> ${window.EVFormat ? EVFormat.dateTime(data.summary.generated_at) : data.summary.generated_at}</div>
   `;
 }
 
 function renderGauge(data) {
   const el = document.getElementById('gauge-active');
   if (!el || typeof echarts === 'undefined') return;
-  const chart = echarts.init(el);
+  const chart = echarts.init(el, 'evtrento-dark');
   chart.setOption({
     series: [
       {
@@ -53,13 +56,13 @@ function renderGauge(data) {
         min: 0,
         max: 100,
         splitNumber: 5,
-        progress: { show: true, width: 16 },
-        axisLine: { lineStyle: { width: 16 } },
-        pointer: { show: true, length: '55%', width: 4, itemStyle: { color: HERO_BLUE } },
-        anchor: { show: true, size: 10, itemStyle: { color: HERO_BLUE, borderColor: '#fff', borderWidth: 2 } },
+        progress: { show: true, width: 16, itemStyle: { color: ACCENT } },
+        axisLine: { lineStyle: { width: 16, color: [[1, 'rgba(255,255,255,0.12)']] } },
+        pointer: { show: true, length: '55%', width: 4, itemStyle: { color: ACCENT } },
+        anchor: { show: true, size: 10, itemStyle: { color: ACCENT, borderColor: '#fff', borderWidth: 2 } },
         axisTick: { show: false },
-        splitLine: { length: 12, lineStyle: { width: 2, color: '#aaa' } },
-        axisLabel: { distance: 22, fontSize: 12, color: '#888' },
+        splitLine: { length: 12, lineStyle: { width: 2, color: 'rgba(255,255,255,.3)' } },
+        axisLabel: { distance: 22, fontSize: 12, color: '#aeb9cc' },
         title: { show: false },
         detail: {
           valueAnimation: true,
@@ -68,7 +71,7 @@ function renderGauge(data) {
           fontSize: 32,
           fontWeight: 'bolder',
           offsetCenter: [0, '10%'],
-          color: '#096277',
+          color: ACCENT,
         },
         data: [{ value: data.summary.share_active }],
       },
@@ -200,16 +203,20 @@ function pointsInRange(points, from, to) {
 function renderDailyChartPoints(points) {
   const el = document.getElementById('chart-daily-trento');
   if (!el || typeof echarts === 'undefined') return;
-  if (!dailyChart) dailyChart = echarts.init(el);
+  if (!dailyChart) dailyChart = echarts.init(el, 'evtrento-dark');
   dailyChart.setOption({
     tooltip: { trigger: 'axis' },
     legend: { data: ['Attive %', 'In ricarica %'] },
-    grid: { left: 40, right: 20, top: 40, bottom: 30 },
-    xAxis: { type: 'category', data: points.map((p) => p.date) },
+    grid: { left: 40, right: 20, top: 40, bottom: 60 },
+    xAxis: {
+      type: 'category',
+      data: points.map((p) => (window.EVFormat ? EVFormat.dateOnly(p.date) : p.date)),
+      axisLabel: { rotate: 45, fontSize: 10 },
+    },
     yAxis: { type: 'value', max: 100, axisLabel: { formatter: '{value}%' } },
     series: [
       { name: 'Attive %', type: 'line', smooth: true, itemStyle: { color: HERO_GREEN }, data: points.map((p) => p.share_active) },
-      { name: 'In ricarica %', type: 'line', smooth: true, itemStyle: { color: HERO_BLUE }, data: points.map((p) => p.share_charging) },
+      { name: 'In ricarica %', type: 'line', smooth: true, itemStyle: { color: ACCENT }, data: points.map((p) => p.share_charging) },
     ],
   });
 }
@@ -222,7 +229,7 @@ function renderDailyTable(points) {
     .map(
       (p) => `
         <tr>
-          <td>${p.date}</td>
+          <td data-sort-value="${p.date}">${window.EVFormat ? EVFormat.dateOnly(p.date) : p.date}</td>
           <td>${p.share_active}%</td>
           <td>${p.share_charging}%</td>
         </tr>`
@@ -271,7 +278,7 @@ function renderWeeklyHeatmap(containerId, block) {
   if (!block.available) return renderPlaceholder(containerId, block);
   const el = document.getElementById(containerId);
   if (!el || typeof echarts === 'undefined') return;
-  const chart = echarts.init(el);
+  const chart = echarts.init(el, 'evtrento-dark');
   const hours = Array.from({ length: 24 }, (_, i) => `${i}:00`);
   const data = [];
   block.matrix_charging.forEach((row, dow) => {
@@ -291,6 +298,8 @@ function renderWeeklyHeatmap(containerId, block) {
       orient: 'horizontal',
       left: 'center',
       bottom: 0,
+      textStyle: { color: '#aeb9cc' },
+      inRange: { color: ['#1c2540', ACCENT] },
     },
     series: [{ type: 'heatmap', data, label: { show: false } }],
   });
@@ -305,7 +314,7 @@ function renderMonthlyTable(points) {
     .map(
       (p) => `
         <tr>
-          <td>${p.month}</td>
+          <td data-sort-value="${p.month}">${window.EVFormat ? EVFormat.monthYear(p.month) : p.month}</td>
           <td>${p.share_active}%</td>
           <td>${p.share_charging}%</td>
         </tr>`
@@ -318,16 +327,16 @@ function renderMonthlyChart(containerId, block) {
   if (!block.available) return renderPlaceholder(containerId, block);
   const el = document.getElementById(containerId);
   if (!el || typeof echarts === 'undefined') return;
-  const chart = echarts.init(el);
+  const chart = echarts.init(el, 'evtrento-dark');
   chart.setOption({
     tooltip: { trigger: 'axis' },
     legend: { data: ['Attive %', 'In ricarica %'] },
     grid: { left: 40, right: 20, top: 40, bottom: 30 },
-    xAxis: { type: 'category', data: block.points.map((p) => p.month) },
+    xAxis: { type: 'category', data: block.points.map((p) => (window.EVFormat ? EVFormat.monthYear(p.month) : p.month)) },
     yAxis: { type: 'value', max: 100, axisLabel: { formatter: '{value}%' } },
     series: [
       { name: 'Attive %', type: 'bar', itemStyle: { color: HERO_GREEN }, data: block.points.map((p) => p.share_active) },
-      { name: 'In ricarica %', type: 'bar', itemStyle: { color: HERO_BLUE }, data: block.points.map((p) => p.share_charging) },
+      { name: 'In ricarica %', type: 'bar', itemStyle: { color: ACCENT }, data: block.points.map((p) => p.share_charging) },
     ],
   });
   window.addEventListener('resize', () => chart.resize());
@@ -362,7 +371,7 @@ function renderHourlyProfile(city) {
     return;
   }
   if (typeof echarts === 'undefined') return;
-  const chart = echarts.init(el);
+  const chart = echarts.init(el, 'evtrento-dark');
   chart.setOption({
     tooltip: { trigger: 'axis' },
     grid: { left: 40, right: 20, top: 20, bottom: 30 },
@@ -373,7 +382,7 @@ function renderHourlyProfile(city) {
         name: 'In ricarica %',
         type: 'bar',
         data: city.profilo_orario.map((p) => p.quota_charging),
-        itemStyle: { color: '#096277' },
+        itemStyle: { color: ACCENT },
       },
     ],
   });

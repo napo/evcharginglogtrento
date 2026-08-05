@@ -57,7 +57,7 @@ window.EVUsage = (() => {
         ? `<dt>Giorno più usato</dt><dd>${usage.giorno_settimana_piu_usato.giorno}</dd>`
         : '<dt>Giorno più usato</dt><dd class="text-muted">servono più giorni di storico</dd>',
       usage.giorno_record
-        ? `<dt>Giorno record</dt><dd>${usage.giorno_record.data} (${usage.giorno_record.minuti_ricarica_totali} min totali)</dd>`
+        ? `<dt>Giorno record</dt><dd>${window.EVFormat ? EVFormat.dateOnly(usage.giorno_record.data) : usage.giorno_record.data} (${usage.giorno_record.minuti_ricarica_totali} min totali)</dd>`
         : '',
     ]
       .filter(Boolean)
