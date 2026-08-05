@@ -1,0 +1,1142 @@
+{
+  "generated_at": "2026-08-05T11:28:53Z",
+  "source": "OpenStreetMap contributors, via Overpass API (ODbL)",
+  "bbox": [
+    46.0,
+    11.03,
+    46.16,
+    11.22
+  ],
+  "categories": {
+    "musei": [
+      {
+        "name": "Museo Diocesano Tridentino",
+        "lat": 46.067484,
+        "lon": 11.12188
+      },
+      {
+        "name": "Le Gallerie",
+        "lat": 46.07176,
+        "lon": 11.113531
+      },
+      {
+        "name": "Museo Casa Porfido",
+        "lat": 46.144074,
+        "lon": 11.193779
+      },
+      {
+        "name": "TTram",
+        "lat": 46.101951,
+        "lon": 11.095267
+      },
+      {
+        "name": "Museo del Castello del Buonconsiglio",
+        "lat": 46.07142,
+        "lon": 11.126484
+      },
+      {
+        "name": "Palazzo delle Albere",
+        "lat": 46.063167,
+        "lon": 11.113768
+      },
+      {
+        "name": "Museo dell'aeronautica Gianni Caproni",
+        "lat": 46.020865,
+        "lon": 11.126958
+      },
+      {
+        "name": "MUSE",
+        "lat": 46.06261,
+        "lon": 11.11473
+      }
+    ],
+    "supermercati": [
+      {
+        "name": "Famiglia Cooperativa",
+        "lat": 46.070691,
+        "lon": 11.139651
+      },
+      {
+        "name": "Coop",
+        "lat": 46.085432,
+        "lon": 11.215569
+      },
+      {
+        "name": "Famiglia Cooperativa Romagnano",
+        "lat": 46.016901,
+        "lon": 11.105604
+      },
+      {
+        "name": "Famiglia Cooperativa di Povo",
+        "lat": 46.066248,
+        "lon": 11.154458
+      },
+      {
+        "name": "Famiglia Cooperativa",
+        "lat": 46.076833,
+        "lon": 11.141931
+      },
+      {
+        "name": "Conad City",
+        "lat": 46.047869,
+        "lon": 11.145406
+      },
+      {
+        "name": "Poli",
+        "lat": 46.058012,
+        "lon": 11.1326
+      },
+      {
+        "name": "Coop Superstore",
+        "lat": 46.044573,
+        "lon": 11.129603
+      },
+      {
+        "name": "Famiglia Cooperativa",
+        "lat": 46.040605,
+        "lon": 11.133085
+      },
+      {
+        "name": "MiniPoli",
+        "lat": 46.064393,
+        "lon": 11.131418
+      },
+      {
+        "name": "EuroSpin",
+        "lat": 46.138939,
+        "lon": 11.109125
+      },
+      {
+        "name": "Conad City",
+        "lat": 46.138801,
+        "lon": 11.113915
+      },
+      {
+        "name": "Wonderful Supermarket asiatico",
+        "lat": 46.054565,
+        "lon": 11.120623
+      },
+      {
+        "name": "EuroSpin",
+        "lat": 46.09449,
+        "lon": 11.119811
+      },
+      {
+        "name": "Pam",
+        "lat": 46.094662,
+        "lon": 11.116123
+      },
+      {
+        "name": "Famiglia Cooperativa",
+        "lat": 46.087914,
+        "lon": 11.064563
+      },
+      {
+        "name": "Coop Trentino",
+        "lat": 46.066815,
+        "lon": 11.129067
+      },
+      {
+        "name": "Poli",
+        "lat": 46.014362,
+        "lon": 11.132294
+      },
+      {
+        "name": "Famiglia cooperativa Perginese",
+        "lat": 46.090224,
+        "lon": 11.181158
+      },
+      {
+        "name": "NaturaSì",
+        "lat": 46.061448,
+        "lon": 11.126398
+      },
+      {
+        "name": "Famiglia Cooperativa",
+        "lat": 46.071669,
+        "lon": 11.059741
+      },
+      {
+        "name": "Famiglia Cooperativa",
+        "lat": 46.1443,
+        "lon": 11.194824
+      },
+      {
+        "name": "Conad",
+        "lat": 46.068727,
+        "lon": 11.118811
+      },
+      {
+        "name": "Coop",
+        "lat": 46.082135,
+        "lon": 11.101771
+      },
+      {
+        "name": "Famiglia Cooperativa",
+        "lat": 46.151461,
+        "lon": 11.096239
+      },
+      {
+        "name": "Conad",
+        "lat": 46.070875,
+        "lon": 11.059379
+      },
+      {
+        "name": "Conad",
+        "lat": 46.0704,
+        "lon": 11.123468
+      },
+      {
+        "name": "Eurospar",
+        "lat": 46.069763,
+        "lon": 11.122769
+      },
+      {
+        "name": "Coop",
+        "lat": 46.007107,
+        "lon": 11.12765
+      },
+      {
+        "name": "Coop",
+        "lat": 46.077137,
+        "lon": 11.120088
+      },
+      {
+        "name": "Mio Negozio di Hu Ling",
+        "lat": 46.091554,
+        "lon": 11.117959
+      },
+      {
+        "name": "Coop",
+        "lat": 46.087,
+        "lon": 11.121745
+      },
+      {
+        "name": "NaturaSì",
+        "lat": 46.079493,
+        "lon": 11.122753
+      },
+      {
+        "name": "Mini Market",
+        "lat": 46.039404,
+        "lon": 11.057532
+      },
+      {
+        "name": "Famiglia Cooperativa",
+        "lat": 46.122761,
+        "lon": 11.117053
+      },
+      {
+        "name": "Da Luigino",
+        "lat": 46.128322,
+        "lon": 11.11725
+      },
+      {
+        "name": "Famiglia Cooperativa",
+        "lat": 46.069498,
+        "lon": 11.206421
+      },
+      {
+        "name": "Famiglia Cooperativa",
+        "lat": 46.15333,
+        "lon": 11.106612
+      },
+      {
+        "name": "Famiglia Cooperativa",
+        "lat": 46.081854,
+        "lon": 11.045305
+      },
+      {
+        "name": "Margherita CONAD",
+        "lat": 46.005027,
+        "lon": 11.199195
+      },
+      {
+        "name": "EuroSpin",
+        "lat": 46.048057,
+        "lon": 11.127309
+      },
+      {
+        "name": "Despar",
+        "lat": 46.074683,
+        "lon": 11.125225
+      },
+      {
+        "name": "Conad City",
+        "lat": 46.056056,
+        "lon": 11.121682
+      },
+      {
+        "name": "Coop",
+        "lat": 46.098058,
+        "lon": 11.044903
+      },
+      {
+        "name": "Prix",
+        "lat": 46.14015,
+        "lon": 11.104805
+      },
+      {
+        "name": "GlutenFree World",
+        "lat": 46.111784,
+        "lon": 11.108041
+      },
+      {
+        "name": "Poli",
+        "lat": 46.083257,
+        "lon": 11.114918
+      },
+      {
+        "name": "Prix",
+        "lat": 46.053074,
+        "lon": 11.118435
+      },
+      {
+        "name": "MD",
+        "lat": 46.092341,
+        "lon": 11.114317
+      },
+      {
+        "name": "Conad City",
+        "lat": 46.132076,
+        "lon": 11.134283
+      },
+      {
+        "name": "ALDI",
+        "lat": 46.085884,
+        "lon": 11.117442
+      },
+      {
+        "name": "MD",
+        "lat": 46.036349,
+        "lon": 11.129848
+      },
+      {
+        "name": "Lidl",
+        "lat": 46.082632,
+        "lon": 11.198966
+      },
+      {
+        "name": "Orvea",
+        "lat": 46.082897,
+        "lon": 11.199286
+      },
+      {
+        "name": "Famiglia Cooperativa",
+        "lat": 46.004197,
+        "lon": 11.199386
+      },
+      {
+        "name": "Coop",
+        "lat": 46.158227,
+        "lon": 11.140752
+      },
+      {
+        "name": "ALDI",
+        "lat": 46.060547,
+        "lon": 11.125803
+      },
+      {
+        "name": "Poli",
+        "lat": 46.105333,
+        "lon": 11.107643
+      },
+      {
+        "name": "Coop",
+        "lat": 46.058333,
+        "lon": 11.215901
+      },
+      {
+        "name": "IperPoli",
+        "lat": 46.087746,
+        "lon": 11.118675
+      },
+      {
+        "name": "Despar",
+        "lat": 46.075651,
+        "lon": 11.119025
+      },
+      {
+        "name": "Conad",
+        "lat": 46.082978,
+        "lon": 11.114035
+      },
+      {
+        "name": "Al Wahab market",
+        "lat": 46.055543,
+        "lon": 11.116103
+      },
+      {
+        "name": "Poli",
+        "lat": 46.141223,
+        "lon": 11.107543
+      },
+      {
+        "name": "Lidl",
+        "lat": 46.08415,
+        "lon": 11.118938
+      },
+      {
+        "name": "Conad",
+        "lat": 46.0586,
+        "lon": 11.114521
+      },
+      {
+        "name": "Prix",
+        "lat": 46.091505,
+        "lon": 11.112373
+      },
+      {
+        "name": "Tovazzi Eurospesa",
+        "lat": 46.070119,
+        "lon": 11.118637
+      },
+      {
+        "name": "Eurospar",
+        "lat": 46.056228,
+        "lon": 11.127883
+      },
+      {
+        "name": "Conad",
+        "lat": 46.089319,
+        "lon": 11.131813
+      },
+      {
+        "name": "Conad City",
+        "lat": 46.116154,
+        "lon": 11.207026
+      },
+      {
+        "name": "Coop",
+        "lat": 46.040772,
+        "lon": 11.111832
+      },
+      {
+        "name": "EuroSpin",
+        "lat": 46.104742,
+        "lon": 11.106132
+      }
+    ],
+    "banche": [
+      {
+        "name": "Volksbank",
+        "lat": 46.047611,
+        "lon": 11.12602
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.074491,
+        "lon": 11.124553
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.064718,
+        "lon": 11.123213
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.085436,
+        "lon": 11.215051
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.065631,
+        "lon": 11.154994
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.076473,
+        "lon": 11.141931
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.089406,
+        "lon": 11.132707
+      },
+      {
+        "name": "BTB - Banca di Trento e Bolzano",
+        "lat": 46.04064,
+        "lon": 11.133373
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.04989,
+        "lon": 11.124183
+      },
+      {
+        "name": "Cassa Rurale Alta Valsugana",
+        "lat": 46.061945,
+        "lon": 11.124911
+      },
+      {
+        "name": "UniCredit Bank",
+        "lat": 46.005735,
+        "lon": 11.127244
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.06956,
+        "lon": 11.121093
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.076665,
+        "lon": 11.119419
+      },
+      {
+        "name": "UniCredit Bank",
+        "lat": 46.06815,
+        "lon": 11.125724
+      },
+      {
+        "name": "Cassa di Risparmio - Sparkasse",
+        "lat": 46.069911,
+        "lon": 11.122889
+      },
+      {
+        "name": "Fineco",
+        "lat": 46.073153,
+        "lon": 11.125053
+      },
+      {
+        "name": "Medio Credito Trentino Alto Adige",
+        "lat": 46.067037,
+        "lon": 11.127872
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.066675,
+        "lon": 11.129426
+      },
+      {
+        "name": "Monte dei Paschi di Siena",
+        "lat": 46.070532,
+        "lon": 11.122017
+      },
+      {
+        "name": "Crédit Agricole",
+        "lat": 46.06778,
+        "lon": 11.122339
+      },
+      {
+        "name": "Banca Popolare del Trentino",
+        "lat": 46.063845,
+        "lon": 11.123638
+      },
+      {
+        "name": "Banca Popolare Volksbank",
+        "lat": 46.067809,
+        "lon": 11.12267
+      },
+      {
+        "name": "Compass",
+        "lat": 46.076991,
+        "lon": 11.123557
+      },
+      {
+        "name": "Intesa Sanpaolo",
+        "lat": 46.068037,
+        "lon": 11.124012
+      },
+      {
+        "name": "BNL",
+        "lat": 46.073506,
+        "lon": 11.122245
+      },
+      {
+        "name": "Credem",
+        "lat": 46.06247,
+        "lon": 11.131966
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.056688,
+        "lon": 11.120115
+      },
+      {
+        "name": "Intesa Sanpaolo",
+        "lat": 46.053482,
+        "lon": 11.129509
+      },
+      {
+        "name": "Banca Popolare Volksbank",
+        "lat": 46.089535,
+        "lon": 11.116903
+      },
+      {
+        "name": "Findomestic",
+        "lat": 46.070514,
+        "lon": 11.121893
+      },
+      {
+        "name": "Cassa di Risparmio Sparkasse",
+        "lat": 46.139684,
+        "lon": 11.111819
+      },
+      {
+        "name": "Cassa Rurale Alto Garda",
+        "lat": 46.059913,
+        "lon": 11.119264
+      },
+      {
+        "name": "Cassa Rurale Alta Valsugana",
+        "lat": 46.088848,
+        "lon": 11.183772
+      },
+      {
+        "name": "Banca Popolare del Trentino",
+        "lat": 46.073887,
+        "lon": 11.124374
+      },
+      {
+        "name": "Banca Popolare del Trentino",
+        "lat": 46.058233,
+        "lon": 11.130456
+      },
+      {
+        "name": "Banca Mediolanum",
+        "lat": 46.068404,
+        "lon": 11.119318
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.088522,
+        "lon": 11.121184
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.153648,
+        "lon": 11.107109
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.151853,
+        "lon": 11.096835
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.047871,
+        "lon": 11.145729
+      },
+      {
+        "name": "BPER Banca",
+        "lat": 46.083032,
+        "lon": 11.120529
+      },
+      {
+        "name": "Deutsche Bank",
+        "lat": 46.069005,
+        "lon": 11.124404
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.039054,
+        "lon": 11.109975
+      },
+      {
+        "name": "Mediolanum",
+        "lat": 46.07137,
+        "lon": 11.123849
+      },
+      {
+        "name": "Cassa di Risparmio di Bolzano - Sparkasse",
+        "lat": 46.056627,
+        "lon": 11.128574
+      },
+      {
+        "name": "UniCredit Bank",
+        "lat": 46.076808,
+        "lon": 11.11873
+      },
+      {
+        "name": "Cassa di Risparmio Sparkasse",
+        "lat": 46.090211,
+        "lon": 11.116843
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.122784,
+        "lon": 11.116845
+      },
+      {
+        "name": "Cassa Rurale della Valle dei Laghi",
+        "lat": 46.081933,
+        "lon": 11.045268
+      },
+      {
+        "name": "Banca Popolare - Volksbank",
+        "lat": 46.141607,
+        "lon": 11.109155
+      },
+      {
+        "name": "Cassa Rurale Val di Non, Rotaliana e Giovo",
+        "lat": 46.142336,
+        "lon": 11.107467
+      },
+      {
+        "name": "Cassa Rurale di Giovo",
+        "lat": 46.156419,
+        "lon": 11.153123
+      },
+      {
+        "name": "UniCredit Bank",
+        "lat": 46.060536,
+        "lon": 11.12506
+      },
+      {
+        "name": "Fideuram",
+        "lat": 46.061091,
+        "lon": 11.11492
+      },
+      {
+        "name": "Western Union",
+        "lat": 46.068904,
+        "lon": 11.121014
+      },
+      {
+        "name": "Banca Popolare di Sondrio",
+        "lat": 46.075465,
+        "lon": 11.124026
+      },
+      {
+        "name": "SignorPrestito",
+        "lat": 46.057561,
+        "lon": 11.130198
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.091538,
+        "lon": 11.105074
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.064314,
+        "lon": 11.096591
+      },
+      {
+        "name": "Mediobanca Premier",
+        "lat": 46.061059,
+        "lon": 11.114666
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.006243,
+        "lon": 11.128396
+      },
+      {
+        "name": "Deutsche Bank Easy",
+        "lat": 46.072492,
+        "lon": 11.123665
+      },
+      {
+        "name": "Sparkasse",
+        "lat": 46.087775,
+        "lon": 11.117967
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.132239,
+        "lon": 11.134911
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.145253,
+        "lon": 11.219038
+      },
+      {
+        "name": "Unicredit",
+        "lat": 46.068287,
+        "lon": 11.125451
+      },
+      {
+        "name": "Intesa San Paolo",
+        "lat": 46.067807,
+        "lon": 11.124626
+      },
+      {
+        "name": "Banca Etica",
+        "lat": 46.062535,
+        "lon": 11.130571
+      },
+      {
+        "name": "Banca Finint",
+        "lat": 46.068232,
+        "lon": 11.121445
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.072151,
+        "lon": 11.138079
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.05788,
+        "lon": 11.133178
+      },
+      {
+        "name": "Filiale di Garniga Terme",
+        "lat": 46.002146,
+        "lon": 11.085197
+      },
+      {
+        "name": "Cassa Centrale Banca Credito Cooperativo del Nord Est SpA",
+        "lat": 46.075066,
+        "lon": 11.122836
+      },
+      {
+        "name": "Unicredit Banca",
+        "lat": 46.137619,
+        "lon": 11.10973
+      },
+      {
+        "name": "Cassa Rurale Alto Garda",
+        "lat": 46.096847,
+        "lon": 11.045953
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.070649,
+        "lon": 11.058665
+      },
+      {
+        "name": "Cassa Rurale Alta Valsugana",
+        "lat": 46.094042,
+        "lon": 11.197049
+      },
+      {
+        "name": "Cassa Rurale",
+        "lat": 46.005357,
+        "lon": 11.195736
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.107668,
+        "lon": 11.11142
+      },
+      {
+        "name": "Banca per il Trentino Alto Adige",
+        "lat": 46.140944,
+        "lon": 11.109694
+      },
+      {
+        "name": "Cassa Rurale Alta Valsugana",
+        "lat": 46.118326,
+        "lon": 11.209027
+      },
+      {
+        "name": "UniCredit Bank",
+        "lat": 46.106633,
+        "lon": 11.110568
+      }
+    ],
+    "ospedali": [
+      {
+        "name": "Villa Igea",
+        "lat": 46.061709,
+        "lon": 11.128102
+      },
+      {
+        "name": "Centro di Protonterapia",
+        "lat": 46.049345,
+        "lon": 11.115694
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.061668,
+        "lon": 11.127881
+      },
+      {
+        "name": "San Camillo",
+        "lat": 46.064974,
+        "lon": 11.132125
+      },
+      {
+        "name": "Casa di Cura \"Villa Bianca\"",
+        "lat": 46.062594,
+        "lon": 11.126744
+      }
+    ],
+    "ambulatori": [
+      {
+        "name": "Ambulatorio Dentistico",
+        "lat": 46.053955,
+        "lon": 11.129955
+      },
+      {
+        "name": "Ambulatori",
+        "lat": 46.037869,
+        "lon": 11.106416
+      },
+      {
+        "name": "Ambulatori",
+        "lat": 46.064609,
+        "lon": 11.13159
+      },
+      {
+        "name": "Ecospes",
+        "lat": 46.085886,
+        "lon": 11.114964
+      },
+      {
+        "name": "Centro Sanitario Trento",
+        "lat": 46.09316,
+        "lon": 11.115457
+      },
+      {
+        "name": "Centro vaccinale",
+        "lat": 46.039765,
+        "lon": 11.138203
+      },
+      {
+        "name": "Progetto Salute",
+        "lat": 46.062343,
+        "lon": 11.130307
+      },
+      {
+        "name": "Ambulatorio medico associato Sermeda",
+        "lat": 46.088677,
+        "lon": 11.181641
+      },
+      {
+        "name": "Studio Cognola",
+        "lat": 46.086797,
+        "lon": 11.119329
+      },
+      {
+        "name": "Ambulatorio Tenuti Dottor Alessandro",
+        "lat": 46.08974,
+        "lon": 11.119926
+      },
+      {
+        "name": "Centro di fisioterapia Kinesi",
+        "lat": 46.08985,
+        "lon": 11.119854
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.067695,
+        "lon": 11.123168
+      },
+      {
+        "name": "Ambulatorio medico",
+        "lat": 46.005282,
+        "lon": 11.199526
+      },
+      {
+        "name": "Guardia Medica",
+        "lat": 46.044608,
+        "lon": 11.130223
+      },
+      {
+        "name": "ASUIT Ambulatori Pediatrici",
+        "lat": 46.05971,
+        "lon": 11.119599
+      },
+      {
+        "name": "Dott. Geol. Michele Camin",
+        "lat": 46.077528,
+        "lon": 11.047968
+      },
+      {
+        "name": "Studio C7 - Studio di Fisioterapia",
+        "lat": 46.061768,
+        "lon": 11.125639
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.151826,
+        "lon": 11.097409
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.073857,
+        "lon": 11.118859
+      },
+      {
+        "name": "Ambulatorio Medico di Povo",
+        "lat": 46.065946,
+        "lon": 11.158017
+      },
+      {
+        "name": "Ambulatorio di Mattarello",
+        "lat": 46.006014,
+        "lon": 11.128203
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.108069,
+        "lon": 11.111494
+      },
+      {
+        "name": "Ambulatorio",
+        "lat": 46.097608,
+        "lon": 11.045632
+      },
+      {
+        "name": "Diètnatural",
+        "lat": 46.08054,
+        "lon": 11.116574
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.107275,
+        "lon": 11.113648
+      },
+      {
+        "name": "Ambulatori Medici",
+        "lat": 46.071013,
+        "lon": 11.05883
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.108175,
+        "lon": 11.112224
+      },
+      {
+        "name": "Centro di salute mentale",
+        "lat": 46.065245,
+        "lon": 11.120696
+      },
+      {
+        "name": "Alessandro Martinelli",
+        "lat": 46.088866,
+        "lon": 11.106063
+      },
+      {
+        "name": "Studio medici San Martino",
+        "lat": 46.073898,
+        "lon": 11.125814
+      },
+      {
+        "name": "Centro per i Servizi Sanitari",
+        "lat": 46.044805,
+        "lon": 11.130001
+      },
+      {
+        "name": "Orthotecnica Tessadri",
+        "lat": 46.100451,
+        "lon": 11.115742
+      },
+      {
+        "name": "Policura",
+        "lat": 46.087954,
+        "lon": 11.118204
+      },
+      {
+        "name": "Tecnomed",
+        "lat": 46.047458,
+        "lon": 11.129119
+      },
+      {
+        "name": "Oculista dr. Giulio Mulè",
+        "lat": 46.064367,
+        "lon": 11.131949
+      },
+      {
+        "name": "RoVis MED",
+        "lat": 46.139697,
+        "lon": 11.105737
+      },
+      {
+        "name": "Dottor Renzo Bertolini psicoterapeuta",
+        "lat": 46.072968,
+        "lon": 11.118431
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.05631,
+        "lon": 11.132725
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.05621,
+        "lon": 11.132675
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.056243,
+        "lon": 11.132608
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.056238,
+        "lon": 11.132623
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.056364,
+        "lon": 11.132344
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.056267,
+        "lon": 11.132667
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.056347,
+        "lon": 11.132455
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.056359,
+        "lon": 11.132498
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.056404,
+        "lon": 11.132471
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.056426,
+        "lon": 11.13246
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.056469,
+        "lon": 11.132433
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.056448,
+        "lon": 11.132447
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.056278,
+        "lon": 11.132635
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.056287,
+        "lon": 11.132659
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.056297,
+        "lon": 11.132688
+      },
+      {
+        "name": "Senza nome",
+        "lat": 46.056383,
+        "lon": 11.132484
+      },
+      {
+        "name": "Banca del Sangue",
+        "lat": 46.061753,
+        "lon": 11.127176
+      },
+      {
+        "name": "Poliambulatori",
+        "lat": 46.142927,
+        "lon": 11.108998
+      },
+      {
+        "name": "Ambulatori",
+        "lat": 46.141993,
+        "lon": 11.106885
+      }
+    ]
+  }
+}

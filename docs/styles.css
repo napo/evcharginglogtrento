@@ -1,0 +1,75 @@
+body {
+  background: #f6f8fb;
+}
+
+.hero-card {
+  border: none;
+  overflow: hidden;
+}
+
+.hero-banner-img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 576px) {
+  .hero-banner-img {
+    height: 200px;
+  }
+}
+
+.popup-usage dt {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.popup-usage dd {
+  margin-bottom: 0.35rem;
+}
+
+.map-container {
+  width: 100%;
+  height: 520px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.marker-pin {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.marker-pin.a22 {
+  border-radius: 3px;
+  border: 2px solid #f1b81b;
+}
+
+.marker-pin.active {
+  background: #198754;
+}
+
+.marker-pin.inactive {
+  background: #dc3545;
+}
+
+.marker-pin.unknown {
+  background: #6c757d;
+}
+
+.marker-pin.charging {
+  background: #0d6efd;
+}
+
+.card {
+  border: none;
+}
+
+.stat-card {
+  min-height: 100%;
+}

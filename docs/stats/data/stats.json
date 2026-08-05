@@ -1,0 +1,132 @@
+{
+  "summary": {
+    "total": 201,
+    "active": 166,
+    "inactive": 18,
+    "charging": 17,
+    "share_active": 82.6,
+    "generated_at": "2026-08-05T11:37:23+00:00"
+  },
+  "a22": {
+    "count": 12,
+    "active": 12,
+    "inactive": 0,
+    "charging": 0,
+    "share_active": 100.0,
+    "operators": {
+      "Autostrada del Brennero S.p.A.": 12
+    }
+  },
+  "pois": [
+    {
+      "name": "Stazioni ferroviarie",
+      "count": 2,
+      "active": 2,
+      "inactive": 0,
+      "charging": 0,
+      "share_active": 100.0
+    }
+  ],
+  "operators": [
+    {
+      "name": "NEOGY SRL",
+      "count": 89,
+      "active": 89,
+      "by_power": {
+        "lenta": 38,
+        "rapida": 44,
+        "ultra": 7
+      }
+    },
+    {
+      "name": "BEC",
+      "count": 34,
+      "active": 31,
+      "by_power": {
+        "lenta": 0,
+        "rapida": 22,
+        "ultra": 12
+      }
+    },
+    {
+      "name": "Tesla Italia Srl.",
+      "count": 16,
+      "active": 7,
+      "by_power": {
+        "lenta": 6,
+        "rapida": 0,
+        "ultra": 10
+      }
+    },
+    {
+      "name": "ENEL X WAY ITALIA SRL",
+      "count": 12,
+      "active": 9,
+      "by_power": {
+        "lenta": 8,
+        "rapida": 2,
+        "ultra": 2
+      }
+    },
+    {
+      "name": "DUFERCO MOBILITY SRL",
+      "count": 6,
+      "active": 4,
+      "by_power": {
+        "lenta": 2,
+        "rapida": 0,
+        "ultra": 4
+      }
+    },
+    {
+      "name": "Electra Italia s.r.l.",
+      "count": 6,
+      "active": 3,
+      "by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 6
+      }
+    },
+    {
+      "name": "Go Electric Stations SRLS",
+      "count": 6,
+      "active": 4,
+      "by_power": {
+        "lenta": 3,
+        "rapida": 3,
+        "ultra": 0
+      }
+    },
+    {
+      "name": "IONITY GMBH",
+      "count": 6,
+      "active": 1,
+      "by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 6
+      }
+    },
+    {
+      "name": "Plenitude On The Road S.r.l.",
+      "count": 6,
+      "active": 5,
+      "by_power": {
+        "lenta": 0,
+        "rapida": 2,
+        "ultra": 4
+      }
+    },
+    {
+      "name": "Atlante S.r.l",
+      "count": 4,
+      "active": 2,
+      "by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 4
+      }
+    }
+  ]
+}

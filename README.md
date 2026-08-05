@@ -112,6 +112,12 @@ Prima di affidarti alle Actions conviene fare un `--once` in locale e committare
 - **Prima discovery.** Se `map/search` non espone già città/coordinate, la
   discovery iniziale scarica i dettagli di tutta Italia (pesante, una volta al
   giorno). Il bootstrap locale della cache aggira il problema.
+- **Durata delle sessioni di ricarica** (`generate_station_usage.py`). Una
+  sessione è una sequenza continua di rilevazioni `CHARGING` fra due
+  rilevazioni non-charging: la durata stimata è per costruzione un limite
+  inferiore, vincolata alla cadenza di polling — la ricarica reale può essere
+  iniziata/finita in un punto qualsiasi fra due rilevazioni consecutive, non
+  esattamente ai timestamp registrati.
 
 ## Licenza
 
@@ -120,3 +126,5 @@ Il **codice** è rilasciato sotto licenza `WTFPL`.
 I **dati** raccolti derivano dalla PUN. Secondo l'interpretazione di AgID (principio *open data by default*, art. 52 c.2 del D.Lgs 82/2005 — CAD, e Linee Guida Open Data AgID), i dati pubblicati dalla PA senza licenza espressa si intendono aperti e riconducibili a **CC BY 4.0** con attribuzione al titolare (GSE). attribuzione al titolare (GSE). Questa è un'interpretazione giuridica di AgID, non una licenza dichiarata
 esplicitamente dalla PUN: verifica prima di riusi in contesti sensibili.
 Fonte da attribuire: *GSE — Piattaforma Unica Nazionale (PUN)*.
+
+I **punti di interesse** (musei, supermercati, banche, ospedali, ambulatori) usati per le statistiche di prossimità in `docs/stats/` provengono da OpenStreetMap (`fetch_poi.py`, via Overpass API), © contributori OpenStreetMap, licenza **ODbL**.

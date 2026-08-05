@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-08-05T12:39:29.564619+00:00",
+  "label": "Trento città",
+  "n_colonnine_real_time": 110,
+  "days_collected": 2,
+  "andamento_giornaliero": {
+    "available": true,
+    "kind": "andamento_giornaliero",
+    "days_collected": 2,
+    "points": [
+      {
+        "date": "2026-08-04",
+        "share_active": 80.8,
+        "share_charging": 6.4,
+        "n_snapshots": 8
+      },
+      {
+        "date": "2026-08-05",
+        "share_active": 82.2,
+        "share_charging": 11.5,
+        "n_snapshots": 37
+      }
+    ]
+  },
+  "profilo_settimanale": {
+    "available": false,
+    "kind": "profilo_settimanale",
+    "days_collected": 2,
+    "days_needed": 7
+  },
+  "profilo_mensile": {
+    "available": false,
+    "kind": "profilo_mensile",
+    "days_collected": 2,
+    "days_needed": 30
+  }
+}

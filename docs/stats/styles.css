@@ -1,0 +1,27 @@
+body {
+  background: #f4f7fb;
+}
+
+.hero-card {
+  border: none;
+}
+
+.hero-illustration svg {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+}
+
+.stat-card {
+  min-height: 100%;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.echart-trend {
+  width: 100%;
+  min-height: 320px;
+}

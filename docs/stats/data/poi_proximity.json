@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-08-05T12:39:29.908701+00:00",
+  "fonte_poi": "OpenStreetMap contributors, via Overpass API (ODbL)",
+  "poi_generated_at": "2026-08-05T11:28:53Z",
+  "soglia_metri": 300,
+  "totale_colonnine_citta": 201,
+  "categorie": {
+    "musei": {
+      "label": "Musei",
+      "n_poi": 8,
+      "count_entro_soglia": 6,
+      "share": 3.0,
+      "esempio": {
+        "colonnina_indirizzo": "Via Lidorno 3",
+        "poi_nome": "Museo dell'aeronautica Gianni Caproni",
+        "distanza_m": 27
+      }
+    },
+    "supermercati": {
+      "label": "Supermercati",
+      "n_poi": 73,
+      "count_entro_soglia": 124,
+      "share": 61.7,
+      "esempio": {
+        "colonnina_indirizzo": "Via Roberto da Sanseverino, 97",
+        "poi_nome": "Conad",
+        "distanza_m": 12
+      }
+    },
+    "banche": {
+      "label": "Banche",
+      "n_poi": 82,
+      "count_entro_soglia": 111,
+      "share": 55.2,
+      "esempio": {
+        "colonnina_indirizzo": "Largo Medaglie d' Oro 8",
+        "poi_nome": "Banca per il Trentino Alto Adige",
+        "distanza_m": 7
+      }
+    },
+    "ospedali": {
+      "label": "Ospedali",
+      "n_poi": 5,
+      "count_entro_soglia": 0,
+      "share": 0.0,
+      "esempio": null
+    },
+    "ambulatori": {
+      "label": "Ambulatori",
+      "n_poi": 56,
+      "count_entro_soglia": 87,
+      "share": 43.3,
+      "esempio": {
+        "colonnina_indirizzo": "Sopramonte - Piazza Oveno 13",
+        "poi_nome": "Ambulatori Medici",
+        "distanza_m": 18
+      }
+    }
+  }
+}

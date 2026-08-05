@@ -38,7 +38,11 @@ jobs:
             echo "── iterazione $i/12  $(date -u +%H:%M:%SZ) ──"
             python pun_trento.py --once --outdir data --statedir state || true
             if [ -n "$(git status --porcelain data state)" ]; then
-              git add data state
+              # nuovi dati: rigenera lo snapshot live per la mappa (leggero,
+              # ogni ciclo). Le aggregazioni pesanti (trend/curiosità/
+              # previsioni) restano al workflow giornaliero update_stats.
+              python generate_frontend_snapshot.py || true
+              git add data state docs/evcharging_snapshot.json
               git commit -m "scrape $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
               git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
               git push || true

@@ -1,0 +1,814 @@
+{
+  "generated_at": "2026-08-05T12:39:30.716463+00:00",
+  "days_collected": 2,
+  "curiosita": [
+    {
+      "titolo": "Corrente alternata o continua?",
+      "testo": "Il 37.2% delle colonnine di Trento eroga corrente continua (DC, ricarica rapida); il resto è AC."
+    },
+    {
+      "titolo": "Quanto è \"live\" lo stato che vedi",
+      "testo": "Solo il 50.8% delle colonnine comunica lo stato in tempo reale: per le altre, il pallino verde o rosso che vedi è l'ultima informazione statica pubblicata dal gestore."
+    },
+    {
+      "titolo": "Città o autostrada?",
+      "testo": "In questo momento il 91.0% delle colonnine in città è attivo, contro il 100.0% di quelle sulla A22: pubblici diversi, andamenti diversi."
+    },
+    {
+      "titolo": "Colonnine e città",
+      "testo": "Il 61.7% delle colonnine cittadine si trova entro 300 m da un supermercato."
+    }
+  ],
+  "top3": {
+    "uso": {
+      "titolo": "Le colonnine più usate",
+      "descrizione": "Quota di tempo in ricarica, su 2 giorni di storico raccolto.",
+      "days_collected": 2,
+      "items": [
+        {
+          "rank": 1,
+          "id_evse": "IT*ATE*E00273*1",
+          "indirizzo": "Strada di Cadine 13",
+          "cpo": "Atlante S.r.l",
+          "valore": "100.0% in ricarica",
+          "lat": 46.088227,
+          "lon": 11.065753,
+          "potenza_w": 90000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 2,
+          "id_evse": "IT*ATE*E00273*2",
+          "indirizzo": "Strada di Cadine 13",
+          "cpo": "Atlante S.r.l",
+          "valore": "100.0% in ricarica",
+          "lat": 46.088227,
+          "lon": 11.065753,
+          "potenza_w": 90000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 3,
+          "id_evse": "IT*PLN*EH003158*1",
+          "indirizzo": "Piazzale Lionello Groff 3",
+          "cpo": "BEC",
+          "valore": "73.3% in ricarica",
+          "lat": 46.107521,
+          "lon": 11.112965,
+          "potenza_w": 110000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 4,
+          "id_evse": "IT*PLN*EE007295*2",
+          "indirizzo": "Via Pranzelores",
+          "cpo": "BEC",
+          "valore": "68.9% in ricarica",
+          "lat": 46.090044,
+          "lon": 11.118607,
+          "potenza_w": 22144,
+          "corrente": "AC",
+          "fascia_potenza": "rapida"
+        },
+        {
+          "rank": 5,
+          "id_evse": "IT*TSL*EA4STCL",
+          "indirizzo": "11, Via Innsbruck",
+          "cpo": "Tesla Italia Srl.",
+          "valore": "55.6% in ricarica",
+          "lat": 46.111341,
+          "lon": 11.090941,
+          "potenza_w": 150000,
+          "corrente": "AC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 6,
+          "id_evse": "IT*ENX*E20XP22T3KK4AL00176*2",
+          "indirizzo": "Via Dietro le Mura A, 25",
+          "cpo": "ENEL X WAY ITALIA SRL",
+          "valore": "53.3% in ricarica",
+          "lat": 46.065312,
+          "lon": 11.12448,
+          "potenza_w": 20403,
+          "corrente": "AC",
+          "fascia_potenza": "lenta"
+        },
+        {
+          "rank": 7,
+          "id_evse": "IT*IOY*E421706",
+          "indirizzo": "Via Ezio Maccani 157",
+          "cpo": "IONITY GMBH",
+          "valore": "51.1% in ricarica",
+          "lat": 46.08704,
+          "lon": 11.1111,
+          "potenza_w": 250000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 8,
+          "id_evse": "IT*ELC*EKLF6",
+          "indirizzo": "Via Ragazzi del 99",
+          "cpo": "Electra Italia s.r.l.",
+          "valore": "48.9% in ricarica",
+          "lat": 46.034485,
+          "lon": 11.127442,
+          "potenza_w": 300000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 9,
+          "id_evse": "IT*PLN*EE008040*2",
+          "indirizzo": "Corso degli Alpini, 9",
+          "cpo": "BEC",
+          "valore": "46.7% in ricarica",
+          "lat": 46.078779,
+          "lon": 11.118232,
+          "potenza_w": 22144,
+          "corrente": "AC",
+          "fascia_potenza": "rapida"
+        },
+        {
+          "rank": 10,
+          "id_evse": "IT*TSL*EA6J63Q",
+          "indirizzo": "11, Via Innsbruck",
+          "cpo": "Tesla Italia Srl.",
+          "valore": "46.7% in ricarica",
+          "lat": 46.111341,
+          "lon": 11.090941,
+          "potenza_w": 150000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 11,
+          "id_evse": "IT*IOY*E421701",
+          "indirizzo": "Via Ezio Maccani 157",
+          "cpo": "IONITY GMBH",
+          "valore": "37.8% in ricarica",
+          "lat": 46.08704,
+          "lon": 11.1111,
+          "potenza_w": 350000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 12,
+          "id_evse": "IT*IOY*E421704",
+          "indirizzo": "Via Ezio Maccani 157",
+          "cpo": "IONITY GMBH",
+          "valore": "37.8% in ricarica",
+          "lat": 46.08704,
+          "lon": 11.1111,
+          "potenza_w": 250000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 13,
+          "id_evse": "IT*IOY*E421703",
+          "indirizzo": "Via Ezio Maccani 157",
+          "cpo": "IONITY GMBH",
+          "valore": "35.6% in ricarica",
+          "lat": 46.08704,
+          "lon": 11.1111,
+          "potenza_w": 350000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 14,
+          "id_evse": "IT*IOY*E421705",
+          "indirizzo": "Via Ezio Maccani 157",
+          "cpo": "IONITY GMBH",
+          "valore": "33.3% in ricarica",
+          "lat": 46.08704,
+          "lon": 11.1111,
+          "potenza_w": 250000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 15,
+          "id_evse": "IT*PLN*EH000118*3",
+          "indirizzo": "Via del Brennero, 154",
+          "cpo": "Plenitude On The Road S.r.l.",
+          "valore": "33.3% in ricarica",
+          "lat": 46.080995,
+          "lon": 11.121708,
+          "potenza_w": 22144,
+          "corrente": "AC",
+          "fascia_potenza": "rapida"
+        }
+      ]
+    },
+    "potenza": {
+      "titolo": "Le colonnine più potenti",
+      "descrizione": "Potenza massima del connettore principale, dall'ultimo snapshot.",
+      "items": [
+        {
+          "rank": 1,
+          "id_evse": "IT*IOY*E421701",
+          "indirizzo": "Via Ezio Maccani 157",
+          "cpo": "IONITY GMBH",
+          "valore": "350.0 kW",
+          "lat": 46.08704,
+          "lon": 11.1111
+        },
+        {
+          "rank": 2,
+          "id_evse": "IT*IOY*E421703",
+          "indirizzo": "Via Ezio Maccani 157",
+          "cpo": "IONITY GMBH",
+          "valore": "350.0 kW",
+          "lat": 46.08704,
+          "lon": 11.1111
+        },
+        {
+          "rank": 3,
+          "id_evse": "IT*IOY*E421702",
+          "indirizzo": "Via Ezio Maccani 157",
+          "cpo": "IONITY GMBH",
+          "valore": "350.0 kW",
+          "lat": 46.08704,
+          "lon": 11.1111
+        }
+      ]
+    }
+  },
+  "per_operatore": {
+    "Atlante S.r.l": {
+      "items": [
+        {
+          "rank": 1,
+          "id_evse": "IT*ATE*E00273*2",
+          "indirizzo": "Strada di Cadine 13",
+          "cpo": "Atlante S.r.l",
+          "valore": "100.0% in ricarica",
+          "lat": 46.088227,
+          "lon": 11.065753,
+          "potenza_w": 90000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 2,
+          "id_evse": "IT*ATE*E00273*1",
+          "indirizzo": "Strada di Cadine 13",
+          "cpo": "Atlante S.r.l",
+          "valore": "100.0% in ricarica",
+          "lat": 46.088227,
+          "lon": 11.065753,
+          "potenza_w": 90000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 3,
+          "id_evse": "IT*ATE*E00271*2",
+          "indirizzo": "Strada di Cadine 13",
+          "cpo": "Atlante S.r.l",
+          "valore": "0.0% in ricarica",
+          "lat": 46.088227,
+          "lon": 11.065753,
+          "potenza_w": 90000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        }
+      ]
+    },
+    "BEC": {
+      "items": [
+        {
+          "rank": 1,
+          "id_evse": "IT*PLN*EH003158*1",
+          "indirizzo": "Piazzale Lionello Groff 3",
+          "cpo": "BEC",
+          "valore": "73.3% in ricarica",
+          "lat": 46.107521,
+          "lon": 11.112965,
+          "potenza_w": 110000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 2,
+          "id_evse": "IT*PLN*EE007295*2",
+          "indirizzo": "Via Pranzelores",
+          "cpo": "BEC",
+          "valore": "68.9% in ricarica",
+          "lat": 46.090044,
+          "lon": 11.118607,
+          "potenza_w": 22144,
+          "corrente": "AC",
+          "fascia_potenza": "rapida"
+        },
+        {
+          "rank": 3,
+          "id_evse": "IT*PLN*EE008040*2",
+          "indirizzo": "Corso degli Alpini, 9",
+          "cpo": "BEC",
+          "valore": "46.7% in ricarica",
+          "lat": 46.078779,
+          "lon": 11.118232,
+          "potenza_w": 22144,
+          "corrente": "AC",
+          "fascia_potenza": "rapida"
+        }
+      ]
+    },
+    "DUFERCO MOBILITY SRL": {
+      "items": [
+        {
+          "rank": 1,
+          "id_evse": "IT*VCC*EVCC*H1056*1",
+          "indirizzo": "Via Alcide Degasperi 128",
+          "cpo": "DUFERCO MOBILITY SRL",
+          "valore": "0.0% in ricarica",
+          "lat": 46.04596,
+          "lon": 11.12771,
+          "potenza_w": 174000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 2,
+          "id_evse": "IT*VCC*EVCC*H1056*2",
+          "indirizzo": "Via Alcide Degasperi 128",
+          "cpo": "DUFERCO MOBILITY SRL",
+          "valore": "0.0% in ricarica",
+          "lat": 46.04596,
+          "lon": 11.12771,
+          "potenza_w": 174000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 3,
+          "id_evse": "IT*VCI*EVCCH1056*1",
+          "indirizzo": "Via Alcide Degasperi",
+          "cpo": "DUFERCO MOBILITY SRL",
+          "valore": "0.0% in ricarica",
+          "lat": 46.04548,
+          "lon": 11.12821,
+          "potenza_w": 175000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        }
+      ]
+    },
+    "ELC": {
+      "items": [
+        {
+          "rank": 1,
+          "id_evse": "IT*ELC*EXCGE",
+          "indirizzo": "Via Ragazzi del 99",
+          "cpo": "ELC",
+          "valore": "3.8% in ricarica",
+          "lat": 46.034485,
+          "lon": 11.127442,
+          "potenza_w": 300000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 2,
+          "id_evse": "IT*ELC*EYB5B",
+          "indirizzo": "Via Ragazzi del 99",
+          "cpo": "ELC",
+          "valore": "0.0% in ricarica",
+          "lat": 46.034485,
+          "lon": 11.127442,
+          "potenza_w": 300000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        }
+      ]
+    },
+    "EMOBITALY S.r.l.": {
+      "items": [
+        {
+          "rank": 1,
+          "id_evse": "IT*EMO*E857*2",
+          "indirizzo": "Strada di Vason, 70",
+          "cpo": "EMOBITALY S.r.l.",
+          "valore": "0.0% in ricarica",
+          "lat": 46.040879,
+          "lon": 11.058332,
+          "potenza_w": 22000,
+          "corrente": "AC",
+          "fascia_potenza": "lenta"
+        },
+        {
+          "rank": 2,
+          "id_evse": "IT*EMOE1273",
+          "indirizzo": "Strada di Vason, 70",
+          "cpo": "EMOBITALY S.r.l.",
+          "valore": "0.0% in ricarica",
+          "lat": 46.040879,
+          "lon": 11.058332,
+          "potenza_w": 22000,
+          "corrente": "AC",
+          "fascia_potenza": "lenta"
+        }
+      ]
+    },
+    "ENEL X WAY ITALIA SRL": {
+      "items": [
+        {
+          "rank": 1,
+          "id_evse": "IT*ENX*E20XP22T3KK4AL00176*2",
+          "indirizzo": "Via Dietro le Mura A, 25",
+          "cpo": "ENEL X WAY ITALIA SRL",
+          "valore": "53.3% in ricarica",
+          "lat": 46.065312,
+          "lon": 11.12448,
+          "potenza_w": 20403,
+          "corrente": "AC",
+          "fascia_potenza": "lenta"
+        },
+        {
+          "rank": 2,
+          "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
+          "indirizzo": "Via Roberto da Sanseverino, 97",
+          "cpo": "ENEL X WAY ITALIA SRL",
+          "valore": "4.4% in ricarica",
+          "lat": 46.058839,
+          "lon": 11.114058,
+          "potenza_w": 11000,
+          "corrente": "AC",
+          "fascia_potenza": "lenta"
+        },
+        {
+          "rank": 3,
+          "id_evse": "IT*ENX*E21BZ1518A*1",
+          "indirizzo": "Via Roberto da Sanseverino, 97",
+          "cpo": "ENEL X WAY ITALIA SRL",
+          "valore": "2.2% in ricarica",
+          "lat": 46.058495,
+          "lon": 11.114552,
+          "potenza_w": 75000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        }
+      ]
+    },
+    "EWIVA SRL": {
+      "items": [
+        {
+          "rank": 1,
+          "id_evse": "IT*EWI*EEW0307S1*1",
+          "indirizzo": "Via Ezio Maccani, 133",
+          "cpo": "EWIVA SRL",
+          "valore": "26.7% in ricarica",
+          "lat": 46.083106,
+          "lon": 11.11428,
+          "potenza_w": 100000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 2,
+          "id_evse": "IT*EWI*E22BZ3668A*1",
+          "indirizzo": "Via Ezio Maccani, 133",
+          "cpo": "EWIVA SRL",
+          "valore": "0.0% in ricarica",
+          "lat": 46.083106,
+          "lon": 11.11428,
+          "potenza_w": 100000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        }
+      ]
+    },
+    "Edison Next S.P.A.": {
+      "items": [
+        {
+          "rank": 1,
+          "id_evse": "ITEDNE0043*01*1",
+          "indirizzo": "V.Masadori,  Fraz. Gardolo 4",
+          "cpo": "Edison Next S.P.A.",
+          "valore": "0.0% in ricarica",
+          "lat": 46.119361,
+          "lon": 11.097,
+          "potenza_w": 22000,
+          "corrente": "AC",
+          "fascia_potenza": "lenta"
+        },
+        {
+          "rank": 2,
+          "id_evse": "ITEDNE0043*01*2",
+          "indirizzo": "V.Masadori,  Fraz. Gardolo 4",
+          "cpo": "Edison Next S.P.A.",
+          "valore": "0.0% in ricarica",
+          "lat": 46.119361,
+          "lon": 11.097,
+          "potenza_w": 22000,
+          "corrente": "AC",
+          "fascia_potenza": "lenta"
+        }
+      ]
+    },
+    "Electra Italia s.r.l.": {
+      "items": [
+        {
+          "rank": 1,
+          "id_evse": "IT*ELC*EKLF6",
+          "indirizzo": "Via Ragazzi del 99",
+          "cpo": "Electra Italia s.r.l.",
+          "valore": "48.9% in ricarica",
+          "lat": 46.034485,
+          "lon": 11.127442,
+          "potenza_w": 300000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 2,
+          "id_evse": "IT*ELC*EXCGE",
+          "indirizzo": "Via Ragazzi del 99",
+          "cpo": "Electra Italia s.r.l.",
+          "valore": "31.6% in ricarica",
+          "lat": 46.034485,
+          "lon": 11.127442,
+          "potenza_w": 300000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 3,
+          "id_evse": "IT*ELC*EKNQE",
+          "indirizzo": "Via Ragazzi del 99",
+          "cpo": "Electra Italia s.r.l.",
+          "valore": "26.7% in ricarica",
+          "lat": 46.034485,
+          "lon": 11.127442,
+          "potenza_w": 300000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        }
+      ]
+    },
+    "Go Electric Stations SRLS": {
+      "items": [
+        {
+          "rank": 1,
+          "id_evse": "ITGESE797904073",
+          "indirizzo": "Via Ponte Alto",
+          "cpo": "Go Electric Stations SRLS",
+          "valore": "0.0% in ricarica",
+          "lat": 46.072481,
+          "lon": 11.148556,
+          "potenza_w": 22000,
+          "corrente": "AC",
+          "fascia_potenza": "lenta"
+        },
+        {
+          "rank": 2,
+          "id_evse": "ITGESE800369566",
+          "indirizzo": "Via della Pontara",
+          "cpo": "Go Electric Stations SRLS",
+          "valore": "0.0% in ricarica",
+          "lat": 46.073287,
+          "lon": 11.126621,
+          "potenza_w": 22000,
+          "corrente": "AC",
+          "fascia_potenza": "lenta"
+        },
+        {
+          "rank": 3,
+          "id_evse": "ITGESE800370391",
+          "indirizzo": "Via della Pontara",
+          "cpo": "Go Electric Stations SRLS",
+          "valore": "0.0% in ricarica",
+          "lat": 46.073273,
+          "lon": 11.12666,
+          "potenza_w": 22000,
+          "corrente": "AC",
+          "fascia_potenza": "lenta"
+        }
+      ]
+    },
+    "IONITY GMBH": {
+      "items": [
+        {
+          "rank": 1,
+          "id_evse": "IT*IOY*E421706",
+          "indirizzo": "Via Ezio Maccani 157",
+          "cpo": "IONITY GMBH",
+          "valore": "51.1% in ricarica",
+          "lat": 46.08704,
+          "lon": 11.1111,
+          "potenza_w": 250000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 2,
+          "id_evse": "IT*IOY*E421701",
+          "indirizzo": "Via Ezio Maccani 157",
+          "cpo": "IONITY GMBH",
+          "valore": "37.8% in ricarica",
+          "lat": 46.08704,
+          "lon": 11.1111,
+          "potenza_w": 350000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 3,
+          "id_evse": "IT*IOY*E421704",
+          "indirizzo": "Via Ezio Maccani 157",
+          "cpo": "IONITY GMBH",
+          "valore": "37.8% in ricarica",
+          "lat": 46.08704,
+          "lon": 11.1111,
+          "potenza_w": 250000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        }
+      ]
+    },
+    "IPLANET SPA": {
+      "items": [
+        {
+          "rank": 1,
+          "id_evse": "IT*IPE*EDC001386*1",
+          "indirizzo": "Via Druso Livio",
+          "cpo": "IPLANET SPA",
+          "valore": "0.0% in ricarica",
+          "lat": 46.07707,
+          "lon": 11.11388,
+          "potenza_w": 300000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 2,
+          "id_evse": "IT*IPE*EDC001386*2",
+          "indirizzo": "Via Druso Livio",
+          "cpo": "IPLANET SPA",
+          "valore": "0.0% in ricarica",
+          "lat": 46.07707,
+          "lon": 11.11388,
+          "potenza_w": 300000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        }
+      ]
+    },
+    "Plenitude On The Road S.r.l.": {
+      "items": [
+        {
+          "rank": 1,
+          "id_evse": "IT*PLN*EH000118*3",
+          "indirizzo": "Via del Brennero, 154",
+          "cpo": "Plenitude On The Road S.r.l.",
+          "valore": "33.3% in ricarica",
+          "lat": 46.080995,
+          "lon": 11.121708,
+          "potenza_w": 22144,
+          "corrente": "AC",
+          "fascia_potenza": "rapida"
+        },
+        {
+          "rank": 2,
+          "id_evse": "IT*PLN*EH001186*2",
+          "indirizzo": "Via Jacopo Aconcio",
+          "cpo": "Plenitude On The Road S.r.l.",
+          "valore": "15.6% in ricarica",
+          "lat": 46.074355,
+          "lon": 11.123253,
+          "potenza_w": 110000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 3,
+          "id_evse": "IT*PLN*EH001186*3",
+          "indirizzo": "Via Jacopo Aconcio",
+          "cpo": "Plenitude On The Road S.r.l.",
+          "valore": "6.7% in ricarica",
+          "lat": 46.074355,
+          "lon": 11.123253,
+          "potenza_w": 22144,
+          "corrente": "AC",
+          "fascia_potenza": "rapida"
+        }
+      ]
+    },
+    "Route220 Srl Sb": {
+      "items": [
+        {
+          "rank": 1,
+          "id_evse": "IT*220*E00341",
+          "indirizzo": "Via Dogana c/o Stazione FTM",
+          "cpo": "Route220 Srl Sb",
+          "valore": "0.0% in ricarica",
+          "lat": 46.073737,
+          "lon": 11.120844,
+          "potenza_w": 22000,
+          "corrente": "AC",
+          "fascia_potenza": "lenta"
+        },
+        {
+          "rank": 2,
+          "id_evse": "IT*220*E00342",
+          "indirizzo": "Via Dogana c/o Stazione FTM",
+          "cpo": "Route220 Srl Sb",
+          "valore": "0.0% in ricarica",
+          "lat": 46.073737,
+          "lon": 11.120844,
+          "potenza_w": 22000,
+          "corrente": "AC",
+          "fascia_potenza": "lenta"
+        }
+      ]
+    },
+    "Tesla Italia Srl.": {
+      "items": [
+        {
+          "rank": 1,
+          "id_evse": "IT*TSL*EA4STCL",
+          "indirizzo": "11, Via Innsbruck",
+          "cpo": "Tesla Italia Srl.",
+          "valore": "55.6% in ricarica",
+          "lat": 46.111341,
+          "lon": 11.090941,
+          "potenza_w": 150000,
+          "corrente": "AC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 2,
+          "id_evse": "IT*TSL*EA6J63Q",
+          "indirizzo": "11, Via Innsbruck",
+          "cpo": "Tesla Italia Srl.",
+          "valore": "46.7% in ricarica",
+          "lat": 46.111341,
+          "lon": 11.090941,
+          "potenza_w": 150000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        },
+        {
+          "rank": 3,
+          "id_evse": "IT*TSL*EA4RQEH",
+          "indirizzo": "11, Via Innsbruck",
+          "cpo": "Tesla Italia Srl.",
+          "valore": "31.1% in ricarica",
+          "lat": 46.111341,
+          "lon": 11.090941,
+          "potenza_w": 150000,
+          "corrente": "DC",
+          "fascia_potenza": "ultra"
+        }
+      ]
+    },
+    "TheF Cherging S.r.l.": {
+      "items": [
+        {
+          "rank": 1,
+          "id_evse": "IT*PWY*EA0198*01*01",
+          "indirizzo": "Via Francesco Petrarca, 38122 Trento TN",
+          "cpo": "TheF Cherging S.r.l.",
+          "valore": "0.0% in ricarica",
+          "lat": 46.07506,
+          "lon": 11.124178,
+          "potenza_w": 50000,
+          "corrente": "DC",
+          "fascia_potenza": "rapida"
+        },
+        {
+          "rank": 2,
+          "id_evse": "IT*PWY*EA0198*01*02",
+          "indirizzo": "Via Francesco Petrarca, 38122 Trento TN",
+          "cpo": "TheF Cherging S.r.l.",
+          "valore": "0.0% in ricarica",
+          "lat": 46.07506,
+          "lon": 11.124178,
+          "potenza_w": 50000,
+          "corrente": "DC",
+          "fascia_potenza": "rapida"
+        },
+        {
+          "rank": 3,
+          "id_evse": "IT*PWY*EC0125*01*01",
+          "indirizzo": "Via del Brennero 159",
+          "cpo": "TheF Cherging S.r.l.",
+          "valore": "0.0% in ricarica",
+          "lat": 46.092061,
+          "lon": 11.114453,
+          "potenza_w": 30000,
+          "corrente": "DC",
+          "fascia_potenza": "rapida"
+        }
+      ]
+    }
+  }
+}
