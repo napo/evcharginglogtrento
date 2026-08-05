@@ -324,8 +324,12 @@ function popupHtml(point) {
 // dall'area visibile (il pulsante di chiusura, in alto a destra, è la
 // prima cosa a finire fuori): dopo l'apertura si misura la sua posizione
 // reale e, se serve, si sposta la mappa quel tanto che basta per
-// riportarlo tutto dentro l'area visibile.
-function ensurePopupVisible(popup) {
+// riportarlo tutto dentro l'area visibile. Il pan può far ricalcolare a
+// MapLibre l'ancoraggio del popup (es. da "sopra" a "sotto" il punto), che
+// a sua volta ne cambia ancora la posizione — per questo si rimisura dopo
+// che il pan è terminato (`moveend`) invece di fidarsi di un unico calcolo,
+// con un tetto di tentativi per non rincorrersi all'infinito.
+function ensurePopupVisible(popup, attempt = 0) {
   requestAnimationFrame(() => {
     const popupEl = popup.getElement();
     const mapEl = map && map.getContainer();
@@ -345,8 +349,9 @@ function ensurePopupVisible(popup) {
     } else if (popupRect.right > mapRect.right - margin) {
       dx = popupRect.right - (mapRect.right - margin);
     }
-    if (dx !== 0 || dy !== 0) {
-      map.panBy([dx, dy], { duration: 400 });
+    if ((dx !== 0 || dy !== 0) && attempt < 2) {
+      map.panBy([dx, dy], { duration: 300 });
+      map.once('moveend', () => ensurePopupVisible(popup, attempt + 1));
     }
   });
 }
