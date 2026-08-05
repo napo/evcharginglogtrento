@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-05T18:36:02+00:00",
+  "generated_at": "2026-08-05T18:41:06+00:00",
   "stats": {
     "total": 213,
-    "active": 186,
-    "inactive": 27,
+    "active": 187,
+    "inactive": 26,
     "charging": 13
   },
   "points": [
@@ -604,7 +604,7 @@
     {
       "id_evse": "IT*IOY*E421703",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "IONITY GMBH",
       "indirizzo": "Via Ezio Maccani 157",
@@ -1036,7 +1036,7 @@
     {
       "id_evse": "IT*PLN*EH003152*3",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "BEC",
       "indirizzo": "Via Carlo e Valeria Jülg, 11-1",
@@ -3555,8 +3555,8 @@
     },
     {
       "id_evse": "IT*IOY*E421701",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "IONITY GMBH",
       "indirizzo": "Via Ezio Maccani 157",
