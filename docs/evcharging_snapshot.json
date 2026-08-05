@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-05T17:45:13+00:00",
+  "generated_at": "2026-08-05T17:50:18+00:00",
   "stats": {
     "total": 213,
-    "active": 189,
-    "inactive": 24,
-    "charging": 11
+    "active": 191,
+    "inactive": 22,
+    "charging": 12
   },
   "points": [
     {
@@ -712,7 +712,7 @@
     {
       "id_evse": "IT*PLN*EE006443*2",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "BEC",
       "indirizzo": "Via del Travai",
@@ -747,8 +747,8 @@
     },
     {
       "id_evse": "IT*PLN*EE006452*2",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "BEC",
       "indirizzo": "Via delle Sugarine",
@@ -891,8 +891,8 @@
     },
     {
       "id_evse": "IT*PLN*EH001186*1",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "Plenitude On The Road S.r.l.",
       "indirizzo": "Via Jacopo Aconcio",
