@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T11:28:53Z",
+  "generated_at": "2026-08-05T20:18:36Z",
   "source": "OpenStreetMap contributors, via Overpass API (ODbL)",
   "bbox": [
     46.0,
@@ -1136,6 +1136,265 @@
         "name": "Ambulatori",
         "lat": 46.141993,
         "lon": 11.106885
+      }
+    ],
+    "svincoli_autostradali": [
+      {
+        "name": "Incrocio Autostrada del Brennero",
+        "lat": 46.121572,
+        "lon": 11.085477
+      },
+      {
+        "name": "Incrocio Autostrada del Brennero",
+        "lat": 46.118142,
+        "lon": 11.086832
+      },
+      {
+        "name": "Incrocio Autostrada del Brennero",
+        "lat": 46.139843,
+        "lon": 11.086083
+      },
+      {
+        "name": "Incrocio Autostrada del Brennero",
+        "lat": 46.033532,
+        "lon": 11.120507
+      },
+      {
+        "name": "Incrocio Autostrada del Brennero",
+        "lat": 46.14433,
+        "lon": 11.088227
+      },
+      {
+        "name": "Incrocio Autostrada del Brennero",
+        "lat": 46.029387,
+        "lon": 11.121957
+      }
+    ],
+    "incroci_primarie": [
+      {
+        "name": "Incrocio Tangenziale Sud",
+        "lat": 46.007258,
+        "lon": 11.123898
+      },
+      {
+        "name": "Incrocio Tangenziale Ovest",
+        "lat": 46.074873,
+        "lon": 11.112559
+      },
+      {
+        "name": "Incrocio Tangenziale Ovest",
+        "lat": 46.083002,
+        "lon": 11.112882
+      },
+      {
+        "name": "Incrocio Tangenziale Ovest",
+        "lat": 46.049903,
+        "lon": 11.112571
+      },
+      {
+        "name": "Incrocio Strada della Fricca",
+        "lat": 46.007984,
+        "lon": 11.156513
+      },
+      {
+        "name": "Incrocio Tangenziale Ovest",
+        "lat": 46.077827,
+        "lon": 11.112152
+      },
+      {
+        "name": "Incrocio Tangenziale Ovest",
+        "lat": 46.095442,
+        "lon": 11.11009
+      },
+      {
+        "name": "Incrocio Strada di Vigolo Baselga",
+        "lat": 46.081412,
+        "lon": 11.046817
+      },
+      {
+        "name": "Incrocio Tangenziale Ovest",
+        "lat": 46.089251,
+        "lon": 11.10366
+      },
+      {
+        "name": "Incrocio Tangenziale Ovest",
+        "lat": 46.093954,
+        "lon": 11.104365
+      },
+      {
+        "name": "Incrocio Strada dell'Interporto",
+        "lat": 46.113173,
+        "lon": 11.087989
+      },
+      {
+        "name": "Incrocio Tangenziale Ovest",
+        "lat": 46.06713,
+        "lon": 11.110631
+      },
+      {
+        "name": "Incrocio Tangenziale Ovest",
+        "lat": 46.096103,
+        "lon": 11.113695
+      },
+      {
+        "name": "Incrocio Tangenziale Ovest",
+        "lat": 46.084639,
+        "lon": 11.109881
+      },
+      {
+        "name": "Incrocio Tangenziale Sud",
+        "lat": 46.032029,
+        "lon": 11.127619
+      },
+      {
+        "name": "Incrocio SP235",
+        "lat": 46.136509,
+        "lon": 11.083889
+      },
+      {
+        "name": "Incrocio Via Enrico Conci",
+        "lat": 46.039398,
+        "lon": 11.137834
+      },
+      {
+        "name": "Incrocio Via Enrico Conci",
+        "lat": 46.039801,
+        "lon": 11.137385
+      },
+      {
+        "name": "Incrocio Tangenziale Sud",
+        "lat": 46.012345,
+        "lon": 11.126035
+      },
+      {
+        "name": "Incrocio Tangenziale Sud",
+        "lat": 46.036937,
+        "lon": 11.124715
+      },
+      {
+        "name": "Incrocio Tangenziale Ovest",
+        "lat": 46.050528,
+        "lon": 11.112718
+      },
+      {
+        "name": "Incrocio Strada Statale 47 della Valsugana",
+        "lat": 46.092319,
+        "lon": 11.12207
+      },
+      {
+        "name": "Incrocio Via delle Dolomiti",
+        "lat": 46.158844,
+        "lon": 11.191465
+      },
+      {
+        "name": "Incrocio Strada Statale 47 della Valsugana",
+        "lat": 46.096592,
+        "lon": 11.117149
+      },
+      {
+        "name": "Incrocio Strada Statale 47 della Valsugana",
+        "lat": 46.077644,
+        "lon": 11.154404
+      },
+      {
+        "name": "Incrocio Via Enrico Conci",
+        "lat": 46.03873,
+        "lon": 11.138163
+      },
+      {
+        "name": "Incrocio Strada di Vigolo Baselga",
+        "lat": 46.080866,
+        "lon": 11.043622
+      },
+      {
+        "name": "Incrocio Strada dell'Interporto",
+        "lat": 46.11818,
+        "lon": 11.088705
+      },
+      {
+        "name": "Incrocio Tangenziale Ovest",
+        "lat": 46.064388,
+        "lon": 11.111436
+      },
+      {
+        "name": "Incrocio Strada della Fricca",
+        "lat": 46.008434,
+        "lon": 11.155462
+      },
+      {
+        "name": "Incrocio SP235",
+        "lat": 46.140559,
+        "lon": 11.083128
+      },
+      {
+        "name": "Incrocio Via Trento",
+        "lat": 46.15415,
+        "lon": 11.138153
+      },
+      {
+        "name": "Incrocio Via della Fricca",
+        "lat": 46.003196,
+        "lon": 11.197469
+      },
+      {
+        "name": "Incrocio Via della Fricca",
+        "lat": 46.003726,
+        "lon": 11.19645
+      },
+      {
+        "name": "Incrocio Strada Statale 47 della Valsugana",
+        "lat": 46.080727,
+        "lon": 11.199766
+      },
+      {
+        "name": "Incrocio Strada Statale 47 della Valsugana",
+        "lat": 46.081114,
+        "lon": 11.19868
+      },
+      {
+        "name": "Incrocio Strada Statale 47 della Valsugana",
+        "lat": 46.077843,
+        "lon": 11.20419
+      },
+      {
+        "name": "Incrocio Strada Statale 47 della Valsugana",
+        "lat": 46.075302,
+        "lon": 11.209981
+      },
+      {
+        "name": "Incrocio Strada Statale 47 della Valsugana",
+        "lat": 46.072135,
+        "lon": 11.215654
+      },
+      {
+        "name": "Incrocio Strada dell'Interporto",
+        "lat": 46.098274,
+        "lon": 11.094955
+      },
+      {
+        "name": "Incrocio SP235",
+        "lat": 46.186277,
+        "lon": 11.09905
+      },
+      {
+        "name": "Incrocio Strada di Vigolo Baselga",
+        "lat": 46.081371,
+        "lon": 11.046423
+      },
+      {
+        "name": "Incrocio Tangenziale Ovest",
+        "lat": 46.079424,
+        "lon": 11.112457
+      },
+      {
+        "name": "Incrocio Via Cembra",
+        "lat": 46.143369,
+        "lon": 11.10724
+      },
+      {
+        "name": "Incrocio Via Cembra",
+        "lat": 46.143447,
+        "lon": 11.107789
       }
     ]
   }

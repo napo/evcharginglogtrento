@@ -36,6 +36,8 @@ CATEGORY_LABELS = {
     'banche': 'Banche',
     'ospedali': 'Ospedali',
     'ambulatori': 'Ambulatori',
+    'svincoli_autostradali': 'Svincoli autostradali',
+    'incroci_primarie': 'Incroci di strade primarie',
 }
 
 

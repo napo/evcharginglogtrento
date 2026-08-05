@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-05T12:39:29.908701+00:00",
+  "generated_at": "2026-08-05T20:25:11.618072+00:00",
   "fonte_poi": "OpenStreetMap contributors, via Overpass API (ODbL)",
-  "poi_generated_at": "2026-08-05T11:28:53Z",
+  "poi_generated_at": "2026-08-05T20:18:36Z",
   "soglia_metri": 300,
   "totale_colonnine_citta": 201,
   "categorie": {
@@ -54,6 +54,28 @@
         "colonnina_indirizzo": "Sopramonte - Piazza Oveno 13",
         "poi_nome": "Ambulatori Medici",
         "distanza_m": 18
+      }
+    },
+    "svincoli_autostradali": {
+      "label": "Svincoli autostradali",
+      "n_poi": 6,
+      "count_entro_soglia": 6,
+      "share": 3.0,
+      "esempio": {
+        "colonnina_indirizzo": "Spini di Gardolo - Strada dell' Interporto 14",
+        "poi_nome": "Incrocio Autostrada del Brennero",
+        "distanza_m": 220
+      }
+    },
+    "incroci_primarie": {
+      "label": "Incroci di strade primarie",
+      "n_poi": 45,
+      "count_entro_soglia": 30,
+      "share": 14.9,
+      "esempio": {
+        "colonnina_indirizzo": "Via Ezio Maccani, 133",
+        "poi_nome": "Incrocio Tangenziale Ovest",
+        "distanza_m": 108
       }
     }
   }

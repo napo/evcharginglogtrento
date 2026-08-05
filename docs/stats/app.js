@@ -1,6 +1,5 @@
 const summaryCards = document.getElementById('summary-cards');
 const summaryBox = document.getElementById('summary-box');
-const a22Box = document.getElementById('a22-box');
 const poisTable = document.getElementById('pois-table');
 const operatorsTable = document.getElementById('operators-table');
 const poiProximityNote = document.getElementById('poi-proximity-note');
@@ -10,7 +9,7 @@ let statsPayload = null;
 
 // Palette derivata dall'immagine hero (vedi ../styles.css).
 const HERO_GREEN = '#1da542';
-const HERO_BLUE = '#0b98cb';
+const HERO_BLUE = '#096277';
 
 function renderSummaryCards(data) {
   const cards = [
@@ -56,8 +55,8 @@ function renderGauge(data) {
         splitNumber: 5,
         progress: { show: true, width: 16 },
         axisLine: { lineStyle: { width: 16 } },
-        pointer: { show: false },
-        anchor: { show: false },
+        pointer: { show: true, length: '55%', width: 4, itemStyle: { color: HERO_BLUE } },
+        anchor: { show: true, size: 10, itemStyle: { color: HERO_BLUE, borderColor: '#fff', borderWidth: 2 } },
         axisTick: { show: false },
         splitLine: { length: 12, lineStyle: { width: 2, color: '#aaa' } },
         axisLabel: { distance: 22, fontSize: 12, color: '#888' },
@@ -69,22 +68,13 @@ function renderGauge(data) {
           fontSize: 32,
           fontWeight: 'bolder',
           offsetCenter: [0, '10%'],
-          color: '#0b98cb',
+          color: '#096277',
         },
         data: [{ value: data.summary.share_active }],
       },
     ],
   });
   window.addEventListener('resize', () => chart.resize());
-}
-
-function renderA22(data) {
-  a22Box.innerHTML = `
-    <div class="mb-2"><strong>Colonnine:</strong> ${data.a22.count}</div>
-    <div class="mb-2"><strong>Attive:</strong> ${data.a22.active}</div>
-    <div class="mb-2"><strong>Non attive:</strong> ${data.a22.inactive}</div>
-    <div class="mb-2"><strong>Quota attive:</strong> ${data.a22.share_active}%</div>
-    <div class="small text-muted">Operatori principali: ${Object.entries(data.a22.operators).map(([k,v]) => `${k} (${v})`).join(', ')}</div>`;
 }
 
 function renderPois(data) {
@@ -120,15 +110,15 @@ function renderOperators(data, tier = 'tutte') {
 
   operatorsTable.innerHTML = `
     <div class="table-responsive">
-      <table class="table table-sm table-hover align-middle">
+      <table class="table table-sm table-hover align-middle" id="operators-table-el">
         <thead><tr><th>#</th><th>Operatore</th><th>${POWER_TIER_LABELS[tier]}</th></tr></thead>
         <tbody>
           ${rows
             .map(
               (op, i) => `
                 <tr class="${i < 3 ? 'table-warning' : ''}">
-                  <td>${i + 1}</td>
-                  <td>${op.name}</td>
+                  <td data-sort-value="${i + 1}">${i + 1}</td>
+                  <td><span class="station-link" data-operator-popover="${op.name}">${op.name}</span></td>
                   <td>${op.shown}</td>
                 </tr>`
             )
@@ -136,6 +126,7 @@ function renderOperators(data, tier = 'tutte') {
         </tbody>
       </table>
     </div>`;
+  enhanceTable(document.getElementById('operators-table-el'));
 }
 
 function wireOperatorsFilter() {
@@ -161,7 +152,7 @@ function renderPoiProximity(data) {
   const rows = categorie.slice().sort((a, b) => b.share - a.share);
   poiProximityTable.innerHTML = `
     <div class="table-responsive">
-      <table class="table table-sm table-hover align-middle">
+      <table class="table table-sm table-hover align-middle" id="poi-proximity-table-el">
         <thead><tr><th>Categoria</th><th>Colonnine entro soglia</th><th>% sul totale città</th><th>Esempio</th></tr></thead>
         <tbody>
           ${rows
@@ -169,8 +160,8 @@ function renderPoiProximity(data) {
               (r) => `
                 <tr>
                   <td>${r.label}</td>
-                  <td>${r.count_entro_soglia} / ${data.totale_colonnine_citta}</td>
-                  <td>${r.share}%</td>
+                  <td data-sort-value="${r.count_entro_soglia}">${r.count_entro_soglia} / ${data.totale_colonnine_citta}</td>
+                  <td data-sort-value="${r.share}">${r.share}%</td>
                   <td class="small text-muted">${
                     r.esempio
                       ? `${r.esempio.colonnina_indirizzo} → ${r.esempio.poi_nome} (${r.esempio.distanza_m} m)`
@@ -182,6 +173,7 @@ function renderPoiProximity(data) {
         </tbody>
       </table>
     </div>`;
+  enhanceTable(document.getElementById('poi-proximity-table-el'));
 }
 
 // --- Andamento dell'uso (trends.json) --------------------------------
@@ -197,23 +189,82 @@ function renderPlaceholder(containerId, block) {
   el.innerHTML = `<div class="alert alert-light border small mb-0">${trendMessage(block)}</div>`;
 }
 
-function renderDailyChart(containerId, block) {
-  if (!block.available) return renderPlaceholder(containerId, block);
-  const el = document.getElementById(containerId);
+let dailyBlockRaw = null;
+let dailyChart = null;
+let dailyTableVisible = false;
+
+function pointsInRange(points, from, to) {
+  return points.filter((p) => (!from || p.date >= from) && (!to || p.date <= to));
+}
+
+function renderDailyChartPoints(points) {
+  const el = document.getElementById('chart-daily-trento');
   if (!el || typeof echarts === 'undefined') return;
-  const chart = echarts.init(el);
-  chart.setOption({
+  if (!dailyChart) dailyChart = echarts.init(el);
+  dailyChart.setOption({
     tooltip: { trigger: 'axis' },
     legend: { data: ['Attive %', 'In ricarica %'] },
     grid: { left: 40, right: 20, top: 40, bottom: 30 },
-    xAxis: { type: 'category', data: block.points.map((p) => p.date) },
+    xAxis: { type: 'category', data: points.map((p) => p.date) },
     yAxis: { type: 'value', max: 100, axisLabel: { formatter: '{value}%' } },
     series: [
-      { name: 'Attive %', type: 'line', smooth: true, itemStyle: { color: HERO_GREEN }, data: block.points.map((p) => p.share_active) },
-      { name: 'In ricarica %', type: 'line', smooth: true, itemStyle: { color: HERO_BLUE }, data: block.points.map((p) => p.share_charging) },
+      { name: 'Attive %', type: 'line', smooth: true, itemStyle: { color: HERO_GREEN }, data: points.map((p) => p.share_active) },
+      { name: 'In ricarica %', type: 'line', smooth: true, itemStyle: { color: HERO_BLUE }, data: points.map((p) => p.share_charging) },
     ],
   });
-  window.addEventListener('resize', () => chart.resize());
+}
+
+function renderDailyTable(points) {
+  const table = document.getElementById('daily-table');
+  if (!table) return;
+  const tbody = table.querySelector('tbody');
+  tbody.innerHTML = points
+    .map(
+      (p) => `
+        <tr>
+          <td>${p.date}</td>
+          <td>${p.share_active}%</td>
+          <td>${p.share_charging}%</td>
+        </tr>`
+    )
+    .join('');
+  enhanceTable(table);
+}
+
+function applyDailyFilter() {
+  if (!dailyBlockRaw) return;
+  const from = document.getElementById('daily-date-from')?.value || '';
+  const to = document.getElementById('daily-date-to')?.value || '';
+  const points = pointsInRange(dailyBlockRaw.points, from, to);
+  renderDailyChartPoints(points);
+  if (dailyTableVisible) renderDailyTable(points);
+}
+
+function renderDailyChart(containerId, block) {
+  if (!block.available) return renderPlaceholder(containerId, block);
+  dailyBlockRaw = block;
+  applyDailyFilter();
+  window.addEventListener('resize', () => dailyChart && dailyChart.resize());
+}
+
+function wireDailyFilters() {
+  const fromInput = document.getElementById('daily-date-from');
+  const toInput = document.getElementById('daily-date-to');
+  const toggleBtn = document.getElementById('daily-table-toggle');
+  const wrap = document.getElementById('daily-table-wrap');
+  [fromInput, toInput].forEach((input) => input && input.addEventListener('change', applyDailyFilter));
+  if (toggleBtn && wrap) {
+    toggleBtn.addEventListener('click', () => {
+      dailyTableVisible = !dailyTableVisible;
+      wrap.classList.toggle('d-none', !dailyTableVisible);
+      toggleBtn.textContent = dailyTableVisible ? 'Nascondi tabella' : 'Vedi come tabella';
+      if (dailyTableVisible && dailyBlockRaw) {
+        const from = fromInput?.value || '';
+        const to = toInput?.value || '';
+        renderDailyTable(pointsInRange(dailyBlockRaw.points, from, to));
+      }
+    });
+  }
 }
 
 function renderWeeklyHeatmap(containerId, block) {
@@ -246,6 +297,23 @@ function renderWeeklyHeatmap(containerId, block) {
   window.addEventListener('resize', () => chart.resize());
 }
 
+function renderMonthlyTable(points) {
+  const table = document.getElementById('monthly-table');
+  if (!table) return;
+  const tbody = table.querySelector('tbody');
+  tbody.innerHTML = points
+    .map(
+      (p) => `
+        <tr>
+          <td>${p.month}</td>
+          <td>${p.share_active}%</td>
+          <td>${p.share_charging}%</td>
+        </tr>`
+    )
+    .join('');
+  enhanceTable(table);
+}
+
 function renderMonthlyChart(containerId, block) {
   if (!block.available) return renderPlaceholder(containerId, block);
   const el = document.getElementById(containerId);
@@ -263,9 +331,21 @@ function renderMonthlyChart(containerId, block) {
     ],
   });
   window.addEventListener('resize', () => chart.resize());
+
+  const toggleBtn = document.getElementById('monthly-table-toggle');
+  const wrap = document.getElementById('monthly-table-wrap');
+  if (toggleBtn && wrap) {
+    toggleBtn.addEventListener('click', () => {
+      const visible = !wrap.classList.contains('d-none');
+      wrap.classList.toggle('d-none', visible);
+      toggleBtn.textContent = visible ? 'Vedi come tabella' : 'Nascondi tabella';
+      if (!visible) renderMonthlyTable(block.points);
+    });
+  }
 }
 
 function renderTrends(trends) {
+  wireDailyFilters();
   renderDailyChart('chart-daily-trento', trends.andamento_giornaliero);
   renderWeeklyHeatmap('chart-weekly-trento', trends.profilo_settimanale);
   renderMonthlyChart('chart-monthly-trento', trends.profilo_mensile);
@@ -293,7 +373,7 @@ function renderHourlyProfile(city) {
         name: 'In ricarica %',
         type: 'bar',
         data: city.profilo_orario.map((p) => p.quota_charging),
-        itemStyle: { color: '#0b98cb' },
+        itemStyle: { color: '#096277' },
       },
     ],
   });
@@ -341,7 +421,6 @@ async function loadData() {
   statsPayload = payload;
   renderSummaryCards(payload);
   renderGauge(payload);
-  renderA22(payload);
   renderPois(payload);
   renderOperators(payload);
   wireOperatorsFilter();
@@ -359,6 +438,7 @@ async function loadData() {
 
   if (usageResponse && usageResponse.ok) {
     const usage = await usageResponse.json();
+    if (window.EVUsage) EVUsage.setData(usage);
     renderHourlyProfile(usage.city);
     renderEnergyCards(usage.city);
   } else {

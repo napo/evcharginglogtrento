@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T12:39:29.564619+00:00",
+  "generated_at": "2026-08-05T20:25:11.193114+00:00",
   "label": "Trento città",
   "n_colonnine_real_time": 110,
   "days_collected": 2,
@@ -16,9 +16,9 @@
       },
       {
         "date": "2026-08-05",
-        "share_active": 82.2,
-        "share_charging": 11.5,
-        "n_snapshots": 37
+        "share_active": 81.1,
+        "share_charging": 12.2,
+        "n_snapshots": 75
       }
     ]
   },

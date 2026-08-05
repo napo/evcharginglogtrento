@@ -1,20 +1,30 @@
-/* Palette derivata dall'immagine hero (blu del cielo, verde della colonnina,
-   blu-grigio dei vetri dell'auto) — validata con lo skill dataviz (CVD-safe,
-   contrasto testo bianco >= 3:1). Sovrascrive le variabili Bootstrap così la
-   tinta si applica automaticamente a bg-primary/success/danger, badge,
-   pulsanti attivi, ecc. senza toccare ogni componente uno per uno. */
+/* Colore primario di brand (dal logo): #096277. Sovrascrive le variabili
+   Bootstrap così la tinta si applica automaticamente a bg-primary,
+   pulsanti attivi, link, ecc. senza toccare ogni componente uno per uno.
+   Verde/blu-grigio/rosso: stato attivo/non-disponibile/non-funzionante,
+   validati con lo skill dataviz (contrasto testo bianco >= 3:1). Rosso e
+   verde hanno una separazione CVD in fascia WARN (comune per la coppia
+   rosso/verde sotto deuteranopia): per questo rosso/verde non compaiono
+   mai da soli, sempre con etichetta di testo accanto (legenda, tooltip). */
 :root {
-  --bs-primary: #0b98cb;
-  --bs-primary-rgb: 11, 152, 203;
+  --bs-primary: #096277;
+  --bs-primary-rgb: 9, 98, 119;
   --bs-success: #1da542;
   --bs-success-rgb: 29, 165, 66;
   --bs-danger: #35528d;
   --bs-danger-rgb: 53, 82, 141;
-  --hero-blue-pale: #7edcfe;
+  --hero-blue-pale: #b8edfa;
+  --status-red: #b02a2a;
 }
 
 body {
   background: #f6f8fb;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.navbar-brand img {
+  height: 32px;
+  width: auto;
 }
 
 [data-aos] {
@@ -49,6 +59,11 @@ body {
   margin-bottom: 0.35rem;
 }
 
+.station-link {
+  cursor: default;
+  border-bottom: 1px dotted #999;
+}
+
 .map-container {
   width: 100%;
   height: 520px;
@@ -64,25 +79,16 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
 }
 
+/* Attive/non attive sono ora cluster (vedi app.js, layer paint-color) — solo
+   le colonnine in ricarica e quelle A22 restano marker DOM individuali. */
 .marker-pin.a22 {
   border-radius: 3px;
   border: 2px solid #f1b81b;
-}
-
-.marker-pin.active {
-  background: #1da542;
-}
-
-.marker-pin.inactive {
-  background: #35528d;
-}
-
-.marker-pin.unknown {
-  background: #6c757d;
+  background: #fff3cd;
 }
 
 .marker-pin.charging {
-  background: #0b98cb;
+  background: #096277;
 }
 
 .card {

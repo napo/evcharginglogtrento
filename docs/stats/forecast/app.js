@@ -47,7 +47,7 @@ function renderForecast(block) {
         stack: 'range',
         symbol: 'none',
         lineStyle: { opacity: 0 },
-        areaStyle: { color: 'rgba(11, 152, 203, 0.15)' },
+        areaStyle: { color: 'rgba(9, 98, 119, 0.15)' },
       },
       {
         name: 'Stima',
@@ -55,7 +55,7 @@ function renderForecast(block) {
         data: block.punti.map((p) => p.share_charging),
         smooth: true,
         symbol: 'none',
-        lineStyle: { color: '#0b98cb', width: 2 },
+        lineStyle: { color: '#096277', width: 2 },
       },
     ],
   });

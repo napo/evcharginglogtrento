@@ -44,11 +44,14 @@ OUT = ROOT / 'docs' / 'stations_usage.json'
 MIN_ORE_PROFILO = 6     # ore distinte coperte minime per fidarsi del profilo orario
 MIN_DAYS_WEEKDAY = 7    # giorni distinti minimi per il giorno-della-settimana più usato
 
-FINESTRE_ENERGIA = {
-    'ultima_ora_kwh': pd.Timedelta(hours=1),
-    'ultime_24h_kwh': pd.Timedelta(hours=24),
-    'ultimi_7_giorni_kwh': pd.Timedelta(days=7),
-    'ultimi_30_giorni_kwh': pd.Timedelta(days=30),
+# Stesse finestre mobili per energia e "veicoli serviti" (una sessione ≈ un
+# veicolo). Mobili, non di calendario, così restano sempre significative
+# indipendentemente dal giorno/ora in cui vengono generate.
+FINESTRE = {
+    'ultima_ora': pd.Timedelta(hours=1),
+    'ultime_24h': pd.Timedelta(hours=24),
+    'ultimi_7_giorni': pd.Timedelta(days=7),
+    'ultimi_30_giorni': pd.Timedelta(days=30),
 }
 
 WEEKDAY_LABELS = ['lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', 'sabato', 'domenica']
@@ -149,10 +152,18 @@ def tag_energia(sessions: list[dict], potenza_w: float | None) -> None:
 def energy_summary(sessions: list[dict], now: pd.Timestamp) -> dict:
     con_energia = [s for s in sessions if s.get('energia_kwh') is not None]
     out = {'totale_kwh_stimato': round(sum(s['energia_kwh'] for s in con_energia), 2)}
-    for key, delta in FINESTRE_ENERGIA.items():
+    for key, delta in FINESTRE.items():
         soglia = now - delta
-        out[key] = round(sum(s['energia_kwh'] for s in con_energia if s['inizio'] >= soglia), 2)
+        out[f'{key}_kwh'] = round(sum(s['energia_kwh'] for s in con_energia if s['inizio'] >= soglia), 2)
     return out
+
+
+def veicoli_serviti(sessions: list[dict], now: pd.Timestamp) -> dict:
+    """Conteggio sessioni nelle stesse finestre mobili dell'energia — una
+    sessione ≈ un veicolo che ha caricato in quella finestra. Sessioni con
+    una sola rilevazione contano comunque (a differenza della durata media,
+    qui basta sapere che una ricarica c'è stata, non per quanto)."""
+    return {key: sum(1 for s in sessions if s['inizio'] >= now - delta) for key, delta in FINESTRE.items()}
 
 
 def colonnina_top(stazioni: dict) -> dict | None:
@@ -216,6 +227,7 @@ def main() -> None:
         print('nessuna colonnina real-time a Trento nel dataset: stations_usage.json non generato')
         return
 
+    now = table['ts'].max()
     stazioni = {}
     tutte_le_sessioni: list[dict] = []
     n_in_corso = 0
@@ -236,6 +248,7 @@ def main() -> None:
             'giorno_settimana_piu_usato': giorno_settimana_piu_usato(g),
             **session_metrics(sessions),
             'energia_totale_kwh_stimata': round(sum(energia_stazione), 2) if energia_stazione else None,
+            'veicoli_serviti': veicoli_serviti(sessions, now),
             'indirizzo': g['indirizzo'].iloc[-1] or 'indirizzo sconosciuto',
             'cpo': g['cpo'].iloc[-1] or 'operatore sconosciuto',
             'lat': float(g['lat'].iloc[-1]),
@@ -254,7 +267,6 @@ def main() -> None:
     # arrivano dalla lista aggregata delle sessioni per-colonnina, MAI da
     # detect_sessions sulla tabella flattata (mischierebbe le sequenze di
     # colonnine diverse creando sessioni false).
-    now = table['ts'].max()
     city = {
         'n_osservazioni': int(len(table)),
         'n_colonnine_real_time': int(table['id_evse'].nunique()),
@@ -263,6 +275,7 @@ def main() -> None:
         **session_metrics(tutte_le_sessioni),
         'n_sessioni_in_corso': n_in_corso,
         'energia': energy_summary(tutte_le_sessioni, now),
+        'veicoli_serviti': veicoli_serviti(tutte_le_sessioni, now),
         'colonnina_top': colonnina_top(stazioni),
         'operatori_per_uso': operatori_per_uso(stazioni)[:5],
     }

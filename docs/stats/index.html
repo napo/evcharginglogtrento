@@ -4,13 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Statistiche EV Charging Trento</title>
+    <link rel="icon" type="image/png" href="../assets/logo_evclog_mini.png" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <nav class="navbar navbar-dark bg-dark shadow-sm">
       <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">EV Charging Log Trento</span>
+        <span class="navbar-brand mb-0 d-flex align-items-center gap-2">
+          <img src="../assets/logo_evclog.png" alt="EV Charging Log" height="32" />
+          <span style="color: #096277" class="fw-semibold h1 mb-0">Trento</span>
+        </span>
         <ul class="nav">
           <li class="nav-item"><a class="nav-link" href="../index.html">Live</a></li>
           <li class="nav-item"><a class="nav-link active" href="index.html">Statistiche</a></li>
@@ -25,9 +32,9 @@
       <section class="mb-4">
         <div class="card shadow-sm hero-card">
           <img
-            src="../assets/hero-colonnina.jpg"
+            src="../assets/bev_i_love_data.png"
             class="hero-banner-img"
-            alt="Illustrazione di un'auto elettrica in ricarica a una colonnina"
+            alt="Illustrazione di un'auto elettrica in ricarica a una colonnina, targa 'I love data'"
           />
           <div class="card-body">
             <div class="row g-3">
@@ -41,7 +48,6 @@
                 <div id="summary-box" class="mt-2"></div>
               </div>
             </div>
-            <p class="text-muted small mt-3 mb-0">Foto: Francis Ray da Pixabay, via Comune di Trento.</p>
           </div>
         </div>
       </section>
@@ -67,29 +73,48 @@
         <div class="card-body">
           <h2 class="h5 mb-1">Andamento dell'uso</h2>
           <p class="text-muted small mb-1">Solo le colonnine cittadine con stato in tempo reale entrano in questi calcoli (vedi README): per le altre lo stato è statico e non racconterebbe un uso reale.</p>
-          <p class="text-muted small mb-4">Le colonnine dell'Autostrada A22 non compaiono in questa sezione né nelle previsioni: sono pensate per il traffico di transito, non per l'utenza urbana, e ad oggi nessun operatore autostradale pubblica lo stato in tempo reale necessario per costruire un andamento. Restano visibili sulla mappa live e nella loro card dedicata.</p>
+          <p class="text-muted small mb-4">Le colonnine dell'Autostrada A22 non compaiono in questa sezione né nelle previsioni: sono pensate per il traffico di transito, non per l'utenza urbana, e ad oggi nessun operatore autostradale pubblica lo stato in tempo reale necessario per costruire un andamento. Restano visibili sulla mappa live.</p>
           <h3 class="h6">Profilo orario (oggi)</h3>
           <p class="text-muted small">Quota di colonnine in ricarica per ora del giorno, su tutto lo storico raccolto finora — a differenza del profilo settimanale qui sotto, non serve aspettare una settimana.</p>
           <div id="chart-hourly-profile" class="echart-trend mb-4"></div>
+
           <h3 class="h6">Andamento giornaliero</h3>
-          <div id="chart-daily-trento" class="echart-trend mb-4"></div>
+          <div class="d-flex flex-wrap align-items-end gap-2 mb-2">
+            <div>
+              <label class="form-label small text-muted mb-0" for="daily-date-from">Dal</label>
+              <input type="date" class="form-control form-control-sm" id="daily-date-from" />
+            </div>
+            <div>
+              <label class="form-label small text-muted mb-0" for="daily-date-to">Al</label>
+              <input type="date" class="form-control form-control-sm" id="daily-date-to" />
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary" id="daily-table-toggle">Vedi come tabella</button>
+          </div>
+          <div id="chart-daily-trento" class="echart-trend mb-2"></div>
+          <div id="daily-table-wrap" class="d-none mb-4">
+            <table class="table table-sm table-hover" id="daily-table">
+              <thead><tr><th>Data</th><th>Attive %</th><th>In ricarica %</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
           <h3 class="h6">Profilo settimanale (giorno &times; ora, quota in ricarica)</h3>
           <div id="chart-weekly-trento" class="echart-trend mb-4"></div>
+
           <h3 class="h6">Andamento mensile</h3>
-          <div id="chart-monthly-trento" class="echart-trend"></div>
+          <button type="button" class="btn btn-sm btn-outline-secondary mb-2" id="monthly-table-toggle">Vedi come tabella</button>
+          <div id="chart-monthly-trento" class="echart-trend mb-2"></div>
+          <div id="monthly-table-wrap" class="d-none">
+            <table class="table table-sm table-hover" id="monthly-table">
+              <thead><tr><th>Mese</th><th>Attive %</th><th>In ricarica %</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
         </div>
       </section>
 
       <section class="row g-4">
-        <div class="col-lg-6">
-          <div class="card shadow-sm h-100">
-            <div class="card-body">
-              <h2 class="h5">Autostrada A22</h2>
-              <div id="a22-box"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
+        <div class="col-12">
           <div class="card shadow-sm h-100">
             <div class="card-body">
               <h2 class="h5">POI / luoghi</h2>
@@ -134,6 +159,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+    <script src="../shared-usage.js"></script>
+    <script src="../shared-table.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

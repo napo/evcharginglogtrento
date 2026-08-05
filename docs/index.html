@@ -4,6 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>EV Charging Log Trento</title>
+    <link rel="icon" type="image/png" href="assets/logo_evclog_mini.png" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -20,7 +24,10 @@
   <body>
     <nav class="navbar navbar-dark bg-dark shadow-sm">
       <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">EV Charging Log Trento</span>
+        <span class="navbar-brand mb-0 d-flex align-items-center gap-2">
+          <img src="assets/logo_evclog.png" alt="EV Charging Log" height="32" />
+          <span style="color: #096277" class="fw-semibold h1 mb-0">Trento</span>
+        </span>
         <ul class="nav">
           <li class="nav-item"><a class="nav-link active" href="index.html">Live</a></li>
           <li class="nav-item"><a class="nav-link" href="stats/index.html">Statistiche</a></li>
@@ -35,24 +42,16 @@
       <section class="mb-4" data-aos="fade-in">
         <div class="card shadow-sm hero-card">
           <img
-            src="assets/hero-colonnina.jpg"
+            src="assets/bev_i_love_data.png"
             class="hero-banner-img"
-            alt="Illustrazione di un'auto elettrica in ricarica a una colonnina"
+            alt="Illustrazione di un'auto elettrica in ricarica a una colonnina, targa 'I love data'"
           />
           <div class="card-body">
-            <div class="d-flex flex-wrap justify-content-between align-items-start gap-3">
-              <div>
-                <div class="text-uppercase small text-muted fw-semibold">Stato in tempo reale</div>
-                <h1 class="h3 mb-2">Colonnine di ricarica a Trento</h1>
-                <p class="lead mb-1" id="usage-headline"></p>
-                <p class="mb-0 text-muted">Serie storica costruita interrogando periodicamente la Piattaforma Unica Nazionale (PUN). Dati generati offline dallo scraper, mai interrogati dal browser.</p>
-              </div>
-              <div class="text-lg-end">
-                <div class="small text-muted text-uppercase">Ultimo aggiornamento</div>
-                <div id="last-update" class="fs-5 fw-semibold"></div>
-              </div>
-            </div>
-            <p class="text-muted small mt-3 mb-0">Foto: Francis Ray da Pixabay, via Comune di Trento.</p>
+            <h1 class="h3 mb-2">Colonnine di ricarica a Trento</h1>
+            <div class="small text-uppercase text-muted fw-semibold">Situazione del giorno</div>
+            <div class="fw-semibold mb-2" id="situation-date"></div>
+            <p class="lead mb-1" id="usage-headline"></p>
+            <p class="mb-0 text-muted">Serie storica costruita interrogando periodicamente la Piattaforma Unica Nazionale (PUN). Dati generati offline dallo scraper, mai interrogati dal browser.</p>
           </div>
         </div>
       </section>
@@ -88,20 +87,8 @@
         <div class="card-body">
           <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
             <div>
-              <h2 class="h5 mb-1">Autostrada A22</h2>
-              <p class="text-muted mb-0">Colonnine sul tracciato autostradale: pubblico di passaggio, diverso da quello cittadino, tenuto separato dalle statistiche di Trento.</p>
-            </div>
-          </div>
-          <div class="row g-3" id="a22-cards"></div>
-        </div>
-      </section>
-
-      <section class="card shadow-sm mb-4">
-        <div class="card-body">
-          <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
-            <div>
               <h2 class="h5 mb-1">Map view</h2>
-              <p class="text-muted mb-0">Mappa in stile street con MapLibre</p>
+              <p class="text-muted mb-0">Mappa a cluster: verde = attive, rosso = non attive/non funzionanti, blu = in ricarica.</p>
             </div>
             <div class="btn-group" role="group" aria-label="Filtri stati">
               <button type="button" class="btn btn-sm btn-outline-success active" data-filter="all">Tutti</button>
@@ -123,7 +110,7 @@
             <div id="table-last-update" class="text-muted small"></div>
           </div>
           <div class="table-responsive">
-            <table class="table table-sm table-hover align-middle">
+            <table class="table table-sm table-hover align-middle" id="live-table">
               <thead>
                 <tr>
                   <th>Stato</th>
@@ -146,6 +133,8 @@
     <script src="https://unpkg.com/maplibre-gl@3.4.0/dist/maplibre-gl.js"></script>
     <script src="https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="shared-usage.js"></script>
+    <script src="shared-table.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

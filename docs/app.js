@@ -1,7 +1,4 @@
-const a22Cards = document.getElementById('a22-cards');
 const tableBody = document.getElementById('points-table');
-const lastUpdate = document.getElementById('last-update');
-const tableLastUpdate = document.getElementById('table-last-update');
 const filterButtons = Array.from(document.querySelectorAll('[data-filter]'));
 
 const statusLabel = {
@@ -12,56 +9,47 @@ const statusLabel = {
   UNKNOWN: 'Sconosciuto',
 };
 
+const MALFUNZIONANTE_RAW = ['OUTOFORDER', 'INOPERATIVE', 'BLOCKED'];
+
+// Colore di brand (dal logo) + stato, validati con lo skill dataviz — vedi
+// styles.css per i dettagli. Copie esadecimali qui perché ECharts non legge
+// le variabili CSS.
+const HERO_BLUE = '#096277';
+const HERO_BLUE_PALE = '#b8edfa';
+const HERO_GREEN = '#1da542';
+const HERO_BLUEGRAY = '#35528d';
+const STATUS_RED = '#b02a2a';
+
 let map;
 let allPoints = [];
 let activeFilter = 'all';
 let stationsUsage = null;
+let a22Markers = [];
 
 function pointState(point) {
   return point.stato || statusLabel[point.stato_raw] || 'Sconosciuto';
 }
 
+function isMalfunzionante(point) {
+  return MALFUNZIONANTE_RAW.includes((point.stato_raw || '').toUpperCase());
+}
+
 function summarize(points) {
   let active = 0;
   let inactive = 0;
+  let malfunzionanti = 0;
   let charging = 0;
   points.forEach((p) => {
     const state = pointState(p);
     if (state === 'Attivo') active += 1;
-    else if (state === 'Non Attivo') inactive += 1;
+    else if (state === 'Non Attivo') {
+      if (isMalfunzionante(p)) malfunzionanti += 1;
+      else inactive += 1;
+    }
     if (p.stato_raw === 'CHARGING') charging += 1;
   });
-  return { total: points.length, active, inactive, charging };
+  return { total: points.length, active, inactive, malfunzionanti, charging };
 }
-
-function statCardsHtml(summary, tones = ['primary', 'success', 'danger', 'info'], totalLabel = 'Colonnine totali') {
-  const cards = [
-    { label: totalLabel, value: summary.total, tone: tones[0] },
-    { label: 'Attive', value: summary.active, tone: tones[1] },
-    { label: 'Non attive', value: summary.inactive, tone: tones[2] },
-    { label: 'In ricarica', value: summary.charging, tone: tones[3] },
-  ];
-  return cards
-    .map(
-      (card) => `
-        <div class="col-md-3 col-sm-6">
-          <div class="card stat-card border-0 shadow-sm bg-${card.tone} bg-gradient text-white h-100">
-            <div class="card-body">
-              <div class="small text-white-50">${card.label}</div>
-              <div class="display-6 fw-semibold">${card.value}</div>
-            </div>
-          </div>
-        </div>`
-    )
-    .join('');
-}
-
-// Palette derivata dall'immagine hero (vedi styles.css) — stessi valori,
-// qui serve la copia esadecimale perché ECharts non legge le variabili CSS.
-const HERO_BLUE = '#0b98cb';
-const HERO_BLUE_PALE = '#7edcfe';
-const HERO_GREEN = '#1da542';
-const HERO_BLUEGRAY = '#35528d';
 
 function countUp(el, target, { duration = 900, decimals = 0, suffix = '' } = {}) {
   if (!el) return;
@@ -76,6 +64,8 @@ function countUp(el, target, { duration = 900, decimals = 0, suffix = '' } = {})
   }
   requestAnimationFrame(tick);
 }
+
+// --- Gauge + stacked bar ------------------------------------------------
 
 function renderGaugeOccupied(cityPoints) {
   const el = document.getElementById('gauge-occupied');
@@ -96,8 +86,8 @@ function renderGaugeOccupied(cityPoints) {
         splitNumber: 5,
         progress: { show: true, width: 16, itemStyle: { color: HERO_BLUE } },
         axisLine: { lineStyle: { width: 16, color: [[1, HERO_BLUE_PALE]] } },
-        pointer: { show: false },
-        anchor: { show: false },
+        pointer: { show: true, length: '55%', width: 4, itemStyle: { color: HERO_BLUE } },
+        anchor: { show: true, size: 10, itemStyle: { color: HERO_BLUE, borderColor: '#fff', borderWidth: 2 } },
         axisTick: { show: false },
         splitLine: { length: 12, lineStyle: { width: 2, color: '#aaa' } },
         axisLabel: { distance: 22, fontSize: 12, color: '#888' },
@@ -108,7 +98,7 @@ function renderGaugeOccupied(cityPoints) {
           width: '60%',
           fontSize: 32,
           fontWeight: 'bolder',
-          offsetCenter: [0, '0%'],
+          offsetCenter: [0, '35%'],
           color: HERO_BLUE,
         },
         data: [{ value: quota, name: 'occupate' }],
@@ -118,20 +108,29 @@ function renderGaugeOccupied(cityPoints) {
   window.addEventListener('resize', () => chart.resize());
 
   const caption = document.createElement('div');
-  caption.className = 'text-center text-muted small mt-n4';
-  caption.textContent = `su ${totale} colonnine cittadine (${quota}%)`;
+  caption.className = 'text-center text-muted small mt-2';
+  caption.textContent = `${occupate} veicoli in carica in questo momento (${quota}% delle ${totale} colonnine cittadine)`;
   el.parentElement.appendChild(caption);
 }
 
 function renderStackedBar(cityPoints) {
   const el = document.getElementById('stacked-bar');
   if (!el || typeof echarts === 'undefined') return;
-  const { total, active, inactive } = summarize(cityPoints);
+  const { total, active, inactive, malfunzionanti } = summarize(cityPoints);
+  const pct = (v) => (total ? Math.round((v / total) * 100) : 0);
+  // Un'etichetta dentro un segmento sottile si sovrappone a quella del
+  // vicino: la mostro solo se il segmento è abbastanza largo da contenerla
+  // con un po' di margine (~12% del totale). Sotto soglia, il valore resta
+  // comunque raggiungibile da tooltip e legenda — mai un numero clippato.
+  const canLabel = (v) => total > 0 && v / total >= 0.12;
 
   const chart = echarts.init(el);
   chart.setOption({
-    tooltip: { trigger: 'item' },
-    legend: { bottom: 0, data: ['Attive', 'Non attive'] },
+    tooltip: {
+      trigger: 'item',
+      formatter: (params) => `${params.seriesName}: <strong>${params.value}</strong> (${pct(params.value)}%)`,
+    },
+    legend: { bottom: 0, data: ['Attive', 'Non disponibili', 'Non funzionanti'] },
     grid: { left: 10, right: 10, top: 20, bottom: 40, containLabel: true },
     xAxis: { type: 'value', show: false },
     yAxis: { type: 'category', data: ['Colonnine'], show: false },
@@ -142,17 +141,26 @@ function renderStackedBar(cityPoints) {
         stack: 'totale',
         barWidth: 40,
         itemStyle: { color: HERO_GREEN, borderRadius: [4, 0, 0, 4] },
-        label: { show: true, position: 'insideLeft', color: '#fff', formatter: () => active },
+        label: { show: canLabel(active), position: 'insideLeft', color: '#fff', formatter: () => active },
         data: [active],
       },
       {
-        name: 'Non attive',
+        name: 'Non disponibili',
         type: 'bar',
         stack: 'totale',
         barWidth: 40,
-        itemStyle: { color: HERO_BLUEGRAY, borderRadius: [0, 4, 4, 0] },
-        label: { show: true, position: 'insideRight', color: '#fff', formatter: () => inactive },
+        itemStyle: { color: HERO_BLUEGRAY },
+        label: { show: canLabel(inactive), position: 'inside', color: '#fff', formatter: () => inactive },
         data: [inactive],
+      },
+      {
+        name: 'Non funzionanti',
+        type: 'bar',
+        stack: 'totale',
+        barWidth: 40,
+        itemStyle: { color: STATUS_RED, borderRadius: [0, 4, 4, 0] },
+        label: { show: canLabel(malfunzionanti), position: 'insideRight', color: '#fff', formatter: () => malfunzionanti },
+        data: [malfunzionanti],
       },
     ],
   });
@@ -164,51 +172,48 @@ function renderStackedBar(cityPoints) {
   el.parentElement.appendChild(caption);
 }
 
-function renderTopUsage(city) {
+function renderTopUsage(city, a22Count) {
   const box = document.getElementById('top-usage-box');
   if (!box) return;
   const top = city && city.colonnina_top;
   const topOperatori = city && city.operatori_per_uso;
-
-  if (!top && (!topOperatori || topOperatori.length === 0)) {
-    box.innerHTML = '<p class="text-muted small mb-0">Dati d\'uso non ancora disponibili.</p>';
-    return;
-  }
 
   const righe = [];
   if (top) {
     righe.push(`
       <div class="mb-3">
         <div class="small text-muted">Colonnina più usata</div>
-        <div class="fw-semibold">${top.indirizzo}</div>
+        <div class="fw-semibold station-link" data-station-popover="${top.id_evse}">${top.indirizzo}</div>
         <div class="small text-muted">${top.cpo} · ${top.n_sessioni} sessioni · ${top.energia_totale_kwh_stimata} kWh (stima)</div>
       </div>`);
   }
   if (topOperatori && topOperatori.length) {
     const leader = topOperatori[0];
     righe.push(`
-      <div>
+      <div class="mb-3">
         <div class="small text-muted">Operatore di maggior successo</div>
         <div class="fw-semibold">${leader.cpo}</div>
         <div class="small text-muted">${leader.energia_totale_kwh_stimata} kWh erogati (stima) su ${leader.n_colonnine} colonnine</div>
       </div>`);
   }
+  if (!top && (!topOperatori || topOperatori.length === 0)) {
+    righe.push('<p class="text-muted small mb-3">Dati d\'uso non ancora disponibili.</p>');
+  }
+  if (a22Count) {
+    righe.push(`
+      <div class="small text-muted border-top pt-2">
+        +${a22Count} colonnine sull'Autostrada A22, pubblico di transito, non incluse in queste statistiche:
+        <a href="info/index.html">vedi Info</a>.
+      </div>`);
+  }
   box.innerHTML = righe.join('');
+  if (window.EVUsage) EVUsage.wirePopovers(box);
 }
 
-function renderA22(points) {
-  if (!a22Cards) return;
-  const a22Points = points.filter((p) => p.is_a22);
-  if (a22Points.length === 0) {
-    a22Cards.innerHTML = '<div class="col"><p class="text-muted mb-0">Nessuna colonnina A22 nell\'ultimo snapshot.</p></div>';
-    return;
-  }
-  a22Cards.innerHTML = statCardsHtml(summarize(a22Points), ['secondary', 'success', 'danger', 'info'], 'Colonnine A22');
-}
+// --- Tabella dettaglio ---------------------------------------------------
 
 function renderTable(items) {
   tableBody.innerHTML = items
-    .slice(0, 25)
     .map((item) => {
       const state = pointState(item);
       return `
@@ -216,56 +221,130 @@ function renderTable(items) {
           <td><span class="badge rounded-pill bg-${state === 'Attivo' ? 'success' : state === 'In ricarica' ? 'primary' : 'danger'}">${state}</span></td>
           <td>${item.cpo || '—'}${item.is_a22 ? ' <span class="badge bg-warning text-dark ms-1">A22</span>' : ''}</td>
           <td>${item.citta || 'Trento'}</td>
-          <td>${item.potenza_w ? `${item.potenza_w / 1000} kW` : '—'}</td>
+          <td data-sort-value="${item.potenza_w || 0}">${item.potenza_w ? `${item.potenza_w / 1000} kW` : '—'}</td>
           <td>${item.n_connettori ?? '—'}</td>
           <td>${item.corrente || '—'}</td>
-          <td>${item.indirizzo || '—'}</td>
+          <td class="station-link" data-station-popover="${item.id_evse}" data-real-time="${item.real_time}">${item.indirizzo || '—'}</td>
         </tr>`;
     })
     .join('');
+  enhanceTable(document.getElementById('live-table'));
 }
 
-function oraPiuUsata(profiloOrario) {
-  if (!profiloOrario) return null;
-  const best = profiloOrario.reduce(
-    (acc, cur) => (cur.quota_charging > (acc ? acc.quota_charging : -1) ? cur : acc),
-    null
-  );
-  return best && best.quota_charging > 0 ? best : null;
+// --- Popup mappa (contenuto condiviso da shared-usage.js) ---------------
+
+function popupHtml(point) {
+  const state = pointState(point);
+  return `<strong>${point.cpo || 'Operatore'}</strong>${point.is_a22 ? ' <span class="badge bg-warning text-dark">A22</span>' : ''}<br>${point.indirizzo || '—'}<br>Stato: ${state}${EVUsage.stationHtml(point.id_evse, { realTime: point.real_time })}`;
 }
 
-function usageSectionHtml(point) {
-  if (!point.real_time) {
-    return '<div class="popup-usage small text-muted mt-2">Questa colonnina non pubblica lo stato in tempo reale: l\'uso non è calcolabile.</div>';
+// --- Mappa: cluster per attive/non attive, punti singoli per in-uso/A22 -
+
+function toGeoJSON(points) {
+  return {
+    type: 'FeatureCollection',
+    features: points.map((p) => ({
+      type: 'Feature',
+      properties: { id_evse: p.id_evse },
+      geometry: { type: 'Point', coordinates: [p.lon, p.lat] },
+    })),
+  };
+}
+
+function addClusterGroup(sourceId, points, color) {
+  const data = toGeoJSON(points);
+  if (map.getSource(sourceId)) {
+    map.getSource(sourceId).setData(data);
+    return;
   }
 
-  const usage = stationsUsage && stationsUsage.stazioni ? stationsUsage.stazioni[point.id_evse] : null;
-  if (!usage) {
-    return '<div class="popup-usage small text-muted mt-2">Dati d\'uso non ancora disponibili.</div>';
-  }
-  if (usage.n_sessioni === 0) {
-    return '<div class="popup-usage small text-muted mt-2">Nessuna sessione di ricarica osservata finora.</div>';
-  }
+  map.addSource(sourceId, {
+    type: 'geojson',
+    data,
+    cluster: true,
+    clusterMaxZoom: 14,
+    clusterRadius: 45,
+  });
 
-  const ora = oraPiuUsata(usage.profilo_orario);
-  const righe = [
-    `<dt>Sessioni osservate</dt><dd>${usage.n_sessioni}</dd>`,
-    usage.durata_media_minuti != null ? `<dt>Durata media</dt><dd>${usage.durata_media_minuti} min</dd>` : '',
-    usage.energia_totale_kwh_stimata != null
-      ? `<dt>Energia erogata (stima)</dt><dd>${usage.energia_totale_kwh_stimata} kWh</dd>`
-      : '',
-    ora ? `<dt>Ora più usata</dt><dd>${ora.ora}:00 (${ora.quota_charging}% delle rilevazioni)</dd>` : '',
-    usage.giorno_settimana_piu_usato
-      ? `<dt>Giorno più usato</dt><dd>${usage.giorno_settimana_piu_usato.giorno}</dd>`
-      : '<dt>Giorno più usato</dt><dd class="text-muted">servono più giorni di storico</dd>',
-    usage.giorno_record
-      ? `<dt>Giorno record</dt><dd>${usage.giorno_record.data} (${usage.giorno_record.minuti_ricarica_totali} min totali)</dd>`
-      : '',
-  ]
-    .filter(Boolean)
-    .join('');
+  map.addLayer({
+    id: `${sourceId}-clusters`,
+    type: 'circle',
+    source: sourceId,
+    filter: ['has', 'point_count'],
+    paint: {
+      'circle-color': color,
+      'circle-opacity': 0.85,
+      'circle-radius': ['step', ['get', 'point_count'], 14, 10, 18, 30, 24],
+      'circle-stroke-width': 2,
+      'circle-stroke-color': '#fff',
+    },
+  });
 
-  return `<dl class="popup-usage small mt-2 mb-0">${righe}</dl>`;
+  map.addLayer({
+    id: `${sourceId}-cluster-count`,
+    type: 'symbol',
+    source: sourceId,
+    filter: ['has', 'point_count'],
+    layout: {
+      'text-field': '{point_count_abbreviated}',
+      'text-size': 12,
+      'text-font': ['Noto Sans Bold'],
+    },
+    paint: { 'text-color': '#fff' },
+  });
+
+  map.addLayer({
+    id: `${sourceId}-unclustered`,
+    type: 'circle',
+    source: sourceId,
+    filter: ['!', ['has', 'point_count']],
+    paint: {
+      'circle-color': color,
+      'circle-radius': 7,
+      'circle-stroke-width': 2,
+      'circle-stroke-color': '#fff',
+    },
+  });
+
+  map.on('click', `${sourceId}-clusters`, (e) => {
+    const features = map.queryRenderedFeatures(e.point, { layers: [`${sourceId}-clusters`] });
+    const clusterId = features[0].properties.cluster_id;
+    map.getSource(sourceId).getClusterExpansionZoom(clusterId, (err, zoom) => {
+      if (err) return;
+      map.easeTo({ center: features[0].geometry.coordinates, zoom });
+    });
+  });
+
+  map.on('click', `${sourceId}-unclustered`, (e) => {
+    const feature = e.features[0];
+    const point = allPoints.find((p) => p.id_evse === feature.properties.id_evse);
+    if (!point) return;
+    new maplibregl.Popup({ offset: 10, maxWidth: '280px' })
+      .setLngLat(feature.geometry.coordinates)
+      .setHTML(popupHtml(point))
+      .addTo(map);
+  });
+
+  [`${sourceId}-clusters`, `${sourceId}-unclustered`].forEach((layerId) => {
+    map.on('mouseenter', layerId, () => {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+    map.on('mouseleave', layerId, () => {
+      map.getCanvas().style.cursor = '';
+    });
+  });
+}
+
+function renderIndividualMarkers(points, className) {
+  const markers = [];
+  points.forEach((point) => {
+    const pin = document.createElement('div');
+    pin.className = `marker-pin ${className}`;
+    const popup = new maplibregl.Popup({ offset: 12, maxWidth: '280px' }).setHTML(popupHtml(point));
+    const marker = new maplibregl.Marker({ element: pin }).setLngLat([point.lon, point.lat]).setPopup(popup).addTo(map);
+    markers.push(marker);
+  });
+  return markers;
 }
 
 function createMap(snapshot) {
@@ -281,50 +360,49 @@ function createMap(snapshot) {
   map.addControl(new maplibregl.FullscreenControl());
 
   map.on('load', () => {
-    const markerLayer = document.createElement('div');
-    markerLayer.id = 'custom-markers';
-    map.getContainer().appendChild(markerLayer);
-
     const points = snapshot.points.filter((p) => p.lat && p.lon);
     allPoints = points;
-    renderMarkers(points);
+    renderMapLayers(points);
   });
 }
 
-function renderMarkers(points) {
+function renderMapLayers(points) {
   if (!map) return;
 
-  const visible = points.filter((point) => {
-    const state = pointState(point);
-    return activeFilter === 'all' || state === activeFilter;
-  });
+  const cityPoints = points.filter((p) => !p.is_a22);
+  const a22Points = points.filter((p) => p.is_a22);
 
-  const existing = document.querySelectorAll('.maplibregl-marker');
-  existing.forEach((el) => el.remove());
+  const chargingPoints = cityPoints.filter((p) => p.stato_raw === 'CHARGING');
+  const activePoints = cityPoints.filter((p) => pointState(p) === 'Attivo' && p.stato_raw !== 'CHARGING');
+  const inactivePoints = cityPoints.filter((p) => pointState(p) === 'Non Attivo');
 
-  visible.forEach((point) => {
-    const state = pointState(point);
-    const pin = document.createElement('div');
-    pin.className = `marker-pin ${
-      state === 'Attivo' ? 'active' : state === 'In ricarica' ? 'charging' : state === 'Non Attivo' ? 'inactive' : 'unknown'
-    }${point.is_a22 ? ' a22' : ''}`;
+  const showActive = activeFilter === 'all' || activeFilter === 'Attivo';
+  const showInactive = activeFilter === 'all' || activeFilter === 'Non Attivo';
 
-    const popup = new maplibregl.Popup({ offset: 12, maxWidth: '280px' }).setHTML(
-      `<strong>${point.cpo || 'Operatore'}</strong>${point.is_a22 ? ' <span class="badge bg-warning text-dark">A22</span>' : ''}<br>${point.indirizzo || '—'}<br>Stato: ${state}${usageSectionHtml(point)}`
-    );
+  addClusterGroup('active', showActive ? activePoints : [], HERO_GREEN);
+  addClusterGroup('inactive', showInactive ? inactivePoints : [], STATUS_RED);
 
-    new maplibregl.Marker({ element: pin })
-      .setLngLat([point.lon, point.lat])
-      .setPopup(popup)
-      .addTo(map);
-    // Niente listener 'click' manuale: MapLibre attacca già un toggle del
-    // popup quando si chiama .setPopup() su un marker con elemento custom —
-    // un secondo listener qui annulla il primo (apre e richiude nello
-    // stesso click), risultando in un popup che non si apre mai.
-  });
+  a22Markers.forEach((m) => m.remove());
+  a22Markers = [];
+  document.querySelectorAll('.maplibregl-marker.charging-marker').forEach((el) => el.remove());
+
+  if (showActive) {
+    renderIndividualMarkers(chargingPoints, 'charging charging-marker');
+  }
+  a22Markers = renderIndividualMarkers(a22Points, 'a22');
 }
 
-function renderUsageHeadline(points) {
+// --- Frase riepilogo hero -------------------------------------------------
+
+function formatSituationDate(iso) {
+  const d = new Date(iso);
+  return d.toLocaleString('it-IT', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+}
+
+function renderUsageHeadline(points, generatedAt) {
+  const dateEl = document.getElementById('situation-date');
+  if (dateEl) dateEl.textContent = formatSituationDate(generatedAt);
+
   const headline = document.getElementById('usage-headline');
   if (!headline) return;
   const cityPoints = points.filter((p) => !p.is_a22);
@@ -333,7 +411,7 @@ function renderUsageHeadline(points) {
     ? stationsUsage.city.energia.totale_kwh_stimato
     : null;
 
-  let frase = `Oggi sono occupate <strong id="hl-occupate">0</strong> colonnine su <strong>${cityPoints.length}</strong>`;
+  let frase = `Al momento sono occupate <strong id="hl-occupate">0</strong> colonnine su <strong>${cityPoints.length}</strong>`;
   if (kwh != null) {
     frase += `, che hanno erogato circa <strong id="hl-kwh">0</strong> kWh finora (stima)`;
   }
@@ -349,7 +427,7 @@ function wireFilters() {
       filterButtons.forEach((btn) => btn.classList.remove('active'));
       button.classList.add('active');
       activeFilter = button.dataset.filter;
-      renderMarkers(allPoints);
+      renderMapLayers(allPoints);
     });
   });
 }
@@ -362,18 +440,18 @@ async function loadDashboard() {
   const snapshot = await snapshotResponse.json();
   if (usageResponse && usageResponse.ok) {
     stationsUsage = await usageResponse.json();
+    if (window.EVUsage) EVUsage.setData(stationsUsage);
   }
 
   const cityPoints = snapshot.points.filter((p) => !p.is_a22);
+  const a22Count = snapshot.points.filter((p) => p.is_a22).length;
+
   renderGaugeOccupied(cityPoints);
   renderStackedBar(cityPoints);
-  renderTopUsage(stationsUsage && stationsUsage.city);
-  renderA22(snapshot.points);
-  renderUsageHeadline(snapshot.points);
+  renderTopUsage(stationsUsage && stationsUsage.city, a22Count);
+  renderUsageHeadline(snapshot.points, snapshot.generated_at);
   renderTable(snapshot.points);
-  const updatedText = `Aggiornato: ${new Date(snapshot.generated_at).toLocaleString('it-IT')}`;
-  lastUpdate.textContent = updatedText;
-  tableLastUpdate.textContent = updatedText;
+  document.getElementById('table-last-update').textContent = `Aggiornato: ${formatSituationDate(snapshot.generated_at)}`;
   createMap(snapshot);
   wireFilters();
 

@@ -51,6 +51,16 @@ CATEGORIES: dict[str, list[tuple[str, str]]] = {
     'ambulatori': [('amenity', 'clinic'), ('amenity', 'doctors')],
 }
 
+# Categorie "incrocio": non hanno un nome proprio in OSM (i nodi
+# motorway_junction/traffic_signals raramente hanno un tag `name`), quindi
+# il nome mostrato è quello della via su cui si trovano, con prefisso
+# "Incrocio " — vedi fetch_road_junctions().
+# categoria -> (valori highway delle way "genitore", valori highway dei nodi da cercare su quelle way)
+JUNCTION_CATEGORIES: dict[str, tuple[list[str], list[str]]] = {
+    'svincoli_autostradali': (['motorway'], ['motorway_junction']),
+    'incroci_primarie': (['trunk', 'primary'], ['motorway_junction', 'traffic_signals']),
+}
+
 
 def element_point(el: dict) -> tuple[float, float] | None:
     if el.get('type') == 'node':
@@ -59,6 +69,18 @@ def element_point(el: dict) -> tuple[float, float] | None:
     if center:
         return center.get('lat'), center.get('lon')
     return None
+
+
+def _run_overpass_query(cat_name: str, query: str) -> list[dict]:
+    for attempt in range(3):
+        r = requests.post(OVERPASS_URL, data={'data': query}, timeout=TIMEOUT + 10, headers=HEADERS)
+        if r.status_code == 200:
+            break
+        print(f'  {cat_name}: tentativo {attempt + 1} fallito ({r.status_code}), riprovo...')
+        time.sleep(10)
+    else:
+        r.raise_for_status()
+    return r.json().get('elements', [])
 
 
 def fetch_category(cat_name: str, filters: list[tuple[str, str]]) -> list[dict]:
@@ -70,16 +92,7 @@ def fetch_category(cat_name: str, filters: list[tuple[str, str]]) -> list[dict]:
         clauses.append(f'way["{key}"="{value}"]({bbox_str});')
     query = f'[out:json][timeout:{TIMEOUT}];\n(\n  {"".join(clauses)}\n);\nout center tags;'
 
-    for attempt in range(3):
-        r = requests.post(OVERPASS_URL, data={'data': query}, timeout=TIMEOUT + 10, headers=HEADERS)
-        if r.status_code == 200:
-            break
-        print(f'  {cat_name}: tentativo {attempt + 1} fallito ({r.status_code}), riprovo...')
-        time.sleep(10)
-    else:
-        r.raise_for_status()
-
-    elements = r.json().get('elements', [])
+    elements = _run_overpass_query(cat_name, query)
     items = []
     for el in elements:
         tags = el.get('tags', {}) or {}
@@ -92,6 +105,47 @@ def fetch_category(cat_name: str, filters: list[tuple[str, str]]) -> list[dict]:
     return items
 
 
+def fetch_road_junctions(cat_name: str, way_highway_values: list[str], node_highway_values: list[str]) -> list[dict]:
+    """Nodi highway=motorway_junction/traffic_signals che giacciono su way
+    highway=motorway/trunk/primary, col nome preso dalla way (i nodi stessi
+    di rado hanno un `name`). Una query sola: chiede sia le way (per i tag
+    name/ref e l'elenco dei nodi che le compongono) sia i nodi filtrati che
+    ne fanno parte, poi il match nodo->via è fatto in Python via l'elenco
+    `nodes` di ogni way."""
+    lat_min, lon_min, lat_max, lon_max = BBOX
+    bbox_str = f'{lat_min},{lon_min},{lat_max},{lon_max}'
+    way_re = '|'.join(way_highway_values)
+    node_re = '|'.join(node_highway_values)
+    query = (
+        f'[out:json][timeout:{TIMEOUT}];\n'
+        f'way["highway"~"^({way_re})$"]({bbox_str})->.w;\n'
+        f'node(w.w)["highway"~"^({node_re})$"]->.n;\n'
+        f'(.w; .n;);\n'
+        f'out body;'
+    )
+    elements = _run_overpass_query(cat_name, query)
+
+    ways = [el for el in elements if el.get('type') == 'way']
+    nodes = {el['id']: el for el in elements if el.get('type') == 'node'}
+
+    node_to_way_tags: dict[int, dict] = {}
+    for way in ways:
+        way_tags = way.get('tags', {}) or {}
+        for node_id in way.get('nodes', []):
+            if node_id in nodes and node_id not in node_to_way_tags:
+                node_to_way_tags[node_id] = way_tags
+
+    items = []
+    for node_id, node in nodes.items():
+        lat, lon = node.get('lat'), node.get('lon')
+        if lat is None or lon is None:
+            continue
+        way_tags = node_to_way_tags.get(node_id, {})
+        nome_via = way_tags.get('name') or way_tags.get('ref') or 'via senza nome'
+        items.append({'name': f'Incrocio {nome_via}', 'lat': round(float(lat), 6), 'lon': round(float(lon), 6)})
+    return items
+
+
 def fetch() -> dict:
     categories: dict[str, list[dict]] = {}
     for cat_name, filters in CATEGORIES.items():
@@ -99,6 +153,11 @@ def fetch() -> dict:
         categories[cat_name] = fetch_category(cat_name, filters)
         print(f'  {cat_name}: {len(categories[cat_name])} elementi')
         time.sleep(2)  # non martellare un servizio pubblico condiviso
+    for cat_name, (way_values, node_values) in JUNCTION_CATEGORIES.items():
+        print(f'interrogo Overpass per "{cat_name}"...')
+        categories[cat_name] = fetch_road_junctions(cat_name, way_values, node_values)
+        print(f'  {cat_name}: {len(categories[cat_name])} elementi')
+        time.sleep(2)
     return categories
 
 

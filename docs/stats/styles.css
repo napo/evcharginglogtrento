@@ -1,17 +1,39 @@
-/* Stessa palette derivata dall'hero di docs/styles.css — vedi quel file per
-   la provenienza e la validazione (skill dataviz, CVD-safe). */
+/* Stessa palette di docs/styles.css — vedi quel file per la provenienza e
+   la validazione (skill dataviz, CVD-safe). */
 :root {
-  --bs-primary: #0b98cb;
-  --bs-primary-rgb: 11, 152, 203;
+  --bs-primary: #096277;
+  --bs-primary-rgb: 9, 98, 119;
   --bs-success: #1da542;
   --bs-success-rgb: 29, 165, 66;
   --bs-danger: #35528d;
   --bs-danger-rgb: 53, 82, 141;
-  --hero-blue-pale: #7edcfe;
+  --hero-blue-pale: #b8edfa;
+  --status-red: #b02a2a;
 }
 
 body {
   background: #f4f7fb;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.navbar-brand img {
+  height: 32px;
+  width: auto;
+}
+
+.popup-usage dt {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.popup-usage dd {
+  margin-bottom: 0.35rem;
+}
+
+.station-link {
+  cursor: default;
+  border-bottom: 1px dotted #999;
 }
 
 [data-aos] {

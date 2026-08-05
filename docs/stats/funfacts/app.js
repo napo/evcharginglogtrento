@@ -10,12 +10,13 @@ function osmLink(lat, lon) {
   return `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=17/${lat}/${lon}`;
 }
 
-function listItemHtml(rank, indirizzo, sottotitolo, lat, lon) {
+function listItemHtml(rank, indirizzo, sottotitolo, lat, lon, idEvse) {
+  const nomeAttr = idEvse ? ` data-station-popover="${idEvse}"` : '';
   return `
     <div class="list-group-item d-flex justify-content-between align-items-start gap-3">
       <div>
         <span class="badge bg-secondary me-2">#${rank}</span>
-        <strong>${indirizzo}</strong>
+        <strong class="station-link"${nomeAttr}>${indirizzo}</strong>
         <div class="small text-muted">${sottotitolo}</div>
       </div>
       <a href="${osmLink(lat, lon)}" target="_blank" rel="noopener" class="small text-nowrap">Vedi su mappa ↗</a>
@@ -47,9 +48,11 @@ function renderTop3Block(prefix, block) {
   col.classList.remove('d-none');
   document.getElementById(`top3-${prefix}-title`).textContent = block.titolo;
   document.getElementById(`top3-${prefix}-desc`).textContent = block.descrizione || '';
-  document.getElementById(`top3-${prefix}-list`).innerHTML = block.items
-    .map((item) => listItemHtml(item.rank, item.indirizzo, `${item.cpo} · ${item.valore}`, item.lat, item.lon))
+  const list = document.getElementById(`top3-${prefix}-list`);
+  list.innerHTML = block.items
+    .map((item) => listItemHtml(item.rank, item.indirizzo, `${item.cpo} · ${item.valore}`, item.lat, item.lon, item.id_evse))
     .join('');
+  if (window.EVUsage) EVUsage.wirePopovers(list);
   return true;
 }
 
@@ -58,8 +61,9 @@ function renderUsoItems(tier) {
   const top3 = filtered.slice(0, 3);
   const list = document.getElementById('top3-uso-list');
   list.innerHTML = top3.length
-    ? top3.map((item, i) => listItemHtml(i + 1, item.indirizzo, `${item.cpo} · ${item.valore}`, item.lat, item.lon)).join('')
+    ? top3.map((item, i) => listItemHtml(i + 1, item.indirizzo, `${item.cpo} · ${item.valore}`, item.lat, item.lon, item.id_evse)).join('')
     : '<div class="list-group-item text-muted small">Nessuna colonnina in questa fascia di potenza.</div>';
+  if (window.EVUsage) EVUsage.wirePopovers(list);
 }
 
 function wireUsoFilter() {
@@ -89,16 +93,18 @@ function renderOperatorsSection(stats, perOperatore) {
   if (!stats || !stats.operators || stats.operators.length === 0) return;
   section.classList.remove('d-none');
 
-  document.getElementById('operators-top3-list').innerHTML = stats.operators
+  const operatorsTop3List = document.getElementById('operators-top3-list');
+  operatorsTop3List.innerHTML = stats.operators
     .slice(0, 3)
     .map(
       (op, i) => `
       <div class="list-group-item d-flex justify-content-between align-items-center">
-        <div><span class="badge bg-secondary me-2">#${i + 1}</span><strong>${op.name}</strong></div>
+        <div><span class="badge bg-secondary me-2">#${i + 1}</span><strong class="station-link" data-operator-popover="${op.name}">${op.name}</strong></div>
         <span class="text-muted small">${op.count} colonnine</span>
       </div>`
     )
     .join('');
+  if (window.EVUsage) EVUsage.wirePopovers(operatorsTop3List);
 
   const select = document.getElementById('operator-select');
   const drilldownList = document.getElementById('operator-drilldown-list');
@@ -116,18 +122,23 @@ function renderOperatorsSection(stats, perOperatore) {
   const renderDrilldown = () => {
     const items = (perOperatore[select.value] || {}).items || [];
     drilldownList.innerHTML = items.length
-      ? items.map((item) => listItemHtml(item.rank, item.indirizzo, item.valore, item.lat, item.lon)).join('')
+      ? items.map((item) => listItemHtml(item.rank, item.indirizzo, item.valore, item.lat, item.lon, item.id_evse)).join('')
       : '<div class="list-group-item text-muted small">Nessun dato.</div>';
+    if (window.EVUsage) EVUsage.wirePopovers(drilldownList);
   };
   select.addEventListener('change', renderDrilldown);
   renderDrilldown();
 }
 
 async function loadCuriosities() {
-  const [curiosResponse, statsResponse] = await Promise.all([
+  const [curiosResponse, statsResponse, usageResponse] = await Promise.all([
     fetch('../data/curiosities.json'),
     fetch('../data/stats.json').catch(() => null),
+    fetch('../../stations_usage.json').catch(() => null),
   ]);
+  if (usageResponse && usageResponse.ok && window.EVUsage) {
+    EVUsage.setData(await usageResponse.json());
+  }
   if (!curiosResponse.ok) {
     emptyState.classList.remove('d-none');
     return;
