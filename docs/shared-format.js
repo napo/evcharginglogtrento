@@ -35,5 +35,23 @@ window.EVFormat = (() => {
     return d.toLocaleDateString('it-IT', { month: 'short', year: 'numeric' });
   }
 
-  return { dateTime, dateOnly, monthYear };
+  const pad2 = (n) => String(n).padStart(2, '0');
+
+  // Formato richiesto specificamente per il contenuto dei popup/popover
+  // (mappa e hover su nome colonnina/operatore): DD/MM/YYYY [HH:MM],
+  // diverso dal formato "mer 05 ago 2026" usato nel resto del sito perché
+  // più compatto in uno spazio piccolo come un popup.
+  function popupDateTime(isoLike) {
+    const d = new Date(isoLike);
+    if (Number.isNaN(d.getTime())) return '';
+    return `${pad2(d.getDate())}/${pad2(d.getMonth() + 1)}/${d.getFullYear()} ${pad2(d.getHours())}:${pad2(d.getMinutes())}`;
+  }
+
+  function popupDate(isoDate) {
+    const d = new Date(`${isoDate}T00:00:00`);
+    if (Number.isNaN(d.getTime())) return '';
+    return `${pad2(d.getDate())}/${pad2(d.getMonth() + 1)}/${d.getFullYear()}`;
+  }
+
+  return { dateTime, dateOnly, monthYear, popupDateTime, popupDate };
 })();

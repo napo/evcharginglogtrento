@@ -240,11 +240,19 @@ a:hover {
 
 /* --- Mappa ----------------------------------------------------------------- */
 
+/* Niente overflow:hidden qui: MapLibre attacca popup/marker/controlli come
+   figli diretti di questo elemento, e con overflow:hidden un popup che
+   sconfina oltre i bordi (es. vicino al margine superiore della mappa)
+   viene tagliato via — compreso il pulsante di chiusura, che sta proprio
+   nell'angolo. L'arrotondamento visivo si applica solo al canvas. */
 .map-container {
   width: 100%;
   height: 520px;
   border-radius: 0.75rem;
-  overflow: hidden;
+}
+
+.map-container .maplibregl-canvas {
+  border-radius: 0.75rem;
 }
 
 .marker-pin {

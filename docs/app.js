@@ -282,8 +282,9 @@ function highlightMapPoint(point) {
   focusMarker = new maplibregl.Marker({ element: el }).setLngLat([point.lon, point.lat]).addTo(map);
   focusPopup = new maplibregl.Popup({ offset: 12, maxWidth: '280px' })
     .setLngLat([point.lon, point.lat])
-    .setHTML(popupHtml(point))
-    .addTo(map);
+    .setHTML(popupHtml(point));
+  focusPopup.on('open', () => ensurePopupVisible(focusPopup));
+  focusPopup.addTo(map);
 }
 
 function flyToPoint(idEvse) {
@@ -317,6 +318,37 @@ function wireTableFocus() {
 function popupHtml(point) {
   const state = pointState(point);
   return `<strong>${point.cpo || 'Operatore'}</strong>${point.is_a22 ? ' <span class="badge bg-warning text-dark">A22</span>' : ''}<br>${point.indirizzo || '—'}<br>Stato: ${state}${EVUsage.stationHtml(point.id_evse, { realTime: point.real_time })}`;
+}
+
+// Un popup aperto vicino al bordo della mappa può sconfinare fuori
+// dall'area visibile (il pulsante di chiusura, in alto a destra, è la
+// prima cosa a finire fuori): dopo l'apertura si misura la sua posizione
+// reale e, se serve, si sposta la mappa quel tanto che basta per
+// riportarlo tutto dentro l'area visibile.
+function ensurePopupVisible(popup) {
+  requestAnimationFrame(() => {
+    const popupEl = popup.getElement();
+    const mapEl = map && map.getContainer();
+    if (!popupEl || !mapEl) return;
+    const mapRect = mapEl.getBoundingClientRect();
+    const popupRect = popupEl.getBoundingClientRect();
+    const margin = 16;
+    let dx = 0;
+    let dy = 0;
+    if (popupRect.top < mapRect.top + margin) {
+      dy = popupRect.top - (mapRect.top + margin);
+    } else if (popupRect.bottom > mapRect.bottom - margin) {
+      dy = popupRect.bottom - (mapRect.bottom - margin);
+    }
+    if (popupRect.left < mapRect.left + margin) {
+      dx = popupRect.left - (mapRect.left + margin);
+    } else if (popupRect.right > mapRect.right - margin) {
+      dx = popupRect.right - (mapRect.right - margin);
+    }
+    if (dx !== 0 || dy !== 0) {
+      map.panBy([dx, dy], { duration: 400 });
+    }
+  });
 }
 
 // --- Mappa: cluster per attive/non attive, punti singoli per in-uso/A22 -
@@ -401,10 +433,11 @@ function addClusterGroup(sourceId, points, color) {
     const point = allPoints.find((p) => p.id_evse === feature.properties.id_evse);
     if (!point) return;
     clearFocus();
-    new maplibregl.Popup({ offset: 10, maxWidth: '280px' })
+    const popup = new maplibregl.Popup({ offset: 10, maxWidth: '280px' })
       .setLngLat(feature.geometry.coordinates)
-      .setHTML(popupHtml(point))
-      .addTo(map);
+      .setHTML(popupHtml(point));
+    popup.on('open', () => ensurePopupVisible(popup));
+    popup.addTo(map);
   });
 
   [`${sourceId}-clusters`, `${sourceId}-unclustered`].forEach((layerId) => {
@@ -428,6 +461,7 @@ function renderIndividualMarkers(points, className) {
     // risolto in una sessione precedente).
     pin.addEventListener('click', () => clearFocus());
     const popup = new maplibregl.Popup({ offset: 12, maxWidth: '280px' }).setHTML(popupHtml(point));
+    popup.on('open', () => ensurePopupVisible(popup));
     const marker = new maplibregl.Marker({ element: pin }).setLngLat([point.lon, point.lat]).setPopup(popup).addTo(map);
     markers.push(marker);
   });
