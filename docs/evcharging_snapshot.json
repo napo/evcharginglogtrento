@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T15:22:54+00:00",
+  "generated_at": "2026-08-05T15:28:01+00:00",
   "stats": {
     "total": 213,
     "active": 193,
@@ -640,7 +640,7 @@
     {
       "id_evse": "IT*IOY*E421706",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "IONITY GMBH",
       "indirizzo": "Via Ezio Maccani 157",
@@ -2926,7 +2926,7 @@
     {
       "id_evse": "IT*TSL*EA6H0AV",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "Tesla Italia Srl.",
       "indirizzo": "11, Via Innsbruck",
