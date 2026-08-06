@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-06T08:55:49+00:00",
+  "generated_at": "2026-08-06T09:00:55+00:00",
   "stats": {
     "total": 213,
-    "active": 195,
-    "inactive": 18,
+    "active": 194,
+    "inactive": 19,
     "charging": 17
   },
   "points": [
@@ -2620,7 +2620,7 @@
     {
       "id_evse": "IT*ELC*EYMGB",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "Electra Italia s.r.l.",
       "indirizzo": "Via Ragazzi del 99",
@@ -3591,8 +3591,8 @@
     },
     {
       "id_evse": "IT*IOY*E421705",
-      "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato": "Non Attivo",
+      "stato_raw": "BLOCKED",
       "real_time": true,
       "cpo": "IONITY GMBH",
       "indirizzo": "Via Ezio Maccani 157",
