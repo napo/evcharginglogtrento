@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T09:21:15+00:00",
+  "generated_at": "2026-08-06T09:26:20+00:00",
   "stats": {
     "total": 213,
     "active": 194,
@@ -1234,7 +1234,7 @@
     {
       "id_evse": "IT*TSL*EA4UB06",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "Tesla Italia Srl.",
       "indirizzo": "11, Via Innsbruck",
@@ -3808,7 +3808,7 @@
     {
       "id_evse": "IT*TSL*EA4RR91",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "Tesla Italia Srl.",
       "indirizzo": "11, Via Innsbruck",
