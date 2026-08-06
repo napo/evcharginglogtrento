@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-06T21:02:44+00:00",
+  "generated_at": "2026-08-06T21:07:50+00:00",
   "stats": {
     "total": 213,
-    "active": 194,
-    "inactive": 19,
-    "charging": 13
+    "active": 195,
+    "inactive": 18,
+    "charging": 14
   },
   "points": [
     {
@@ -424,7 +424,7 @@
     {
       "id_evse": "IT*ELC*EYBYR",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "Electra Italia s.r.l.",
       "indirizzo": "Via Ragazzi del 99",
@@ -622,7 +622,7 @@
     {
       "id_evse": "IT*IOY*E421704",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "IONITY GMBH",
       "indirizzo": "Via Ezio Maccani 157",
@@ -927,8 +927,8 @@
     },
     {
       "id_evse": "IT*PLN*EH001740*1",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "BEC",
       "indirizzo": "Via Valnigra",
@@ -1072,7 +1072,7 @@
     {
       "id_evse": "IT*PLN*EH003157*3",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "BEC",
       "indirizzo": "Via della Torre Franca",
