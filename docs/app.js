@@ -223,7 +223,9 @@ function renderTable(items) {
   tableBody.innerHTML = rows
     .map(({ item, state }) => {
       const lastUsed = lastUsedIso(item.id_evse);
-      const lastUsedLabel = lastUsed && window.EVFormat ? EVFormat.popupDate(lastUsed.split('T')[0]) : '—';
+      const lastUsedLabel = state.label === 'In uso'
+        ? 'ora'
+        : (lastUsed && window.EVFormat ? EVFormat.popupDate(lastUsed.split('T')[0]) : '—');
       return `
         <tr data-id-evse="${item.id_evse}">
           <td><span class="badge rounded-pill badge-state ${state.cls}">${state.label}</span></td>
