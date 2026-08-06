@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-06T14:29:00+00:00",
+  "generated_at": "2026-08-06T14:34:06+00:00",
   "stats": {
     "total": 213,
-    "active": 197,
-    "inactive": 16,
-    "charging": 17
+    "active": 196,
+    "inactive": 17,
+    "charging": 16
   },
   "points": [
     {
@@ -622,7 +622,7 @@
     {
       "id_evse": "IT*IOY*E421704",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "IONITY GMBH",
       "indirizzo": "Via Ezio Maccani 157",
@@ -639,8 +639,8 @@
     },
     {
       "id_evse": "IT*IOY*E421706",
-      "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato": "Non Attivo",
+      "stato_raw": "BLOCKED",
       "real_time": true,
       "cpo": "IONITY GMBH",
       "indirizzo": "Via Ezio Maccani 157",
@@ -1414,7 +1414,7 @@
     {
       "id_evse": "ITGESE797904073",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "Go Electric Stations SRLS",
       "indirizzo": "Via Ponte Alto",
