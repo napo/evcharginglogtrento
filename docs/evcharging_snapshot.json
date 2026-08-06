@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-06T05:55:30+00:00",
+  "generated_at": "2026-08-06T06:00:37+00:00",
   "stats": {
     "total": 213,
-    "active": 192,
-    "inactive": 21,
+    "active": 197,
+    "inactive": 16,
     "charging": 8
   },
   "points": [
@@ -513,8 +513,8 @@
     },
     {
       "id_evse": "IT*ENX*E21BZ1518A*3",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "ENEL X WAY ITALIA SRL",
       "indirizzo": "Via Roberto da Sanseverino, 97",
@@ -2655,8 +2655,8 @@
     },
     {
       "id_evse": "IT*ENX*E21BZ1518A*1",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "ENEL X WAY ITALIA SRL",
       "indirizzo": "Via Roberto da Sanseverino, 97",
@@ -3501,8 +3501,8 @@
     },
     {
       "id_evse": "IT*ENX*E21BZ1518A*2",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "ENEL X WAY ITALIA SRL",
       "indirizzo": "Via Roberto da Sanseverino, 97",
@@ -3519,8 +3519,8 @@
     },
     {
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "ENEL X WAY ITALIA SRL",
       "indirizzo": "Via Roberto da Sanseverino, 97",
@@ -3537,8 +3537,8 @@
     },
     {
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "ENEL X WAY ITALIA SRL",
       "indirizzo": "Via Roberto da Sanseverino, 97",
