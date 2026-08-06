@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T06:15:54+00:00",
+  "generated_at": "2026-08-06T06:21:00+00:00",
   "stats": {
     "total": 213,
     "active": 197,
@@ -352,7 +352,7 @@
     {
       "id_evse": "IT*ATE*E00271*2",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "Atlante S.r.l",
       "indirizzo": "Strada di Cadine 13",
@@ -586,7 +586,7 @@
     {
       "id_evse": "IT*EWI*EEW0307S1*1",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "EWIVA SRL",
       "indirizzo": "Via Ezio Maccani, 133",
