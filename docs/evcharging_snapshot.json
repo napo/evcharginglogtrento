@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-06T08:45:39+00:00",
+  "generated_at": "2026-08-06T08:50:44+00:00",
   "stats": {
     "total": 213,
-    "active": 194,
-    "inactive": 19,
+    "active": 195,
+    "inactive": 18,
     "charging": 16
   },
   "points": [
@@ -388,7 +388,7 @@
     {
       "id_evse": "IT*ELC*EXCGE",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "Electra Italia s.r.l.",
       "indirizzo": "Via Ragazzi del 99",
@@ -424,7 +424,7 @@
     {
       "id_evse": "IT*ELC*EYBYR",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "Electra Italia s.r.l.",
       "indirizzo": "Via Ragazzi del 99",
@@ -747,8 +747,8 @@
     },
     {
       "id_evse": "IT*PLN*EE006452*2",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "BEC",
       "indirizzo": "Via delle Sugarine",
@@ -1234,7 +1234,7 @@
     {
       "id_evse": "IT*TSL*EA4UB06",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "Tesla Italia Srl.",
       "indirizzo": "11, Via Innsbruck",
