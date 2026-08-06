@@ -195,11 +195,20 @@ a:hover {
 .popup-usage dt {
   font-weight: 600;
   font-size: 0.8rem;
-  color: #555555;
+  color: #111111;
 }
 
 .popup-usage dd {
   margin-bottom: 0.35rem;
+}
+
+/* Bootstrap applica a .text-muted un colore grigio con !important: dentro
+   popup/popover va comunque tutto in nero come il resto del contenuto,
+   quindi va sovrascritto esplicitamente qui invece che alla fonte (il
+   grigio resta corretto altrove nel sito). */
+.maplibregl-popup-content .text-muted,
+.popover-body .text-muted {
+  color: #111111 !important;
 }
 
 .station-link {
@@ -271,6 +280,10 @@ a:hover {
 
 .marker-pin.charging {
   background: var(--accent-color);
+}
+
+.marker-pin.spider-marker {
+  cursor: pointer;
 }
 
 /* Anello che evidenzia il punto raggiunto dal fly-to tabella→mappa:

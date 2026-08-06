@@ -36,6 +36,12 @@ let selectedRow = null;
 let focusTimer = null;
 let focusMarker = null;
 let focusPopup = null;
+let spiderfied = null;
+// Il click che apre uno spiderfy fa comunque scattare il listener 'click'
+// generico sulla mappa (registrato dopo quelli sui layer, vedi createMap):
+// senza questo flag richiuderebbe lo spiderfy nello stesso istante in cui
+// lo si è aperto.
+let suppressSpiderClose = false;
 
 function pointState(point) {
   return point.stato || statusLabel[point.stato_raw] || 'Sconosciuto';
@@ -369,9 +375,91 @@ function toGeoJSON(points) {
   };
 }
 
+// Chiude l'eventuale "spiderfy" in corso (vedi spiderfyCluster più sotto):
+// rimuove i marker esplosi, le linee che li collegano al centro del
+// cluster e ripristina il filtro che nascondeva quel cluster.
+function unspiderfy() {
+  if (!spiderfied) return;
+  spiderfied.markers.forEach((m) => m.remove());
+  if (map.getLayer('spider-legs-line')) map.removeLayer('spider-legs-line');
+  if (map.getSource('spider-legs')) map.removeSource('spider-legs');
+  if (map.getLayer(`${spiderfied.sourceId}-clusters`)) {
+    map.setFilter(`${spiderfied.sourceId}-clusters`, ['has', 'point_count']);
+  }
+  if (map.getLayer(`${spiderfied.sourceId}-cluster-count`)) {
+    map.setFilter(`${spiderfied.sourceId}-cluster-count`, ['has', 'point_count']);
+  }
+  spiderfied = null;
+}
+
+function openPopupForPoint(point, lngLat) {
+  clearFocus();
+  const popup = new maplibregl.Popup({ offset: 10, maxWidth: '280px' })
+    .setLngLat(lngLat)
+    .setHTML(popupHtml(point));
+  popup.on('open', () => ensurePopupVisible(popup));
+  popup.addTo(map);
+}
+
+// Alcune colonnine condividono esattamente le stesse coordinate (più EVSE
+// alla stessa stazione): il cluster che le raggruppa non si "rompe" mai
+// zoomando, perché supercluster continua a vederle sovrapposte anche al
+// suo zoom massimo. In quel caso, invece di continuare a zoomare a vuoto,
+// si "esplodono" i punti in cerchio intorno al centro del cluster e li si
+// collega con una linea che ne indica l'origine comune (comportamento
+// nativo di Leaflet.markercluster, qui replicato a mano perché il
+// clustering di MapLibre/supercluster non lo offre di serie).
+function spiderfyCluster(sourceId, clusterId, center, leaves, color) {
+  unspiderfy();
+
+  const centerPx = map.project(center);
+  const n = leaves.length;
+  const radius = Math.min(70, 24 + n * 6);
+  const legFeatures = [];
+  const markers = [];
+
+  leaves.forEach((leaf, i) => {
+    const angle = (i / n) * Math.PI * 2 - Math.PI / 2;
+    const px = { x: centerPx.x + Math.cos(angle) * radius, y: centerPx.y + Math.sin(angle) * radius };
+    const lngLat = map.unproject(px);
+
+    legFeatures.push({
+      type: 'Feature',
+      geometry: { type: 'LineString', coordinates: [center, [lngLat.lng, lngLat.lat]] },
+    });
+
+    const el = document.createElement('div');
+    el.className = 'marker-pin spider-marker';
+    el.style.background = color;
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const point = allPoints.find((p) => p.id_evse === leaf.properties.id_evse);
+      if (point) openPopupForPoint(point, [lngLat.lng, lngLat.lat]);
+    });
+    markers.push(new maplibregl.Marker({ element: el }).setLngLat(lngLat).addTo(map));
+  });
+
+  map.addSource('spider-legs', {
+    type: 'geojson',
+    data: { type: 'FeatureCollection', features: legFeatures },
+  });
+  map.addLayer({
+    id: 'spider-legs-line',
+    type: 'line',
+    source: 'spider-legs',
+    paint: { 'line-color': color, 'line-width': 1.5, 'line-dasharray': [2, 2] },
+  });
+
+  map.setFilter(`${sourceId}-clusters`, ['all', ['has', 'point_count'], ['!=', ['get', 'cluster_id'], clusterId]]);
+  map.setFilter(`${sourceId}-cluster-count`, ['all', ['has', 'point_count'], ['!=', ['get', 'cluster_id'], clusterId]]);
+
+  spiderfied = { sourceId, markers };
+}
+
 function addClusterGroup(sourceId, points, color) {
   const data = toGeoJSON(points);
   if (map.getSource(sourceId)) {
+    unspiderfy();
     map.getSource(sourceId).setData(data);
     return;
   }
@@ -427,9 +515,25 @@ function addClusterGroup(sourceId, points, color) {
   map.on('click', `${sourceId}-clusters`, (e) => {
     const features = map.queryRenderedFeatures(e.point, { layers: [`${sourceId}-clusters`] });
     const clusterId = features[0].properties.cluster_id;
-    map.getSource(sourceId).getClusterExpansionZoom(clusterId, (err, zoom) => {
-      if (err) return;
-      map.easeTo({ center: features[0].geometry.coordinates, zoom });
+    const pointCount = features[0].properties.point_count;
+    const center = features[0].geometry.coordinates;
+    const source = map.getSource(sourceId);
+    source.getClusterLeaves(clusterId, pointCount, 0, (leavesErr, leaves) => {
+      if (leavesErr) return;
+      const concentric = leaves.every((f) => {
+        const [lon, lat] = f.geometry.coordinates;
+        return Math.abs(lon - center[0]) < 1e-7 && Math.abs(lat - center[1]) < 1e-7;
+      });
+      if (concentric) {
+        suppressSpiderClose = true;
+        spiderfyCluster(sourceId, clusterId, center, leaves, color);
+        return;
+      }
+      unspiderfy();
+      source.getClusterExpansionZoom(clusterId, (zoomErr, zoom) => {
+        if (zoomErr) return;
+        map.easeTo({ center, zoom });
+      });
     });
   });
 
@@ -489,6 +593,20 @@ function createMap(snapshot) {
     const points = snapshot.points.filter((p) => p.lat && p.lon);
     allPoints = points;
     renderMapLayers(points);
+
+    // Registrati dopo i click handler dei layer (aggiunti da renderMapLayers
+    // qui sopra): MapLibre esegue i listener 'click' nell'ordine in cui
+    // sono stati registrati, quindi questi vedono già l'eventuale
+    // suppressSpiderClose impostato dal click sul cluster nello stesso evento.
+    map.on('zoomstart', unspiderfy);
+    map.on('dragstart', unspiderfy);
+    map.on('click', () => {
+      if (suppressSpiderClose) {
+        suppressSpiderClose = false;
+        return;
+      }
+      unspiderfy();
+    });
   });
 }
 
