@@ -1,11 +1,11 @@
 {
   "summary": {
     "total": 201,
-    "active": 162,
-    "inactive": 25,
-    "charging": 14,
-    "share_active": 80.6,
-    "generated_at": "2026-08-05T20:02:24+00:00"
+    "active": 173,
+    "inactive": 22,
+    "charging": 6,
+    "share_active": 86.1,
+    "generated_at": "2026-08-06T03:51:40+00:00"
   },
   "a22": {
     "count": 12,
@@ -41,7 +41,7 @@
     {
       "name": "BEC",
       "count": 34,
-      "active": 27,
+      "active": 32,
       "by_power": {
         "lenta": 0,
         "rapida": 22,
@@ -51,7 +51,7 @@
     {
       "name": "Tesla Italia Srl.",
       "count": 16,
-      "active": 6,
+      "active": 9,
       "by_power": {
         "lenta": 6,
         "rapida": 0,
@@ -61,7 +61,7 @@
     {
       "name": "ENEL X WAY ITALIA SRL",
       "count": 12,
-      "active": 5,
+      "active": 7,
       "by_power": {
         "lenta": 8,
         "rapida": 2,
@@ -81,7 +81,7 @@
     {
       "name": "Electra Italia s.r.l.",
       "count": 6,
-      "active": 6,
+      "active": 5,
       "by_power": {
         "lenta": 0,
         "rapida": 0,
@@ -101,7 +101,7 @@
     {
       "name": "IONITY GMBH",
       "count": 6,
-      "active": 4,
+      "active": 5,
       "by_power": {
         "lenta": 0,
         "rapida": 0,
@@ -111,7 +111,7 @@
     {
       "name": "Plenitude On The Road S.r.l.",
       "count": 6,
-      "active": 4,
+      "active": 5,
       "by_power": {
         "lenta": 0,
         "rapida": 2,
