@@ -88,6 +88,57 @@ function renderUsoBlock(block) {
   return true;
 }
 
+// Tabella completa degli operatori (per numero di colonnine), spostata qui
+// da stats/app.js: sulla pagina Statistiche quel blocco duplicava
+// concettualmente l'uso reale (già coperto dalla nuova tabella "Operatori —
+// ricariche"), qui invece è coerente con le altre classifiche di curiosità.
+const POWER_TIER_LABELS = { tutte: 'Colonnine', lenta: 'Colonnine ≤22 kW', rapida: 'Colonnine 22–50 kW', ultra: 'Colonnine >50 kW' };
+let statsPayloadForOperators = null;
+
+function renderOperatorsTable(data, tier = 'tutte') {
+  const container = document.getElementById('operators-table');
+  if (!container || !data) return;
+  const countFor = (op) => (tier === 'tutte' ? op.count : op.by_power[tier] || 0);
+  const rows = data.operators
+    .map((op) => ({ ...op, shown: countFor(op) }))
+    .filter((op) => op.shown > 0)
+    .sort((a, b) => b.shown - a.shown);
+
+  container.innerHTML = `
+    <div class="table-responsive">
+      <table class="table table-sm table-hover align-middle" id="operators-table-el">
+        <thead><tr><th>#</th><th>Operatore</th><th>${POWER_TIER_LABELS[tier]}</th></tr></thead>
+        <tbody>
+          ${rows
+            .map(
+              (op, i) => `
+                <tr class="${i < 3 ? 'table-warning' : ''}">
+                  <td data-sort-value="${i + 1}">${i + 1}</td>
+                  <td>
+                    <span class="station-link" data-operator-popover="${op.name}">${op.name}</span>
+                    ${op.active_unknown > 0 ? '<span class="badge bg-warning text-dark ms-1" title="Stato non aggiornato in tempo reale: occupazione stimata">stima</span>' : ''}
+                  </td>
+                  <td>${op.shown}</td>
+                </tr>`
+            )
+            .join('')}
+        </tbody>
+      </table>
+    </div>`;
+  enhanceTable(document.getElementById('operators-table-el'));
+}
+
+function wireOperatorsFilter() {
+  const buttons = Array.from(document.querySelectorAll('#operators-power-filter button'));
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      buttons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (statsPayloadForOperators) renderOperatorsTable(statsPayloadForOperators, btn.dataset.tier);
+    });
+  });
+}
+
 function renderOperatorsSection(stats, perOperatore) {
   const section = document.getElementById('operators-section');
   if (!stats || !stats.operators || stats.operators.length === 0) return;
@@ -105,6 +156,10 @@ function renderOperatorsSection(stats, perOperatore) {
     )
     .join('');
   if (window.EVUsage) EVUsage.wirePopovers(operatorsTop3List);
+
+  statsPayloadForOperators = stats;
+  renderOperatorsTable(stats);
+  wireOperatorsFilter();
 
   const select = document.getElementById('operator-select');
   const drilldownList = document.getElementById('operator-drilldown-list');
@@ -130,11 +185,52 @@ function renderOperatorsSection(stats, perOperatore) {
   renderDrilldown();
 }
 
+// Tabella "Colonnine e punti di interesse" per categoria OSM, spostata qui
+// da stats/app.js (dati da poi_proximity.json): sulla pagina Statistiche il
+// nuovo blocco "POI / Luoghi" (poi_usage.json) la superava, mostrando
+// l'uso reale per singolo POI invece di un aggregato per categoria.
+function renderPoiProximity(data) {
+  const section = document.getElementById('poi-proximity-section');
+  const table = document.getElementById('poi-proximity-table');
+  const note = document.getElementById('poi-proximity-note');
+  if (!table || !section) return;
+  const categorie = data && data.categorie ? Object.values(data.categorie) : [];
+  if (categorie.length === 0) return;
+  section.classList.remove('d-none');
+  note.textContent = `Colonnine cittadine entro ${data.soglia_metri} m dal punto più vicino, per categoria. Fonte: ${data.fonte_poi}.`;
+  const rows = categorie.slice().sort((a, b) => b.share - a.share);
+  table.innerHTML = `
+    <div class="table-responsive">
+      <table class="table table-sm table-hover align-middle" id="poi-proximity-table-el">
+        <thead><tr><th>Categoria</th><th>Colonnine entro soglia</th><th>% sul totale città</th><th>Esempio</th></tr></thead>
+        <tbody>
+          ${rows
+            .map(
+              (r) => `
+                <tr>
+                  <td>${r.label}</td>
+                  <td data-sort-value="${r.count_entro_soglia}">${r.count_entro_soglia} / ${data.totale_colonnine_citta}</td>
+                  <td data-sort-value="${r.share}">${r.share}%</td>
+                  <td class="small text-muted">${
+                    r.esempio
+                      ? `${r.esempio.colonnina_indirizzo} → ${r.esempio.poi_nome} (${r.esempio.distanza_m} m)`
+                      : '—'
+                  }</td>
+                </tr>`
+            )
+            .join('')}
+        </tbody>
+      </table>
+    </div>`;
+  enhanceTable(document.getElementById('poi-proximity-table-el'));
+}
+
 async function loadCuriosities() {
-  const [curiosResponse, statsResponse, usageResponse] = await Promise.all([
+  const [curiosResponse, statsResponse, usageResponse, poiProximityResponse] = await Promise.all([
     fetch('../data/curiosities.json'),
     fetch('../data/stats.json').catch(() => null),
     fetch('../../stations_usage.json').catch(() => null),
+    fetch('../data/poi_proximity.json').catch(() => null),
   ]);
   if (usageResponse && usageResponse.ok && window.EVUsage) {
     EVUsage.setData(await usageResponse.json());
@@ -154,6 +250,10 @@ async function loadCuriosities() {
 
   if (statsResponse && statsResponse.ok) {
     renderOperatorsSection(await statsResponse.json(), payload.per_operatore);
+  }
+
+  if (poiProximityResponse && poiProximityResponse.ok) {
+    renderPoiProximity(await poiProximityResponse.json());
   }
 
   if (!hasCuriosita && !hasUso && !hasPotenza) {

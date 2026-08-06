@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T05:34:20.624780+00:00",
+  "generated_at": "2026-08-06T21:05:46.812276+00:00",
   "label": "Trento città",
   "n_colonnine_real_time": 110,
   "days_collected": 3,
@@ -22,9 +22,9 @@
       },
       {
         "date": "2026-08-06",
-        "share_active": 80.0,
-        "share_charging": 4.5,
-        "n_snapshots": 4
+        "share_active": 84.3,
+        "share_charging": 12.3,
+        "n_snapshots": 52
       }
     ]
   },
@@ -39,5 +39,49 @@
     "kind": "profilo_mensile",
     "days_collected": 3,
     "days_needed": 30
+  },
+  "andamento_conteggio_giornaliero": {
+    "available": true,
+    "kind": "andamento_conteggio_giornaliero",
+    "days_collected": 3,
+    "points": [
+      {
+        "date": "2026-08-04",
+        "n_attive": 180,
+        "n_non_attive": 21,
+        "n_totale": 201
+      },
+      {
+        "date": "2026-08-05",
+        "n_attive": 178,
+        "n_non_attive": 23,
+        "n_totale": 201
+      },
+      {
+        "date": "2026-08-06",
+        "n_attive": 187,
+        "n_non_attive": 14,
+        "n_totale": 201
+      }
+    ]
+  },
+  "colonnine_monitorabili_giornaliero": {
+    "available": true,
+    "kind": "colonnine_monitorabili_giornaliero",
+    "days_collected": 3,
+    "points": [
+      {
+        "date": "2026-08-04",
+        "n_monitorabili": 110
+      },
+      {
+        "date": "2026-08-05",
+        "n_monitorabili": 110
+      },
+      {
+        "date": "2026-08-06",
+        "n_monitorabili": 110
+      }
+    ]
   }
 }

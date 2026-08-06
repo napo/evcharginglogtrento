@@ -1,26 +1,34 @@
 const summaryCards = document.getElementById('summary-cards');
 const summaryBox = document.getElementById('summary-box');
-const poisTable = document.getElementById('pois-table');
-const operatorsTable = document.getElementById('operators-table');
-const poiProximityNote = document.getElementById('poi-proximity-note');
-const poiProximityTable = document.getElementById('poi-proximity-table');
+const poiUsageNote = document.getElementById('poi-usage-note');
+const poiUsageTable = document.getElementById('poi-usage-table');
+const operatorsUsageNote = document.getElementById('operators-usage-note');
+const operatorsUsageTable = document.getElementById('operators-usage-table');
 
-let statsPayload = null;
-
-// Palette derivata dall'immagine hero (vedi ../theme.css). ACCENT è la
-// tinta chiara sulla stessa tonalità del brand (#096277), usata ovunque il
-// colore serve come tratto/testo su sfondo scuro (il brand puro fallisce
-// il contrasto minimo lì) — vedi docs/app.js per i numeri di validazione.
+// Palette derivata dall'immagine hero (vedi ../theme.css) — stessa
+// convenzione duplicata in ogni script che disegna grafici (docs/app.js,
+// shared-drilldown.js): ECharts non legge le CSS custom properties.
 const HERO_GREEN = '#1da542';
 const ACCENT = '#28a1bd';
+const STATUS_RED = '#b02a2a';
+
+const CATEGORY_LABELS = {
+  musei: 'Musei',
+  supermercati: 'Supermercati',
+  banche: 'Banche',
+  ospedali: 'Ospedali',
+  ambulatori: 'Ambulatori',
+  svincoli_autostradali: 'Svincoli autostradali',
+  incroci_primarie: 'Incroci di strade primarie',
+};
+
+let statsPayload = null;
+let usageTimeseriesRows = [];
+let raccoltaDalIso = null;
+
+// --- Summary (stats.json) ------------------------------------------------
 
 function renderSummaryCards(data) {
-  // "Attive" è divisa in due card: le colonnine il cui stato è telemetria
-  // osservata (dato reale) e quelle il cui "Attivo" è in realtà uno stub
-  // statico lato provider (NEOGY, A22, Sagelio: mai visto altro stato che
-  // "AVAILABLE" in tutto lo storico) — sommarle in un solo numero
-  // nasconderebbe che quasi metà del parco colonnine non ha un'occupazione
-  // osservata davvero.
   const cards = [
     { label: 'Colonnine', value: data.summary.total, tone: 'primary' },
     { label: 'Attiva (reale)', value: data.summary.active_known, tone: 'success' },
@@ -31,8 +39,6 @@ function renderSummaryCards(data) {
 
   summaryCards.innerHTML = cards
     .map((card) => {
-      // bg-warning (giallo) fallisce il contrasto con testo bianco: solo
-      // quella card usa testo scuro, come già per il badge A22 altrove.
       const textClass = card.tone === 'warning' ? 'text-dark' : 'text-white';
       const labelClass = card.tone === 'warning' ? 'text-black-50' : 'text-white-50';
       return `
@@ -58,170 +64,7 @@ function renderSummaryCards(data) {
   `;
 }
 
-function renderGauge(data) {
-  const el = document.getElementById('gauge-active');
-  if (!el || typeof echarts === 'undefined') return;
-  // "In uso" ha senso solo relativo alle colonnine monitorabili (real_time
-  // noto): le stimate (active_unknown) non lo sono per definizione, quindi
-  // il denominatore è il totale meno quelle — stessa quota mostrata nel
-  // blocco "Colonnine totali" per il segmento "In uso" (vedi
-  // shared-drilldown.js, che usa la stessa formula sugli stessi conteggi).
-  const monitorabili = data.summary.total - data.summary.active_unknown;
-  const quota = window.EVDrilldown ? EVDrilldown.ratio(data.summary.charging, monitorabili) : 0;
-  const chart = echarts.init(el, 'evtrento-dark');
-  chart.setOption({
-    series: [
-      {
-        type: 'gauge',
-        startAngle: 200,
-        endAngle: -20,
-        min: 0,
-        max: 100,
-        splitNumber: 5,
-        progress: { show: true, width: 16, itemStyle: { color: ACCENT } },
-        axisLine: { lineStyle: { width: 16, color: [[1, 'rgba(255,255,255,0.12)']] } },
-        pointer: { show: true, length: '55%', width: 4, itemStyle: { color: ACCENT } },
-        anchor: { show: true, size: 10, itemStyle: { color: ACCENT, borderColor: '#fff', borderWidth: 2 } },
-        axisTick: { show: false },
-        splitLine: { length: 12, lineStyle: { width: 2, color: 'rgba(255,255,255,.3)' } },
-        axisLabel: { distance: 22, fontSize: 12, color: '#aeb9cc' },
-        title: { show: false },
-        detail: {
-          valueAnimation: true,
-          formatter: (value) => `${EVDrilldown.formatPct(value)}%`,
-          width: '60%',
-          fontSize: 32,
-          fontWeight: 'bolder',
-          offsetCenter: [0, '10%'],
-          color: ACCENT,
-        },
-        data: [{ value: quota }],
-      },
-    ],
-  });
-  window.addEventListener('resize', () => chart.resize());
-
-  const caption = document.createElement('div');
-  caption.className = 'text-center text-muted small mt-2';
-  caption.textContent = `Colonnine in uso rispetto a quelle dove è possibile il monitoraggio (${monitorabili} su ${data.summary.total} totali).`;
-  el.parentElement.appendChild(caption);
-}
-
-function renderDrilldownTotali(data) {
-  const el = document.getElementById('drilldown-totali');
-  if (!el || !window.EVDrilldown) return;
-  window.EVDrilldown.render(el, {
-    attivaReale: data.summary.active_known,
-    attivaStimata: data.summary.active_unknown,
-    inUso: data.summary.charging,
-    nonAttiva: data.summary.inactive,
-  });
-}
-
-function renderPois(data) {
-  poisTable.innerHTML = `
-    <div class="table-responsive">
-      <table class="table table-sm table-hover align-middle">
-        <thead><tr><th>POI</th><th>Colonnine</th><th>Attive</th><th>di cui stimate</th><th>% attive</th></tr></thead>
-        <tbody>
-          ${data.pois
-            .map(
-              (row) => `
-                <tr>
-                  <td>${row.name}</td>
-                  <td>${row.count}</td>
-                  <td>${row.active}</td>
-                  <td>${row.active_unknown || '—'}</td>
-                  <td>${row.share_active}%</td>
-                </tr>`
-            )
-            .join('')}
-        </tbody>
-      </table>
-    </div>`;
-}
-
-const POWER_TIER_LABELS = { tutte: 'Colonnine', lenta: 'Colonnine ≤22 kW', rapida: 'Colonnine 22–50 kW', ultra: 'Colonnine >50 kW' };
-
-function renderOperators(data, tier = 'tutte') {
-  const countFor = (op) => (tier === 'tutte' ? op.count : op.by_power[tier] || 0);
-  const rows = data.operators
-    .map((op) => ({ ...op, shown: countFor(op) }))
-    .filter((op) => op.shown > 0)
-    .sort((a, b) => b.shown - a.shown);
-
-  operatorsTable.innerHTML = `
-    <div class="table-responsive">
-      <table class="table table-sm table-hover align-middle" id="operators-table-el">
-        <thead><tr><th>#</th><th>Operatore</th><th>${POWER_TIER_LABELS[tier]}</th></tr></thead>
-        <tbody>
-          ${rows
-            .map(
-              (op, i) => `
-                <tr class="${i < 3 ? 'table-warning' : ''}">
-                  <td data-sort-value="${i + 1}">${i + 1}</td>
-                  <td>
-                    <span class="station-link" data-operator-popover="${op.name}">${op.name}</span>
-                    ${op.active_unknown > 0 ? '<span class="badge bg-warning text-dark ms-1" title="Stato non aggiornato in tempo reale: occupazione stimata">stima</span>' : ''}
-                  </td>
-                  <td>${op.shown}</td>
-                </tr>`
-            )
-            .join('')}
-        </tbody>
-      </table>
-    </div>`;
-  enhanceTable(document.getElementById('operators-table-el'));
-}
-
-function wireOperatorsFilter() {
-  const buttons = Array.from(document.querySelectorAll('#operators-power-filter button'));
-  buttons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      buttons.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-      if (statsPayload) renderOperators(statsPayload, btn.dataset.tier);
-    });
-  });
-}
-
-function renderPoiProximity(data) {
-  if (!poiProximityTable) return;
-  const categorie = data && data.categorie ? Object.values(data.categorie) : [];
-  if (categorie.length === 0) {
-    poiProximityNote.textContent = '';
-    poiProximityTable.innerHTML = '<p class="text-muted mb-0">Dati non ancora disponibili: esegui fetch_poi.py e generate_poi_proximity.py.</p>';
-    return;
-  }
-  poiProximityNote.textContent = `Colonnine cittadine entro ${data.soglia_metri} m dal punto più vicino, per categoria. Fonte: ${data.fonte_poi}.`;
-  const rows = categorie.slice().sort((a, b) => b.share - a.share);
-  poiProximityTable.innerHTML = `
-    <div class="table-responsive">
-      <table class="table table-sm table-hover align-middle" id="poi-proximity-table-el">
-        <thead><tr><th>Categoria</th><th>Colonnine entro soglia</th><th>% sul totale città</th><th>Esempio</th></tr></thead>
-        <tbody>
-          ${rows
-            .map(
-              (r) => `
-                <tr>
-                  <td>${r.label}</td>
-                  <td data-sort-value="${r.count_entro_soglia}">${r.count_entro_soglia} / ${data.totale_colonnine_citta}</td>
-                  <td data-sort-value="${r.share}">${r.share}%</td>
-                  <td class="small text-muted">${
-                    r.esempio
-                      ? `${r.esempio.colonnina_indirizzo} → ${r.esempio.poi_nome} (${r.esempio.distanza_m} m)`
-                      : '—'
-                  }</td>
-                </tr>`
-            )
-            .join('')}
-        </tbody>
-      </table>
-    </div>`;
-  enhanceTable(document.getElementById('poi-proximity-table-el'));
-}
-
-// --- Andamento dell'uso (trends.json) --------------------------------
+// --- Andamento conteggio giornaliero (trends.json) -----------------------
 
 function trendMessage(block) {
   return `Raccolta dati in corso: servono almeno ${block.days_needed} giorni di storico (oggi ${block.days_collected}).`;
@@ -234,273 +77,421 @@ function renderPlaceholder(containerId, block) {
   el.innerHTML = `<div class="alert alert-light border small mb-0">${trendMessage(block)}</div>`;
 }
 
-let dailyBlockRaw = null;
-let dailyChart = null;
-let dailyTableVisible = false;
-
 function pointsInRange(points, from, to) {
   return points.filter((p) => (!from || p.date >= from) && (!to || p.date <= to));
 }
 
-function renderDailyChartPoints(points) {
-  const el = document.getElementById('chart-daily-trento');
+let countBlockRaw = null;
+let countChart = null;
+
+function renderCountDailyPoints(points) {
+  const el = document.getElementById('chart-count-daily');
   if (!el || typeof echarts === 'undefined') return;
-  if (!dailyChart) dailyChart = echarts.init(el, 'evtrento-dark');
-  dailyChart.setOption({
+  if (!countChart) countChart = echarts.init(el, 'evtrento-dark');
+  countChart.setOption({
     tooltip: { trigger: 'axis' },
-    legend: { data: ['Attive %', 'In uso %'] },
+    legend: { data: ['Attive', 'Non attive'] },
     grid: { left: 40, right: 20, top: 40, bottom: 60 },
     xAxis: {
       type: 'category',
       data: points.map((p) => (window.EVFormat ? EVFormat.dateOnly(p.date) : p.date)),
       axisLabel: { rotate: 45, fontSize: 10 },
     },
-    yAxis: { type: 'value', max: 100, axisLabel: { formatter: '{value}%' } },
+    yAxis: { type: 'value' },
     series: [
-      { name: 'Attive %', type: 'line', smooth: true, itemStyle: { color: HERO_GREEN }, data: points.map((p) => p.share_active) },
-      { name: 'In uso %', type: 'line', smooth: true, itemStyle: { color: ACCENT }, data: points.map((p) => p.share_charging) },
+      { name: 'Attive', type: 'bar', stack: 'totale', itemStyle: { color: HERO_GREEN }, data: points.map((p) => p.n_attive) },
+      { name: 'Non attive', type: 'bar', stack: 'totale', itemStyle: { color: STATUS_RED }, data: points.map((p) => p.n_non_attive) },
     ],
   });
+  if (window.EVChartTools) EVChartTools.attach(countChart, el, { filename: 'colonnine-attive-non-attive' });
 }
 
-function renderDailyTable(points) {
-  const table = document.getElementById('daily-table');
-  if (!table) return;
-  const tbody = table.querySelector('tbody');
-  tbody.innerHTML = points
-    .map(
-      (p) => `
-        <tr>
-          <td data-sort-value="${p.date}">${window.EVFormat ? EVFormat.dateOnly(p.date) : p.date}</td>
-          <td>${p.share_active}%</td>
-          <td>${p.share_charging}%</td>
-        </tr>`
-    )
-    .join('');
-  enhanceTable(table);
+function applyCountFilter() {
+  if (!countBlockRaw) return;
+  const from = document.getElementById('count-date-from')?.value || '';
+  const to = document.getElementById('count-date-to')?.value || '';
+  renderCountDailyPoints(pointsInRange(countBlockRaw.points, from, to));
 }
 
-function applyDailyFilter() {
-  if (!dailyBlockRaw) return;
-  const from = document.getElementById('daily-date-from')?.value || '';
-  const to = document.getElementById('daily-date-to')?.value || '';
-  const points = pointsInRange(dailyBlockRaw.points, from, to);
-  renderDailyChartPoints(points);
-  if (dailyTableVisible) renderDailyTable(points);
+function renderCountSection(block) {
+  if (!block.available) return renderPlaceholder('chart-count-daily', block);
+  countBlockRaw = block;
+  applyCountFilter();
+  window.addEventListener('resize', () => countChart && countChart.resize());
+  const fromInput = document.getElementById('count-date-from');
+  const toInput = document.getElementById('count-date-to');
+  [fromInput, toInput].forEach((input) => input && input.addEventListener('change', applyCountFilter));
 }
 
-function renderDailyChart(containerId, block) {
-  if (!block.available) return renderPlaceholder(containerId, block);
-  dailyBlockRaw = block;
-  applyDailyFilter();
-  window.addEventListener('resize', () => dailyChart && dailyChart.resize());
-}
+let monitorabiliBlockRaw = null;
+let monitorabiliChart = null;
 
-function wireDailyFilters() {
-  const fromInput = document.getElementById('daily-date-from');
-  const toInput = document.getElementById('daily-date-to');
-  const toggleBtn = document.getElementById('daily-table-toggle');
-  const wrap = document.getElementById('daily-table-wrap');
-  [fromInput, toInput].forEach((input) => input && input.addEventListener('change', applyDailyFilter));
-  if (toggleBtn && wrap) {
-    toggleBtn.addEventListener('click', () => {
-      dailyTableVisible = !dailyTableVisible;
-      wrap.classList.toggle('d-none', !dailyTableVisible);
-      toggleBtn.textContent = dailyTableVisible ? 'Nascondi tabella' : 'Vedi come tabella';
-      if (dailyTableVisible && dailyBlockRaw) {
-        const from = fromInput?.value || '';
-        const to = toInput?.value || '';
-        renderDailyTable(pointsInRange(dailyBlockRaw.points, from, to));
-      }
-    });
-  }
-}
-
-function renderWeeklyHeatmap(containerId, block) {
-  if (!block.available) return renderPlaceholder(containerId, block);
-  const el = document.getElementById(containerId);
+function renderMonitorabiliPoints(points) {
+  const el = document.getElementById('chart-monitorabili-daily');
   if (!el || typeof echarts === 'undefined') return;
-  const chart = echarts.init(el, 'evtrento-dark');
-  const hours = Array.from({ length: 24 }, (_, i) => `${i}:00`);
-  const data = [];
-  block.matrix_charging.forEach((row, dow) => {
-    row.forEach((v, hour) => {
-      if (v !== null) data.push([hour, dow, v]);
-    });
-  });
-  chart.setOption({
-    tooltip: { position: 'top' },
-    grid: { left: 60, right: 20, top: 20, bottom: 60 },
-    xAxis: { type: 'category', data: hours, splitArea: { show: true }, axisLabel: { fontSize: 10 } },
-    yAxis: { type: 'category', data: block.weekday_labels, splitArea: { show: true } },
-    visualMap: {
-      min: 0,
-      max: Math.max(10, ...data.map((d) => d[2])),
-      calculable: true,
-      orient: 'horizontal',
-      left: 'center',
-      bottom: 0,
-      textStyle: { color: '#aeb9cc' },
-      inRange: { color: ['#1c2540', ACCENT] },
+  if (!monitorabiliChart) monitorabiliChart = echarts.init(el, 'evtrento-dark');
+  monitorabiliChart.setOption({
+    tooltip: { trigger: 'axis' },
+    grid: { left: 40, right: 20, top: 20, bottom: 60 },
+    xAxis: {
+      type: 'category',
+      data: points.map((p) => (window.EVFormat ? EVFormat.dateOnly(p.date) : p.date)),
+      axisLabel: { rotate: 45, fontSize: 10 },
     },
-    series: [{ type: 'heatmap', data, label: { show: false } }],
+    yAxis: { type: 'value' },
+    series: [{ name: 'Colonnine monitorabili', type: 'line', smooth: true, itemStyle: { color: ACCENT }, data: points.map((p) => p.n_monitorabili) }],
   });
-  window.addEventListener('resize', () => chart.resize());
+  if (window.EVChartTools) EVChartTools.attach(monitorabiliChart, el, { filename: 'colonnine-monitorabili' });
 }
 
-function renderMonthlyTable(points) {
-  const table = document.getElementById('monthly-table');
-  if (!table) return;
-  const tbody = table.querySelector('tbody');
-  tbody.innerHTML = points
-    .map(
-      (p) => `
-        <tr>
-          <td data-sort-value="${p.month}">${window.EVFormat ? EVFormat.monthYear(p.month) : p.month}</td>
-          <td>${p.share_active}%</td>
-          <td>${p.share_charging}%</td>
-        </tr>`
-    )
-    .join('');
-  enhanceTable(table);
+function applyMonitorabiliFilter() {
+  if (!monitorabiliBlockRaw) return;
+  const from = document.getElementById('monitorabili-date-from')?.value || '';
+  const to = document.getElementById('monitorabili-date-to')?.value || '';
+  renderMonitorabiliPoints(pointsInRange(monitorabiliBlockRaw.points, from, to));
 }
 
-function renderMonthlyChart(containerId, block) {
-  if (!block.available) return renderPlaceholder(containerId, block);
-  const el = document.getElementById(containerId);
-  if (!el || typeof echarts === 'undefined') return;
-  const chart = echarts.init(el, 'evtrento-dark');
-  chart.setOption({
-    tooltip: { trigger: 'axis' },
-    legend: { data: ['Attive %', 'In uso %'] },
-    grid: { left: 40, right: 20, top: 40, bottom: 30 },
-    xAxis: { type: 'category', data: block.points.map((p) => (window.EVFormat ? EVFormat.monthYear(p.month) : p.month)) },
-    yAxis: { type: 'value', max: 100, axisLabel: { formatter: '{value}%' } },
-    series: [
-      { name: 'Attive %', type: 'bar', itemStyle: { color: HERO_GREEN }, data: block.points.map((p) => p.share_active) },
-      { name: 'In uso %', type: 'bar', itemStyle: { color: ACCENT }, data: block.points.map((p) => p.share_charging) },
-    ],
-  });
-  window.addEventListener('resize', () => chart.resize());
+function renderMonitorabiliSection(block) {
+  if (!block.available) return renderPlaceholder('chart-monitorabili-daily', block);
+  monitorabiliBlockRaw = block;
+  applyMonitorabiliFilter();
+  window.addEventListener('resize', () => monitorabiliChart && monitorabiliChart.resize());
+  const fromInput = document.getElementById('monitorabili-date-from');
+  const toInput = document.getElementById('monitorabili-date-to');
+  [fromInput, toInput].forEach((input) => input && input.addEventListener('change', applyMonitorabiliFilter));
+}
 
-  const toggleBtn = document.getElementById('monthly-table-toggle');
-  const wrap = document.getElementById('monthly-table-wrap');
-  if (toggleBtn && wrap) {
-    toggleBtn.addEventListener('click', () => {
-      const visible = !wrap.classList.contains('d-none');
-      wrap.classList.toggle('d-none', visible);
-      toggleBtn.textContent = visible ? 'Vedi come tabella' : 'Nascondi tabella';
-      if (!visible) renderMonthlyTable(block.points);
+// --- Filtri condivisi (potenza / operatore / POI) -------------------------
+
+const usageFilters = { tier: 'tutte', operator: '', poiCategory: '' };
+let granularity = 'giorno';
+
+function filterRows(rows) {
+  return rows.filter((r) => {
+    if (usageFilters.tier !== 'tutte' && r.fascia_potenza !== usageFilters.tier) return false;
+    if (usageFilters.operator && r.cpo !== usageFilters.operator) return false;
+    if (usageFilters.poiCategory && !r.poi_categorie.includes(usageFilters.poiCategory)) return false;
+    return true;
+  });
+}
+
+function populateFilterOptions(rows) {
+  const operatorSelect = document.getElementById('usage-operator-filter');
+  const poiSelect = document.getElementById('usage-poi-filter');
+  if (operatorSelect) {
+    const operators = Array.from(new Set(rows.map((r) => r.cpo))).sort((a, b) => a.localeCompare(b, 'it'));
+    operatorSelect.innerHTML = '<option value="">Tutti</option>' + operators.map((o) => `<option value="${o}">${o}</option>`).join('');
+  }
+  if (poiSelect) {
+    poiSelect.innerHTML = '<option value="">Ovunque</option>' + Object.entries(CATEGORY_LABELS)
+      .map(([key, label]) => `<option value="${key}">${label}</option>`)
+      .join('');
+  }
+}
+
+function wireUsageFilters() {
+  const buttons = Array.from(document.querySelectorAll('#usage-power-filter button'));
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      buttons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      usageFilters.tier = btn.dataset.tier;
+      refreshUsageViews();
     });
-  }
-}
-
-function renderTrends(trends) {
-  wireDailyFilters();
-  renderDailyChart('chart-daily-trento', trends.andamento_giornaliero);
-  renderWeeklyHeatmap('chart-weekly-trento', trends.profilo_settimanale);
-  renderMonthlyChart('chart-monthly-trento', trends.profilo_mensile);
-}
-
-// --- Profilo orario (stations_usage.json) -----------------------------
-
-function renderHourlyProfile(city) {
-  const el = document.getElementById('chart-hourly-profile');
-  if (!el) return;
-  if (!city || !city.profilo_orario) {
-    el.classList.remove('echart-trend');
-    el.innerHTML = '<div class="alert alert-light border small mb-0">Servono più rilevazioni distribuite nella giornata per costruire il profilo orario.</div>';
-    return;
-  }
-  if (typeof echarts === 'undefined') return;
-  const chart = echarts.init(el, 'evtrento-dark');
-  chart.setOption({
-    tooltip: { trigger: 'axis' },
-    grid: { left: 40, right: 20, top: 20, bottom: 30 },
-    xAxis: { type: 'category', data: city.profilo_orario.map((p) => `${p.ora}:00`) },
-    yAxis: { type: 'value', max: 100, axisLabel: { formatter: '{value}%' } },
-    series: [
-      {
-        name: 'In uso %',
-        type: 'bar',
-        data: city.profilo_orario.map((p) => p.quota_charging),
-        itemStyle: { color: ACCENT },
-      },
-    ],
   });
-  window.addEventListener('resize', () => chart.resize());
+
+  const operatorSelect = document.getElementById('usage-operator-filter');
+  operatorSelect?.addEventListener('change', () => {
+    usageFilters.operator = operatorSelect.value;
+    refreshUsageViews();
+  });
+
+  const poiSelect = document.getElementById('usage-poi-filter');
+  poiSelect?.addEventListener('change', () => {
+    usageFilters.poiCategory = poiSelect.value;
+    refreshUsageViews();
+  });
+
+  const granButtons = Array.from(document.querySelectorAll('#granularity-filter button'));
+  granButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      granButtons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      granularity = btn.dataset.gran;
+      renderGranularityCharts(filterRows(usageTimeseriesRows));
+    });
+  });
 }
 
-function renderEnergyCards(city) {
-  const container = document.getElementById('energy-cards');
+function refreshUsageViews() {
+  const filtered = filterRows(usageTimeseriesRows);
+  renderKpiCards(filtered);
+  renderGranularityCharts(filtered);
+  renderPoiUsageTable(lastPoiUsagePayload, usageFilters.tier);
+}
+
+// --- KPI ricariche ---------------------------------------------------------
+
+function renderKpiCards(rows) {
+  const container = document.getElementById('usage-kpi-cards');
   if (!container) return;
-  const energia = city && city.energia;
-  if (!energia) {
-    container.innerHTML = '<div class="col"><p class="text-muted mb-0">Dati non ancora disponibili.</p></div>';
+  const kwh = rows.reduce((sum, r) => sum + (r.kwh_stimato || 0), 0);
+  const sessioni = rows.reduce((sum, r) => sum + (r.n_sessioni || 0), 0);
+  const durataTotale = rows.reduce((sum, r) => sum + (r.durata_totale_minuti || 0), 0);
+
+  const now = Date.now();
+  const start = raccoltaDalIso ? new Date(raccoltaDalIso).getTime() : now;
+  const oreTrascorse = Math.max(1, (now - start) / 3600000);
+  const giorniTrascorsi = Math.max(1, oreTrascorse / 24);
+  const settimaneTrascorse = Math.max(1, giorniTrascorsi / 7);
+
+  const durataMediaRicarica = sessioni > 0 ? durataTotale / sessioni : null;
+
+  const rateCard = (label, unit, totale, tono) => `
+    <div class="col-lg-4">
+      <div class="card stat-card border-0 shadow-sm bg-${tono} bg-gradient text-white h-100">
+        <div class="card-body">
+          <div class="small text-white-50 mb-1">${label}</div>
+          <div class="small text-white-50">Oraria: <strong class="text-white">${(totale / oreTrascorse).toFixed(2)} ${unit}</strong></div>
+          <div class="small text-white-50">Giornaliera: <strong class="text-white">${(totale / giorniTrascorsi).toFixed(2)} ${unit}</strong></div>
+          <div class="small text-white-50">Settimanale: <strong class="text-white">${(totale / settimaneTrascorse).toFixed(2)} ${unit}</strong></div>
+        </div>
+      </div>
+    </div>`;
+
+  container.innerHTML = [
+    rateCard('Energia erogata (media)', 'kWh', kwh, 'success'),
+    rateCard('Ricariche (media)', 'ricariche', sessioni, 'info'),
+    `<div class="col-lg-4">
+      <div class="card stat-card border-0 shadow-sm bg-secondary bg-gradient text-white h-100">
+        <div class="card-body">
+          <div class="small text-white-50 mb-1">Durata media di una ricarica</div>
+          <div class="display-6 fw-semibold">${durataMediaRicarica != null ? durataMediaRicarica.toFixed(0) : '—'}</div>
+          <div class="small text-white-50">minuti (${sessioni} ricariche osservate, sui filtri applicati)</div>
+        </div>
+      </div>
+    </div>`,
+  ].join('');
+}
+
+// --- Serie storiche con granularità ----------------------------------------
+
+function isoWeekKey(dateStr) {
+  const d = new Date(`${dateStr}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
+  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+  const weekNo = Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
+  return `${d.getUTCFullYear()}-W${String(weekNo).padStart(2, '0')}`;
+}
+
+function periodKey(dateStr, gran) {
+  if (gran === 'settimana') return isoWeekKey(dateStr);
+  if (gran === 'mese') return dateStr.slice(0, 7);
+  return dateStr;
+}
+
+function periodLabel(key, gran) {
+  if (!window.EVFormat) return key;
+  if (gran === 'giorno') return EVFormat.dateOnly(key);
+  if (gran === 'mese') return EVFormat.monthYear(key);
+  return key; // settimana: "2026-W32" resta leggibile così com'è
+}
+
+let colonnineChart = null;
+let kwhChart = null;
+
+function aggregateHourly(rows) {
+  const perHourStations = Array(24).fill(0);
+  const perHourKwh = Array(24).fill(0);
+  const days = new Set();
+  rows.forEach((r) => {
+    days.add(r.date);
+    const oreAttive = r.ore_charging.reduce((a, b) => a + b, 0);
+    // Il dataset non registra l'energia per singola ora, solo il totale
+    // della giornata: distribuirla in parti uguali sulle ore in cui la
+    // colonnina risulta in carica è una stima ulteriore (coerente con le
+    // altre stime del sito), non una lettura reale.
+    const kwhPerOraAttiva = oreAttive > 0 && r.kwh_stimato ? r.kwh_stimato / oreAttive : 0;
+    r.ore_charging.forEach((flag, h) => {
+      if (!flag) return;
+      perHourStations[h] += 1;
+      perHourKwh[h] += kwhPerOraAttiva;
+    });
+  });
+  const nDays = days.size || 1;
+  return {
+    labels: Array.from({ length: 24 }, (_, h) => `${h}:00`),
+    stazioni: perHourStations.map((v) => v / nDays),
+    kwh: perHourKwh.map((v) => v / nDays),
+  };
+}
+
+function aggregateByPeriod(rows, gran) {
+  const buckets = new Map();
+  rows.forEach((r) => {
+    const key = periodKey(r.date, gran);
+    const b = buckets.get(key) || { stazioni: new Set(), kwh: 0 };
+    b.stazioni.add(r.id_evse);
+    b.kwh += r.kwh_stimato || 0;
+    buckets.set(key, b);
+  });
+  const keys = Array.from(buckets.keys()).sort();
+  return {
+    labels: keys.map((k) => periodLabel(k, gran)),
+    stazioni: keys.map((k) => buckets.get(k).stazioni.size),
+    kwh: keys.map((k) => Math.round(buckets.get(k).kwh * 100) / 100),
+  };
+}
+
+function renderGranularityCharts(rows) {
+  const data = granularity === 'ora' ? aggregateHourly(rows) : aggregateByPeriod(rows, granularity);
+
+  const colEl = document.getElementById('chart-colonnine-in-uso');
+  if (colEl && typeof echarts !== 'undefined') {
+    if (!colonnineChart) colonnineChart = echarts.init(colEl, 'evtrento-dark');
+    colonnineChart.setOption({
+      tooltip: { trigger: 'axis' },
+      grid: { left: 40, right: 20, top: 40, bottom: 60 },
+      xAxis: { type: 'category', data: data.labels, axisLabel: { rotate: granularity === 'ora' ? 0 : 45, fontSize: 10 } },
+      yAxis: { type: 'value' },
+      series: [{ name: 'Colonnine in uso', type: 'bar', itemStyle: { color: ACCENT }, data: data.stazioni }],
+    });
+    if (window.EVChartTools) EVChartTools.attach(colonnineChart, colEl, { filename: 'colonnine-in-uso' });
+  }
+
+  const kwhEl = document.getElementById('chart-kwh-erogati');
+  if (kwhEl && typeof echarts !== 'undefined') {
+    if (!kwhChart) kwhChart = echarts.init(kwhEl, 'evtrento-dark');
+    kwhChart.setOption({
+      tooltip: { trigger: 'axis' },
+      grid: { left: 40, right: 20, top: 20, bottom: 60 },
+      xAxis: { type: 'category', data: data.labels, axisLabel: { rotate: granularity === 'ora' ? 0 : 45, fontSize: 10 } },
+      yAxis: { type: 'value', name: 'kWh' },
+      series: [{ name: 'kWh erogati', type: 'line', smooth: true, itemStyle: { color: HERO_GREEN }, data: data.kwh }],
+    });
+    if (window.EVChartTools) EVChartTools.attach(kwhChart, kwhEl, { filename: 'kwh-erogati' });
+  }
+
+  window.addEventListener('resize', () => {
+    colonnineChart && colonnineChart.resize();
+    kwhChart && kwhChart.resize();
+  });
+}
+
+// --- POI / Luoghi (poi_usage.json) -----------------------------------------
+
+let lastPoiUsagePayload = null;
+
+function renderPoiUsageTable(data, tier = 'tutte') {
+  if (!poiUsageTable) return;
+  lastPoiUsagePayload = data;
+  if (!data || !data.pois || data.pois.length === 0) {
+    poiUsageNote.textContent = '';
+    poiUsageTable.innerHTML = '<p class="text-muted mb-0">Dati non ancora disponibili: esegui fetch_poi.py, generate_station_usage.py e generate_poi_usage.py.</p>';
     return;
   }
-  const cards = [
-    { label: 'Oggi', value: energia.oggi_kwh, tone: 'warning' },
-    { label: 'Ultima ora', value: energia.ultima_ora_kwh, tone: 'info' },
-    { label: 'Ultime 24 ore', value: energia.ultime_24h_kwh, tone: 'primary' },
-    { label: 'Ultimi 7 giorni', value: energia.ultimi_7_giorni_kwh, tone: 'secondary' },
-    { label: 'Totale storico', value: energia.totale_kwh_stimato, tone: 'success' },
-  ];
-  container.innerHTML = cards
-    .map((card) => {
-      // bg-warning (giallo) fallisce il contrasto con testo bianco: solo
-      // la card "Oggi" usa testo scuro, come già per le card attive/stima.
-      const textClass = card.tone === 'warning' ? 'text-dark' : 'text-white';
-      const labelClass = card.tone === 'warning' ? 'text-black-50' : 'text-white-50';
-      return `
-      <div class="col-lg-2 col-md-4 col-6">
-        <div class="card stat-card border-0 shadow-sm bg-${card.tone} bg-gradient ${textClass} h-100">
-          <div class="card-body">
-            <div class="small ${labelClass}">${card.label}</div>
-            <div class="display-6 fw-semibold">${Math.round(card.value)}</div>
-            <div class="small ${labelClass}">kWh</div>
-          </div>
-        </div>
-      </div>`;
-    })
-    .join('');
+  poiUsageNote.textContent = `Colonnine monitorabili entro ${data.soglia_metri} m da ciascun POI, e quante fra queste sono state effettivamente usate (almeno una ricarica osservata). Fonte POI: ${data.fonte_poi}.`;
+
+  const rows = data.pois
+    .map((p) => ({ ...p, usate_shown: tier === 'tutte' ? p.n_colonnine_usate : p.n_usate_by_power[tier] || 0 }))
+    .sort((a, b) => b.usate_shown - a.usate_shown || a.name.localeCompare(b.name, 'it'));
+
+  poiUsageTable.innerHTML = `
+    <div class="table-responsive">
+      <table class="table table-sm table-hover align-middle" id="poi-usage-table-el">
+        <thead><tr><th>POI</th><th>Categoria</th><th>Entro soglia</th><th>Usate</th><th>Esempio</th></tr></thead>
+        <tbody>
+          ${rows
+            .map(
+              (r) => `
+                <tr>
+                  <td>${r.name}</td>
+                  <td>${r.categoria_label}</td>
+                  <td data-sort-value="${r.n_colonnine_entro_soglia}">${r.n_colonnine_entro_soglia}</td>
+                  <td data-sort-value="${r.usate_shown}">${r.usate_shown}</td>
+                  <td class="small text-muted">${r.esempio ? `${r.esempio.colonnina_indirizzo} (${r.esempio.distanza_m} m)` : '—'}</td>
+                </tr>`
+            )
+            .join('')}
+        </tbody>
+      </table>
+    </div>`;
+  enhanceTable(document.getElementById('poi-usage-table-el'));
 }
+
+// --- Operatori — ricariche (stations_usage.json) ---------------------------
+
+function renderOperatorsUsageTable(city) {
+  if (!operatorsUsageTable) return;
+  const lista = (city && city.operatori_per_uso) || [];
+  if (lista.length === 0) {
+    operatorsUsageNote.textContent = '';
+    operatorsUsageTable.innerHTML = '<p class="text-muted mb-0">Dati d\'uso non ancora disponibili.</p>';
+    return;
+  }
+  const raccoltaDalLabel = raccoltaDalIso && window.EVFormat ? EVFormat.popupDate(raccoltaDalIso.split('T')[0]) : raccoltaDalIso;
+  operatorsUsageNote.textContent = `Ricariche osservate dal ${raccoltaDalLabel} (${city.days_collected} giorni di storico raccolto finora).`;
+
+  operatorsUsageTable.innerHTML = `
+    <div class="table-responsive">
+      <table class="table table-sm table-hover align-middle" id="operators-usage-table-el">
+        <thead><tr><th>#</th><th>Operatore</th><th>N. ricariche</th><th>Media giornaliera</th></tr></thead>
+        <tbody>
+          ${lista
+            .map(
+              (op, i) => `
+                <tr>
+                  <td data-sort-value="${i + 1}">${i + 1}</td>
+                  <td><span class="station-link" data-operator-popover="${op.cpo}">${op.cpo}</span></td>
+                  <td data-sort-value="${op.n_sessioni}">${op.n_sessioni}</td>
+                  <td data-sort-value="${op.media_sessioni_giornaliere ?? 0}">${op.media_sessioni_giornaliere ?? '—'}</td>
+                </tr>`
+            )
+            .join('')}
+        </tbody>
+      </table>
+    </div>`;
+  enhanceTable(document.getElementById('operators-usage-table-el'));
+}
+
+// --- Caricamento dati --------------------------------------------------
 
 async function loadData() {
-  const [statsResponse, trendsResponse, poiResponse, usageResponse] = await Promise.all([
+  const [statsResponse, trendsResponse, poiUsageResponse, usageTsResponse, usageResponse] = await Promise.all([
     fetch('data/stats.json'),
     fetch('data/trends.json').catch(() => null),
-    fetch('data/poi_proximity.json').catch(() => null),
+    fetch('data/poi_usage.json').catch(() => null),
+    fetch('data/usage_timeseries.json').catch(() => null),
     fetch('../stations_usage.json').catch(() => null),
   ]);
   const payload = await statsResponse.json();
   statsPayload = payload;
+  raccoltaDalIso = payload.summary.raccolta_dati_dal;
   renderSummaryCards(payload);
-  renderGauge(payload);
-  renderDrilldownTotali(payload);
-  renderPois(payload);
-  renderOperators(payload);
-  wireOperatorsFilter();
 
   if (trendsResponse && trendsResponse.ok) {
     const trends = await trendsResponse.json();
-    renderTrends(trends);
+    renderCountSection(trends.andamento_conteggio_giornaliero);
+    renderMonitorabiliSection(trends.colonnine_monitorabili_giornaliero);
   }
 
-  if (poiResponse && poiResponse.ok) {
-    renderPoiProximity(await poiResponse.json());
-  } else {
-    renderPoiProximity(null);
+  if (usageTsResponse && usageTsResponse.ok) {
+    const ts = await usageTsResponse.json();
+    usageTimeseriesRows = ts.rows || [];
   }
+
+  lastPoiUsagePayload = poiUsageResponse && poiUsageResponse.ok ? await poiUsageResponse.json() : null;
+
+  populateFilterOptions(usageTimeseriesRows);
+  wireUsageFilters();
+  refreshUsageViews();
 
   if (usageResponse && usageResponse.ok) {
     const usage = await usageResponse.json();
     if (window.EVUsage) EVUsage.setData(usage);
-    renderHourlyProfile(usage.city);
-    renderEnergyCards(usage.city);
+    renderOperatorsUsageTable(usage.city);
   } else {
-    renderHourlyProfile(null);
-    renderEnergyCards(null);
+    renderOperatorsUsageTable(null);
   }
 }
 

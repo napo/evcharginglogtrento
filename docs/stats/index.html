@@ -56,8 +56,8 @@
             <div class="row g-3">
               <div class="col-lg-8">
                 <span class="hero-eyebrow">Dashboard statica</span>
-                <h1 class="h3 mb-2">L'uso reale delle colonnine di Trento</h1>
-                <p class="mb-0 text-muted">JSON statici generati offline, senza backend: sessioni di ricarica, fasce orarie, operatori e punti di interesse.</p>
+                <h1 class="h3 mb-2">L'andamento e l'uso reale delle colonnine di Trento</h1>
+                <p class="mb-0 text-muted">JSON statici generati offline, senza backend: la fotografia di oggi è sulla <a href="../index.html">pagina Live</a> — qui trovi come cambia nel tempo e quanto viene usato davvero.</p>
               </div>
               <div class="col-lg-4">
                 <div class="small text-muted text-uppercase">Sintesi</div>
@@ -72,114 +72,133 @@
 
       <section class="card shadow-sm mb-4">
         <div class="card-body">
-          <h2 class="h5 mb-3">Colonnine attive ora</h2>
-          <div id="gauge-active" style="min-height: 320px;"></div>
-        </div>
-      </section>
-
-      <section class="card shadow-sm mb-4">
-        <div class="card-body">
-          <h2 class="h5 mb-3">Colonnine totali</h2>
-          <div id="drilldown-totali"></div>
-        </div>
-      </section>
-
-      <section class="card shadow-sm mb-4">
-        <div class="card-body">
-          <h2 class="h5 mb-1">Energia erogata (stima)</h2>
-          <p class="text-muted small mb-3">Stima: durata delle sessioni osservate × potenza nominale del connettore — non una lettura reale, probabile sovrastima (vedi README). Solo colonnine cittadine real-time. "Oggi" è dalla mezzanotte di oggi (ora italiana); le altre finestre sono mobili, non di calendario (es. "ultime 24 ore" è sempre riferito a ora, non a "ieri").</p>
-          <div class="row g-3" id="energy-cards"></div>
-        </div>
-      </section>
-
-      <section class="card shadow-sm mb-4">
-        <div class="card-body">
-          <div class="section-eyebrow">Serie storiche</div>
-          <h2 class="h5 mb-1">Andamento dell'uso</h2>
-          <p class="text-muted small mb-1">Solo le colonnine cittadine con stato in tempo reale entrano in questi calcoli (vedi README): per le altre lo stato è statico e non racconterebbe un uso reale.</p>
-          <p class="text-muted small mb-4">Le colonnine dell'Autostrada A22 non compaiono in questa sezione né nelle previsioni: sono pensate per il traffico di transito, non per l'utenza urbana, e ad oggi nessun operatore autostradale pubblica lo stato in tempo reale necessario per costruire un andamento. Restano visibili sulla mappa live.</p>
-          <h3 class="h6">Profilo orario (oggi)</h3>
-          <p class="text-muted small">Quota di colonnine in ricarica per ora del giorno, su tutto lo storico raccolto finora — a differenza del profilo settimanale qui sotto, non serve aspettare una settimana.</p>
-          <div id="chart-hourly-profile" class="echart-trend mb-4"></div>
-
-          <h3 class="h6">Andamento giornaliero</h3>
-          <div class="d-flex flex-wrap align-items-end gap-2 mb-2">
+          <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-2">
             <div>
-              <label class="form-label small text-muted mb-0" for="daily-date-from">Dal</label>
-              <input type="date" class="form-control form-control-sm" id="daily-date-from" />
+              <div class="section-eyebrow">Andamento</div>
+              <h2 class="h5 mb-1">Colonnine attive e non attive nel tempo</h2>
+              <p class="text-muted small mb-0">Tutte le colonnine cittadine (non solo quelle monitorabili in tempo reale): conteggio dell'ultimo stato noto per ciascuna, giorno per giorno.</p>
             </div>
-            <div>
-              <label class="form-label small text-muted mb-0" for="daily-date-to">Al</label>
-              <input type="date" class="form-control form-control-sm" id="daily-date-to" />
-            </div>
-            <button type="button" class="btn btn-sm btn-outline-secondary" id="daily-table-toggle">Vedi come tabella</button>
-          </div>
-          <div id="chart-daily-trento" class="echart-trend mb-2"></div>
-          <div id="daily-table-wrap" class="d-none mb-4">
-            <table class="table table-sm table-hover" id="daily-table">
-              <thead><tr><th>Data</th><th>Attive %</th><th>In uso %</th></tr></thead>
-              <tbody></tbody>
-            </table>
-          </div>
-
-          <h3 class="h6">Profilo settimanale (giorno &times; ora, quota in ricarica)</h3>
-          <div id="chart-weekly-trento" class="echart-trend mb-4"></div>
-
-          <h3 class="h6">Andamento mensile</h3>
-          <button type="button" class="btn btn-sm btn-outline-secondary mb-2" id="monthly-table-toggle">Vedi come tabella</button>
-          <div id="chart-monthly-trento" class="echart-trend mb-2"></div>
-          <div id="monthly-table-wrap" class="d-none">
-            <table class="table table-sm table-hover" id="monthly-table">
-              <thead><tr><th>Mese</th><th>Attive %</th><th>In uso %</th></tr></thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section class="row g-4">
-        <div class="col-12">
-          <div class="card shadow-sm h-100">
-            <div class="card-body">
-              <h2 class="h5">POI / luoghi</h2>
-              <div id="pois-table"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="row g-4 mt-1">
-        <div class="col-12">
-          <div class="card shadow-sm h-100">
-            <div class="card-body">
-              <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-2">
-                <div>
-                  <div class="section-eyebrow">Operatori</div>
-                  <h2 class="h5 mb-0">Operatori principali</h2>
-                </div>
-                <div class="btn-group btn-group-sm" role="group" aria-label="Filtro potenza operatori" id="operators-power-filter">
-                  <button type="button" class="btn btn-outline-secondary active" data-tier="tutte">Tutte</button>
-                  <button type="button" class="btn btn-outline-secondary" data-tier="lenta">≤22 kW</button>
-                  <button type="button" class="btn btn-outline-secondary" data-tier="rapida">22–50 kW</button>
-                  <button type="button" class="btn btn-outline-secondary" data-tier="ultra">&gt;50 kW</button>
-                </div>
+            <div class="d-flex flex-wrap align-items-end gap-2">
+              <div>
+                <label class="form-label small text-muted mb-0" for="count-date-from">Dal</label>
+                <input type="date" class="form-control form-control-sm" id="count-date-from" />
               </div>
-              <p class="text-muted small">I primi 3 della tabella sono i 3 operatori principali (per numero di colonnine nella fascia selezionata).</p>
-              <div id="operators-table"></div>
+              <div>
+                <label class="form-label small text-muted mb-0" for="count-date-to">Al</label>
+                <input type="date" class="form-control form-control-sm" id="count-date-to" />
+              </div>
+            </div>
+          </div>
+          <div id="chart-count-daily" class="echart-trend"></div>
+        </div>
+      </section>
+
+      <section class="card shadow-sm mb-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-2">
+            <div>
+              <div class="section-eyebrow">Andamento</div>
+              <h2 class="h5 mb-1">Colonnine disponibili per il monitoraggio nel tempo</h2>
+              <p class="text-muted small mb-0">Quante colonnine pubblicano stato in tempo reale, giorno per giorno: il parco monitorabile può crescere o ridursi indipendentemente dal totale.</p>
+            </div>
+            <div class="d-flex flex-wrap align-items-end gap-2">
+              <div>
+                <label class="form-label small text-muted mb-0" for="monitorabili-date-from">Dal</label>
+                <input type="date" class="form-control form-control-sm" id="monitorabili-date-from" />
+              </div>
+              <div>
+                <label class="form-label small text-muted mb-0" for="monitorabili-date-to">Al</label>
+                <input type="date" class="form-control form-control-sm" id="monitorabili-date-to" />
+              </div>
+            </div>
+          </div>
+          <div id="chart-monitorabili-daily" class="echart-trend"></div>
+        </div>
+      </section>
+
+      <section class="alert alert-light border mb-4">
+        Da qui in poi tutte le metriche riguardano <strong>solo le colonnine dove è possibile il monitoraggio</strong>
+        (stato in tempo reale): per le altre non esiste una sessione di ricarica da rilevare, quindi non c'è un
+        "uso" calcolabile — vedi <a href="../info/index.html">Info</a> per i dettagli.
+      </section>
+
+      <section class="card shadow-sm mb-4">
+        <div class="card-body">
+          <div class="section-eyebrow">Filtri</div>
+          <h2 class="h6 mb-2">Applicati a tutti i grafici e le tabelle qui sotto</h2>
+          <div class="row g-3 align-items-end">
+            <div class="col-md-4">
+              <label class="form-label small text-muted mb-1">Fascia di potenza</label>
+              <div class="btn-group btn-group-sm d-flex" role="group" aria-label="Filtro potenza" id="usage-power-filter">
+                <button type="button" class="btn btn-outline-secondary active" data-tier="tutte">Tutte</button>
+                <button type="button" class="btn btn-outline-secondary" data-tier="lenta">≤22 kW</button>
+                <button type="button" class="btn btn-outline-secondary" data-tier="rapida">22–50 kW</button>
+                <button type="button" class="btn btn-outline-secondary" data-tier="ultra">&gt;50 kW</button>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label small text-muted mb-1" for="usage-operator-filter">Operatore</label>
+              <select class="form-select form-select-sm" id="usage-operator-filter">
+                <option value="">Tutti</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label small text-muted mb-1" for="usage-poi-filter">Vicino a</label>
+              <select class="form-select form-select-sm" id="usage-poi-filter">
+                <option value="">Ovunque</option>
+              </select>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="row g-4 mt-1">
-        <div class="col-12">
-          <div class="card shadow-sm h-100">
-            <div class="card-body">
-              <h2 class="h5 mb-1">Colonnine e punti di interesse</h2>
-              <p class="text-muted small" id="poi-proximity-note"></p>
-              <div id="poi-proximity-table"></div>
+      <section class="card shadow-sm mb-4">
+        <div class="card-body">
+          <div class="section-eyebrow">Uso reale</div>
+          <h2 class="h5 mb-1">Energia, ricariche e tempi di ricarica</h2>
+          <p class="text-muted small mb-3">Medie sul periodo raccolto finora (vedi data di inizio nella sintesi), ricalcolate sui filtri sopra. Stime, non letture reali — vedi README.</p>
+          <div class="row g-3" id="usage-kpi-cards"></div>
+        </div>
+      </section>
+
+      <section class="card shadow-sm mb-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-2">
+            <div>
+              <div class="section-eyebrow">Serie storiche</div>
+              <h2 class="h5 mb-1">Colonnine in uso</h2>
+              <p class="text-muted small mb-0">Numero medio di colonnine in ricarica per periodo, sui filtri applicati sopra.</p>
+            </div>
+            <div class="btn-group btn-group-sm" role="group" aria-label="Granularità" id="granularity-filter">
+              <button type="button" class="btn btn-outline-secondary" data-gran="ora">Ora</button>
+              <button type="button" class="btn btn-outline-secondary active" data-gran="giorno">Giorno</button>
+              <button type="button" class="btn btn-outline-secondary" data-gran="settimana">Settimana</button>
+              <button type="button" class="btn btn-outline-secondary" data-gran="mese">Mese</button>
             </div>
           </div>
+          <div id="chart-colonnine-in-uso" class="echart-trend mb-4"></div>
+
+          <h2 class="h5 mb-1">kWh erogati</h2>
+          <p class="text-muted small mb-0">Stima: durata delle sessioni osservate × potenza nominale del connettore — vedi README. Stessa granularità e stessi filtri del grafico sopra.</p>
+          <div id="chart-kwh-erogati" class="echart-trend"></div>
+        </div>
+      </section>
+
+      <section class="card shadow-sm mb-4">
+        <div class="card-body">
+          <div class="section-eyebrow">Luoghi</div>
+          <h2 class="h5 mb-1">POI / Luoghi</h2>
+          <p class="text-muted small" id="poi-usage-note"></p>
+          <div id="poi-usage-table"></div>
+        </div>
+      </section>
+
+      <section class="card shadow-sm mb-4">
+        <div class="card-body">
+          <div class="section-eyebrow">Operatori</div>
+          <h2 class="h5 mb-1">Operatori — ricariche</h2>
+          <p class="text-muted small" id="operators-usage-note"></p>
+          <div id="operators-usage-table"></div>
         </div>
       </section>
     </main>
@@ -190,7 +209,7 @@
     <script src="../shared-format.js"></script>
     <script src="../shared-table.js"></script>
     <script src="../shared-echarts-theme.js"></script>
-    <script src="../shared-drilldown.js"></script>
+    <script src="../shared-chart-tools.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

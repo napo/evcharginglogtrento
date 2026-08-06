@@ -205,10 +205,13 @@ def colonnina_top(stazioni: dict) -> dict | None:
     }
 
 
-def operatori_per_uso(stazioni: dict) -> list[dict]:
-    """Operatori ordinati per energia stimata erogata dalle loro colonnine
-    (non per numero di colonnine possedute, quello è già in stats.json):
-    risponde a "quale operatore è più usato", non "quale è più grande"."""
+def operatori_per_uso(stazioni: dict, days_collected: int) -> list[dict]:
+    """Tutti gli operatori con almeno una sessione osservata, con energia
+    stimata erogata, numero di ricariche e media giornaliera di ricariche
+    dall'inizio del monitoraggio (days_collected, stesso valore riportato a
+    livello città). Non più limitata ai primi 5: la tabella "Operatori —
+    ricariche" della pagina Statistiche mostra l'elenco completo (paginato
+    lato frontend), qui serve la lista intera."""
     per_operatore: dict[str, dict] = {}
     for rec in stazioni.values():
         cpo = rec['cpo']
@@ -218,11 +221,18 @@ def operatori_per_uso(stazioni: dict) -> list[dict]:
         o['_energia'] += rec['energia_totale_kwh_stimata'] or 0.0
 
     lista = [
-        {**{k: v for k, v in o.items() if k != '_energia'}, 'energia_totale_kwh_stimata': round(o['_energia'], 2)}
+        {
+            **{k: v for k, v in o.items() if k != '_energia'},
+            'energia_totale_kwh_stimata': round(o['_energia'], 2),
+            'media_sessioni_giornaliere': round(o['n_sessioni'] / days_collected, 2) if days_collected else None,
+        }
         for o in per_operatore.values()
-        if o['_energia'] > 0
+        if o['n_sessioni'] > 0
     ]
-    lista.sort(key=lambda o: o['energia_totale_kwh_stimata'], reverse=True)
+    # Ordine di default della tabella: n. ricariche desc, poi media
+    # giornaliera desc, poi nome operatore asc (per questo il terzo campo
+    # della chiave non è negato, a differenza dei primi due).
+    lista.sort(key=lambda o: (-o['n_sessioni'], -(o['media_sessioni_giornaliere'] or 0), o['cpo']))
     return lista
 
 
@@ -301,9 +311,15 @@ def main() -> None:
     # arrivano dalla lista aggregata delle sessioni per-colonnina, MAI da
     # detect_sessions sulla tabella flattata (mischierebbe le sequenze di
     # colonnine diverse creando sessioni false).
+    # Giorni distinti coperti dallo storico real-time cittadino: stesso
+    # calcolo di generate_trends.py, serve qui per la media giornaliera di
+    # ricariche per operatore (n_sessioni / days_collected).
+    days_collected = int(table['date'].nunique())
+
     city = {
         'n_osservazioni': int(len(table)),
         'n_colonnine_real_time': int(table['id_evse'].nunique()),
+        'days_collected': days_collected,
         'profilo_orario': profilo_orario(table),
         'giorno_settimana_piu_usato': giorno_settimana_piu_usato(table),
         **session_metrics(tutte_le_sessioni),
@@ -311,7 +327,7 @@ def main() -> None:
         'energia': energy_summary(tutte_le_sessioni, now, oggi_da),
         'veicoli_serviti': veicoli_serviti(tutte_le_sessioni, now),
         'colonnina_top': colonnina_top(stazioni),
-        'operatori_per_uso': operatori_per_uso(stazioni)[:5],
+        'operatori_per_uso': operatori_per_uso(stazioni, days_collected),
     }
 
     payload = {

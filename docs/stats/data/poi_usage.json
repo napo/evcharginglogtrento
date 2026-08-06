@@ -1,0 +1,4297 @@
+{
+  "generated_at": "2026-08-06T21:05:48.632230+00:00",
+  "fonte_poi": "OpenStreetMap contributors, via Overpass API (ODbL)",
+  "soglia_metri": 300,
+  "pois": [
+    {
+      "name": "Museo Diocesano Tridentino",
+      "categoria": "musei",
+      "categoria_label": "Musei",
+      "lat": 46.067484,
+      "lon": 11.12188,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Le Gallerie",
+      "categoria": "musei",
+      "categoria_label": "Musei",
+      "lat": 46.07176,
+      "lon": 11.113531,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Museo Casa Porfido",
+      "categoria": "musei",
+      "categoria_label": "Musei",
+      "lat": 46.144074,
+      "lon": 11.193779,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "TTram",
+      "categoria": "musei",
+      "categoria_label": "Musei",
+      "lat": 46.101951,
+      "lon": 11.095267,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Museo del Castello del Buonconsiglio",
+      "categoria": "musei",
+      "categoria_label": "Musei",
+      "lat": 46.07142,
+      "lon": 11.126484,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 1,
+      "n_usate_by_power": {
+        "lenta": 1,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via della Pontara",
+        "distanza_m": 208
+      }
+    },
+    {
+      "name": "Palazzo delle Albere",
+      "categoria": "musei",
+      "categoria_label": "Musei",
+      "lat": 46.063167,
+      "lon": 11.113768,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Museo dell'aeronautica Gianni Caproni",
+      "categoria": "musei",
+      "categoria_label": "Musei",
+      "lat": 46.020865,
+      "lon": 11.126958,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "MUSE",
+      "categoria": "musei",
+      "categoria_label": "Musei",
+      "lat": 46.06261,
+      "lon": 11.11473,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Famiglia Cooperativa",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.070691,
+      "lon": 11.139651,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Coop",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.085432,
+      "lon": 11.215569,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Famiglia Cooperativa Romagnano",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.016901,
+      "lon": 11.105604,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Famiglia Cooperativa di Povo",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.066248,
+      "lon": 11.154458,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Famiglia Cooperativa",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.076833,
+      "lon": 11.141931,
+      "n_colonnine_entro_soglia": 3,
+      "n_colonnine_usate": 1,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 1,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Carlo e Valeria Jülg, 11-1",
+        "distanza_m": 33
+      }
+    },
+    {
+      "name": "Conad City",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.047869,
+      "lon": 11.145406,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Poli",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.058012,
+      "lon": 11.1326,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Coop Superstore",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.044573,
+      "lon": 11.129603,
+      "n_colonnine_entro_soglia": 9,
+      "n_colonnine_usate": 3,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 1,
+        "ultra": 2
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Viale Verona, 210",
+        "distanza_m": 100
+      }
+    },
+    {
+      "name": "Famiglia Cooperativa",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.040605,
+      "lon": 11.133085,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "MiniPoli",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.064393,
+      "lon": 11.131418,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "EuroSpin",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.138939,
+      "lon": 11.109125,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Conad City",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.138801,
+      "lon": 11.113915,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Wonderful Supermarket asiatico",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.054565,
+      "lon": 11.120623,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "EuroSpin",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.09449,
+      "lon": 11.119811,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Pam",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.094662,
+      "lon": 11.116123,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Famiglia Cooperativa",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.087914,
+      "lon": 11.064563,
+      "n_colonnine_entro_soglia": 4,
+      "n_colonnine_usate": 3,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 3
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Strada di Cadine 13",
+        "distanza_m": 98
+      }
+    },
+    {
+      "name": "Coop Trentino",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.066815,
+      "lon": 11.129067,
+      "n_colonnine_entro_soglia": 3,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Poli",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.014362,
+      "lon": 11.132294,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Famiglia cooperativa Perginese",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.090224,
+      "lon": 11.181158,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "NaturaSì",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.061448,
+      "lon": 11.126398,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Famiglia Cooperativa",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.071669,
+      "lon": 11.059741,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Famiglia Cooperativa",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.1443,
+      "lon": 11.194824,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Conad",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.068727,
+      "lon": 11.118811,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Coop",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.082135,
+      "lon": 11.101771,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Famiglia Cooperativa",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.151461,
+      "lon": 11.096239,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Conad",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.070875,
+      "lon": 11.059379,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Conad",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.0704,
+      "lon": 11.123468,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Eurospar",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.069763,
+      "lon": 11.122769,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Coop",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.007107,
+      "lon": 11.12765,
+      "n_colonnine_entro_soglia": 3,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Coop",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.077137,
+      "lon": 11.120088,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 1,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 1,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Corso degli Alpini, 9",
+        "distanza_m": 232
+      }
+    },
+    {
+      "name": "Mio Negozio di Hu Ling",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.091554,
+      "lon": 11.117959,
+      "n_colonnine_entro_soglia": 4,
+      "n_colonnine_usate": 2,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 2,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Pranzelores",
+        "distanza_m": 175
+      }
+    },
+    {
+      "name": "Coop",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.087,
+      "lon": 11.121745,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "NaturaSì",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.079493,
+      "lon": 11.122753,
+      "n_colonnine_entro_soglia": 6,
+      "n_colonnine_usate": 2,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 2,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via del Brennero, 154",
+        "distanza_m": 185
+      }
+    },
+    {
+      "name": "Mini Market",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.039404,
+      "lon": 11.057532,
+      "n_colonnine_entro_soglia": 6,
+      "n_colonnine_usate": 1,
+      "n_usate_by_power": {
+        "lenta": 1,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Strada di Vason, 70",
+        "distanza_m": 175
+      }
+    },
+    {
+      "name": "Famiglia Cooperativa",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.122761,
+      "lon": 11.117053,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Da Luigino",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.128322,
+      "lon": 11.11725,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Famiglia Cooperativa",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.069498,
+      "lon": 11.206421,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Famiglia Cooperativa",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.15333,
+      "lon": 11.106612,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Famiglia Cooperativa",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.081854,
+      "lon": 11.045305,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Margherita CONAD",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.005027,
+      "lon": 11.199195,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "EuroSpin",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.048057,
+      "lon": 11.127309,
+      "n_colonnine_entro_soglia": 6,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Despar",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.074683,
+      "lon": 11.125225,
+      "n_colonnine_entro_soglia": 7,
+      "n_colonnine_usate": 4,
+      "n_usate_by_power": {
+        "lenta": 1,
+        "rapida": 1,
+        "ultra": 2
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Jacopo Aconcio",
+        "distanza_m": 156
+      }
+    },
+    {
+      "name": "Conad City",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.056056,
+      "lon": 11.121682,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Coop",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.098058,
+      "lon": 11.044903,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Prix",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.14015,
+      "lon": 11.104805,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "GlutenFree World",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.111784,
+      "lon": 11.108041,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Poli",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.083257,
+      "lon": 11.114918,
+      "n_colonnine_entro_soglia": 4,
+      "n_colonnine_usate": 1,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 1
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Ezio Maccani, 133",
+        "distanza_m": 52
+      }
+    },
+    {
+      "name": "Prix",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.053074,
+      "lon": 11.118435,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "MD",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.092341,
+      "lon": 11.114317,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Conad City",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.132076,
+      "lon": 11.134283,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "ALDI",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.085884,
+      "lon": 11.117442,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "MD",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.036349,
+      "lon": 11.129848,
+      "n_colonnine_entro_soglia": 6,
+      "n_colonnine_usate": 6,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 6
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Ragazzi del 99",
+        "distanza_m": 278
+      }
+    },
+    {
+      "name": "Lidl",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.082632,
+      "lon": 11.198966,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Orvea",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.082897,
+      "lon": 11.199286,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Famiglia Cooperativa",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.004197,
+      "lon": 11.199386,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Coop",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.158227,
+      "lon": 11.140752,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "ALDI",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.060547,
+      "lon": 11.125803,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Poli",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.105333,
+      "lon": 11.107643,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Coop",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.058333,
+      "lon": 11.215901,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "IperPoli",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.087746,
+      "lon": 11.118675,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 2,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 2,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Pranzelores",
+        "distanza_m": 256
+      }
+    },
+    {
+      "name": "Despar",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.075651,
+      "lon": 11.119025,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Conad",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.082978,
+      "lon": 11.114035,
+      "n_colonnine_entro_soglia": 4,
+      "n_colonnine_usate": 1,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 1
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Ezio Maccani, 133",
+        "distanza_m": 24
+      }
+    },
+    {
+      "name": "Al Wahab market",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.055543,
+      "lon": 11.116103,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Poli",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.141223,
+      "lon": 11.107543,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Lidl",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.08415,
+      "lon": 11.118938,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Conad",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.0586,
+      "lon": 11.114521,
+      "n_colonnine_entro_soglia": 5,
+      "n_colonnine_usate": 4,
+      "n_usate_by_power": {
+        "lenta": 3,
+        "rapida": 0,
+        "ultra": 1
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Roberto da Sanseverino, 97",
+        "distanza_m": 12
+      }
+    },
+    {
+      "name": "Prix",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.091505,
+      "lon": 11.112373,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Tovazzi Eurospesa",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.070119,
+      "lon": 11.118637,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Eurospar",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.056228,
+      "lon": 11.127883,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Conad",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.089319,
+      "lon": 11.131813,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Conad City",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.116154,
+      "lon": 11.207026,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Coop",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.040772,
+      "lon": 11.111832,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "EuroSpin",
+      "categoria": "supermercati",
+      "categoria_label": "Supermercati",
+      "lat": 46.104742,
+      "lon": 11.106132,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Volksbank",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.047611,
+      "lon": 11.12602,
+      "n_colonnine_entro_soglia": 6,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.074491,
+      "lon": 11.124553,
+      "n_colonnine_entro_soglia": 9,
+      "n_colonnine_usate": 4,
+      "n_usate_by_power": {
+        "lenta": 1,
+        "rapida": 1,
+        "ultra": 2
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Jacopo Aconcio",
+        "distanza_m": 101
+      }
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.064718,
+      "lon": 11.123213,
+      "n_colonnine_entro_soglia": 4,
+      "n_colonnine_usate": 4,
+      "n_usate_by_power": {
+        "lenta": 2,
+        "rapida": 2,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Dietro le Mura A, 25",
+        "distanza_m": 118
+      }
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.085436,
+      "lon": 11.215051,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.065631,
+      "lon": 11.154994,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.076473,
+      "lon": 11.141931,
+      "n_colonnine_entro_soglia": 3,
+      "n_colonnine_usate": 1,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 1,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Carlo e Valeria Jülg, 11-1",
+        "distanza_m": 68
+      }
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.089406,
+      "lon": 11.132707,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "BTB - Banca di Trento e Bolzano",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.04064,
+      "lon": 11.133373,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.04989,
+      "lon": 11.124183,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Cassa Rurale Alta Valsugana",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.061945,
+      "lon": 11.124911,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "UniCredit Bank",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.005735,
+      "lon": 11.127244,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.06956,
+      "lon": 11.121093,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.076665,
+      "lon": 11.119419,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 1,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 1,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Corso degli Alpini, 9",
+        "distanza_m": 252
+      }
+    },
+    {
+      "name": "UniCredit Bank",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.06815,
+      "lon": 11.125724,
+      "n_colonnine_entro_soglia": 3,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Cassa di Risparmio - Sparkasse",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.069911,
+      "lon": 11.122889,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Fineco",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.073153,
+      "lon": 11.125053,
+      "n_colonnine_entro_soglia": 7,
+      "n_colonnine_usate": 4,
+      "n_usate_by_power": {
+        "lenta": 1,
+        "rapida": 1,
+        "ultra": 2
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via della Pontara",
+        "distanza_m": 122
+      }
+    },
+    {
+      "name": "Medio Credito Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.067037,
+      "lon": 11.127872,
+      "n_colonnine_entro_soglia": 3,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.066675,
+      "lon": 11.129426,
+      "n_colonnine_entro_soglia": 3,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Monte dei Paschi di Siena",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.070532,
+      "lon": 11.122017,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Crédit Agricole",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.06778,
+      "lon": 11.122339,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca Popolare del Trentino",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.063845,
+      "lon": 11.123638,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 2,
+      "n_usate_by_power": {
+        "lenta": 2,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Dietro le Mura A, 25",
+        "distanza_m": 176
+      }
+    },
+    {
+      "name": "Banca Popolare Volksbank",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.067809,
+      "lon": 11.12267,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Compass",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.076991,
+      "lon": 11.123557,
+      "n_colonnine_entro_soglia": 5,
+      "n_colonnine_usate": 3,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 1,
+        "ultra": 2
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Jacopo Aconcio",
+        "distanza_m": 294
+      }
+    },
+    {
+      "name": "Intesa Sanpaolo",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.068037,
+      "lon": 11.124012,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "BNL",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.073506,
+      "lon": 11.122245,
+      "n_colonnine_entro_soglia": 9,
+      "n_colonnine_usate": 3,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 1,
+        "ultra": 2
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Jacopo Aconcio",
+        "distanza_m": 122
+      }
+    },
+    {
+      "name": "Credem",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.06247,
+      "lon": 11.131966,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.056688,
+      "lon": 11.120115,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Intesa Sanpaolo",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.053482,
+      "lon": 11.129509,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca Popolare Volksbank",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.089535,
+      "lon": 11.116903,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 2,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 2,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Pranzelores",
+        "distanza_m": 143
+      }
+    },
+    {
+      "name": "Findomestic",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.070514,
+      "lon": 11.121893,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Cassa di Risparmio Sparkasse",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.139684,
+      "lon": 11.111819,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Cassa Rurale Alto Garda",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.059913,
+      "lon": 11.119264,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Cassa Rurale Alta Valsugana",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.088848,
+      "lon": 11.183772,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca Popolare del Trentino",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.073887,
+      "lon": 11.124374,
+      "n_colonnine_entro_soglia": 9,
+      "n_colonnine_usate": 4,
+      "n_usate_by_power": {
+        "lenta": 1,
+        "rapida": 1,
+        "ultra": 2
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Jacopo Aconcio",
+        "distanza_m": 101
+      }
+    },
+    {
+      "name": "Banca Popolare del Trentino",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.058233,
+      "lon": 11.130456,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca Mediolanum",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.068404,
+      "lon": 11.119318,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.088522,
+      "lon": 11.121184,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 2,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 2,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Pranzelores",
+        "distanza_m": 261
+      }
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.153648,
+      "lon": 11.107109,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.151853,
+      "lon": 11.096835,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.047871,
+      "lon": 11.145729,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "BPER Banca",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.083032,
+      "lon": 11.120529,
+      "n_colonnine_entro_soglia": 6,
+      "n_colonnine_usate": 2,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 2,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via del Brennero",
+        "distanza_m": 186
+      }
+    },
+    {
+      "name": "Deutsche Bank",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.069005,
+      "lon": 11.124404,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.039054,
+      "lon": 11.109975,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Mediolanum",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.07137,
+      "lon": 11.123849,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Cassa di Risparmio di Bolzano - Sparkasse",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.056627,
+      "lon": 11.128574,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "UniCredit Bank",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.076808,
+      "lon": 11.11873,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 1,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 1,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Corso degli Alpini, 9",
+        "distanza_m": 223
+      }
+    },
+    {
+      "name": "Cassa di Risparmio Sparkasse",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.090211,
+      "lon": 11.116843,
+      "n_colonnine_entro_soglia": 4,
+      "n_colonnine_usate": 2,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 2,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Pranzelores",
+        "distanza_m": 137
+      }
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.122784,
+      "lon": 11.116845,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Cassa Rurale della Valle dei Laghi",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.081933,
+      "lon": 11.045268,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca Popolare - Volksbank",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.141607,
+      "lon": 11.109155,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Cassa Rurale Val di Non, Rotaliana e Giovo",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.142336,
+      "lon": 11.107467,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Cassa Rurale di Giovo",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.156419,
+      "lon": 11.153123,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "UniCredit Bank",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.060536,
+      "lon": 11.12506,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Fideuram",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.061091,
+      "lon": 11.11492,
+      "n_colonnine_entro_soglia": 5,
+      "n_colonnine_usate": 4,
+      "n_usate_by_power": {
+        "lenta": 3,
+        "rapida": 0,
+        "ultra": 1
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Roberto da Sanseverino, 97",
+        "distanza_m": 259
+      }
+    },
+    {
+      "name": "Western Union",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.068904,
+      "lon": 11.121014,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca Popolare di Sondrio",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.075465,
+      "lon": 11.124026,
+      "n_colonnine_entro_soglia": 5,
+      "n_colonnine_usate": 3,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 1,
+        "ultra": 2
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Jacopo Aconcio",
+        "distanza_m": 137
+      }
+    },
+    {
+      "name": "SignorPrestito",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.057561,
+      "lon": 11.130198,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.091538,
+      "lon": 11.105074,
+      "n_colonnine_entro_soglia": 1,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.064314,
+      "lon": 11.096591,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Mediobanca Premier",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.061059,
+      "lon": 11.114666,
+      "n_colonnine_entro_soglia": 5,
+      "n_colonnine_usate": 4,
+      "n_usate_by_power": {
+        "lenta": 3,
+        "rapida": 0,
+        "ultra": 1
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Roberto da Sanseverino, 97",
+        "distanza_m": 251
+      }
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.006243,
+      "lon": 11.128396,
+      "n_colonnine_entro_soglia": 3,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Deutsche Bank Easy",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.072492,
+      "lon": 11.123665,
+      "n_colonnine_entro_soglia": 11,
+      "n_colonnine_usate": 4,
+      "n_usate_by_power": {
+        "lenta": 1,
+        "rapida": 1,
+        "ultra": 2
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Jacopo Aconcio",
+        "distanza_m": 210
+      }
+    },
+    {
+      "name": "Sparkasse",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.087775,
+      "lon": 11.117967,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 2,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 2,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Pranzelores",
+        "distanza_m": 257
+      }
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.132239,
+      "lon": 11.134911,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.145253,
+      "lon": 11.219038,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Unicredit",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.068287,
+      "lon": 11.125451,
+      "n_colonnine_entro_soglia": 3,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Intesa San Paolo",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.067807,
+      "lon": 11.124626,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 2,
+      "n_usate_by_power": {
+        "lenta": 2,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Dietro le Mura A, 25",
+        "distanza_m": 278
+      }
+    },
+    {
+      "name": "Banca Etica",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.062535,
+      "lon": 11.130571,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca Finint",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.068232,
+      "lon": 11.121445,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.072151,
+      "lon": 11.138079,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.05788,
+      "lon": 11.133178,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Filiale di Garniga Terme",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.002146,
+      "lon": 11.085197,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Cassa Centrale Banca Credito Cooperativo del Nord Est SpA",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.075066,
+      "lon": 11.122836,
+      "n_colonnine_entro_soglia": 7,
+      "n_colonnine_usate": 3,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 1,
+        "ultra": 2
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Jacopo Aconcio",
+        "distanza_m": 85
+      }
+    },
+    {
+      "name": "Unicredit Banca",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.137619,
+      "lon": 11.10973,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Cassa Rurale Alto Garda",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.096847,
+      "lon": 11.045953,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.070649,
+      "lon": 11.058665,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Cassa Rurale Alta Valsugana",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.094042,
+      "lon": 11.197049,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Cassa Rurale",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.005357,
+      "lon": 11.195736,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.107668,
+      "lon": 11.11142,
+      "n_colonnine_entro_soglia": 3,
+      "n_colonnine_usate": 2,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 1,
+        "ultra": 1
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Piazzale Lionello Groff 3",
+        "distanza_m": 120
+      }
+    },
+    {
+      "name": "Banca per il Trentino Alto Adige",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.140944,
+      "lon": 11.109694,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Cassa Rurale Alta Valsugana",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.118326,
+      "lon": 11.209027,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "UniCredit Bank",
+      "categoria": "banche",
+      "categoria_label": "Banche",
+      "lat": 46.106633,
+      "lon": 11.110568,
+      "n_colonnine_entro_soglia": 3,
+      "n_colonnine_usate": 2,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 1,
+        "ultra": 1
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Piazzale Lionello Groff 3",
+        "distanza_m": 210
+      }
+    },
+    {
+      "name": "Villa Igea",
+      "categoria": "ospedali",
+      "categoria_label": "Ospedali",
+      "lat": 46.061709,
+      "lon": 11.128102,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Centro di Protonterapia",
+      "categoria": "ospedali",
+      "categoria_label": "Ospedali",
+      "lat": 46.049345,
+      "lon": 11.115694,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ospedali",
+      "categoria_label": "Ospedali",
+      "lat": 46.061668,
+      "lon": 11.127881,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "San Camillo",
+      "categoria": "ospedali",
+      "categoria_label": "Ospedali",
+      "lat": 46.064974,
+      "lon": 11.132125,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Casa di Cura \"Villa Bianca\"",
+      "categoria": "ospedali",
+      "categoria_label": "Ospedali",
+      "lat": 46.062594,
+      "lon": 11.126744,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Ambulatorio Dentistico",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.053955,
+      "lon": 11.129955,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Ambulatori",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.037869,
+      "lon": 11.106416,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Ambulatori",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.064609,
+      "lon": 11.13159,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Ecospes",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.085886,
+      "lon": 11.114964,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Centro Sanitario Trento",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.09316,
+      "lon": 11.115457,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Centro vaccinale",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.039765,
+      "lon": 11.138203,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Progetto Salute",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.062343,
+      "lon": 11.130307,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Ambulatorio medico associato Sermeda",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.088677,
+      "lon": 11.181641,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Studio Cognola",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.086797,
+      "lon": 11.119329,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Ambulatorio Tenuti Dottor Alessandro",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.08974,
+      "lon": 11.119926,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 2,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 2,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Pranzelores",
+        "distanza_m": 107
+      }
+    },
+    {
+      "name": "Centro di fisioterapia Kinesi",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.08985,
+      "lon": 11.119854,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 2,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 2,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Pranzelores",
+        "distanza_m": 99
+      }
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.067695,
+      "lon": 11.123168,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 2,
+      "n_usate_by_power": {
+        "lenta": 2,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Dietro le Mura A, 25",
+        "distanza_m": 284
+      }
+    },
+    {
+      "name": "Ambulatorio medico",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.005282,
+      "lon": 11.199526,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Guardia Medica",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.044608,
+      "lon": 11.130223,
+      "n_colonnine_entro_soglia": 9,
+      "n_colonnine_usate": 3,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 1,
+        "ultra": 2
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Viale Verona, 210",
+        "distanza_m": 56
+      }
+    },
+    {
+      "name": "ASUIT Ambulatori Pediatrici",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.05971,
+      "lon": 11.119599,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Dott. Geol. Michele Camin",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.077528,
+      "lon": 11.047968,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Studio C7 - Studio di Fisioterapia",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.061768,
+      "lon": 11.125639,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.151826,
+      "lon": 11.097409,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.073857,
+      "lon": 11.118859,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Ambulatorio Medico di Povo",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.065946,
+      "lon": 11.158017,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Ambulatorio di Mattarello",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.006014,
+      "lon": 11.128203,
+      "n_colonnine_entro_soglia": 3,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.108069,
+      "lon": 11.111494,
+      "n_colonnine_entro_soglia": 3,
+      "n_colonnine_usate": 2,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 1,
+        "ultra": 1
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Piazzale Lionello Groff 3",
+        "distanza_m": 129
+      }
+    },
+    {
+      "name": "Ambulatorio",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.097608,
+      "lon": 11.045632,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Diètnatural",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.08054,
+      "lon": 11.116574,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 1,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 1,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Corso degli Alpini, 9",
+        "distanza_m": 234
+      }
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.107275,
+      "lon": 11.113648,
+      "n_colonnine_entro_soglia": 3,
+      "n_colonnine_usate": 2,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 1,
+        "ultra": 1
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Piazzale Lionello Groff 3",
+        "distanza_m": 59
+      }
+    },
+    {
+      "name": "Ambulatori Medici",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.071013,
+      "lon": 11.05883,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.108175,
+      "lon": 11.112224,
+      "n_colonnine_entro_soglia": 3,
+      "n_colonnine_usate": 2,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 1,
+        "ultra": 1
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Piazzale Lionello Groff 3",
+        "distanza_m": 92
+      }
+    },
+    {
+      "name": "Centro di salute mentale",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.065245,
+      "lon": 11.120696,
+      "n_colonnine_entro_soglia": 4,
+      "n_colonnine_usate": 4,
+      "n_usate_by_power": {
+        "lenta": 2,
+        "rapida": 2,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via del Travai",
+        "distanza_m": 100
+      }
+    },
+    {
+      "name": "Alessandro Martinelli",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.088866,
+      "lon": 11.106063,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Studio medici San Martino",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.073898,
+      "lon": 11.125814,
+      "n_colonnine_entro_soglia": 7,
+      "n_colonnine_usate": 4,
+      "n_usate_by_power": {
+        "lenta": 1,
+        "rapida": 1,
+        "ultra": 2
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via della Pontara",
+        "distanza_m": 92
+      }
+    },
+    {
+      "name": "Centro per i Servizi Sanitari",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.044805,
+      "lon": 11.130001,
+      "n_colonnine_entro_soglia": 9,
+      "n_colonnine_usate": 3,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 1,
+        "ultra": 2
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Viale Verona, 210",
+        "distanza_m": 82
+      }
+    },
+    {
+      "name": "Orthotecnica Tessadri",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.100451,
+      "lon": 11.115742,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Policura",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.087954,
+      "lon": 11.118204,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 2,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 2,
+        "ultra": 0
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Pranzelores",
+        "distanza_m": 234
+      }
+    },
+    {
+      "name": "Tecnomed",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.047458,
+      "lon": 11.129119,
+      "n_colonnine_entro_soglia": 6,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Oculista dr. Giulio Mulè",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.064367,
+      "lon": 11.131949,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "RoVis MED",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.139697,
+      "lon": 11.105737,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Dottor Renzo Bertolini psicoterapeuta",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.072968,
+      "lon": 11.118431,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.05631,
+      "lon": 11.132725,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.05621,
+      "lon": 11.132675,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.056243,
+      "lon": 11.132608,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.056238,
+      "lon": 11.132623,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.056364,
+      "lon": 11.132344,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.056267,
+      "lon": 11.132667,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.056347,
+      "lon": 11.132455,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.056359,
+      "lon": 11.132498,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.056404,
+      "lon": 11.132471,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.056426,
+      "lon": 11.13246,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.056469,
+      "lon": 11.132433,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.056448,
+      "lon": 11.132447,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.056278,
+      "lon": 11.132635,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.056287,
+      "lon": 11.132659,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.056297,
+      "lon": 11.132688,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Senza nome",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.056383,
+      "lon": 11.132484,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Banca del Sangue",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.061753,
+      "lon": 11.127176,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Poliambulatori",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.142927,
+      "lon": 11.108998,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Ambulatori",
+      "categoria": "ambulatori",
+      "categoria_label": "Ambulatori",
+      "lat": 46.141993,
+      "lon": 11.106885,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Autostrada del Brennero",
+      "categoria": "svincoli_autostradali",
+      "categoria_label": "Svincoli autostradali",
+      "lat": 46.121572,
+      "lon": 11.085477,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Autostrada del Brennero",
+      "categoria": "svincoli_autostradali",
+      "categoria_label": "Svincoli autostradali",
+      "lat": 46.118142,
+      "lon": 11.086832,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Autostrada del Brennero",
+      "categoria": "svincoli_autostradali",
+      "categoria_label": "Svincoli autostradali",
+      "lat": 46.139843,
+      "lon": 11.086083,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Autostrada del Brennero",
+      "categoria": "svincoli_autostradali",
+      "categoria_label": "Svincoli autostradali",
+      "lat": 46.033532,
+      "lon": 11.120507,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Autostrada del Brennero",
+      "categoria": "svincoli_autostradali",
+      "categoria_label": "Svincoli autostradali",
+      "lat": 46.14433,
+      "lon": 11.088227,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Autostrada del Brennero",
+      "categoria": "svincoli_autostradali",
+      "categoria_label": "Svincoli autostradali",
+      "lat": 46.029387,
+      "lon": 11.121957,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Tangenziale Sud",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.007258,
+      "lon": 11.123898,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Tangenziale Ovest",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.074873,
+      "lon": 11.112559,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 1,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 1
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Druso Livio",
+        "distanza_m": 265
+      }
+    },
+    {
+      "name": "Incrocio Tangenziale Ovest",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.083002,
+      "lon": 11.112882,
+      "n_colonnine_entro_soglia": 4,
+      "n_colonnine_usate": 1,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 1
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Ezio Maccani, 133",
+        "distanza_m": 108
+      }
+    },
+    {
+      "name": "Incrocio Tangenziale Ovest",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.049903,
+      "lon": 11.112571,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Strada della Fricca",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.007984,
+      "lon": 11.156513,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Tangenziale Ovest",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.077827,
+      "lon": 11.112152,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 1,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 1
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Druso Livio",
+        "distanza_m": 158
+      }
+    },
+    {
+      "name": "Incrocio Tangenziale Ovest",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.095442,
+      "lon": 11.11009,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Strada di Vigolo Baselga",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.081412,
+      "lon": 11.046817,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Tangenziale Ovest",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.089251,
+      "lon": 11.10366,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Tangenziale Ovest",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.093954,
+      "lon": 11.104365,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Strada dell'Interporto",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.113173,
+      "lon": 11.087989,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Tangenziale Ovest",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.06713,
+      "lon": 11.110631,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Tangenziale Ovest",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.096103,
+      "lon": 11.113695,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Tangenziale Ovest",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.084639,
+      "lon": 11.109881,
+      "n_colonnine_entro_soglia": 6,
+      "n_colonnine_usate": 6,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 6
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Ezio Maccani 157",
+        "distanza_m": 283
+      }
+    },
+    {
+      "name": "Incrocio Tangenziale Sud",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.032029,
+      "lon": 11.127619,
+      "n_colonnine_entro_soglia": 6,
+      "n_colonnine_usate": 6,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 6
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Ragazzi del 99",
+        "distanza_m": 273
+      }
+    },
+    {
+      "name": "Incrocio SP235",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.136509,
+      "lon": 11.083889,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Via Enrico Conci",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.039398,
+      "lon": 11.137834,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Via Enrico Conci",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.039801,
+      "lon": 11.137385,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Tangenziale Sud",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.012345,
+      "lon": 11.126035,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Tangenziale Sud",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.036937,
+      "lon": 11.124715,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Tangenziale Ovest",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.050528,
+      "lon": 11.112718,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Strada Statale 47 della Valsugana",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.092319,
+      "lon": 11.12207,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Via delle Dolomiti",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.158844,
+      "lon": 11.191465,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Strada Statale 47 della Valsugana",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.096592,
+      "lon": 11.117149,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Strada Statale 47 della Valsugana",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.077644,
+      "lon": 11.154404,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Via Enrico Conci",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.03873,
+      "lon": 11.138163,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Strada di Vigolo Baselga",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.080866,
+      "lon": 11.043622,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Strada dell'Interporto",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.11818,
+      "lon": 11.088705,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Tangenziale Ovest",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.064388,
+      "lon": 11.111436,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Strada della Fricca",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.008434,
+      "lon": 11.155462,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio SP235",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.140559,
+      "lon": 11.083128,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Via Trento",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.15415,
+      "lon": 11.138153,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Via della Fricca",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.003196,
+      "lon": 11.197469,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Via della Fricca",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.003726,
+      "lon": 11.19645,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Strada Statale 47 della Valsugana",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.080727,
+      "lon": 11.199766,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Strada Statale 47 della Valsugana",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.081114,
+      "lon": 11.19868,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Strada Statale 47 della Valsugana",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.077843,
+      "lon": 11.20419,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Strada Statale 47 della Valsugana",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.075302,
+      "lon": 11.209981,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Strada Statale 47 della Valsugana",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.072135,
+      "lon": 11.215654,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Strada dell'Interporto",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.098274,
+      "lon": 11.094955,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio SP235",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.186277,
+      "lon": 11.09905,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Strada di Vigolo Baselga",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.081371,
+      "lon": 11.046423,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Tangenziale Ovest",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.079424,
+      "lon": 11.112457,
+      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_usate": 1,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 1
+      },
+      "esempio": {
+        "colonnina_indirizzo": "Via Druso Livio",
+        "distanza_m": 284
+      }
+    },
+    {
+      "name": "Incrocio Via Cembra",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.143369,
+      "lon": 11.10724,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    },
+    {
+      "name": "Incrocio Via Cembra",
+      "categoria": "incroci_primarie",
+      "categoria_label": "Incroci di strade primarie",
+      "lat": 46.143447,
+      "lon": 11.107789,
+      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_usate": 0,
+      "n_usate_by_power": {
+        "lenta": 0,
+        "rapida": 0,
+        "ultra": 0
+      },
+      "esempio": null
+    }
+  ]
+}

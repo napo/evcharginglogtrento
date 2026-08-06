@@ -38,6 +38,8 @@ jobs:
           python generate_trends.py
           python generate_poi_proximity.py
           python generate_station_usage.py
+          python generate_usage_timeseries.py
+          python generate_poi_usage.py
           python generate_curiosities.py
           python generate_forecast.py
 

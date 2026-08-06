@@ -228,6 +228,19 @@ a:hover {
   min-height: 320px;
 }
 
+/* --- Fullscreen grafici (docs/shared-chart-tools.js) ---------------------- */
+/* L'elemento richiede il fullscreen su se stesso: senza queste regole
+   resterebbe alto quanto il min-height originale (es. 320px) invece di
+   riempire lo schermo, perché quel valore è un vincolo esplicito, non un
+   default che :fullscreen sovrascrive da solo. */
+.ev-chart-fullscreen-target:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  min-height: 0;
+  padding: 24px;
+  background: #0b1120;
+}
+
 .stat-card {
   min-height: 100%;
 }

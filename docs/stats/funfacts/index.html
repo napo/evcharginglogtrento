@@ -100,6 +100,35 @@
             </div>
           </div>
         </div>
+        <div class="col-12">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-2">
+                <h2 class="h5 mb-0">Tutti gli operatori</h2>
+                <div class="btn-group btn-group-sm" role="group" aria-label="Filtro potenza operatori" id="operators-power-filter">
+                  <button type="button" class="btn btn-outline-secondary active" data-tier="tutte">Tutte</button>
+                  <button type="button" class="btn btn-outline-secondary" data-tier="lenta">≤22 kW</button>
+                  <button type="button" class="btn btn-outline-secondary" data-tier="rapida">22–50 kW</button>
+                  <button type="button" class="btn btn-outline-secondary" data-tier="ultra">&gt;50 kW</button>
+                </div>
+              </div>
+              <p class="text-muted small">I primi 3 della tabella sono i 3 operatori principali (per numero di colonnine nella fascia selezionata).</p>
+              <div id="operators-table"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="row g-4 mb-4 d-none" id="poi-proximity-section">
+        <div class="col-12">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h2 class="h5 mb-1">Colonnine e punti di interesse</h2>
+              <p class="text-muted small" id="poi-proximity-note"></p>
+              <div id="poi-proximity-table"></div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section id="empty-state" class="d-none">
@@ -113,6 +142,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../shared-usage.js"></script>
     <script src="../../shared-format.js"></script>
+    <script src="../../shared-table.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
