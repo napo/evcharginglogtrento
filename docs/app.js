@@ -758,9 +758,11 @@ function renderUsageHeadline(points, generatedAt) {
   if (!headline) return;
   const cityPoints = points.filter((p) => !p.is_a22);
   const occupate = cityPoints.filter((p) => p.stato_raw === 'CHARGING').length;
-  const kwh = stationsUsage && stationsUsage.city && stationsUsage.city.energia
-    ? stationsUsage.city.energia.totale_kwh_stimato
-    : null;
+  // "In uso" ha senso solo relativo alle colonnine monitorabili
+  // (real_time noto): il totale cittadino include quasi metà colonnine
+  // di cui non si sa l'occupazione (vedi renderGaugeOccupied, stessa
+  // distinzione).
+  const monitorabili = cityPoints.filter((p) => isKnownOccupancy(p)).length;
   // "Oggi" = dalle 00:00 di oggi ora italiana, non ultime 24h: stessa
   // definizione di calendario usata ovunque compaia questo dato (popup,
   // pagina Statistiche — vedi generate_station_usage.py).
@@ -768,17 +770,13 @@ function renderUsageHeadline(points, generatedAt) {
     ? stationsUsage.city.energia.oggi_kwh
     : null;
 
-  let frase = `Al momento sono occupate <strong id="hl-occupate">0</strong> colonnine su <strong>${cityPoints.length}</strong>`;
-  if (kwh != null) {
-    frase += `, che hanno erogato circa <strong id="hl-kwh">0</strong> kWh finora (stima)`;
-    if (kwhOggi != null) {
-      frase += `, di cui <strong id="hl-kwh-oggi">0</strong> kWh oggi dalle 00:00 (ora italiana)`;
-    }
+  let frase = `Al momento sono occupate <strong id="hl-occupate">0</strong> colonnine delle <strong>${monitorabili}</strong> monitorabili, su un totale di <strong>${cityPoints.length}</strong>.`;
+  if (kwhOggi != null) {
+    frase += ` L'energia stimata erogata dalle ${monitorabili} colonnine monitorabili è di <strong id="hl-kwh-oggi">0</strong> kWh da inizio giornata ad ora.`;
   }
-  headline.innerHTML = `${frase}.`;
+  headline.innerHTML = frase;
 
   countUp(document.getElementById('hl-occupate'), occupate, { duration: 700 });
-  if (kwh != null) countUp(document.getElementById('hl-kwh'), Math.round(kwh), { duration: 1100 });
   if (kwhOggi != null) countUp(document.getElementById('hl-kwh-oggi'), Math.round(kwhOggi), { duration: 1100 });
 }
 
