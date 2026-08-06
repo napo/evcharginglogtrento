@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-06T06:36:19+00:00",
+  "generated_at": "2026-08-06T06:41:25+00:00",
   "stats": {
     "total": 213,
     "active": 197,
     "inactive": 16,
-    "charging": 8
+    "charging": 9
   },
   "points": [
     {
@@ -352,7 +352,7 @@
     {
       "id_evse": "IT*ATE*E00271*2",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "Atlante S.r.l",
       "indirizzo": "Strada di Cadine 13",
@@ -622,7 +622,7 @@
     {
       "id_evse": "IT*IOY*E421704",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "IONITY GMBH",
       "indirizzo": "Via Ezio Maccani 157",
@@ -2764,7 +2764,7 @@
     {
       "id_evse": "IT*PLN*EH001186*2",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "Plenitude On The Road S.r.l.",
       "indirizzo": "Via Jacopo Aconcio",
