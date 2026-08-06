@@ -232,6 +232,63 @@ a:hover {
   min-height: 100%;
 }
 
+/* --- Componente "colonnine totali -> di cui" (docs/shared-drilldown.js) -- */
+
+.drilldown-bar-top {
+  width: 100%;
+  height: 32px;
+}
+
+.drilldown-connector {
+  width: 100%;
+  height: 56px;
+  color: var(--bs-body-color);
+}
+
+.drilldown-connector svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.drilldown-bar-bottom-wrap {
+  /* Larghezza impostata via JS: esattamente la quota del segmento "Attive"
+     nella barra sopra, per restare visivamente il suo stesso sottoinsieme
+     scomposto (vedi drawConnector in shared-drilldown.js). */
+  min-width: 0;
+}
+
+.drilldown-bar-bottom {
+  width: 100%;
+  height: 40px;
+}
+
+/* --- Badge di stato colonnina (tabella live + eventuali riusi) ---------- */
+/* Colori dedicati invece dei bg-* di Bootstrap: qui serve la stessa
+   identica palette di mappa/legenda/stacked-bar (alcuni token bootstrap,
+   es. --bs-danger, sono già riassegnati ad altri scopi nel tema). */
+
+.badge-state {
+  color: #ffffff;
+}
+
+.badge-state.is-real {
+  background: #1da542;
+}
+
+.badge-state.is-estimated {
+  background: #8bc34a;
+  color: #173318;
+}
+
+.badge-state.is-inuse {
+  background: #28a1bd;
+}
+
+.badge-state.is-inactive {
+  background: #b02a2a;
+}
+
 /* .alert-light è usato per i placeholder "servono più giorni di storico":
    il grigio chiaro di default di Bootstrap stona sulla superficie scura. */
 .alert-light {
@@ -272,18 +329,72 @@ a:hover {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
-.marker-pin.a22 {
-  border-radius: 3px;
-  border: 2px solid #f1b81b;
-  background: #fff3cd;
-}
-
 .marker-pin.charging {
   background: var(--accent-color);
 }
 
+/* Marker "esplosi" dallo spiderfy (docs/app.js, buildSpiderMarkers): un
+   po' più grandi del pin base per restare cliccabili anche quando sono
+   tanti e vicini, colorati per stato invece che con un colore unico di
+   gruppo — è proprio quello che permette di vedere a colpo d'occhio quale
+   stallo, tra quelli alla stessa stazione, è in uso. Il codice univoco
+   (id_evse) non compare come numero sul marker: è nel title (hover) e nel
+   popup al click. Stessa palette di .badge-state qui sopra. */
 .marker-pin.spider-marker {
+  width: 20px;
+  height: 20px;
   cursor: pointer;
+}
+
+.marker-pin.spider-marker.is-real {
+  background: #1da542;
+}
+
+.marker-pin.spider-marker.is-estimated {
+  background: #8bc34a;
+}
+
+.marker-pin.spider-marker.is-inuse {
+  background: #28a1bd;
+}
+
+.marker-pin.spider-marker.is-inactive {
+  background: #b02a2a;
+}
+
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.map-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--bs-secondary-color, #aeb9cc);
+}
+
+.map-legend-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 2px solid white;
+  flex: none;
+}
+
+/* 5 bottoni filtro affiancati possono non starci su uno schermo stretto:
+   scroll orizzontale del gruppo invece di farlo andare a capo (che
+   romperebbe la fusione visiva dei bordi tra i bottoni). */
+.btn-group-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.btn-group-scroll .btn-group {
+  flex-wrap: nowrap;
 }
 
 /* Anello che evidenzia il punto raggiunto dal fly-to tabella→mappa:

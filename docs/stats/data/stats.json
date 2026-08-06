@@ -1,11 +1,14 @@
 {
   "summary": {
     "total": 201,
-    "active": 173,
-    "inactive": 22,
-    "charging": 6,
-    "share_active": 86.1,
-    "generated_at": "2026-08-06T03:51:40+00:00"
+    "active": 178,
+    "active_known": 87,
+    "active_unknown": 91,
+    "inactive": 16,
+    "charging": 7,
+    "share_active": 88.6,
+    "generated_at": "2026-08-06T06:26:06+00:00",
+    "raccolta_dati_dal": "2026-08-04T20:41:09+00:00"
   },
   "a22": {
     "count": 12,
@@ -22,6 +25,8 @@
       "name": "Stazioni ferroviarie",
       "count": 2,
       "active": 2,
+      "active_known": 2,
+      "active_unknown": 0,
       "inactive": 0,
       "charging": 0,
       "share_active": 100.0
@@ -32,6 +37,8 @@
       "name": "NEOGY SRL",
       "count": 89,
       "active": 89,
+      "active_known": 0,
+      "active_unknown": 89,
       "by_power": {
         "lenta": 38,
         "rapida": 44,
@@ -41,7 +48,9 @@
     {
       "name": "BEC",
       "count": 34,
-      "active": 32,
+      "active": 33,
+      "active_known": 33,
+      "active_unknown": 0,
       "by_power": {
         "lenta": 0,
         "rapida": 22,
@@ -51,7 +60,9 @@
     {
       "name": "Tesla Italia Srl.",
       "count": 16,
-      "active": 9,
+      "active": 7,
+      "active_known": 7,
+      "active_unknown": 0,
       "by_power": {
         "lenta": 6,
         "rapida": 0,
@@ -61,7 +72,9 @@
     {
       "name": "ENEL X WAY ITALIA SRL",
       "count": 12,
-      "active": 7,
+      "active": 12,
+      "active_known": 12,
+      "active_unknown": 0,
       "by_power": {
         "lenta": 8,
         "rapida": 2,
@@ -72,6 +85,8 @@
       "name": "DUFERCO MOBILITY SRL",
       "count": 6,
       "active": 4,
+      "active_known": 4,
+      "active_unknown": 0,
       "by_power": {
         "lenta": 2,
         "rapida": 0,
@@ -81,7 +96,9 @@
     {
       "name": "Electra Italia s.r.l.",
       "count": 6,
-      "active": 5,
+      "active": 6,
+      "active_known": 6,
+      "active_unknown": 0,
       "by_power": {
         "lenta": 0,
         "rapida": 0,
@@ -91,7 +108,9 @@
     {
       "name": "Go Electric Stations SRLS",
       "count": 6,
-      "active": 3,
+      "active": 4,
+      "active_known": 4,
+      "active_unknown": 0,
       "by_power": {
         "lenta": 3,
         "rapida": 3,
@@ -101,7 +120,9 @@
     {
       "name": "IONITY GMBH",
       "count": 6,
-      "active": 5,
+      "active": 4,
+      "active_known": 4,
+      "active_unknown": 0,
       "by_power": {
         "lenta": 0,
         "rapida": 0,
@@ -112,6 +133,8 @@
       "name": "Plenitude On The Road S.r.l.",
       "count": 6,
       "active": 5,
+      "active_known": 5,
+      "active_unknown": 0,
       "by_power": {
         "lenta": 0,
         "rapida": 2,
@@ -121,7 +144,9 @@
     {
       "name": "Atlante S.r.l",
       "count": 4,
-      "active": 3,
+      "active": 2,
+      "active_known": 2,
+      "active_unknown": 0,
       "by_power": {
         "lenta": 0,
         "rapida": 0,

@@ -27,6 +27,11 @@ probabile sovrastima, soprattutto per la ricarica rapida DC dove la
 potenza cala avvicinandosi al pieno. Non è una lettura reale, è un
 indicatore di massima.
 
+"Energia oggi" (energia_oggi_kwh, sia per colonnina che a livello città) è
+calcolata sulle sessioni iniziate dalla mezzanotte di oggi in ora italiana
+(Europe/Rome) in poi — a differenza delle altre finestre (ultima_ora,
+ultime_24h, ...), che sono mobili e non di calendario.
+
 Va eseguito una volta al giorno, dopo generate_stats.py.
 """
 from __future__ import annotations
@@ -53,6 +58,18 @@ FINESTRE = {
     'ultimi_7_giorni': pd.Timedelta(days=7),
     'ultimi_30_giorni': pd.Timedelta(days=30),
 }
+
+# Unica eccezione voluta alle finestre mobili qui sopra: "oggi" è di
+# calendario (dalla mezzanotte di oggi, ora italiana, non ultime 24h),
+# perché è quello che ci si aspetta leggendo "energia erogata oggi".
+ROME_TZ = 'Europe/Rome'
+
+
+def inizio_giornata_roma(now: pd.Timestamp) -> pd.Timestamp:
+    """Mezzanotte di oggi in ora italiana (gestisce il cambio ora legale/
+    solare), riportata in UTC per confrontarla con i timestamp del
+    dataset."""
+    return now.tz_convert(ROME_TZ).normalize().tz_convert('UTC')
 
 WEEKDAY_LABELS = ['lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', 'sabato', 'domenica']
 
@@ -149,12 +166,13 @@ def tag_energia(sessions: list[dict], potenza_w: float | None) -> None:
         s['energia_kwh'] = round(durata_minuti(s) / 60.0 * potenza_w / 1000.0, 2) if potenza_w else None
 
 
-def energy_summary(sessions: list[dict], now: pd.Timestamp) -> dict:
+def energy_summary(sessions: list[dict], now: pd.Timestamp, oggi_da: pd.Timestamp) -> dict:
     con_energia = [s for s in sessions if s.get('energia_kwh') is not None]
     out = {'totale_kwh_stimato': round(sum(s['energia_kwh'] for s in con_energia), 2)}
     for key, delta in FINESTRE.items():
         soglia = now - delta
         out[f'{key}_kwh'] = round(sum(s['energia_kwh'] for s in con_energia if s['inizio'] >= soglia), 2)
+    out['oggi_kwh'] = round(sum(s['energia_kwh'] for s in con_energia if s['inizio'] >= oggi_da), 2)
     return out
 
 
@@ -208,6 +226,16 @@ def operatori_per_uso(stazioni: dict) -> list[dict]:
     return lista
 
 
+def ultimo_uso(sessions: list[dict], ongoing: dict | None) -> str | None:
+    """Fine dell'ultima sessione osservata (chiusa o ancora in corso): per
+    il campo "ultimo uso" mostrato in tabella, non per le metriche di
+    durata/energia (quelle restano sulle sole sessioni chiuse)."""
+    candidati = [s['fine'] for s in sessions]
+    if ongoing is not None:
+        candidati.append(ongoing['fine'])
+    return max(candidati).isoformat() if candidati else None
+
+
 def session_metrics(sessions: list[dict]) -> dict:
     sessioni_stimabili = [s for s in sessions if s['n_rilevazioni'] >= 2]
     durata_media = (
@@ -228,6 +256,7 @@ def main() -> None:
         return
 
     now = table['ts'].max()
+    oggi_da = inizio_giornata_roma(now)
     stazioni = {}
     tutte_le_sessioni: list[dict] = []
     n_in_corso = 0
@@ -242,12 +271,17 @@ def main() -> None:
         tutte_le_sessioni.extend(sessions)
 
         energia_stazione = [s['energia_kwh'] for s in sessions if s.get('energia_kwh') is not None]
+        energia_oggi_stazione = [
+            s['energia_kwh'] for s in sessions if s.get('energia_kwh') is not None and s['inizio'] >= oggi_da
+        ]
         rec = {
             'n_osservazioni': int(len(g)),
             'profilo_orario': profilo_orario(g),
             'giorno_settimana_piu_usato': giorno_settimana_piu_usato(g),
             **session_metrics(sessions),
+            'ultimo_uso': ultimo_uso(sessions, ongoing),
             'energia_totale_kwh_stimata': round(sum(energia_stazione), 2) if energia_stazione else None,
+            'energia_oggi_kwh': round(sum(energia_oggi_stazione), 2) if energia_oggi_stazione else None,
             'veicoli_serviti': veicoli_serviti(sessions, now),
             'indirizzo': g['indirizzo'].iloc[-1] or 'indirizzo sconosciuto',
             'cpo': g['cpo'].iloc[-1] or 'operatore sconosciuto',
@@ -274,7 +308,7 @@ def main() -> None:
         'giorno_settimana_piu_usato': giorno_settimana_piu_usato(table),
         **session_metrics(tutte_le_sessioni),
         'n_sessioni_in_corso': n_in_corso,
-        'energia': energy_summary(tutte_le_sessioni, now),
+        'energia': energy_summary(tutte_le_sessioni, now, oggi_da),
         'veicoli_serviti': veicoli_serviti(tutte_le_sessioni, now),
         'colonnina_top': colonnina_top(stazioni),
         'operatori_per_uso': operatori_per_uso(stazioni)[:5],

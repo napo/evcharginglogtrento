@@ -72,6 +72,8 @@ def build_operators(city_only: pd.DataFrame) -> list[dict]:
             'name': name,
             'count': int(len(g)),
             'active': int(g['is_active'].sum()),
+            'active_known': int(g['is_active_known'].sum()),
+            'active_unknown': int(g['is_active_unknown'].sum()),
             'by_power': {
                 'lenta': int(tier_counts.get('lenta', 0)),
                 'rapida': int(tier_counts.get('rapida', 0)),
@@ -88,6 +90,13 @@ def build_stats_payload(table: pd.DataFrame, latest: pd.DataFrame):
     latest['is_active'] = latest['status'].eq('Attivo')
     latest['is_inactive'] = latest['status'].eq('Non Attivo')
     latest['is_charging'] = latest['status'].eq('In ricarica')
+    # 'Attivo' copre sia telemetria osservata (real_time=True) sia lo stub
+    # statico che alcuni operatori (NEOGY, Sagelio, verificato sullo
+    # storico completo) restituiscono sempre come "AVAILABLE": is_active
+    # da solo confonde le due cose, quindi si separa qui una volta per
+    # tutte e si riusa ovunque sotto (summary, operatori, POI).
+    latest['is_active_known'] = latest['is_active'] & latest['real_time']
+    latest['is_active_unknown'] = latest['is_active'] & ~latest['real_time']
 
     is_a22 = (
         latest['id_evse'].fillna('').str.upper().str.startswith(A22_ID_PREFIX)
@@ -103,10 +112,16 @@ def build_stats_payload(table: pd.DataFrame, latest: pd.DataFrame):
     summary = {
         'total': int(len(city_only)),
         'active': int(city_only['is_active'].sum()),
+        'active_known': int(city_only['is_active_known'].sum()),
+        'active_unknown': int(city_only['is_active_unknown'].sum()),
         'inactive': int(city_only['is_inactive'].sum()),
         'charging': int(city_only['is_charging'].sum()),
         'share_active': round(city_only['is_active'].mean() * 100, 1) if len(city_only) else 0,
         'generated_at': latest['ts'].max().isoformat(),
+        # Prima rilevazione in assoluto nel dataset grezzo (non filtrata per
+        # città/A22): dà il contesto — da quanti giorni raccogliamo dati —
+        # a tutte le statistiche della pagina, non solo a questo summary.
+        'raccolta_dati_dal': table['ts'].min().isoformat(),
     }
 
     a22_df = latest[is_a22]
@@ -131,6 +146,8 @@ def build_stats_payload(table: pd.DataFrame, latest: pd.DataFrame):
             'name': poi_name,
             'count': int(len(poi_df)),
             'active': int(poi_df['is_active'].sum()),
+            'active_known': int(poi_df['is_active_known'].sum()),
+            'active_unknown': int(poi_df['is_active_unknown'].sum()),
             'inactive': int(poi_df['is_inactive'].sum()),
             'charging': int(poi_df['is_charging'].sum()),
             'share_active': round(poi_df['is_active'].mean() * 100, 1),

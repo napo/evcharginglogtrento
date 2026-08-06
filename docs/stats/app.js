@@ -15,37 +15,59 @@ const HERO_GREEN = '#1da542';
 const ACCENT = '#28a1bd';
 
 function renderSummaryCards(data) {
+  // "Attive" è divisa in due card: le colonnine il cui stato è telemetria
+  // osservata (dato reale) e quelle il cui "Attivo" è in realtà uno stub
+  // statico lato provider (NEOGY, A22, Sagelio: mai visto altro stato che
+  // "AVAILABLE" in tutto lo storico) — sommarle in un solo numero
+  // nasconderebbe che quasi metà del parco colonnine non ha un'occupazione
+  // osservata davvero.
   const cards = [
     { label: 'Colonnine', value: data.summary.total, tone: 'primary' },
-    { label: 'Attive', value: data.summary.active, tone: 'success' },
+    { label: 'Attiva (reale)', value: data.summary.active_known, tone: 'success' },
+    { label: 'Attiva (stimata)', value: data.summary.active_unknown, tone: 'warning' },
     { label: 'Non attive', value: data.summary.inactive, tone: 'danger' },
-    { label: 'In ricarica', value: data.summary.charging, tone: 'info' },
+    { label: 'In uso', value: data.summary.charging, tone: 'info' },
   ];
 
   summaryCards.innerHTML = cards
-    .map(
-      (card) => `
-      <div class="col-md-3 col-sm-6">
-        <div class="card stat-card border-0 shadow-sm bg-${card.tone} text-white">
+    .map((card) => {
+      // bg-warning (giallo) fallisce il contrasto con testo bianco: solo
+      // quella card usa testo scuro, come già per il badge A22 altrove.
+      const textClass = card.tone === 'warning' ? 'text-dark' : 'text-white';
+      const labelClass = card.tone === 'warning' ? 'text-black-50' : 'text-white-50';
+      return `
+      <div class="col-lg-2 col-md-4 col-6">
+        <div class="card stat-card border-0 shadow-sm bg-${card.tone} ${textClass}">
           <div class="card-body">
-            <div class="small text-white-50">${card.label}</div>
+            <div class="small ${labelClass}">${card.label}</div>
             <div class="display-6 fw-semibold">${card.value}</div>
           </div>
         </div>
-      </div>`
-    )
+      </div>`;
+    })
     .join('');
 
+  const raccoltaDalLabel = window.EVFormat
+    ? EVFormat.popupDate(data.summary.raccolta_dati_dal.split('T')[0])
+    : data.summary.raccolta_dati_dal;
   summaryBox.innerHTML = `
     <div class="mb-2"><strong>Totale:</strong> ${data.summary.total}</div>
-    <div class="mb-2"><strong>Quota attive:</strong> ${data.summary.share_active}%</div>
+    <div class="mb-2"><strong>Quota attive:</strong> ${data.summary.share_active}% (di cui ${data.summary.active_unknown} stimate, senza dato in tempo reale)</div>
     <div class="mb-2"><strong>Ultimo snapshot:</strong> ${window.EVFormat ? EVFormat.dateTime(data.summary.generated_at) : data.summary.generated_at}</div>
+    <div class="mb-2"><strong>Dati raccolti dal:</strong> ${raccoltaDalLabel}</div>
   `;
 }
 
 function renderGauge(data) {
   const el = document.getElementById('gauge-active');
   if (!el || typeof echarts === 'undefined') return;
+  // "In uso" ha senso solo relativo alle colonnine monitorabili (real_time
+  // noto): le stimate (active_unknown) non lo sono per definizione, quindi
+  // il denominatore è il totale meno quelle — stessa quota mostrata nel
+  // blocco "Colonnine totali" per il segmento "In uso" (vedi
+  // shared-drilldown.js, che usa la stessa formula sugli stessi conteggi).
+  const monitorabili = data.summary.total - data.summary.active_unknown;
+  const quota = window.EVDrilldown ? EVDrilldown.ratio(data.summary.charging, monitorabili) : 0;
   const chart = echarts.init(el, 'evtrento-dark');
   chart.setOption({
     series: [
@@ -66,25 +88,41 @@ function renderGauge(data) {
         title: { show: false },
         detail: {
           valueAnimation: true,
-          formatter: '{value}%',
+          formatter: (value) => `${EVDrilldown.formatPct(value)}%`,
           width: '60%',
           fontSize: 32,
           fontWeight: 'bolder',
           offsetCenter: [0, '10%'],
           color: ACCENT,
         },
-        data: [{ value: data.summary.share_active }],
+        data: [{ value: quota }],
       },
     ],
   });
   window.addEventListener('resize', () => chart.resize());
+
+  const caption = document.createElement('div');
+  caption.className = 'text-center text-muted small mt-2';
+  caption.textContent = `Colonnine in uso rispetto a quelle dove è possibile il monitoraggio (${monitorabili} su ${data.summary.total} totali).`;
+  el.parentElement.appendChild(caption);
+}
+
+function renderDrilldownTotali(data) {
+  const el = document.getElementById('drilldown-totali');
+  if (!el || !window.EVDrilldown) return;
+  window.EVDrilldown.render(el, {
+    attivaReale: data.summary.active_known,
+    attivaStimata: data.summary.active_unknown,
+    inUso: data.summary.charging,
+    nonAttiva: data.summary.inactive,
+  });
 }
 
 function renderPois(data) {
   poisTable.innerHTML = `
     <div class="table-responsive">
       <table class="table table-sm table-hover align-middle">
-        <thead><tr><th>POI</th><th>Colonnine</th><th>Attive</th><th>% attive</th></tr></thead>
+        <thead><tr><th>POI</th><th>Colonnine</th><th>Attive</th><th>di cui stimate</th><th>% attive</th></tr></thead>
         <tbody>
           ${data.pois
             .map(
@@ -93,6 +131,7 @@ function renderPois(data) {
                   <td>${row.name}</td>
                   <td>${row.count}</td>
                   <td>${row.active}</td>
+                  <td>${row.active_unknown || '—'}</td>
                   <td>${row.share_active}%</td>
                 </tr>`
             )
@@ -121,7 +160,10 @@ function renderOperators(data, tier = 'tutte') {
               (op, i) => `
                 <tr class="${i < 3 ? 'table-warning' : ''}">
                   <td data-sort-value="${i + 1}">${i + 1}</td>
-                  <td><span class="station-link" data-operator-popover="${op.name}">${op.name}</span></td>
+                  <td>
+                    <span class="station-link" data-operator-popover="${op.name}">${op.name}</span>
+                    ${op.active_unknown > 0 ? '<span class="badge bg-warning text-dark ms-1" title="Stato non aggiornato in tempo reale: occupazione stimata">stima</span>' : ''}
+                  </td>
                   <td>${op.shown}</td>
                 </tr>`
             )
@@ -206,7 +248,7 @@ function renderDailyChartPoints(points) {
   if (!dailyChart) dailyChart = echarts.init(el, 'evtrento-dark');
   dailyChart.setOption({
     tooltip: { trigger: 'axis' },
-    legend: { data: ['Attive %', 'In ricarica %'] },
+    legend: { data: ['Attive %', 'In uso %'] },
     grid: { left: 40, right: 20, top: 40, bottom: 60 },
     xAxis: {
       type: 'category',
@@ -216,7 +258,7 @@ function renderDailyChartPoints(points) {
     yAxis: { type: 'value', max: 100, axisLabel: { formatter: '{value}%' } },
     series: [
       { name: 'Attive %', type: 'line', smooth: true, itemStyle: { color: HERO_GREEN }, data: points.map((p) => p.share_active) },
-      { name: 'In ricarica %', type: 'line', smooth: true, itemStyle: { color: ACCENT }, data: points.map((p) => p.share_charging) },
+      { name: 'In uso %', type: 'line', smooth: true, itemStyle: { color: ACCENT }, data: points.map((p) => p.share_charging) },
     ],
   });
 }
@@ -330,13 +372,13 @@ function renderMonthlyChart(containerId, block) {
   const chart = echarts.init(el, 'evtrento-dark');
   chart.setOption({
     tooltip: { trigger: 'axis' },
-    legend: { data: ['Attive %', 'In ricarica %'] },
+    legend: { data: ['Attive %', 'In uso %'] },
     grid: { left: 40, right: 20, top: 40, bottom: 30 },
     xAxis: { type: 'category', data: block.points.map((p) => (window.EVFormat ? EVFormat.monthYear(p.month) : p.month)) },
     yAxis: { type: 'value', max: 100, axisLabel: { formatter: '{value}%' } },
     series: [
       { name: 'Attive %', type: 'bar', itemStyle: { color: HERO_GREEN }, data: block.points.map((p) => p.share_active) },
-      { name: 'In ricarica %', type: 'bar', itemStyle: { color: ACCENT }, data: block.points.map((p) => p.share_charging) },
+      { name: 'In uso %', type: 'bar', itemStyle: { color: ACCENT }, data: block.points.map((p) => p.share_charging) },
     ],
   });
   window.addEventListener('resize', () => chart.resize());
@@ -379,7 +421,7 @@ function renderHourlyProfile(city) {
     yAxis: { type: 'value', max: 100, axisLabel: { formatter: '{value}%' } },
     series: [
       {
-        name: 'In ricarica %',
+        name: 'In uso %',
         type: 'bar',
         data: city.profilo_orario.map((p) => p.quota_charging),
         itemStyle: { color: ACCENT },
@@ -398,24 +440,29 @@ function renderEnergyCards(city) {
     return;
   }
   const cards = [
+    { label: 'Oggi', value: energia.oggi_kwh, tone: 'warning' },
     { label: 'Ultima ora', value: energia.ultima_ora_kwh, tone: 'info' },
     { label: 'Ultime 24 ore', value: energia.ultime_24h_kwh, tone: 'primary' },
     { label: 'Ultimi 7 giorni', value: energia.ultimi_7_giorni_kwh, tone: 'secondary' },
     { label: 'Totale storico', value: energia.totale_kwh_stimato, tone: 'success' },
   ];
   container.innerHTML = cards
-    .map(
-      (card) => `
-      <div class="col-md-3 col-sm-6">
-        <div class="card stat-card border-0 shadow-sm bg-${card.tone} bg-gradient text-white h-100">
+    .map((card) => {
+      // bg-warning (giallo) fallisce il contrasto con testo bianco: solo
+      // la card "Oggi" usa testo scuro, come già per le card attive/stima.
+      const textClass = card.tone === 'warning' ? 'text-dark' : 'text-white';
+      const labelClass = card.tone === 'warning' ? 'text-black-50' : 'text-white-50';
+      return `
+      <div class="col-lg-2 col-md-4 col-6">
+        <div class="card stat-card border-0 shadow-sm bg-${card.tone} bg-gradient ${textClass} h-100">
           <div class="card-body">
-            <div class="small text-white-50">${card.label}</div>
+            <div class="small ${labelClass}">${card.label}</div>
             <div class="display-6 fw-semibold">${Math.round(card.value)}</div>
-            <div class="small text-white-50">kWh</div>
+            <div class="small ${labelClass}">kWh</div>
           </div>
         </div>
-      </div>`
-    )
+      </div>`;
+    })
     .join('');
 }
 
@@ -430,6 +477,7 @@ async function loadData() {
   statsPayload = payload;
   renderSummaryCards(payload);
   renderGauge(payload);
+  renderDrilldownTotali(payload);
   renderPois(payload);
   renderOperators(payload);
   wireOperatorsFilter();

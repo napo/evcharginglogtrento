@@ -51,6 +51,9 @@ window.EVUsage = (() => {
       usage.energia_totale_kwh_stimata != null
         ? `<dt>Energia erogata (stima)</dt><dd>${usage.energia_totale_kwh_stimata} kWh</dd>`
         : '',
+      usage.energia_oggi_kwh != null
+        ? `<dt>Energia oggi (dalle 00:00, ora italiana)</dt><dd>${usage.energia_oggi_kwh} kWh</dd>`
+        : '',
       veicoliRiga(usage.veicoli_serviti),
       ora ? `<dt>Ora più usata</dt><dd>${ora.ora}:00 (${ora.quota_charging}% delle rilevazioni)</dd>` : '',
       usage.giorno_settimana_piu_usato

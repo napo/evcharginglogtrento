@@ -65,8 +65,15 @@
 
       <section class="card shadow-sm mb-4">
         <div class="card-body">
+          <h2 class="h5 mb-3">Colonnine totali</h2>
+          <div id="drilldown-totali"></div>
+        </div>
+      </section>
+
+      <section class="card shadow-sm mb-4">
+        <div class="card-body">
           <h2 class="h5 mb-1">Energia erogata (stima)</h2>
-          <p class="text-muted small mb-3">Stima: durata delle sessioni osservate × potenza nominale del connettore — non una lettura reale, probabile sovrastima (vedi README). Solo colonnine cittadine real-time.</p>
+          <p class="text-muted small mb-3">Stima: durata delle sessioni osservate × potenza nominale del connettore — non una lettura reale, probabile sovrastima (vedi README). Solo colonnine cittadine real-time. "Oggi" è dalla mezzanotte di oggi (ora italiana); le altre finestre sono mobili, non di calendario (es. "ultime 24 ore" è sempre riferito a ora, non a "ieri").</p>
           <div class="row g-3" id="energy-cards"></div>
         </div>
       </section>
@@ -96,7 +103,7 @@
           <div id="chart-daily-trento" class="echart-trend mb-2"></div>
           <div id="daily-table-wrap" class="d-none mb-4">
             <table class="table table-sm table-hover" id="daily-table">
-              <thead><tr><th>Data</th><th>Attive %</th><th>In ricarica %</th></tr></thead>
+              <thead><tr><th>Data</th><th>Attive %</th><th>In uso %</th></tr></thead>
               <tbody></tbody>
             </table>
           </div>
@@ -109,7 +116,7 @@
           <div id="chart-monthly-trento" class="echart-trend mb-2"></div>
           <div id="monthly-table-wrap" class="d-none">
             <table class="table table-sm table-hover" id="monthly-table">
-              <thead><tr><th>Mese</th><th>Attive %</th><th>In ricarica %</th></tr></thead>
+              <thead><tr><th>Mese</th><th>Attive %</th><th>In uso %</th></tr></thead>
               <tbody></tbody>
             </table>
           </div>
@@ -169,6 +176,7 @@
     <script src="../shared-format.js"></script>
     <script src="../shared-table.js"></script>
     <script src="../shared-echarts-theme.js"></script>
+    <script src="../shared-drilldown.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
