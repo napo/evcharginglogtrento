@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-07T07:59:32+00:00",
+  "generated_at": "2026-08-07T08:04:37+00:00",
   "stats": {
     "total": 213,
     "active": 194,
     "inactive": 19,
-    "charging": 11
+    "charging": 10
   },
   "points": [
     {
@@ -586,7 +586,7 @@
     {
       "id_evse": "IT*EWI*EEW0307S1*1",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "EWIVA SRL",
       "indirizzo": "Via Ezio Maccani, 133",
