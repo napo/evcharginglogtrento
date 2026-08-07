@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-07T07:49:21+00:00",
+  "generated_at": "2026-08-07T07:54:27+00:00",
   "stats": {
     "total": 213,
     "active": 194,
     "inactive": 19,
-    "charging": 14
+    "charging": 12
   },
   "points": [
     {
@@ -910,7 +910,7 @@
     {
       "id_evse": "IT*PLN*EH001186*3",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "Plenitude On The Road S.r.l.",
       "indirizzo": "Via Jacopo Aconcio",
@@ -1270,7 +1270,7 @@
     {
       "id_evse": "IT*TSL*EA6M1PM",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "Tesla Italia Srl.",
       "indirizzo": "11, Via Innsbruck",
@@ -2908,7 +2908,7 @@
     {
       "id_evse": "IT*TSL*EA4TAJR",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "Tesla Italia Srl.",
       "indirizzo": "11, Via Innsbruck",
@@ -2944,7 +2944,7 @@
     {
       "id_evse": "IT*TSL*EA6J63Q",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "Tesla Italia Srl.",
       "indirizzo": "11, Via Innsbruck",
