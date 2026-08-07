@@ -132,9 +132,9 @@ window.EVDrilldown = (() => {
       <div class="drilldown-connector"><svg role="presentation"></svg></div>
       <div class="drilldown-bar-bottom-wrap"><div class="drilldown-bar-bottom"></div></div>
       <div class="map-legend mt-3">
+        <span class="map-legend-item"><span class="map-legend-dot" style="background:${ACCENT}"></span>In uso · <strong>${inUso}</strong></span>
         <span class="map-legend-item"><span class="map-legend-dot" style="background:${HERO_GREEN}"></span>Attiva (reale) · <strong>${attivaReale}</strong></span>
         <span class="map-legend-item"><span class="map-legend-dot" style="background:${HERO_GREEN_LIGHT}"></span>Attiva (stimata) · <strong>${attivaStimata}</strong></span>
-        <span class="map-legend-item"><span class="map-legend-dot" style="background:${ACCENT}"></span>In uso · <strong>${inUso}</strong></span>
         <span class="map-legend-item"><span class="map-legend-dot" style="background:${STATUS_RED}"></span>Non attiva · <strong>${nonAttiva}</strong></span>
       </div>
       <p class="text-muted small mt-3 mb-0">Non tutte le colonnine sono monitorabili: la categoria "in uso" può essere mostrata solo per quelle disponibili su cui l'app riesce a rilevare l'occupazione in tempo reale.</p>

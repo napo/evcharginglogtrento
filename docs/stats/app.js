@@ -1,5 +1,5 @@
-const summaryCards = document.getElementById('summary-cards');
 const summaryBox = document.getElementById('summary-box');
+const heroLead = document.getElementById('hero-lead');
 const poiUsageNote = document.getElementById('poi-usage-note');
 const poiUsageTable = document.getElementById('poi-usage-table');
 const operatorsUsageNote = document.getElementById('operators-usage-note');
@@ -28,40 +28,34 @@ let raccoltaDalIso = null;
 
 // --- Summary (stats.json) ------------------------------------------------
 
+// Giorni di calendario coperti dalla raccolta, dalla prima rilevazione
+// assoluta (raccolta_dati_dal) all'ultimo snapshot (generated_at):
+// entrambe le date sono normalizzate a mezzanotte locale prima della
+// differenza, altrimenti l'orario del primo/ultimo snapshot del giorno
+// falserebbe il conteggio di un giorno in più o in meno.
+function daysCollected(fromIso, toIso) {
+  const from = new Date(`${fromIso.split('T')[0]}T00:00:00`);
+  const to = new Date(`${toIso.split('T')[0]}T00:00:00`);
+  if (Number.isNaN(from.getTime()) || Number.isNaN(to.getTime())) return null;
+  return Math.round((to - from) / 86400000) + 1;
+}
+
 function renderSummaryCards(data) {
-  const cards = [
-    { label: 'Colonnine', value: data.summary.total, tone: 'primary' },
-    { label: 'Attiva (reale)', value: data.summary.active_known, tone: 'success' },
-    { label: 'Attiva (stimata)', value: data.summary.active_unknown, tone: 'warning' },
-    { label: 'Non attive', value: data.summary.inactive, tone: 'danger' },
-    { label: 'In uso', value: data.summary.charging, tone: 'info' },
-  ];
-
-  summaryCards.innerHTML = cards
-    .map((card) => {
-      const textClass = card.tone === 'warning' ? 'text-dark' : 'text-white';
-      const labelClass = card.tone === 'warning' ? 'text-black-50' : 'text-white-50';
-      return `
-      <div class="col-lg-2 col-md-4 col-6">
-        <div class="card stat-card border-0 shadow-sm bg-${card.tone} ${textClass}">
-          <div class="card-body">
-            <div class="small ${labelClass}">${card.label}</div>
-            <div class="display-6 fw-semibold">${card.value}</div>
-          </div>
-        </div>
-      </div>`;
-    })
-    .join('');
-
   const raccoltaDalLabel = window.EVFormat
     ? EVFormat.popupDate(data.summary.raccolta_dati_dal.split('T')[0])
     : data.summary.raccolta_dati_dal;
+  const totaleGiorni = daysCollected(data.summary.raccolta_dati_dal, data.summary.generated_at);
   summaryBox.innerHTML = `
     <div class="mb-2"><strong>Totale:</strong> ${data.summary.total}</div>
     <div class="mb-2"><strong>Quota attive:</strong> ${data.summary.share_active}% (di cui ${data.summary.active_unknown} stimate, senza dato in tempo reale)</div>
     <div class="mb-2"><strong>Ultimo snapshot:</strong> ${window.EVFormat ? EVFormat.dateTime(data.summary.generated_at) : data.summary.generated_at}</div>
     <div class="mb-2"><strong>Dati raccolti dal:</strong> ${raccoltaDalLabel}</div>
+    ${totaleGiorni != null ? `<div class="mb-2">Per un totale di <strong>${totaleGiorni}</strong> giorni</div>` : ''}
   `;
+
+  if (heroLead) {
+    heroLead.textContent = `L'applicazione archivia i dati dal ${raccoltaDalLabel} e pubblica questo report giornaliero.`;
+  }
 }
 
 // --- Andamento conteggio giornaliero (trends.json) -----------------------
@@ -91,16 +85,16 @@ function renderCountDailyPoints(points) {
   countChart.setOption({
     tooltip: { trigger: 'axis' },
     legend: { data: ['Attive', 'Non attive'] },
-    grid: { left: 40, right: 20, top: 40, bottom: 60 },
+    grid: { left: 40, right: 20, top: 40, bottom: 40 },
     xAxis: {
       type: 'category',
-      data: points.map((p) => (window.EVFormat ? EVFormat.dateOnly(p.date) : p.date)),
-      axisLabel: { rotate: 45, fontSize: 10 },
+      data: points.map((p) => (window.EVFormat ? EVFormat.dateShort(p.date) : p.date)),
+      axisLabel: { rotate: 0, fontSize: 10 },
     },
     yAxis: { type: 'value' },
     series: [
-      { name: 'Attive', type: 'bar', stack: 'totale', itemStyle: { color: HERO_GREEN }, data: points.map((p) => p.n_attive) },
-      { name: 'Non attive', type: 'bar', stack: 'totale', itemStyle: { color: STATUS_RED }, data: points.map((p) => p.n_non_attive) },
+      { name: 'Attive', type: 'bar', stack: 'totale', barCategoryGap: '10%', itemStyle: { color: HERO_GREEN }, data: points.map((p) => p.n_attive) },
+      { name: 'Non attive', type: 'bar', stack: 'totale', barCategoryGap: '10%', itemStyle: { color: STATUS_RED }, data: points.map((p) => p.n_non_attive) },
     ],
   });
   if (window.EVChartTools) EVChartTools.attach(countChart, el, { filename: 'colonnine-attive-non-attive' });

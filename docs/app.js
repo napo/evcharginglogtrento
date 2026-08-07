@@ -228,7 +228,7 @@ function renderTable(items) {
         : (lastUsed && window.EVFormat ? EVFormat.popupDate(lastUsed.split('T')[0]) : '—');
       return `
         <tr data-id-evse="${item.id_evse}">
-          <td><span class="badge rounded-pill badge-state ${state.cls}">${state.label}</span></td>
+          <td data-sort-value="${STATE_SORT_RANK[state.label]}"><span class="badge rounded-pill badge-state ${state.cls}">${state.label}</span></td>
           <td>${item.cpo || '—'}${item.is_a22 ? ' <span class="badge bg-warning text-dark ms-1">A22</span>' : ''}</td>
           <td>${item.citta || 'Trento'}</td>
           <td data-sort-value="${item.potenza_w || 0}">${item.potenza_w ? `${item.potenza_w / 1000} kW` : '—'}</td>
@@ -772,13 +772,15 @@ function renderUsageHeadline(points, generatedAt) {
     ? stationsUsage.city.energia.oggi_kwh
     : null;
 
-  let frase = `Al momento sono occupate <strong id="hl-occupate">0</strong> colonnine delle <strong>${monitorabili}</strong> monitorabili, su un totale di <strong>${cityPoints.length}</strong>.`;
+  let frase = `Al momento sono occupate <strong id="hl-occupate">0</strong> colonnine delle <strong id="hl-monitorabili">0</strong> monitorabili, su un totale di <strong id="hl-totale">0</strong>.`;
   if (kwhOggi != null) {
     frase += ` L'energia stimata erogata dalle ${monitorabili} colonnine monitorabili è di <strong id="hl-kwh-oggi">0</strong> kWh da inizio giornata ad ora.`;
   }
   headline.innerHTML = frase;
 
   countUp(document.getElementById('hl-occupate'), occupate, { duration: 700 });
+  countUp(document.getElementById('hl-monitorabili'), monitorabili, { duration: 900 });
+  countUp(document.getElementById('hl-totale'), cityPoints.length, { duration: 900 });
   if (kwhOggi != null) countUp(document.getElementById('hl-kwh-oggi'), Math.round(kwhOggi), { duration: 1100 });
 }
 

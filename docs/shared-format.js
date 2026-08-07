@@ -53,5 +53,14 @@ window.EVFormat = (() => {
     return `${pad2(d.getDate())}/${pad2(d.getMonth() + 1)}/${d.getFullYear()}`;
   }
 
-  return { dateTime, dateOnly, monthYear, popupDateTime, popupDate };
+  // DD/MM/YY: per le etichette sugli assi dei grafici, dove lo spazio
+  // orizzontale per categoria è poco e un anno a 4 cifre costringerebbe a
+  // ruotare il testo.
+  function dateShort(isoDate) {
+    const d = new Date(`${isoDate}T00:00:00`);
+    if (Number.isNaN(d.getTime())) return '';
+    return `${pad2(d.getDate())}/${pad2(d.getMonth() + 1)}/${String(d.getFullYear()).slice(-2)}`;
+  }
+
+  return { dateTime, dateOnly, monthYear, popupDateTime, popupDate, dateShort };
 })();
