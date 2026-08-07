@@ -28,6 +28,8 @@ from pathlib import Path
 import pandas as pd
 import pyarrow.dataset as ds
 
+from config import COMUNE, COMUNE_NORM
+
 ROOT = Path(__file__).resolve().parent
 DATASET = ROOT / 'data'
 POI_FILE = ROOT / 'poi_trento.json'
@@ -57,11 +59,11 @@ def haversine_m(lat1, lon1, lat2, lon2) -> float:
     return 2 * r * math.asin(math.sqrt(a))
 
 
-def load_real_time_trento() -> pd.DataFrame:
+def load_real_time_city() -> pd.DataFrame:
     table = ds.dataset(str(DATASET), format='parquet', partitioning='hive').to_table().to_pandas()
     table['ts'] = pd.to_datetime(table['ts'], utc=True)
-    is_trento = table['citta'].fillna('').str.strip().str.lower() == 'trento'
-    table = table[(table['real_time'] == True) & is_trento].copy()  # noqa: E712
+    is_comune = table['citta'].fillna('').str.strip().str.lower() == COMUNE_NORM
+    table = table[(table['real_time'] == True) & is_comune].copy()  # noqa: E712
     table['is_charging'] = table['stato_raw'].fillna('').str.upper().eq('CHARGING')
     return table
 
@@ -107,9 +109,9 @@ def poi_categorie_vicine(lat: float, lon: float, poi_data: dict) -> list[str]:
 
 
 def main() -> None:
-    table = load_real_time_trento()
+    table = load_real_time_city()
     if table.empty:
-        print('nessuna colonnina real-time a Trento nel dataset: usage_timeseries.json non generato')
+        print(f'nessuna colonnina real-time a {COMUNE} nel dataset: usage_timeseries.json non generato')
         return
 
     poi_data = json.loads(POI_FILE.read_text(encoding='utf-8')) if POI_FILE.exists() else {'categories': {}}

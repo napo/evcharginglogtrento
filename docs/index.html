@@ -40,7 +40,7 @@
       <div class="container-fluid container-xl d-flex align-items-center justify-content-between flex-wrap gap-2">
         <a href="index.html" class="site-logo d-flex align-items-center gap-2">
           <img src="assets/logo_evclog.png" alt="EV Charging Log" />
-          <span class="site-logo-word">Trento</span>
+          <span class="site-logo-word" data-comune>Trento</span>
         </a>
         <nav class="site-nav">
           <ul>
@@ -63,7 +63,7 @@
             alt="Illustrazione di un'auto elettrica in ricarica a una colonnina, targa 'I love data'"
           />
           <div class="card-body">
-            <h1 class="h3 mb-2">Colonnine di ricarica a Trento</h1>
+            <h1 class="h3 mb-2">Colonnine di ricarica a <span data-comune>Trento</span></h1>
             <span class="hero-eyebrow">Situazione del giorno</span>
             <div class="fw-semibold mb-2" id="situation-date"></div>
             <p class="lead mb-0" id="usage-headline"></p>
@@ -165,6 +165,7 @@
     <script src="shared-table.js"></script>
     <script src="shared-echarts-theme.js"></script>
     <script src="shared-drilldown.js"></script>
+    <script src="shared-config.js" data-config="config.json"></script>
     <script src="app.js"></script>
   </body>
 </html>

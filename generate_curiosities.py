@@ -34,6 +34,8 @@ from pathlib import Path
 import pandas as pd
 import pyarrow.dataset as ds
 
+from config import COMUNE, COMUNE_NORM
+
 ROOT = Path(__file__).resolve().parent
 DATASET = ROOT / 'data'
 OUT = ROOT / 'docs' / 'stats' / 'data' / 'curiosities.json'
@@ -75,9 +77,9 @@ def load_table() -> pd.DataFrame:
         table['id_evse'].fillna('').str.upper().str.startswith(A22_ID_PREFIX)
         | table['cpo'].fillna('').str.contains('autostrada del brennero', case=False, na=False)
     )
-    # Solo Comune di Trento, non i comuni limitrofi che lo scraper raccoglie
-    # comunque nel dataset grezzo.
-    table['is_trento'] = table['citta'].fillna('').str.strip().str.lower() == 'trento'
+    # Solo il comune configurato, non i comuni limitrofi che lo scraper
+    # raccoglie comunque nel dataset grezzo.
+    table['is_comune'] = table['citta'].fillna('').str.strip().str.lower() == COMUNE_NORM
     table['is_active'] = table['stato'].eq('Attivo')
     table['is_charging'] = table['stato_raw'].fillna('').str.upper().eq('CHARGING')
     return table
@@ -90,7 +92,7 @@ def fact_quota_ac_dc(latest: pd.DataFrame) -> dict | None:
     quota_dc = round((known == 'DC').mean() * 100, 1)
     return {
         'titolo': 'Corrente alternata o continua?',
-        'testo': f'Il {quota_dc}% delle colonnine di Trento eroga corrente continua (DC, ricarica rapida); il resto è AC.',
+        'testo': f'Il {quota_dc}% delle colonnine di {COMUNE} eroga corrente continua (DC, ricarica rapida); il resto è AC.',
     }
 
 
@@ -107,17 +109,21 @@ def fact_quota_real_time(latest: pd.DataFrame) -> dict | None:
     }
 
 
-def fact_trento_vs_a22(latest: pd.DataFrame) -> dict | None:
-    trento = latest[latest['is_trento']]
+def fact_citta_vs_a22(latest: pd.DataFrame) -> dict | None:
+    """Confronto città/A22: compare solo se nel dataset del comune configurato
+    ci sono anche colonnine A22 rilevate (non è detto — dipende da quanto è
+    vicino il comune all'autostrada del Brennero), altrimenti non è calcolabile
+    e la curiosità viene omessa invece di essere scritta a mano."""
+    citta = latest[latest['is_comune']]
     a22 = latest[latest['is_a22']]
-    if trento.empty or a22.empty:
+    if citta.empty or a22.empty:
         return None
-    share_trento = round(trento['is_active'].mean() * 100, 1)
+    share_citta = round(citta['is_active'].mean() * 100, 1)
     share_a22 = round(a22['is_active'].mean() * 100, 1)
     return {
         'titolo': 'Città o autostrada?',
         'testo': (
-            f'In questo momento il {share_trento}% delle colonnine in città è attivo, contro il '
+            f'In questo momento il {share_citta}% delle colonnine in città è attivo, contro il '
             f'{share_a22}% di quelle sulla A22: pubblici diversi, andamenti diversi.'
         ),
     }
@@ -277,14 +283,14 @@ def main() -> None:
 
     latest = table.sort_values('ts').drop_duplicates(subset=['id_evse'], keep='last')
     rt = table[table['real_time'] == True].copy()  # noqa: E712
-    rt_city = rt[rt['is_trento']]
-    latest_city = latest[latest['is_trento']]
+    rt_city = rt[rt['is_comune']]
+    latest_city = latest[latest['is_comune']]
     days = int(rt['date'].nunique()) if not rt.empty else 0
 
     candidati = [
         fact_quota_ac_dc(latest),
         fact_quota_real_time(latest),
-        fact_trento_vs_a22(latest),
+        fact_citta_vs_a22(latest),
         fact_ora_punta_ricarica(rt, days),
         fact_giorno_settimana_top(rt, days),
         fact_poi_vicine(),

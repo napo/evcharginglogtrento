@@ -56,6 +56,8 @@ from botocore.auth import SigV4Auth
 from botocore.awsrequest import AWSRequest
 from botocore.credentials import Credentials
 
+from config import COMUNE, PROVINCIA
+
 log = logging.getLogger("pun")
 
 # ────────────────────────── COSTANTI / FALLBACK ────────────────────────────
@@ -396,8 +398,8 @@ def run_cycle(sess, args, bbox) -> None:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--comune", default="Trento")
-    ap.add_argument("--provincia", default="TN")
+    ap.add_argument("--comune", default=COMUNE)
+    ap.add_argument("--provincia", default=PROVINCIA)
     ap.add_argument("--outdir", default="./data",
                     help="cartella dei parquet di output (default: ./data)")
     ap.add_argument("--statedir", default="./state",

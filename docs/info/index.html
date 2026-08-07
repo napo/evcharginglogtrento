@@ -30,7 +30,7 @@
       <div class="container-fluid container-xl d-flex align-items-center justify-content-between flex-wrap gap-2">
         <a href="../index.html" class="site-logo d-flex align-items-center gap-2">
           <img src="../assets/logo_evclog.png" alt="EV Charging Log" />
-          <span class="site-logo-word">Trento</span>
+          <span class="site-logo-word" data-comune>Trento</span>
         </a>
         <nav class="site-nav">
           <ul>
@@ -50,9 +50,9 @@
       <div class="card shadow-sm mb-3">
         <div class="card-body">
           <h2 class="h5">Il progetto</h2>
-          <p class="fw-semibold">Progetto indipendente e non ufficiale. Non è affiliato né promosso da FBK, Comune di Trento, GSE, MASE o RSE.</p>
-          <p>EV Charging Log Trento registra periodicamente lo stato delle colonnine di ricarica per veicoli elettrici
-            nel Comune di Trento, interrogando la <a href="https://www.piattaformaunicanazionale.it/idr" target="_blank" rel="noopener">Piattaforma Unica Nazionale (PUN)</a>
+          <p class="fw-semibold">Progetto indipendente e non ufficiale. Non è affiliato né promosso da FBK, Comune di <span data-comune>Trento</span>, GSE, MASE o RSE.</p>
+          <p>EV Charging Log <span data-comune>Trento</span> registra periodicamente lo stato delle colonnine di ricarica per veicoli elettrici
+            nel Comune di <span data-comune>Trento</span>, interrogando la <a href="https://www.piattaformaunicanazionale.it/idr" target="_blank" rel="noopener">Piattaforma Unica Nazionale (PUN)</a>
             di GSE/MASE. La PUN espone solo lo stato attuale, non uno storico: questo progetto colma quel vuoto
             accumulando uno snapshot ogni ciclo — l'archivio storico che ne risulta <em>è</em> il dato che produce.</p>
           <p class="mb-0">È un progetto personale, sviluppato nel tempo libero, senza alcuna affiliazione ufficiale
@@ -93,5 +93,6 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../shared-config.js" data-config="../config.json"></script>
   </body>
 </html>

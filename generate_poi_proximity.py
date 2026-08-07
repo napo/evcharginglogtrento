@@ -23,6 +23,8 @@ from pathlib import Path
 import pandas as pd
 import pyarrow.dataset as ds
 
+from config import COMUNE_NORM
+
 ROOT = Path(__file__).resolve().parent
 DATASET = ROOT / 'data'
 POI_FILE = ROOT / 'poi_trento.json'
@@ -54,9 +56,9 @@ def load_latest_city() -> pd.DataFrame:
     table = ds.dataset(str(DATASET), format='parquet', partitioning='hive').to_table().to_pandas()
     table['ts'] = pd.to_datetime(table['ts'], utc=True)
     latest = table.sort_values('ts').drop_duplicates(subset=['id_evse'], keep='last').copy()
-    # Solo Comune di Trento (non i comuni limitrofi, non l'A22).
-    is_trento = latest['citta'].fillna('').str.strip().str.lower() == 'trento'
-    return latest[is_trento]
+    # Solo il comune configurato (non i comuni limitrofi, non l'A22).
+    is_comune = latest['citta'].fillna('').str.strip().str.lower() == COMUNE_NORM
+    return latest[is_comune]
 
 
 def nearest(lat: float, lon: float, pois: list[dict]) -> tuple[dict, float] | None:

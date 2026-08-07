@@ -34,6 +34,8 @@ import numpy as np
 import pandas as pd
 import pyarrow.dataset as ds
 
+from config import COMUNE, COMUNE_NORM
+
 ROOT = Path(__file__).resolve().parent
 DATASET = ROOT / 'data'
 OUT = ROOT / 'docs' / 'stats' / 'data' / 'forecast.json'
@@ -47,10 +49,10 @@ MIN_GIORNI_STORICO = 14   # sotto questa soglia non si prevede (dato insufficien
 def load_real_time_city_table() -> pd.DataFrame:
     table = ds.dataset(str(DATASET), format='parquet', partitioning='hive').to_table().to_pandas()
     table['ts'] = pd.to_datetime(table['ts'], utc=True)
-    # Solo Comune di Trento (non i comuni limitrofi, non l'A22).
-    is_trento = table['citta'].fillna('').str.strip().str.lower() == 'trento'
+    # Solo il comune configurato (non i comuni limitrofi, non l'A22).
+    is_comune = table['citta'].fillna('').str.strip().str.lower() == COMUNE_NORM
     table['is_charging'] = table['stato_raw'].fillna('').str.upper().eq('CHARGING')
-    return table[(table['real_time'] == True) & is_trento].copy()  # noqa: E712
+    return table[(table['real_time'] == True) & is_comune].copy()  # noqa: E712
 
 
 def serie_oraria(g: pd.DataFrame) -> pd.DataFrame:
@@ -116,7 +118,7 @@ def main() -> None:
 
     payload = {
         'generated_at': pd.Timestamp.now('UTC').isoformat(),
-        'label': 'Trento città',
+        'label': f'{COMUNE} città',
         'modello': 'profilo giorno-settimana x ora, corretto con lo scostamento più recente',
         'nota': (
             'Previsione sperimentale e non ufficiale. La fonte dei dati è la PUN (GSE/MASE), '

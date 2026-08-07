@@ -7,6 +7,8 @@ from pathlib import Path
 import pandas as pd
 import pyarrow.dataset as ds
 
+from config import COMUNE_NORM
+
 ROOT = Path(__file__).resolve().parent
 DATASET = ROOT / 'data'
 OUT_DIR = ROOT / 'docs' / 'stats' / 'data'
@@ -103,11 +105,11 @@ def build_stats_payload(table: pd.DataFrame, latest: pd.DataFrame):
         | latest['cpo'].fillna('').str.contains('autostrada del brennero', case=False, na=False)
     )
     latest['is_a22'] = is_a22
-    # Solo Comune di Trento: non i comuni limitrofi (Lavis, Civezzano,
-    # Pergine...) che lo scraper raccoglie comunque nel dataset grezzo, e
+    # Solo il comune configurato (COMUNE, vedi config.py): non i comuni
+    # limitrofi che lo scraper raccoglie comunque nel dataset grezzo, e
     # non l'A22 (pubblico diverso, sezione a parte più sotto).
-    is_trento = latest['citta'].fillna('').str.strip().str.lower() == 'trento'
-    city_only = latest[is_trento & ~is_a22]
+    is_comune = latest['citta'].fillna('').str.strip().str.lower() == COMUNE_NORM
+    city_only = latest[is_comune & ~is_a22]
 
     summary = {
         'total': int(len(city_only)),

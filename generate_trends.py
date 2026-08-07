@@ -1,6 +1,6 @@
 """
 generate_trends.py — Precalcola l'andamento nel tempo (uso/disponibilità)
-delle colonnine cittadine di Trento.
+delle colonnine cittadine del comune monitorato (vedi config.py).
 
 Le colonnine dell'autostrada A22 sono escluse a monte, non solo filtrate:
 sono per il traffico di transito, non per l'utenza urbana, e nessun
@@ -32,6 +32,8 @@ from pathlib import Path
 import pandas as pd
 import pyarrow.dataset as ds
 
+from config import COMUNE, COMUNE_NORM
+
 ROOT = Path(__file__).resolve().parent
 DATASET = ROOT / 'data'
 OUT = ROOT / 'docs' / 'stats' / 'data' / 'trends.json'
@@ -54,11 +56,11 @@ def load_city_table() -> pd.DataFrame:
     non quanto sono usate — quella distinzione lì non ha senso."""
     table = ds.dataset(str(DATASET), format='parquet', partitioning='hive').to_table().to_pandas()
     table['ts'] = pd.to_datetime(table['ts'], utc=True)
-    # Solo Comune di Trento (non i comuni limitrofi che lo scraper raccoglie
-    # comunque), e non l'A22 (pubblico diverso, gestito a parte).
-    is_trento = table['citta'].fillna('').str.strip().str.lower() == 'trento'
+    # Solo il comune configurato (non i comuni limitrofi che lo scraper
+    # raccoglie comunque), e non l'A22 (pubblico diverso, gestito a parte).
+    is_comune = table['citta'].fillna('').str.strip().str.lower() == COMUNE_NORM
     table['is_active'] = table['stato'].eq('Attivo')
-    return table[is_trento].copy()
+    return table[is_comune].copy()
 
 
 def load_real_time_city_table() -> pd.DataFrame:
@@ -212,7 +214,7 @@ def main() -> None:
 
     payload = {
         'generated_at': pd.Timestamp.now('UTC').isoformat(),
-        'label': 'Trento città',
+        'label': f'{COMUNE} città',
         'n_colonnine_real_time': int(g['id_evse'].nunique()) if not g.empty else 0,
         'days_collected': days,
         'andamento_giornaliero': andamento_giornaliero(g, days),

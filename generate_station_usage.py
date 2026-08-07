@@ -4,7 +4,7 @@ esistono/sono attive): sessioni di ricarica, fasce orarie più piene,
 durata media, giorno record. Per singola colonnina (per il popup della
 mappa) e aggregato città.
 
-Solo Comune di Trento (non i comuni limitrofi, non l'A22 — vedi
+Solo il comune configurato (non i comuni limitrofi, non l'A22 — vedi
 generate_trends.py per lo stesso criterio) e solo colonnine real_time=True:
 per le altre lo stato è statico e non esiste una "sessione" da rilevare.
 
@@ -41,6 +41,8 @@ from pathlib import Path
 
 import pandas as pd
 import pyarrow.dataset as ds
+
+from config import COMUNE, COMUNE_NORM
 
 ROOT = Path(__file__).resolve().parent
 DATASET = ROOT / 'data'
@@ -85,11 +87,11 @@ WEEKDAY_LABELS = ['lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', '
 GAP_MASSIMO_MINUTI = 20
 
 
-def load_real_time_trento() -> pd.DataFrame:
+def load_real_time_city() -> pd.DataFrame:
     table = ds.dataset(str(DATASET), format='parquet', partitioning='hive').to_table().to_pandas()
     table['ts'] = pd.to_datetime(table['ts'], utc=True)
-    is_trento = table['citta'].fillna('').str.strip().str.lower() == 'trento'
-    table = table[(table['real_time'] == True) & is_trento].copy()  # noqa: E712
+    is_comune = table['citta'].fillna('').str.strip().str.lower() == COMUNE_NORM
+    table = table[(table['real_time'] == True) & is_comune].copy()  # noqa: E712
     table['is_charging'] = table['stato_raw'].fillna('').str.upper().eq('CHARGING')
     return table
 
@@ -260,9 +262,9 @@ def session_metrics(sessions: list[dict]) -> dict:
 
 
 def main() -> None:
-    table = load_real_time_trento()
+    table = load_real_time_city()
     if table.empty:
-        print('nessuna colonnina real-time a Trento nel dataset: stations_usage.json non generato')
+        print(f'nessuna colonnina real-time a {COMUNE} nel dataset: stations_usage.json non generato')
         return
 
     now = table['ts'].max()

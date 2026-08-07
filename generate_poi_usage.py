@@ -24,6 +24,8 @@ from pathlib import Path
 import pandas as pd
 import pyarrow.dataset as ds
 
+from config import COMUNE_NORM
+
 ROOT = Path(__file__).resolve().parent
 DATASET = ROOT / 'data'
 POI_FILE = ROOT / 'poi_trento.json'
@@ -68,8 +70,8 @@ def haversine_m(lat1, lon1, lat2, lon2) -> float:
 def load_monitorabili_city() -> list[dict]:
     table = ds.dataset(str(DATASET), format='parquet', partitioning='hive').to_table().to_pandas()
     table['ts'] = pd.to_datetime(table['ts'], utc=True)
-    is_trento = table['citta'].fillna('').str.strip().str.lower() == 'trento'
-    latest = table[is_trento & (table['real_time'] == True)].sort_values('ts').drop_duplicates(  # noqa: E712
+    is_comune = table['citta'].fillna('').str.strip().str.lower() == COMUNE_NORM
+    latest = table[is_comune & (table['real_time'] == True)].sort_values('ts').drop_duplicates(  # noqa: E712
         subset=['id_evse'], keep='last'
     )
     usage = {}

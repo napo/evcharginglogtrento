@@ -30,7 +30,7 @@
       <div class="container-fluid container-xl d-flex align-items-center justify-content-between flex-wrap gap-2">
         <a href="../index.html" class="site-logo d-flex align-items-center gap-2">
           <img src="../assets/logo_evclog.png" alt="EV Charging Log" />
-          <span class="site-logo-word">Trento</span>
+          <span class="site-logo-word" data-comune>Trento</span>
         </a>
         <nav class="site-nav">
           <ul>
@@ -56,7 +56,7 @@
             <div class="row g-3">
               <div class="col-lg-8">
                 <span class="hero-eyebrow">Dashboard statica</span>
-                <h1 class="h3 mb-2">L'andamento e l'uso reale delle colonnine di Trento</h1>
+                <h1 class="h3 mb-2">L'andamento e l'uso reale delle colonnine di <span data-comune>Trento</span></h1>
                 <p class="mb-0 text-muted" id="hero-lead"></p>
               </div>
               <div class="col-lg-4">
@@ -208,6 +208,7 @@
     <script src="../shared-table.js"></script>
     <script src="../shared-echarts-theme.js"></script>
     <script src="../shared-chart-tools.js"></script>
+    <script src="../shared-config.js" data-config="../config.json"></script>
     <script src="app.js"></script>
   </body>
 </html>

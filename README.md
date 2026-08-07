@@ -94,6 +94,24 @@ Opzioni principali:
 --no-dedup                 scrive ogni ciclo anche se identico al precedente
 ```
 
+### Ripetere il progetto su un altro comune
+
+Il nome del comune è in un'unica variabile di configurazione, `docs/config.json`:
+
+```json
+{ "comune": "Trento", "provincia": "TN" }
+```
+
+`config.py` la legge per tutti gli script Python (default di `--comune`/`--provincia`,
+filtro `citta == comune` nei vari `generate_*.py`); il sito statico la legge a
+runtime via `docs/shared-config.js` (nome comune in titolo, intestazioni, testi).
+Per ripetere il progetto su un altro comune basta cambiare quel file — nessun
+altro punto del codice ha il nome del comune scritto a mano, con due eccezioni
+volutamente non generalizzate: la bbox di fallback in `pun_trento.py`
+(`TRENTO_BBOX`, usata solo quando l'API non riporta la città) e i punti di
+interesse (`poi_trento.json`, scaricati a mano da `fetch_poi.py` per l'area di
+Trento) — per un altro comune vanno adattati a parte.
+
 ## Automazione (GitHub Actions)
 
 Il workflow in `.github/workflows/scrape.yml` gira ogni ora e, con un loop interno, esegue un ciclo ogni 5 minuti committando i dati nel repo (il cron nativo di Actions non è affidabile sui 5 minuti). Serve solo abilitare *Settings => Actions => Workflow permissions => Read and write*.\ Nessun secret:\

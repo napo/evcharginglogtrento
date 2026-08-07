@@ -30,6 +30,7 @@ let map;
 let allPoints = [];
 let activeFilter = 'all';
 let stationsUsage = null;
+let comuneLabel = 'Trento'; // sovrascritto da EVConfig.ready in loadDashboard()
 
 // --- Fly-to tabella -> mappa ---------------------------------------------
 let selectedRow = null;
@@ -230,7 +231,7 @@ function renderTable(items) {
         <tr data-id-evse="${item.id_evse}">
           <td data-sort-value="${STATE_SORT_RANK[state.label]}"><span class="badge rounded-pill badge-state ${state.cls}">${state.label}</span></td>
           <td>${item.cpo || '—'}${item.is_a22 ? ' <span class="badge bg-warning text-dark ms-1">A22</span>' : ''}</td>
-          <td>${item.citta || 'Trento'}</td>
+          <td>${item.citta || comuneLabel}</td>
           <td data-sort-value="${item.potenza_w || 0}">${item.potenza_w ? `${item.potenza_w / 1000} kW` : '—'}</td>
           <td>${item.n_connettori ?? '—'}</td>
           <td>${item.corrente || '—'}</td>
@@ -796,6 +797,9 @@ function wireFilters() {
 }
 
 async function loadDashboard() {
+  if (window.EVConfig) {
+    comuneLabel = (await window.EVConfig.ready).comune;
+  }
   const [snapshotResponse, usageResponse] = await Promise.all([
     fetch('evcharging_snapshot.json'),
     fetch('stations_usage.json').catch(() => null),

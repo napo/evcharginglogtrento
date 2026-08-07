@@ -6,6 +6,8 @@ from pathlib import Path
 import pandas as pd
 import pyarrow.dataset as ds
 
+from config import COMUNE_NORM
+
 ROOT = Path(__file__).resolve().parent
 DATASET = ROOT / 'data'
 OUT = ROOT / 'docs' / 'evcharging_snapshot.json'
@@ -27,11 +29,11 @@ def main() -> None:
         latest['id_evse'].fillna('').str.upper().str.startswith(A22_ID_PREFIX)
         | latest['cpo'].fillna('').str.contains('autostrada del brennero', case=False, na=False)
     )
-    # Solo Comune di Trento (mappa/tabella live) + A22 (caso a sé, resta
-    # visibile): i comuni limitrofi che lo scraper raccoglie comunque nel
-    # dataset grezzo non compaiono qui.
-    is_trento = latest['citta'].fillna('').str.strip().str.lower() == 'trento'
-    latest = latest[is_trento | latest['is_a22']]
+    # Solo il comune configurato (mappa/tabella live) + A22 (caso a sé,
+    # resta visibile): i comuni limitrofi che lo scraper raccoglie comunque
+    # nel dataset grezzo non compaiono qui.
+    is_comune = latest['citta'].fillna('').str.strip().str.lower() == COMUNE_NORM
+    latest = latest[is_comune | latest['is_a22']]
 
     active = int((latest['stato'] == 'Attivo').sum())
     inactive = int((latest['stato'] == 'Non Attivo').sum())
