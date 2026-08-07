@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-07T14:00:20+00:00",
+  "generated_at": "2026-08-07T14:05:26+00:00",
   "stats": {
     "total": 213,
     "active": 188,
     "inactive": 25,
-    "charging": 27
+    "charging": 28
   },
   "points": [
     {
@@ -542,7 +542,7 @@
     {
       "id_evse": "IT*ENX*E21BZ1518A*3",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENEL X WAY ITALIA SRL",
