@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T06:34:47+00:00",
+  "generated_at": "2026-08-07T06:39:51+00:00",
   "stats": {
     "total": 213,
     "active": 200,
@@ -1450,7 +1450,7 @@
     {
       "id_evse": "ITGESE868971885",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "Go Electric Stations SRLS",
       "indirizzo": "Via Ezio Maccani",
@@ -3556,7 +3556,7 @@
     {
       "id_evse": "IT*IOY*E421701",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "IONITY GMBH",
       "indirizzo": "Via Ezio Maccani 157",
