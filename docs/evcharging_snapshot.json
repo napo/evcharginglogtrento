@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-07T05:59:14+00:00",
+  "generated_at": "2026-08-07T06:04:19+00:00",
   "stats": {
     "total": 213,
-    "active": 195,
-    "inactive": 18,
+    "active": 200,
+    "inactive": 13,
     "charging": 9
   },
   "points": [
@@ -513,8 +513,8 @@
     },
     {
       "id_evse": "IT*ENX*E21BZ1518A*3",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "ENEL X WAY ITALIA SRL",
       "indirizzo": "Via Roberto da Sanseverino, 97",
@@ -622,7 +622,7 @@
     {
       "id_evse": "IT*IOY*E421704",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "IONITY GMBH",
       "indirizzo": "Via Ezio Maccani 157",
@@ -2655,8 +2655,8 @@
     },
     {
       "id_evse": "IT*ENX*E21BZ1518A*1",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "ENEL X WAY ITALIA SRL",
       "indirizzo": "Via Roberto da Sanseverino, 97",
@@ -3501,8 +3501,8 @@
     },
     {
       "id_evse": "IT*ENX*E21BZ1518A*2",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "ENEL X WAY ITALIA SRL",
       "indirizzo": "Via Roberto da Sanseverino, 97",
@@ -3519,8 +3519,8 @@
     },
     {
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "ENEL X WAY ITALIA SRL",
       "indirizzo": "Via Roberto da Sanseverino, 97",
@@ -3537,8 +3537,8 @@
     },
     {
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "ENEL X WAY ITALIA SRL",
       "indirizzo": "Via Roberto da Sanseverino, 97",
@@ -3592,7 +3592,7 @@
     {
       "id_evse": "IT*IOY*E421705",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "IONITY GMBH",
       "indirizzo": "Via Ezio Maccani 157",
