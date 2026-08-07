@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T21:05:48.632230+00:00",
+  "generated_at": "2026-08-07T04:37:12.363695+00:00",
   "fonte_poi": "OpenStreetMap contributors, via Overpass API (ODbL)",
   "soglia_metri": 300,
   "pois": [
@@ -70,15 +70,15 @@
       "lat": 46.07142,
       "lon": 11.126484,
       "n_colonnine_entro_soglia": 2,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
-        "lenta": 1,
+        "lenta": 2,
         "rapida": 0,
         "ultra": 0
       },
       "esempio": {
         "colonnina_indirizzo": "Via della Pontara",
-        "distanza_m": 208
+        "distanza_m": 206
       }
     },
     {
@@ -562,13 +562,16 @@
       "lat": 46.007107,
       "lon": 11.12765,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 0,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 0,
-        "ultra": 0
+        "rapida": 1,
+        "ultra": 1
       },
-      "esempio": null
+      "esempio": {
+        "colonnina_indirizzo": "Via della Torre Franca",
+        "distanza_m": 278
+      }
     },
     {
       "name": "Coop",
@@ -646,9 +649,9 @@
       "lat": 46.039404,
       "lon": 11.057532,
       "n_colonnine_entro_soglia": 6,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
-        "lenta": 1,
+        "lenta": 2,
         "rapida": 0,
         "ultra": 0
       },
@@ -769,9 +772,9 @@
       "lat": 46.074683,
       "lon": 11.125225,
       "n_colonnine_entro_soglia": 7,
-      "n_colonnine_usate": 4,
+      "n_colonnine_usate": 5,
       "n_usate_by_power": {
-        "lenta": 1,
+        "lenta": 2,
         "rapida": 1,
         "ultra": 2
       },
@@ -1282,9 +1285,9 @@
       "lat": 46.074491,
       "lon": 11.124553,
       "n_colonnine_entro_soglia": 9,
-      "n_colonnine_usate": 4,
+      "n_colonnine_usate": 5,
       "n_usate_by_power": {
-        "lenta": 1,
+        "lenta": 2,
         "rapida": 1,
         "ultra": 2
       },
@@ -1504,9 +1507,9 @@
       "lat": 46.073153,
       "lon": 11.125053,
       "n_colonnine_entro_soglia": 7,
-      "n_colonnine_usate": 4,
+      "n_colonnine_usate": 5,
       "n_usate_by_power": {
-        "lenta": 1,
+        "lenta": 2,
         "rapida": 1,
         "ultra": 2
       },
@@ -1789,9 +1792,9 @@
       "lat": 46.073887,
       "lon": 11.124374,
       "n_colonnine_entro_soglia": 9,
-      "n_colonnine_usate": 4,
+      "n_colonnine_usate": 5,
       "n_usate_by_power": {
-        "lenta": 1,
+        "lenta": 2,
         "rapida": 1,
         "ultra": 2
       },
@@ -2218,13 +2221,16 @@
       "lat": 46.006243,
       "lon": 11.128396,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 0,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 0,
-        "ultra": 0
+        "rapida": 1,
+        "ultra": 1
       },
-      "esempio": null
+      "esempio": {
+        "colonnina_indirizzo": "Via della Torre Franca",
+        "distanza_m": 257
+      }
     },
     {
       "name": "Deutsche Bank Easy",
@@ -2233,9 +2239,9 @@
       "lat": 46.072492,
       "lon": 11.123665,
       "n_colonnine_entro_soglia": 11,
-      "n_colonnine_usate": 4,
+      "n_colonnine_usate": 5,
       "n_usate_by_power": {
-        "lenta": 1,
+        "lenta": 2,
         "rapida": 1,
         "ultra": 2
       },
@@ -2953,13 +2959,16 @@
       "lat": 46.006014,
       "lon": 11.128203,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 0,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 0,
-        "ultra": 0
+        "rapida": 1,
+        "ultra": 1
       },
-      "esempio": null
+      "esempio": {
+        "colonnina_indirizzo": "Via della Torre Franca",
+        "distanza_m": 284
+      }
     },
     {
       "name": "Senza nome",
@@ -3103,9 +3112,9 @@
       "lat": 46.073898,
       "lon": 11.125814,
       "n_colonnine_entro_soglia": 7,
-      "n_colonnine_usate": 4,
+      "n_colonnine_usate": 5,
       "n_usate_by_power": {
-        "lenta": 1,
+        "lenta": 2,
         "rapida": 1,
         "ultra": 2
       },
