@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T04:37:12.363695+00:00",
+  "generated_at": "2026-08-07T09:06:32.905367+00:00",
   "fonte_poi": "OpenStreetMap contributors, via Overpass API (ODbL)",
   "soglia_metri": 300,
   "pois": [
@@ -193,11 +193,11 @@
       "lat": 46.076833,
       "lon": 11.141931,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
         "lenta": 0,
         "rapida": 1,
-        "ultra": 0
+        "ultra": 1
       },
       "esempio": {
         "colonnina_indirizzo": "Via Carlo e Valeria Jülg, 11-1",
@@ -240,7 +240,7 @@
       "categoria_label": "Supermercati",
       "lat": 46.044573,
       "lon": 11.129603,
-      "n_colonnine_entro_soglia": 9,
+      "n_colonnine_entro_soglia": 3,
       "n_colonnine_usate": 3,
       "n_usate_by_power": {
         "lenta": 0,
@@ -597,7 +597,7 @@
       "categoria_label": "Supermercati",
       "lat": 46.091554,
       "lon": 11.117959,
-      "n_colonnine_entro_soglia": 4,
+      "n_colonnine_entro_soglia": 2,
       "n_colonnine_usate": 2,
       "n_usate_by_power": {
         "lenta": 0,
@@ -756,7 +756,7 @@
       "categoria_label": "Supermercati",
       "lat": 46.048057,
       "lon": 11.127309,
-      "n_colonnine_entro_soglia": 6,
+      "n_colonnine_entro_soglia": 0,
       "n_colonnine_usate": 0,
       "n_usate_by_power": {
         "lenta": 0,
@@ -771,7 +771,7 @@
       "categoria_label": "Supermercati",
       "lat": 46.074683,
       "lon": 11.125225,
-      "n_colonnine_entro_soglia": 7,
+      "n_colonnine_entro_soglia": 5,
       "n_colonnine_usate": 5,
       "n_usate_by_power": {
         "lenta": 2,
@@ -882,7 +882,7 @@
       "categoria_label": "Supermercati",
       "lat": 46.092341,
       "lon": 11.114317,
-      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_entro_soglia": 0,
       "n_colonnine_usate": 0,
       "n_usate_by_power": {
         "lenta": 0,
@@ -1068,7 +1068,7 @@
       "categoria_label": "Supermercati",
       "lat": 46.075651,
       "lon": 11.119025,
-      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_entro_soglia": 0,
       "n_colonnine_usate": 0,
       "n_usate_by_power": {
         "lenta": 0,
@@ -1164,7 +1164,7 @@
       "categoria_label": "Supermercati",
       "lat": 46.091505,
       "lon": 11.112373,
-      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_entro_soglia": 0,
       "n_colonnine_usate": 0,
       "n_usate_by_power": {
         "lenta": 0,
@@ -1269,7 +1269,7 @@
       "categoria_label": "Banche",
       "lat": 46.047611,
       "lon": 11.12602,
-      "n_colonnine_entro_soglia": 6,
+      "n_colonnine_entro_soglia": 0,
       "n_colonnine_usate": 0,
       "n_usate_by_power": {
         "lenta": 0,
@@ -1284,7 +1284,7 @@
       "categoria_label": "Banche",
       "lat": 46.074491,
       "lon": 11.124553,
-      "n_colonnine_entro_soglia": 9,
+      "n_colonnine_entro_soglia": 5,
       "n_colonnine_usate": 5,
       "n_usate_by_power": {
         "lenta": 2,
@@ -1351,11 +1351,11 @@
       "lat": 46.076473,
       "lon": 11.141931,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
         "lenta": 0,
         "rapida": 1,
-        "ultra": 0
+        "ultra": 1
       },
       "esempio": {
         "colonnina_indirizzo": "Via Carlo e Valeria Jülg, 11-1",
@@ -1506,7 +1506,7 @@
       "categoria_label": "Banche",
       "lat": 46.073153,
       "lon": 11.125053,
-      "n_colonnine_entro_soglia": 7,
+      "n_colonnine_entro_soglia": 5,
       "n_colonnine_usate": 5,
       "n_usate_by_power": {
         "lenta": 2,
@@ -1617,7 +1617,7 @@
       "categoria_label": "Banche",
       "lat": 46.076991,
       "lon": 11.123557,
-      "n_colonnine_entro_soglia": 5,
+      "n_colonnine_entro_soglia": 3,
       "n_colonnine_usate": 3,
       "n_usate_by_power": {
         "lenta": 0,
@@ -1650,7 +1650,7 @@
       "categoria_label": "Banche",
       "lat": 46.073506,
       "lon": 11.122245,
-      "n_colonnine_entro_soglia": 9,
+      "n_colonnine_entro_soglia": 5,
       "n_colonnine_usate": 3,
       "n_usate_by_power": {
         "lenta": 0,
@@ -1791,7 +1791,7 @@
       "categoria_label": "Banche",
       "lat": 46.073887,
       "lon": 11.124374,
-      "n_colonnine_entro_soglia": 9,
+      "n_colonnine_entro_soglia": 5,
       "n_colonnine_usate": 5,
       "n_usate_by_power": {
         "lenta": 2,
@@ -1998,7 +1998,7 @@
       "categoria_label": "Banche",
       "lat": 46.090211,
       "lon": 11.116843,
-      "n_colonnine_entro_soglia": 4,
+      "n_colonnine_entro_soglia": 2,
       "n_colonnine_usate": 2,
       "n_usate_by_power": {
         "lenta": 0,
@@ -2139,7 +2139,7 @@
       "categoria_label": "Banche",
       "lat": 46.075465,
       "lon": 11.124026,
-      "n_colonnine_entro_soglia": 5,
+      "n_colonnine_entro_soglia": 3,
       "n_colonnine_usate": 3,
       "n_usate_by_power": {
         "lenta": 0,
@@ -2173,13 +2173,16 @@
       "lat": 46.091538,
       "lon": 11.105074,
       "n_colonnine_entro_soglia": 1,
-      "n_colonnine_usate": 0,
+      "n_colonnine_usate": 1,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 0,
+        "rapida": 1,
         "ultra": 0
       },
-      "esempio": null
+      "esempio": {
+        "colonnina_indirizzo": "Via Ezio Maccani",
+        "distanza_m": 250
+      }
     },
     {
       "name": "Banca per il Trentino Alto Adige",
@@ -2238,7 +2241,7 @@
       "categoria_label": "Banche",
       "lat": 46.072492,
       "lon": 11.123665,
-      "n_colonnine_entro_soglia": 11,
+      "n_colonnine_entro_soglia": 7,
       "n_colonnine_usate": 5,
       "n_usate_by_power": {
         "lenta": 2,
@@ -2412,7 +2415,7 @@
       "categoria_label": "Banche",
       "lat": 46.075066,
       "lon": 11.122836,
-      "n_colonnine_entro_soglia": 7,
+      "n_colonnine_entro_soglia": 3,
       "n_colonnine_usate": 3,
       "n_usate_by_power": {
         "lenta": 0,
@@ -2706,7 +2709,7 @@
       "categoria_label": "Ambulatori",
       "lat": 46.09316,
       "lon": 11.115457,
-      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_entro_soglia": 0,
       "n_colonnine_usate": 0,
       "n_usate_by_power": {
         "lenta": 0,
@@ -2850,7 +2853,7 @@
       "categoria_label": "Ambulatori",
       "lat": 46.044608,
       "lon": 11.130223,
-      "n_colonnine_entro_soglia": 9,
+      "n_colonnine_entro_soglia": 3,
       "n_colonnine_usate": 3,
       "n_usate_by_power": {
         "lenta": 0,
@@ -2928,7 +2931,7 @@
       "categoria_label": "Ambulatori",
       "lat": 46.073857,
       "lon": 11.118859,
-      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_entro_soglia": 0,
       "n_colonnine_usate": 0,
       "n_usate_by_power": {
         "lenta": 0,
@@ -3111,7 +3114,7 @@
       "categoria_label": "Ambulatori",
       "lat": 46.073898,
       "lon": 11.125814,
-      "n_colonnine_entro_soglia": 7,
+      "n_colonnine_entro_soglia": 5,
       "n_colonnine_usate": 5,
       "n_usate_by_power": {
         "lenta": 2,
@@ -3129,7 +3132,7 @@
       "categoria_label": "Ambulatori",
       "lat": 46.044805,
       "lon": 11.130001,
-      "n_colonnine_entro_soglia": 9,
+      "n_colonnine_entro_soglia": 3,
       "n_colonnine_usate": 3,
       "n_usate_by_power": {
         "lenta": 0,
@@ -3180,7 +3183,7 @@
       "categoria_label": "Ambulatori",
       "lat": 46.047458,
       "lon": 11.129119,
-      "n_colonnine_entro_soglia": 6,
+      "n_colonnine_entro_soglia": 0,
       "n_colonnine_usate": 0,
       "n_usate_by_power": {
         "lenta": 0,
@@ -3225,7 +3228,7 @@
       "categoria_label": "Ambulatori",
       "lat": 46.072968,
       "lon": 11.118431,
-      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_entro_soglia": 0,
       "n_colonnine_usate": 0,
       "n_usate_by_power": {
         "lenta": 0,
@@ -3631,11 +3634,11 @@
       "lat": 46.074873,
       "lon": 11.112559,
       "n_colonnine_entro_soglia": 2,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
         "lenta": 0,
         "rapida": 0,
-        "ultra": 1
+        "ultra": 2
       },
       "esempio": {
         "colonnina_indirizzo": "Via Druso Livio",
@@ -3697,11 +3700,11 @@
       "lat": 46.077827,
       "lon": 11.112152,
       "n_colonnine_entro_soglia": 2,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
         "lenta": 0,
         "rapida": 0,
-        "ultra": 1
+        "ultra": 2
       },
       "esempio": {
         "colonnina_indirizzo": "Via Druso Livio",
@@ -4261,11 +4264,11 @@
       "lat": 46.079424,
       "lon": 11.112457,
       "n_colonnine_entro_soglia": 2,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
         "lenta": 0,
         "rapida": 0,
-        "ultra": 1
+        "ultra": 2
       },
       "esempio": {
         "colonnina_indirizzo": "Via Druso Livio",

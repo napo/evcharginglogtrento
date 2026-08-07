@@ -80,7 +80,9 @@ function summarize(points) {
   let attivaStimata = 0;
   let inUso = 0;
   let nonAttiva = 0;
+  let monitorabili = 0;
   points.forEach((p) => {
+    if (isKnownOccupancy(p)) monitorabili += 1;
     if (p.stato_raw === 'CHARGING') {
       inUso += 1;
     } else if (pointState(p) === 'Attivo') {
@@ -90,7 +92,11 @@ function summarize(points) {
       nonAttiva += 1;
     }
   });
-  return { total: points.length, attivaReale, attivaStimata, inUso, nonAttiva };
+  // monitorabili non è ricavabile da attivaReale + nonAttiva + inUso: una
+  // colonnina "Non Attivo" può appartenere a un operatore non
+  // usage_observable esattamente come una "Attiva (stimata)" (vedi
+  // isKnownOccupancy) — va quindi contata a parte, non derivata.
+  return { total: points.length, attivaReale, attivaStimata, inUso, nonAttiva, monitorabili };
 }
 
 function countUp(el, target, { duration = 900, decimals = 0, suffix = '' } = {}) {

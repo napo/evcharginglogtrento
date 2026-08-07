@@ -107,7 +107,7 @@ window.EVDrilldown = (() => {
     `;
   }
 
-  // counts = { attivaReale, attivaStimata, inUso, nonAttiva }.
+  // counts = { attivaReale, attivaStimata, inUso, nonAttiva, monitorabili }.
   // Ritorna le due istanze ECharts (o null se ECharts non è caricato),
   // utile solo per test manuali dalla console.
   function render(container, counts) {
@@ -118,11 +118,13 @@ window.EVDrilldown = (() => {
     const attiva = attivaReale + attivaStimata + inUso;
     const totale = attiva + nonAttiva;
     const fracAttiva = totale ? attiva / totale : 0;
-    // "Monitorabili" = colonnine con occupazione osservabile, a prescindere
-    // dallo stato: le reali e le non attive lo sono per definizione (solo le
-    // stimate non lo sono), quindi si ricava dai 4 conteggi senza bisogno
-    // di un dato aggiuntivo — stessa quota mostrata nel gauge accanto.
-    const monitorabili = attivaReale + nonAttiva + inUso;
+    // "Monitorabili" = colonnine con occupazione osservabile
+    // (isKnownOccupancy), a prescindere dallo stato: NON si può ricavare da
+    // attivaReale + nonAttiva + inUso — una colonnina "Non Attivo" può
+    // benissimo appartenere a un operatore non usage_observable, esattamente
+    // come una "Attiva (stimata)" — va quindi passato esplicitamente
+    // (stessa quota mostrata nel gauge accanto).
+    const monitorabili = counts.monitorabili || 0;
     const quotaInUso = ratio(inUso, monitorabili);
 
     container.innerHTML = `

@@ -197,14 +197,15 @@ def andamento_conteggio_giornaliero(g_all: pd.DataFrame, days: int) -> dict:
 
 
 def colonnine_monitorabili_giornaliero(g_all: pd.DataFrame, days: int) -> dict:
-    """Quante colonnine cittadine pubblicano stato real-time, per giorno:
-    il "parco monitorabile" può crescere (nuovi operatori aprono l'API) o
-    ridursi (un operatore smette di pubblicarlo) indipendentemente dal
+    """Quante colonnine cittadine hanno l'uso osservabile (usage_observable,
+    vedi usage_semantics.py), per giorno: il "parco monitorabile" può
+    crescere (nuovi operatori aprono l'API o iniziano a riportare CHARGING)
+    o ridursi (un operatore smette di pubblicarlo) indipendentemente dal
     parco totale."""
     if days < DAYS_NEEDED['colonnine_monitorabili_giornaliero']:
         return placeholder('colonnine_monitorabili_giornaliero', days)
-    rt = g_all[g_all['real_time'] == True]  # noqa: E712
-    per_day = rt.groupby('date')['id_evse'].nunique().reset_index(name='n_monitorabili')
+    uo = g_all[g_all['usage_observable']]
+    per_day = uo.groupby('date')['id_evse'].nunique().reset_index(name='n_monitorabili')
     return {
         'available': True,
         'kind': 'colonnine_monitorabili_giornaliero',
