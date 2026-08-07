@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T05:43:59+00:00",
+  "generated_at": "2026-08-07T05:49:04+00:00",
   "stats": {
     "total": 213,
     "active": 195,
@@ -2800,7 +2800,7 @@
     {
       "id_evse": "IT*PLN*EH003152*1",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "BEC",
       "indirizzo": "Via Carlo e Valeria Jülg, 11-1",
@@ -3556,7 +3556,7 @@
     {
       "id_evse": "IT*IOY*E421701",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "IONITY GMBH",
       "indirizzo": "Via Ezio Maccani 157",
