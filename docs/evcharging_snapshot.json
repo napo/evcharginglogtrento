@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-07T09:40:26+00:00",
+  "generated_at": "2026-08-07T09:45:32+00:00",
   "stats": {
     "total": 213,
     "active": 192,
     "inactive": 21,
-    "charging": 13
+    "charging": 12
   },
   "points": [
     {
@@ -371,7 +371,7 @@
     {
       "id_evse": "IT*ATE*E00271*2",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Atlante S.r.l",
@@ -713,7 +713,7 @@
     {
       "id_evse": "IT*IPE*EDC001386*2",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IPLANET SPA",
@@ -2727,7 +2727,7 @@
     {
       "id_evse": "IT*ATE*E00273*2",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Atlante S.r.l",
