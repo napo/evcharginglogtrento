@@ -5,8 +5,9 @@ durata media, giorno record. Per singola colonnina (per il popup della
 mappa) e aggregato città.
 
 Solo il comune configurato (non i comuni limitrofi, non l'A22 — vedi
-generate_trends.py per lo stesso criterio) e solo colonnine real_time=True:
-per le altre lo stato è statico e non esiste una "sessione" da rilevare.
+generate_trends.py per lo stesso criterio) e solo colonnine usage_observable
+(vedi usage_semantics.py): per le altre lo stato è statico, o l'operatore
+non distingue occupata da libera, e non esiste una "sessione" da rilevare.
 
 Cos'è una sessione: una sequenza continua di rilevazioni con
 stato_raw='CHARGING' per una colonnina, delimitata da rilevazioni non-
@@ -43,6 +44,7 @@ import pandas as pd
 import pyarrow.dataset as ds
 
 from config import COMUNE, COMUNE_NORM
+from usage_semantics import cpos_with_charging, usage_observable
 
 ROOT = Path(__file__).resolve().parent
 DATASET = ROOT / 'data'
@@ -87,11 +89,13 @@ WEEKDAY_LABELS = ['lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', '
 GAP_MASSIMO_MINUTI = 20
 
 
-def load_real_time_city() -> pd.DataFrame:
+def load_usage_observable_city() -> pd.DataFrame:
     table = ds.dataset(str(DATASET), format='parquet', partitioning='hive').to_table().to_pandas()
     table['ts'] = pd.to_datetime(table['ts'], utc=True)
+    charging_cpos = cpos_with_charging(table)
+    table['usage_observable'] = usage_observable(table, charging_cpos)
     is_comune = table['citta'].fillna('').str.strip().str.lower() == COMUNE_NORM
-    table = table[(table['real_time'] == True) & is_comune].copy()  # noqa: E712
+    table = table[table['usage_observable'] & is_comune].copy()
     table['is_charging'] = table['stato_raw'].fillna('').str.upper().eq('CHARGING')
     return table
 
@@ -262,9 +266,9 @@ def session_metrics(sessions: list[dict]) -> dict:
 
 
 def main() -> None:
-    table = load_real_time_city()
+    table = load_usage_observable_city()
     if table.empty:
-        print(f'nessuna colonnina real-time a {COMUNE} nel dataset: stations_usage.json non generato')
+        print(f'nessuna colonnina con occupazione osservabile a {COMUNE} nel dataset: stations_usage.json non generato')
         return
 
     now = table['ts'].max()
@@ -313,14 +317,14 @@ def main() -> None:
     # arrivano dalla lista aggregata delle sessioni per-colonnina, MAI da
     # detect_sessions sulla tabella flattata (mischierebbe le sequenze di
     # colonnine diverse creando sessioni false).
-    # Giorni distinti coperti dallo storico real-time cittadino: stesso
-    # calcolo di generate_trends.py, serve qui per la media giornaliera di
-    # ricariche per operatore (n_sessioni / days_collected).
+    # Giorni distinti coperti dallo storico cittadino con occupazione
+    # osservabile: stesso calcolo di generate_trends.py, serve qui per la
+    # media giornaliera di ricariche per operatore (n_sessioni / days_collected).
     days_collected = int(table['date'].nunique())
 
     city = {
         'n_osservazioni': int(len(table)),
-        'n_colonnine_real_time': int(table['id_evse'].nunique()),
+        'n_colonnine_usage_observable': int(table['id_evse'].nunique()),
         'days_collected': days_collected,
         'profilo_orario': profilo_orario(table),
         'giorno_settimana_piu_usato': giorno_settimana_piu_usato(table),

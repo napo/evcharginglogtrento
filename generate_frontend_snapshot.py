@@ -7,6 +7,7 @@ import pandas as pd
 import pyarrow.dataset as ds
 
 from config import COMUNE_NORM
+from usage_semantics import cpos_with_charging, usage_observable
 
 ROOT = Path(__file__).resolve().parent
 DATASET = ROOT / 'data'
@@ -20,11 +21,13 @@ A22_ID_PREFIX = 'IT*A22*'
 def main() -> None:
     table = ds.dataset(str(DATASET), format='parquet', partitioning='hive').to_table().to_pandas()
     table['ts'] = pd.to_datetime(table['ts'], utc=True)
+    charging_cpos = cpos_with_charging(table)
     latest_ts = table['ts'].max()
     latest = table[table['ts'] == latest_ts].copy()
 
     latest['stato'] = latest['stato'].fillna('Sconosciuto')
     latest['stato_raw'] = latest['stato_raw'].fillna('UNKNOWN')
+    latest['usage_observable'] = usage_observable(latest, charging_cpos)
     latest['is_a22'] = (
         latest['id_evse'].fillna('').str.upper().str.startswith(A22_ID_PREFIX)
         | latest['cpo'].fillna('').str.contains('autostrada del brennero', case=False, na=False)
@@ -53,6 +56,7 @@ def main() -> None:
                 'stato': row['stato'],
                 'stato_raw': row['stato_raw'],
                 'real_time': bool(row['real_time']),
+                'usage_observable': bool(row['usage_observable']),
                 'cpo': row['cpo'],
                 'indirizzo': row['indirizzo'],
                 'citta': row['citta'],

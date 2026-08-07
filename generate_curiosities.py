@@ -16,8 +16,9 @@ dichiarare che è una classifica ancora giovane invece di nasconderla — a
 differenza delle curiosità testuali sopra, un "primi risultati su N giorni"
 resta onesto anche quando N è piccolo.
 
-Solo le colonnine real_time=True entrano nei calcoli temporali (stesso
-motivo di generate_trends.py). Le curiosità "statiche" (che fotografano
+Solo le colonnine usage_observable entrano nei calcoli temporali sull'uso
+(stesso motivo di generate_trends.py: real_time da solo non basta, vedi
+usage_semantics.py). Le curiosità "statiche" (che fotografano
 l'ultimo snapshot, es. quota AC/DC) non hanno questo vincolo. Tutte le
 classifiche e i confronti sono limitati alle colonnine cittadine: l'A22 è
 un pubblico diverso (vedi generate_trends.py) e i suoi DC rapidi
@@ -35,6 +36,7 @@ import pandas as pd
 import pyarrow.dataset as ds
 
 from config import COMUNE, COMUNE_NORM
+from usage_semantics import cpos_with_charging, usage_observable
 
 ROOT = Path(__file__).resolve().parent
 DATASET = ROOT / 'data'
@@ -82,6 +84,8 @@ def load_table() -> pd.DataFrame:
     table['is_comune'] = table['citta'].fillna('').str.strip().str.lower() == COMUNE_NORM
     table['is_active'] = table['stato'].eq('Attivo')
     table['is_charging'] = table['stato_raw'].fillna('').str.upper().eq('CHARGING')
+    charging_cpos = cpos_with_charging(table)
+    table['usage_observable'] = usage_observable(table, charging_cpos)
     return table
 
 
@@ -282,7 +286,7 @@ def main() -> None:
         return
 
     latest = table.sort_values('ts').drop_duplicates(subset=['id_evse'], keep='last')
-    rt = table[table['real_time'] == True].copy()  # noqa: E712
+    rt = table[table['usage_observable']].copy()
     rt_city = rt[rt['is_comune']]
     latest_city = latest[latest['is_comune']]
     days = int(rt['date'].nunique()) if not rt.empty else 0

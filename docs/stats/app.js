@@ -47,7 +47,7 @@ function renderSummaryCards(data) {
   const totaleGiorni = daysCollected(data.summary.raccolta_dati_dal, data.summary.generated_at);
   summaryBox.innerHTML = `
     <div class="mb-2"><strong>Totale:</strong> ${data.summary.total}</div>
-    <div class="mb-2"><strong>Quota attive:</strong> ${data.summary.share_active}% (di cui ${data.summary.active_unknown} stimate, senza dato in tempo reale)</div>
+    <div class="mb-2"><strong>Quota attive:</strong> ${data.summary.share_active}% (di cui ${data.summary.active_unknown} stimate: l'operatore non distingue occupata da libera)</div>
     <div class="mb-2"><strong>Ultimo snapshot:</strong> ${window.EVFormat ? EVFormat.dateTime(data.summary.generated_at) : data.summary.generated_at}</div>
     <div class="mb-2"><strong>Dati raccolti dal:</strong> ${raccoltaDalLabel}</div>
     ${totaleGiorni != null ? `<div class="mb-2">Per un totale di <strong>${totaleGiorni}</strong> giorni</div>` : ''}

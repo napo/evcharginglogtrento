@@ -15,13 +15,15 @@ del profilo (MAE) diventa la banda min/max attorno alla stima.
 Perché per l'aggregato città e non per singola colonnina (a differenza di
 parklogtrento, che prevede per singola struttura): lo stato di una colonnina
 è binario (in ricarica o no) ed è noisy a livello di singolo punto, e solo
-metà delle colonnine sono real_time. Una previsione per singola colonnina
-sarebbe poco più che rumore finché non c'è molto più storico; la quota
-aggregata è la granularità onesta per iniziare.
+una parte delle colonnine ha l'occupazione osservabile (usage_observable,
+vedi usage_semantics.py: real_time non basta, serve un operatore che
+distingua occupata da libera). Una previsione per singola colonnina sarebbe
+poco più che rumore finché non c'è molto più storico; la quota aggregata è
+la granularità onesta per iniziare.
 
 Non emette nessuna previsione sotto MIN_GIORNI_STORICO giorni di storico
-real_time: sotto soglia scrive solo {"available": false, "days_collected",
-"days_needed"}.
+con occupazione osservabile: sotto soglia scrive solo {"available": false,
+"days_collected", "days_needed"}.
 
 Va eseguito una volta al giorno, dopo generate_trends.py.
 """
@@ -35,6 +37,7 @@ import pandas as pd
 import pyarrow.dataset as ds
 
 from config import COMUNE, COMUNE_NORM
+from usage_semantics import cpos_with_charging, usage_observable
 
 ROOT = Path(__file__).resolve().parent
 DATASET = ROOT / 'data'
@@ -46,13 +49,15 @@ DECADIMENTO_ORE = 12.0    # dopo ~12h la correzione è svanita, resta il profilo
 MIN_GIORNI_STORICO = 14   # sotto questa soglia non si prevede (dato insufficiente)
 
 
-def load_real_time_city_table() -> pd.DataFrame:
+def load_usage_observable_city_table() -> pd.DataFrame:
     table = ds.dataset(str(DATASET), format='parquet', partitioning='hive').to_table().to_pandas()
     table['ts'] = pd.to_datetime(table['ts'], utc=True)
+    charging_cpos = cpos_with_charging(table)
+    table['usage_observable'] = usage_observable(table, charging_cpos)
     # Solo il comune configurato (non i comuni limitrofi, non l'A22).
     is_comune = table['citta'].fillna('').str.strip().str.lower() == COMUNE_NORM
     table['is_charging'] = table['stato_raw'].fillna('').str.upper().eq('CHARGING')
-    return table[(table['real_time'] == True) & is_comune].copy()  # noqa: E712
+    return table[table['usage_observable'] & is_comune].copy()
 
 
 def serie_oraria(g: pd.DataFrame) -> pd.DataFrame:
@@ -114,7 +119,7 @@ def prevedi(g: pd.DataFrame) -> dict:
 
 
 def main() -> None:
-    g = load_real_time_city_table()
+    g = load_usage_observable_city_table()
 
     payload = {
         'generated_at': pd.Timestamp.now('UTC').isoformat(),

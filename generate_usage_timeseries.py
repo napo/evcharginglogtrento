@@ -11,9 +11,10 @@ Stessa logica di rilevazione sessioni di generate_station_usage.py
 ogni script di generazione resta eseguibile da solo — vedi es. le costanti
 colore duplicate in docs/app.js e docs/stats/app.js).
 
-Solo colonnine cittadine con real_time=True (le altre non hanno una
-"sessione" da rilevare, vedi generate_station_usage.py) e non A22 (stesso
-motivo di generate_trends.py: pubblico di transito, non urbano).
+Solo colonnine cittadine usage_observable (le altre non hanno una
+"sessione" da rilevare, vedi generate_station_usage.py e
+usage_semantics.py) e non A22 (stesso motivo di generate_trends.py:
+pubblico di transito, non urbano).
 
 Va eseguito dopo generate_station_usage.py e generate_poi_proximity.py
 (quest'ultimo scarica/legge poi_trento.json, qui si riusa solo la sorgente
@@ -29,6 +30,7 @@ import pandas as pd
 import pyarrow.dataset as ds
 
 from config import COMUNE, COMUNE_NORM
+from usage_semantics import cpos_with_charging, usage_observable
 
 ROOT = Path(__file__).resolve().parent
 DATASET = ROOT / 'data'
@@ -59,11 +61,13 @@ def haversine_m(lat1, lon1, lat2, lon2) -> float:
     return 2 * r * math.asin(math.sqrt(a))
 
 
-def load_real_time_city() -> pd.DataFrame:
+def load_usage_observable_city() -> pd.DataFrame:
     table = ds.dataset(str(DATASET), format='parquet', partitioning='hive').to_table().to_pandas()
     table['ts'] = pd.to_datetime(table['ts'], utc=True)
+    charging_cpos = cpos_with_charging(table)
+    table['usage_observable'] = usage_observable(table, charging_cpos)
     is_comune = table['citta'].fillna('').str.strip().str.lower() == COMUNE_NORM
-    table = table[(table['real_time'] == True) & is_comune].copy()  # noqa: E712
+    table = table[table['usage_observable'] & is_comune].copy()
     table['is_charging'] = table['stato_raw'].fillna('').str.upper().eq('CHARGING')
     return table
 
@@ -109,9 +113,9 @@ def poi_categorie_vicine(lat: float, lon: float, poi_data: dict) -> list[str]:
 
 
 def main() -> None:
-    table = load_real_time_city()
+    table = load_usage_observable_city()
     if table.empty:
-        print(f'nessuna colonnina real-time a {COMUNE} nel dataset: usage_timeseries.json non generato')
+        print(f'nessuna colonnina con occupazione osservabile a {COMUNE} nel dataset: usage_timeseries.json non generato')
         return
 
     poi_data = json.loads(POI_FILE.read_text(encoding='utf-8')) if POI_FILE.exists() else {'categories': {}}

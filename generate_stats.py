@@ -8,6 +8,7 @@ import pandas as pd
 import pyarrow.dataset as ds
 
 from config import COMUNE_NORM
+from usage_semantics import cpos_with_charging, usage_observable
 
 ROOT = Path(__file__).resolve().parent
 DATASET = ROOT / 'data'
@@ -92,13 +93,16 @@ def build_stats_payload(table: pd.DataFrame, latest: pd.DataFrame):
     latest['is_active'] = latest['status'].eq('Attivo')
     latest['is_inactive'] = latest['status'].eq('Non Attivo')
     latest['is_charging'] = latest['status'].eq('In ricarica')
-    # 'Attivo' copre sia telemetria osservata (real_time=True) sia lo stub
-    # statico che alcuni operatori (NEOGY, Sagelio, verificato sullo
-    # storico completo) restituiscono sempre come "AVAILABLE": is_active
+    # 'Attivo' copre sia colonnine il cui operatore distingue davvero
+    # occupata/libera (usage_observable, vedi usage_semantics.py) sia
+    # colonnine il cui stato è un'assunzione (real_time=False, o
+    # real_time=True ma l'operatore non ha mai riportato CHARGING): is_active
     # da solo confonde le due cose, quindi si separa qui una volta per
     # tutte e si riusa ovunque sotto (summary, operatori, POI).
-    latest['is_active_known'] = latest['is_active'] & latest['real_time']
-    latest['is_active_unknown'] = latest['is_active'] & ~latest['real_time']
+    charging_cpos = cpos_with_charging(table)
+    latest['usage_observable'] = usage_observable(latest, charging_cpos)
+    latest['is_active_known'] = latest['is_active'] & latest['usage_observable']
+    latest['is_active_unknown'] = latest['is_active'] & ~latest['usage_observable']
 
     is_a22 = (
         latest['id_evse'].fillna('').str.upper().str.startswith(A22_ID_PREFIX)

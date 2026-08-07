@@ -52,12 +52,14 @@ function pointState(point) {
   return point.stato || statusLabel[point.stato_raw] || 'Sconosciuto';
 }
 
-// point.real_time distingue telemetria osservata da uno stub statico lato
-// provider: alcuni operatori (NEOGY, A22, Sagelio, verificato sullo storico
-// completo) non hanno mai riportato altro che "AVAILABLE" — il loro stato
-// "Attivo" è un'assunzione, non un dato misurato.
+// point.usage_observable (calcolato server-side, vedi usage_semantics.py):
+// real_time da solo non basta — alcuni operatori real_time=True (es. ACEA
+// ENERGIA, Route220, verificato sullo storico completo) non hanno mai
+// riportato altro che "AVAILABLE"/"OUTOFORDER", mai "CHARGING". Per loro lo
+// stato Attivo/Non Attivo è affidabile, ma se la colonnina sia occupata
+// resta un'assunzione tanto quanto per un operatore non real-time.
 function isKnownOccupancy(point) {
-  return point.real_time === true;
+  return point.usage_observable === true;
 }
 
 // I 4 stati mostrati ovunque nell'app (mappa, tabella, popup, stacked bar):
@@ -111,9 +113,10 @@ function renderGaugeOccupied(cityPoints) {
   const el = document.getElementById('gauge-occupied');
   if (!el || typeof echarts === 'undefined') return;
   const occupate = cityPoints.filter((p) => p.stato_raw === 'CHARGING').length;
-  // "In uso" ha senso solo per le colonnine monitorabili (real_time): sul
-  // totale cittadino (che include quasi metà colonnine di cui non si sa
-  // l'occupazione) la quota risulterebbe artificialmente bassa.
+  // "In uso" ha senso solo per le colonnine con occupazione osservabile
+  // (isKnownOccupancy/usage_observable): sul totale cittadino (che include
+  // colonnine il cui operatore non distingue mai occupata da libera) la
+  // quota risulterebbe artificialmente bassa.
   const monitorabili = cityPoints.filter((p) => isKnownOccupancy(p)).length;
   const quota = EVDrilldown.ratio(occupate, monitorabili);
 
@@ -235,7 +238,7 @@ function renderTable(items) {
           <td data-sort-value="${item.potenza_w || 0}">${item.potenza_w ? `${item.potenza_w / 1000} kW` : '—'}</td>
           <td>${item.n_connettori ?? '—'}</td>
           <td>${item.corrente || '—'}</td>
-          <td class="station-link" data-station-popover="${item.id_evse}" data-real-time="${item.real_time}">${item.indirizzo || '—'}</td>
+          <td class="station-link" data-station-popover="${item.id_evse}" data-usage-observable="${item.usage_observable}">${item.indirizzo || '—'}</td>
           <td data-sort-value="${lastUsed || ''}">${lastUsedLabel}</td>
         </tr>`;
     })
@@ -338,7 +341,7 @@ function wireTableFocus() {
 
 function popupHtml(point) {
   const { label } = displayState(point);
-  return `<strong>${point.cpo || 'Operatore'}</strong>${point.is_a22 ? ' <span class="badge bg-warning text-dark">A22</span>' : ''}<br>${point.indirizzo || '—'}<br>Stato: ${label}<br><span class="text-muted small">${point.id_evse}</span>${EVUsage.stationHtml(point.id_evse, { realTime: point.real_time })}`;
+  return `<strong>${point.cpo || 'Operatore'}</strong>${point.is_a22 ? ' <span class="badge bg-warning text-dark">A22</span>' : ''}<br>${point.indirizzo || '—'}<br>Stato: ${label}<br><span class="text-muted small">${point.id_evse}</span>${EVUsage.stationHtml(point.id_evse, { usageObservable: point.usage_observable })}`;
 }
 
 // Un popup aperto vicino al bordo della mappa può sconfinare fuori
@@ -713,9 +716,10 @@ function renderMapLayers(points) {
   if (!map) return;
 
   // Nessuno split per is_a22 qui: sulla mappa l'A22 è trattata come
-  // qualunque altra colonnina, colorata solo in base a stato/real_time.
-  // Resta invece esclusa dalle statistiche cittadine (gauge, stacked bar,
-  // riepilogo, tabella) che continuano a filtrare !p.is_a22 più sotto.
+  // qualunque altra colonnina, colorata solo in base a stato/occupazione
+  // osservabile (isKnownOccupancy). Resta invece esclusa dalle statistiche
+  // cittadine (gauge, stacked bar, riepilogo, tabella) che continuano a
+  // filtrare !p.is_a22 più sotto.
   const chargingPoints = points.filter((p) => p.stato_raw === 'CHARGING');
   const activeKnownPoints = points.filter(
     (p) => pointState(p) === 'Attivo' && p.stato_raw !== 'CHARGING' && isKnownOccupancy(p)
@@ -728,8 +732,9 @@ function renderMapLayers(points) {
   // Il filtro "In uso" isola le colonnine in ricarica (marker blu): quando
   // è selezionato, i cluster attive/non attive spariscono e restano solo
   // quei marker. "Monitorabili" è un asse ortogonale allo stato: mostra
-  // tutte le colonnine con real_time=true qualunque sia il loro stato
-  // (reale + non attive + in uso), nascondendo solo le stimate.
+  // tutte le colonnine con occupazione osservabile (isKnownOccupancy)
+  // qualunque sia il loro stato (reale + non attive + in uso), nascondendo
+  // solo le stimate.
   const showActiveKnown = activeFilter === 'all' || activeFilter === 'Attivo' || activeFilter === 'Monitorabile';
   const showActiveUnknown = activeFilter === 'all' || activeFilter === 'Attivo';
   const showInactive = activeFilter === 'all' || activeFilter === 'Non Attivo' || activeFilter === 'Monitorabile';
@@ -761,10 +766,9 @@ function renderUsageHeadline(points, generatedAt) {
   if (!headline) return;
   const cityPoints = points.filter((p) => !p.is_a22);
   const occupate = cityPoints.filter((p) => p.stato_raw === 'CHARGING').length;
-  // "In uso" ha senso solo relativo alle colonnine monitorabili
-  // (real_time noto): il totale cittadino include quasi metà colonnine
-  // di cui non si sa l'occupazione (vedi renderGaugeOccupied, stessa
-  // distinzione).
+  // "In uso" ha senso solo relativo alle colonnine con occupazione
+  // osservabile: il totale cittadino include colonnine di cui non si sa
+  // l'occupazione (vedi renderGaugeOccupied, stessa distinzione).
   const monitorabili = cityPoints.filter((p) => isKnownOccupancy(p)).length;
   // "Oggi" = dalle 00:00 di oggi ora italiana, non ultime 24h: stessa
   // definizione di calendario usata ovunque compaia questo dato (popup,

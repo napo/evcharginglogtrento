@@ -17,9 +17,11 @@ Ogni blocco sotto soglia scrive solo {"available": false, "days_collected",
 "days_needed"}: il frontend mostra un avviso invece di un grafico vuoto, e il
 giorno in cui la soglia scatta il grafico compare da solo.
 
-Solo le colonnine real_time=True entrano nel calcolo: per le altre lo stato
-è statico (vedi README, sezione Limiti) e mediarle vorrebbe dire modellare
-una costante, non un uso reale.
+Solo le colonnine usage_observable entrano nel calcolo di andamento_giornaliero/
+profilo_settimanale/profilo_mensile (vedi usage_semantics.py): per le altre lo
+stato è statico o l'operatore non distingue occupata da libera (vedi README,
+sezione Limiti), e mediarle vorrebbe dire modellare un'assunzione, non un uso
+reale.
 
 Va eseguito una volta al giorno (dopo generate_stats.py), non ad ogni ciclo:
 il calcolo scandisce l'intero dataset storico, non solo l'ultimo snapshot.
@@ -33,6 +35,7 @@ import pandas as pd
 import pyarrow.dataset as ds
 
 from config import COMUNE, COMUNE_NORM
+from usage_semantics import cpos_with_charging, usage_observable
 
 ROOT = Path(__file__).resolve().parent
 DATASET = ROOT / 'data'
@@ -51,11 +54,14 @@ WEEKDAY_LABELS = ['Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab', 'Dom']
 
 def load_city_table() -> pd.DataFrame:
     """Tutte le colonnine cittadine (a differenza di
-    load_real_time_city_table, NON filtra su real_time=True): serve ai
-    blocchi che contano quante colonnine esistono/sono attive nel tempo,
-    non quanto sono usate — quella distinzione lì non ha senso."""
+    load_usage_observable_city_table, NON filtra sull'osservabilità
+    dell'uso): serve ai blocchi che contano quante colonnine esistono/sono
+    attive nel tempo, non quanto sono usate — quella distinzione lì non ha
+    senso."""
     table = ds.dataset(str(DATASET), format='parquet', partitioning='hive').to_table().to_pandas()
     table['ts'] = pd.to_datetime(table['ts'], utc=True)
+    charging_cpos = cpos_with_charging(table)
+    table['usage_observable'] = usage_observable(table, charging_cpos)
     # Solo il comune configurato (non i comuni limitrofi che lo scraper
     # raccoglie comunque), e non l'A22 (pubblico diverso, gestito a parte).
     is_comune = table['citta'].fillna('').str.strip().str.lower() == COMUNE_NORM
@@ -63,10 +69,15 @@ def load_city_table() -> pd.DataFrame:
     return table[is_comune].copy()
 
 
-def load_real_time_city_table() -> pd.DataFrame:
+def load_usage_observable_city_table() -> pd.DataFrame:
+    """Solo le colonnine il cui operatore distingue davvero occupata/libera
+    (usage_observable, vedi usage_semantics.py): per le altre lo stato
+    Attivo/Non Attivo può essere affidabile, ma "in ricarica" non è mai
+    osservato — mediarlo vorrebbe dire modellare un'assunzione, non un uso
+    reale."""
     table = load_city_table()
     table['is_charging'] = table['stato_raw'].fillna('').str.upper().eq('CHARGING')
-    return table[table['real_time'] == True].copy()  # noqa: E712
+    return table[table['usage_observable']].copy()
 
 
 def placeholder(kind: str, days_collected: int) -> dict:
@@ -209,13 +220,13 @@ def main() -> None:
     g_all = load_city_table()
     days_all = int(g_all['date'].nunique()) if not g_all.empty else 0
 
-    g = load_real_time_city_table()
+    g = load_usage_observable_city_table()
     days = int(g['date'].nunique()) if not g.empty else 0
 
     payload = {
         'generated_at': pd.Timestamp.now('UTC').isoformat(),
         'label': f'{COMUNE} città',
-        'n_colonnine_real_time': int(g['id_evse'].nunique()) if not g.empty else 0,
+        'n_colonnine_usage_observable': int(g['id_evse'].nunique()) if not g.empty else 0,
         'days_collected': days,
         'andamento_giornaliero': andamento_giornaliero(g, days),
         'profilo_settimanale': profilo_settimanale(g, days),

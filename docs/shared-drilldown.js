@@ -118,8 +118,8 @@ window.EVDrilldown = (() => {
     const attiva = attivaReale + attivaStimata + inUso;
     const totale = attiva + nonAttiva;
     const fracAttiva = totale ? attiva / totale : 0;
-    // "Monitorabili" = colonnine con real_time noto, a prescindere dallo
-    // stato: le reali e le non attive lo sono per definizione (solo le
+    // "Monitorabili" = colonnine con occupazione osservabile, a prescindere
+    // dallo stato: le reali e le non attive lo sono per definizione (solo le
     // stimate non lo sono), quindi si ricava dai 4 conteggi senza bisogno
     // di un dato aggiuntivo — stessa quota mostrata nel gauge accanto.
     const monitorabili = attivaReale + nonAttiva + inUso;

@@ -12,8 +12,9 @@ potenza delle colonnine) e stations_usage.json già generato da
 generate_station_usage.py (n_sessioni per colonnina) — va quindi eseguito
 DOPO generate_station_usage.py.
 
-Solo colonnine cittadine real_time=True: senza telemetria osservata "usata"
-non è calcolabile (stesso criterio di generate_station_usage.py).
+Solo colonnine cittadine usage_observable: senza un operatore che distingua
+occupata da libera "usata" non è calcolabile (stesso criterio di
+generate_station_usage.py, vedi usage_semantics.py).
 """
 from __future__ import annotations
 
@@ -25,6 +26,7 @@ import pandas as pd
 import pyarrow.dataset as ds
 
 from config import COMUNE_NORM
+from usage_semantics import cpos_with_charging, usage_observable
 
 ROOT = Path(__file__).resolve().parent
 DATASET = ROOT / 'data'
@@ -70,8 +72,10 @@ def haversine_m(lat1, lon1, lat2, lon2) -> float:
 def load_monitorabili_city() -> list[dict]:
     table = ds.dataset(str(DATASET), format='parquet', partitioning='hive').to_table().to_pandas()
     table['ts'] = pd.to_datetime(table['ts'], utc=True)
+    charging_cpos = cpos_with_charging(table)
+    table['usage_observable'] = usage_observable(table, charging_cpos)
     is_comune = table['citta'].fillna('').str.strip().str.lower() == COMUNE_NORM
-    latest = table[is_comune & (table['real_time'] == True)].sort_values('ts').drop_duplicates(  # noqa: E712
+    latest = table[is_comune & table['usage_observable']].sort_values('ts').drop_duplicates(
         subset=['id_evse'], keep='last'
     )
     usage = {}

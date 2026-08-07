@@ -32,9 +32,9 @@ window.EVUsage = (() => {
     return `<dt>Veicoli serviti</dt><dd>ultima ora ${veicoli.ultima_ora} · 24h ${veicoli.ultime_24h} · 7gg ${veicoli.ultimi_7_giorni} · 30gg ${veicoli.ultimi_30_giorni}</dd>`;
   }
 
-  function stationHtml(idEvse, { realTime = true } = {}) {
-    if (!realTime) {
-      return '<div class="popup-usage small text-muted mt-2">Questa colonnina non pubblica lo stato in tempo reale: l\'uso non è calcolabile.</div>';
+  function stationHtml(idEvse, { usageObservable = true } = {}) {
+    if (!usageObservable) {
+      return '<div class="popup-usage small text-muted mt-2">Per questa colonnina l\'operatore non distingue occupata da libera: l\'uso non è calcolabile.</div>';
     }
     const usage = data && data.stazioni ? data.stazioni[idEvse] : null;
     if (!usage) {
@@ -95,7 +95,7 @@ window.EVUsage = (() => {
       const cpo = el.getAttribute('data-operator-popover');
       const content = cpo
         ? () => operatorHtml(cpo)
-        : () => stationHtml(idEvse, { realTime: el.getAttribute('data-real-time') !== 'false' });
+        : () => stationHtml(idEvse, { usageObservable: el.getAttribute('data-usage-observable') !== 'false' });
       el._evPopover = new bootstrap.Popover(el, {
         trigger: 'hover focus',
         html: true,
