@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-07T06:39:51+00:00",
+  "generated_at": "2026-08-07T07:23:55+00:00",
   "stats": {
     "total": 213,
     "active": 200,
     "inactive": 13,
-    "charging": 8
+    "charging": 11
   },
   "points": [
     {
@@ -442,7 +442,7 @@
     {
       "id_evse": "IT*EMO*E857*2",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "EMOBITALY S.r.l.",
       "indirizzo": "Strada di Vason, 70",
@@ -478,7 +478,7 @@
     {
       "id_evse": "IT*ENX*E20XP22T3KK4AL00176*1",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "ENEL X WAY ITALIA SRL",
       "indirizzo": "Via Dietro le Mura A, 25",
@@ -586,7 +586,7 @@
     {
       "id_evse": "IT*EWI*EEW0307S1*1",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "EWIVA SRL",
       "indirizzo": "Via Ezio Maccani, 133",
@@ -676,7 +676,7 @@
     {
       "id_evse": "IT*IPE*EDC001386*2",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "IPLANET SPA",
       "indirizzo": "Via Druso Livio",
@@ -1270,7 +1270,7 @@
     {
       "id_evse": "IT*TSL*EA6M1PM",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "Tesla Italia Srl.",
       "indirizzo": "11, Via Innsbruck",
@@ -2836,7 +2836,7 @@
     {
       "id_evse": "IT*PLN*EH003158*1",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "BEC",
       "indirizzo": "Piazzale Lionello Groff 3",
@@ -2908,7 +2908,7 @@
     {
       "id_evse": "IT*TSL*EA4TAJR",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "Tesla Italia Srl.",
       "indirizzo": "11, Via Innsbruck",
@@ -2926,7 +2926,7 @@
     {
       "id_evse": "IT*TSL*EA6H0AV",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "Tesla Italia Srl.",
       "indirizzo": "11, Via Innsbruck",
@@ -3592,7 +3592,7 @@
     {
       "id_evse": "IT*IOY*E421705",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "IONITY GMBH",
       "indirizzo": "Via Ezio Maccani 157",
@@ -3790,7 +3790,7 @@
     {
       "id_evse": "IT*TSL*EA4RQEH",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "Tesla Italia Srl.",
       "indirizzo": "11, Via Innsbruck",
@@ -3808,7 +3808,7 @@
     {
       "id_evse": "IT*TSL*EA4RR91",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "Tesla Italia Srl.",
       "indirizzo": "11, Via Innsbruck",
