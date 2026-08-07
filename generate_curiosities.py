@@ -25,6 +25,18 @@ un pubblico diverso (vedi generate_trends.py) e i suoi DC rapidi
 dominerebbero banalmente la classifica potenza travisandola da curiosità
 cittadina.
 
+L'A22 (Autostrada del Brennero) è riconoscibile nel dataset solo perché ha
+un prefisso ID (A22_ID_PREFIX) e un nome CPO distinguibili: è un caso
+specifico di quella autostrada, non un rilevamento generico "colonnina
+autostradale". L'autostrada attraversa decine di comuni ben oltre quello
+configurato, e le colonnine che finiscono in `is_a22` sono solo quelle
+delle aree di servizio effettivamente intercettate dallo scraping (bbox/
+città del comune configurato) — non "tutta l'A22". Un comune vicino a
+un'altra autostrada non avrebbe automaticamente lo stesso confronto: quel
+gestore andrebbe identificato a parte se riconoscibile nei dati, oppure
+individuato per prossimità geografica alle aree di servizio (via OSM) — non
+banale, non ancora fatto qui.
+
 Va eseguito una volta al giorno, dopo generate_stats.py.
 """
 from __future__ import annotations
@@ -117,18 +129,28 @@ def fact_citta_vs_a22(latest: pd.DataFrame) -> dict | None:
     """Confronto città/A22: compare solo se nel dataset del comune configurato
     ci sono anche colonnine A22 rilevate (non è detto — dipende da quanto è
     vicino il comune all'autostrada del Brennero), altrimenti non è calcolabile
-    e la curiosità viene omessa invece di essere scritta a mano."""
+    e la curiosità viene omessa invece di essere scritta a mano.
+
+    Il testo è esplicito sul fatto che non è "tutta l'A22" (che attraversa
+    decine di comuni ben oltre quello configurato) ma solo le aree di
+    servizio effettivamente rilevate qui, e che l'A22 è riconoscibile nei
+    dati (A22_ID_PREFIX / nome CPO) in un modo che non generalizza ad altre
+    autostrade con altri gestori — vedi nota di modulo più sopra."""
     citta = latest[latest['is_comune']]
     a22 = latest[latest['is_a22']]
     if citta.empty or a22.empty:
         return None
     share_citta = round(citta['is_active'].mean() * 100, 1)
     share_a22 = round(a22['is_active'].mean() * 100, 1)
+    aree = sorted(a22['indirizzo'].dropna().unique())
+    aree_label = ' e '.join(aree) if len(aree) <= 2 else f'{len(aree)} aree di servizio'
     return {
         'titolo': 'Città o autostrada?',
         'testo': (
-            f'In questo momento il {share_citta}% delle colonnine in città è attivo, contro il '
-            f'{share_a22}% di quelle sulla A22: pubblici diversi, andamenti diversi.'
+            f'In questo momento il {share_citta}% delle colonnine di {COMUNE} è attivo, contro il '
+            f'{share_a22}% di quelle rilevate su {aree_label} (A22): pubblici diversi, andamenti diversi. '
+            'È un confronto possibile solo perché la A22 è riconoscibile nei dati (operatore e ID dedicati); '
+            'colonnine di altre autostrade, con altri gestori, non lo sarebbero allo stesso modo.'
         ),
     }
 

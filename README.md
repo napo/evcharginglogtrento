@@ -1,4 +1,10 @@
 # EVChargingLogTrento
+
+> **Vuoi la stessa cosa per il tuo comune?** Fai un fork di questo repo: basta
+> cambiare il nome del comune in `docs/config.json` e abilitare le GitHub
+> Pages sulla cartella `docs/` per avere una versione funzionante con dati e
+> sito propri — vedi [Ripetere il progetto su un altro comune](#ripetere-il-progetto-su-un-altro-comune).
+
 Serie storica aperta dello stato delle colonnine di ricarica per veicoli elettrici all'interno del **Comune di Trento**, costruita interrogando periodicamente la [Piattaforma Unica Nazionale (PUN)](https://www.piattaformaunicanazionale.it/idr) e accumulando ogni snapshot in file Parquet.
 
 La PUN espone solo lo stato *attuale*: non esiste un endpoint per interrogare i dati a una certa data, né un archivio storico. Questo progetto colma quel vuoto registrando lo stato nel tempo - l'archivio storico *è* il dato che produce.
@@ -7,7 +13,9 @@ La PUN espone solo lo stato *attuale*: non esiste un endpoint per interrogare i 
 > Non è affiliato né promosso da FBK, Comune di Trento, GSE, MASE o RSE.
 
 ## Cosa fa
+
 Ogni ciclo (default: 5 minuti):
+
 1. individua le colonnine del comune (fase *discovery*, rifatta ogni 24h);
 2. ne scarica lo stato corrente (disponibile / in ricarica / fuori servizio,
    potenza, connettori, operatore, coordinate…);
@@ -16,10 +24,11 @@ Ogni ciclo (default: 5 minuti):
    (dedup), così il file non si gonfia di righe ridondanti.
 
 ## La fonte dei dati
+
 I dati provengono dalla PUN (GSE/MASE). Fino a giugno 2026 esisteva un pulsante "Esporta dati" con un endpoint S3 il cui URL cambiava di continuo; è stato **disabilitato**. \
 Oggi i dati sono accessibili solo tramite l'API REST del portale (`api.pun.piattaformaunicanazionale.it`), autenticata con credenziali **AWS Cognito guest** (nessun login richiesto). Il flusso è:
 
-```
+```text
 /config.json                => region + IdentityPoolId
 Cognito GetId / GetCreds     => credenziali SigV4 temporanee (1h)
 POST /v1/chargepoints/public/map/search   => lista evse_id (paginata)
@@ -29,12 +38,13 @@ POST /v1/chargepoints/group               => dettagli completi (batch da 100)
 Il meccanismo dell'API è stato ricostruito a partire dall'ETL del progetto [`AgID/cruscotto-italia`](https://github.com/AgID/cruscotto-italia), a cui va il credito per il reverse-engineering della sorgente.
 
 ## Schema del Parquet
+
 L'output è un **dataset partizionato per giorno**: ogni snapshot è un file
 Parquet scritto una volta sola, mai riscritto, in
 `data/date=YYYY-MM-DD/<timestamp>.parquet`. Questo mantiene minimo l'impatto su git (ogni file è un blob salvato una volta) e si legge come un unico dataset. Ogni riga è lo stato di una colonnina a un dato istante `ts`. Un nuovo file viene scritto solo quando qualcosa cambia rispetto al ciclo precedente (dedup).
 
 | campo | descrizione |
-|---|---|
+| --- | --- |
 | `ts` | timestamp UTC dello snapshot (ISO-8601) |
 | `id_evse` | identificativo EVSE della colonnina |
 | `stato` | stato normalizzato: `Attivo` / `Non Attivo` |
@@ -83,7 +93,7 @@ python pun_trento.py --comune Rovereto --provincia TN --interval 600
 
 Opzioni principali:
 
-```
+```text
 --comune / --provincia     comune da monitorare (default: Trento / TN)
 --outdir                   cartella dei Parquet (default: ./data)
 --statedir                 cache discovery + lasthash (default: ./state)
@@ -106,11 +116,20 @@ Il nome del comune è in un'unica variabile di configurazione, `docs/config.json
 filtro `citta == comune` nei vari `generate_*.py`); il sito statico la legge a
 runtime via `docs/shared-config.js` (nome comune in titolo, intestazioni, testi).
 Per ripetere il progetto su un altro comune basta cambiare quel file — nessun
-altro punto del codice ha il nome del comune scritto a mano, con due eccezioni
-volutamente non generalizzate: la bbox di fallback in `pun_trento.py`
-(`TRENTO_BBOX`, usata solo quando l'API non riporta la città) e i punti di
-interesse (`poi_trento.json`, scaricati a mano da `fetch_poi.py` per l'area di
-Trento) — per un altro comune vanno adattati a parte.
+altro punto del codice ha il nome del comune scritto a mano, con tre eccezioni
+volutamente non generalizzate:
+
+- la bbox di fallback in `pun_trento.py` (`TRENTO_BBOX`, usata solo quando
+  l'API non riporta la città);
+- i punti di interesse (`poi_trento.json`, scaricati a mano da `fetch_poi.py`
+  per l'area di Trento);
+- la categoria "A22" in `generate_stats.py`/`generate_curiosities.py`/
+  `docs/app.js` (colonnine dell'Autostrada del Brennero, riconosciute da un
+  prefisso ID e un nome CPO specifici di quella autostrada). Un comune vicino
+  a un'altra autostrada non avrebbe automaticamente lo stesso confronto: va
+  identificato a parte con il gestore giusto, se riconoscibile nei dati.
+
+Per un altro comune questi tre punti vanno adattati a parte.
 
 ## Automazione (GitHub Actions)
 
@@ -141,7 +160,7 @@ Prima di affidarti alle Actions conviene fare un `--once` in locale e committare
 
 Il **codice** è rilasciato sotto licenza `WTFPL`.
 
-I **dati** raccolti derivano dalla PUN. Secondo l'interpretazione di AgID (principio *open data by default*, art. 52 c.2 del D.Lgs 82/2005 — CAD, e Linee Guida Open Data AgID), i dati pubblicati dalla PA senza licenza espressa si intendono aperti e riconducibili a **CC BY 4.0** con attribuzione al titolare (GSE). attribuzione al titolare (GSE). Questa è un'interpretazione giuridica di AgID, non una licenza dichiarata
+I **dati** raccolti derivano dalla PUN. Secondo l'interpretazione di AgID (principio *open data by default*, art. 52 c.2 del D.Lgs 82/2005 — CAD, e Linee Guida Open Data AgID), i dati pubblicati dalla PA senza licenza espressa si intendono aperti e riconducibili a **CC BY 4.0** con attribuzione al titolare (GSE). Questa è un'interpretazione giuridica di AgID, non una licenza dichiarata
 esplicitamente dalla PUN: verifica prima di riusi in contesti sensibili.
 Fonte da attribuire: *GSE — Piattaforma Unica Nazionale (PUN)*.
 

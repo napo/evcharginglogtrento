@@ -80,9 +80,7 @@ function summarize(points) {
   let attivaStimata = 0;
   let inUso = 0;
   let nonAttiva = 0;
-  let monitorabili = 0;
   points.forEach((p) => {
-    if (isKnownOccupancy(p)) monitorabili += 1;
     if (p.stato_raw === 'CHARGING') {
       inUso += 1;
     } else if (pointState(p) === 'Attivo') {
@@ -92,10 +90,14 @@ function summarize(points) {
       nonAttiva += 1;
     }
   });
-  // monitorabili non è ricavabile da attivaReale + nonAttiva + inUso: una
-  // colonnina "Non Attivo" può appartenere a un operatore non
-  // usage_observable esattamente come una "Attiva (stimata)" (vedi
-  // isKnownOccupancy) — va quindi contata a parte, non derivata.
+  // "Monitorabili" qui = colonnine che ADESSO dicono se sono libere o
+  // occupate (Attiva reale + In uso). Esclude le "Non Attivo" che, pur
+  // appartenendo a un operatore usage_observable, in questo momento sono
+  // spente/guaste: non possono essere né libere né occupate, quindi non
+  // vanno contate come "monitorabili in questo istante" (per la capacità
+  // sull'intera giornata, usata per l'energia, vedi
+  // n_colonnine_usage_observable lato server).
+  const monitorabili = attivaReale + inUso;
   return { total: points.length, attivaReale, attivaStimata, inUso, nonAttiva, monitorabili };
 }
 
@@ -118,12 +120,12 @@ function countUp(el, target, { duration = 900, decimals = 0, suffix = '' } = {})
 function renderGaugeOccupied(cityPoints) {
   const el = document.getElementById('gauge-occupied');
   if (!el || typeof echarts === 'undefined') return;
-  const occupate = cityPoints.filter((p) => p.stato_raw === 'CHARGING').length;
-  // "In uso" ha senso solo per le colonnine con occupazione osservabile
-  // (isKnownOccupancy/usage_observable): sul totale cittadino (che include
-  // colonnine il cui operatore non distingue mai occupata da libera) la
-  // quota risulterebbe artificialmente bassa.
-  const monitorabili = cityPoints.filter((p) => isKnownOccupancy(p)).length;
+  // "monitorabili" = colonnine che ADESSO dicono se sono libere o occupate
+  // (vedi summarize): esclude sia quelle il cui operatore non distingue mai
+  // occupata da libera, sia quelle "Non Attivo" in questo momento (spente/
+  // guaste, né libere né occupate) — altrimenti la quota risulterebbe
+  // artificialmente bassa.
+  const { inUso: occupate, monitorabili } = summarize(cityPoints);
   const quota = EVDrilldown.ratio(occupate, monitorabili);
 
   const chart = echarts.init(el, 'evtrento-dark');
@@ -771,11 +773,11 @@ function renderUsageHeadline(points, generatedAt) {
   const headline = document.getElementById('usage-headline');
   if (!headline) return;
   const cityPoints = points.filter((p) => !p.is_a22);
-  const occupate = cityPoints.filter((p) => p.stato_raw === 'CHARGING').length;
-  // "In uso" ha senso solo relativo alle colonnine con occupazione
-  // osservabile: il totale cittadino include colonnine di cui non si sa
-  // l'occupazione (vedi renderGaugeOccupied, stessa distinzione).
-  const monitorabili = cityPoints.filter((p) => isKnownOccupancy(p)).length;
+  // "monitorabili" = colonnine che ADESSO dicono se sono libere o occupate
+  // (vedi renderGaugeOccupied/summarize, stessa distinzione): esclude sia
+  // gli operatori che non distinguono mai occupata da libera, sia le
+  // "Non Attivo" in questo momento (spente/guaste).
+  const { inUso: occupate, monitorabili } = summarize(cityPoints);
   // "Oggi" = dalle 00:00 di oggi ora italiana, non ultime 24h: stessa
   // definizione di calendario usata ovunque compaia questo dato (popup,
   // pagina Statistiche — vedi generate_station_usage.py).
@@ -785,7 +787,7 @@ function renderUsageHeadline(points, generatedAt) {
 
   let frase = `Al momento sono occupate <strong id="hl-occupate">0</strong> colonnine delle <strong id="hl-monitorabili">0</strong> monitorabili, su un totale di <strong id="hl-totale">0</strong>.`;
   if (kwhOggi != null) {
-    frase += ` L'energia stimata erogata dalle ${monitorabili} colonnine monitorabili è di <strong id="hl-kwh-oggi">0</strong> kWh da inizio giornata ad ora.`;
+    frase += ` L'energia stimata dalle colonnine monitorate è di <strong id="hl-kwh-oggi">0</strong> kWh da inizio giornata ad ora.`;
   }
   headline.innerHTML = frase;
 

@@ -241,6 +241,15 @@ a:hover {
   background: #0b1120;
 }
 
+/* --- Fullscreen tabelle (docs/shared-table.js) ---------------------------- */
+.ev-table-fullscreen-target:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  padding: 24px;
+  overflow-y: auto;
+  background: #0b1120;
+}
+
 .stat-card {
   min-height: 100%;
 }

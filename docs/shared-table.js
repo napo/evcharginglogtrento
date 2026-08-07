@@ -25,11 +25,51 @@ function enhanceTable(tableEl, { pageSize = 10 } = {}) {
   if (pagId) document.getElementById(pagId)?.remove();
 
   const toolbar = document.createElement('div');
-  toolbar.className = 'mb-2';
+  toolbar.className = 'mb-2 d-flex flex-wrap align-items-center justify-content-between gap-2';
   if (wrapId) toolbar.id = wrapId;
-  toolbar.innerHTML = '<input type="search" class="form-control form-control-sm" style="max-width: 260px" placeholder="Cerca...">';
+  toolbar.innerHTML = `
+    <input type="search" class="form-control form-control-sm ev-table-search" style="max-width: 260px" placeholder="Cerca...">
+    <div class="d-flex align-items-center gap-2">
+      <label class="small text-muted mb-0">Righe per pagina</label>
+      <select class="form-select form-select-sm ev-table-page-size" style="width: auto">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="40">40</option>
+        <option value="50">50</option>
+      </select>
+      <button type="button" class="btn btn-sm btn-outline-secondary ev-table-fullscreen-btn">Schermo intero</button>
+    </div>
+  `;
   tableEl.parentElement.insertBefore(toolbar, tableEl);
-  const searchInput = toolbar.querySelector('input');
+  const searchInput = toolbar.querySelector('.ev-table-search');
+  const pageSizeSelect = toolbar.querySelector('.ev-table-page-size');
+  const fullscreenBtn = toolbar.querySelector('.ev-table-fullscreen-btn');
+  pageSizeSelect.value = String(pageSize);
+
+  // Il target del fullscreen è la card che contiene la tabella (titolo,
+  // filtri ecc. inclusi), non solo il <table> — altrimenti in schermo
+  // intero si vedrebbe la tabella senza contesto.
+  const fsTarget = tableEl.closest('.card') || tableEl.parentElement;
+  fsTarget.classList.add('ev-table-fullscreen-target');
+  fullscreenBtn.addEventListener('click', () => {
+    if (document.fullscreenElement === fsTarget) document.exitFullscreen();
+    else if (fsTarget.requestFullscreen) fsTarget.requestFullscreen();
+  });
+  if (!fsTarget._evTableFsWired) {
+    fsTarget._evTableFsWired = true;
+    document.addEventListener('fullscreenchange', () => {
+      const isFs = document.fullscreenElement === fsTarget;
+      const btn = fsTarget.querySelector('.ev-table-fullscreen-btn');
+      if (btn) btn.textContent = isFs ? 'Esci da schermo intero' : 'Schermo intero';
+    });
+  }
+
+  pageSizeSelect.addEventListener('change', () => {
+    pageSize = parseInt(pageSizeSelect.value, 10) || 10;
+    page = 1;
+    render();
+  });
 
   const paginationWrap = document.createElement('div');
   if (pagId) paginationWrap.id = pagId;

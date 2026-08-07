@@ -118,12 +118,11 @@ window.EVDrilldown = (() => {
     const attiva = attivaReale + attivaStimata + inUso;
     const totale = attiva + nonAttiva;
     const fracAttiva = totale ? attiva / totale : 0;
-    // "Monitorabili" = colonnine con occupazione osservabile
-    // (isKnownOccupancy), a prescindere dallo stato: NON si può ricavare da
-    // attivaReale + nonAttiva + inUso — una colonnina "Non Attivo" può
-    // benissimo appartenere a un operatore non usage_observable, esattamente
-    // come una "Attiva (stimata)" — va quindi passato esplicitamente
-    // (stessa quota mostrata nel gauge accanto).
+    // "Monitorabili" = colonnine che ADESSO dicono se sono libere o occupate
+    // (attivaReale + inUso, vedi summarize in docs/app.js): esclude le
+    // "Non Attivo" che, pur appartenendo a un operatore usage_observable,
+    // in questo momento sono spente/guaste — stessa quota mostrata nel
+    // gauge accanto.
     const monitorabili = counts.monitorabili || 0;
     const quotaInUso = ratio(inUso, monitorabili);
 
