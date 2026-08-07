@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-07T06:04:19+00:00",
+  "generated_at": "2026-08-07T06:09:24+00:00",
   "stats": {
     "total": 213,
-    "active": 200,
-    "inactive": 13,
+    "active": 199,
+    "inactive": 14,
     "charging": 9
   },
   "points": [
@@ -459,8 +459,8 @@
     },
     {
       "id_evse": "IT*ENX*E20XM32T7KK3AR00101*2",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "cpo": "ENEL X WAY ITALIA SRL",
       "indirizzo": "Via del Brennero",
@@ -3448,7 +3448,7 @@
     {
       "id_evse": "IT*ELC*EKNQE",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "cpo": "Electra Italia s.r.l.",
       "indirizzo": "Via Ragazzi del 99",
@@ -3466,7 +3466,7 @@
     {
       "id_evse": "IT*ENX*E20XM32T7KK3AR00101*1",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "cpo": "ENEL X WAY ITALIA SRL",
       "indirizzo": "Via del Brennero",
