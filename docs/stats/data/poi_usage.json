@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T09:06:32.905367+00:00",
+  "generated_at": "2026-08-08T03:51:54.840641+00:00",
   "fonte_poi": "OpenStreetMap contributors, via Overpass API (ODbL)",
   "soglia_metri": 300,
   "pois": [
@@ -364,11 +364,11 @@
       "lat": 46.087914,
       "lon": 11.064563,
       "n_colonnine_entro_soglia": 4,
-      "n_colonnine_usate": 3,
+      "n_colonnine_usate": 4,
       "n_usate_by_power": {
         "lenta": 0,
         "rapida": 0,
-        "ultra": 3
+        "ultra": 4
       },
       "esempio": {
         "colonnina_indirizzo": "Strada di Cadine 13",
@@ -562,11 +562,11 @@
       "lat": 46.007107,
       "lon": 11.12765,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 2,
+      "n_colonnine_usate": 3,
       "n_usate_by_power": {
         "lenta": 0,
         "rapida": 1,
-        "ultra": 1
+        "ultra": 2
       },
       "esempio": {
         "colonnina_indirizzo": "Via della Torre Franca",
@@ -631,11 +631,11 @@
       "lat": 46.079493,
       "lon": 11.122753,
       "n_colonnine_entro_soglia": 6,
-      "n_colonnine_usate": 2,
+      "n_colonnine_usate": 5,
       "n_usate_by_power": {
-        "lenta": 0,
+        "lenta": 1,
         "rapida": 2,
-        "ultra": 0
+        "ultra": 2
       },
       "esempio": {
         "colonnina_indirizzo": "Via del Brennero, 154",
@@ -850,15 +850,15 @@
       "lat": 46.083257,
       "lon": 11.114918,
       "n_colonnine_entro_soglia": 4,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
-        "lenta": 0,
+        "lenta": 1,
         "rapida": 0,
         "ultra": 1
       },
       "esempio": {
-        "colonnina_indirizzo": "Via Ezio Maccani, 133",
-        "distanza_m": 52
+        "colonnina_indirizzo": "Ezio Maccani",
+        "distanza_m": 46
       }
     },
     {
@@ -1084,9 +1084,9 @@
       "lat": 46.082978,
       "lon": 11.114035,
       "n_colonnine_entro_soglia": 4,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
-        "lenta": 0,
+        "lenta": 1,
         "rapida": 0,
         "ultra": 1
       },
@@ -1903,11 +1903,11 @@
       "lat": 46.083032,
       "lon": 11.120529,
       "n_colonnine_entro_soglia": 6,
-      "n_colonnine_usate": 2,
+      "n_colonnine_usate": 5,
       "n_usate_by_power": {
-        "lenta": 0,
+        "lenta": 1,
         "rapida": 2,
-        "ultra": 0
+        "ultra": 2
       },
       "esempio": {
         "colonnina_indirizzo": "Via del Brennero",
@@ -2224,11 +2224,11 @@
       "lat": 46.006243,
       "lon": 11.128396,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 2,
+      "n_colonnine_usate": 3,
       "n_usate_by_power": {
         "lenta": 0,
         "rapida": 1,
-        "ultra": 1
+        "ultra": 2
       },
       "esempio": {
         "colonnina_indirizzo": "Via della Torre Franca",
@@ -2962,11 +2962,11 @@
       "lat": 46.006014,
       "lon": 11.128203,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 2,
+      "n_colonnine_usate": 3,
       "n_usate_by_power": {
         "lenta": 0,
         "rapida": 1,
-        "ultra": 1
+        "ultra": 2
       },
       "esempio": {
         "colonnina_indirizzo": "Via della Torre Franca",
@@ -3652,9 +3652,9 @@
       "lat": 46.083002,
       "lon": 11.112882,
       "n_colonnine_entro_soglia": 4,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
-        "lenta": 0,
+        "lenta": 1,
         "rapida": 0,
         "ultra": 1
       },
