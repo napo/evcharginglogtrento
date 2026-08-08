@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-08T11:57:57+00:00",
+  "generated_at": "2026-08-08T12:08:05+00:00",
   "stats": {
     "total": 213,
-    "active": 190,
-    "inactive": 23,
+    "active": 191,
+    "inactive": 22,
     "charging": 28
   },
   "points": [
@@ -694,7 +694,7 @@
     {
       "id_evse": "IT*IPE*EDC001386*1",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IPLANET SPA",
@@ -712,8 +712,8 @@
     },
     {
       "id_evse": "IT*IPE*EDC001386*2",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IPLANET SPA",
