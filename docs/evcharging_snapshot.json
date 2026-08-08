@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-08T13:48:35+00:00",
+  "generated_at": "2026-08-08T13:53:40+00:00",
   "stats": {
     "total": 213,
-    "active": 185,
-    "inactive": 28,
+    "active": 184,
+    "inactive": 29,
     "charging": 25
   },
   "points": [
@@ -617,8 +617,8 @@
     },
     {
       "id_evse": "IT*EWI*EEW0307S1*1",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "EWIVA SRL",
