@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-09T11:03:28+00:00",
+  "generated_at": "2026-08-09T11:08:33+00:00",
   "stats": {
     "total": 213,
     "active": 189,
     "inactive": 24,
-    "charging": 10
+    "charging": 12
   },
   "points": [
     {
@@ -751,7 +751,7 @@
     {
       "id_evse": "IT*PLN*EE006443*2",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -3639,7 +3639,7 @@
     {
       "id_evse": "IT*ELC*EKNQE",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Electra Italia s.r.l.",
@@ -3772,7 +3772,7 @@
     {
       "id_evse": "IT*IOY*E421702",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
@@ -3886,7 +3886,7 @@
     {
       "id_evse": "IT*PLN*EH000118*1",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Plenitude On The Road S.r.l.",
