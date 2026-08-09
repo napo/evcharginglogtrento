@@ -1,13 +1,13 @@
 {
   "summary": {
     "total": 201,
-    "active": 159,
-    "active_known": 58,
+    "active": 154,
+    "active_known": 53,
     "active_unknown": 101,
-    "inactive": 27,
-    "charging": 15,
-    "share_active": 79.1,
-    "generated_at": "2026-08-08T03:50:02+00:00",
+    "inactive": 36,
+    "charging": 11,
+    "share_active": 76.6,
+    "generated_at": "2026-08-09T02:29:41+00:00",
     "raccolta_dati_dal": "2026-08-04T20:41:09+00:00"
   },
   "a22": {
@@ -48,8 +48,8 @@
     {
       "name": "BEC",
       "count": 34,
-      "active": 23,
-      "active_known": 23,
+      "active": 21,
+      "active_known": 21,
       "active_unknown": 0,
       "by_power": {
         "lenta": 0,
@@ -72,8 +72,8 @@
     {
       "name": "ENEL X WAY ITALIA SRL",
       "count": 12,
-      "active": 3,
-      "active_known": 3,
+      "active": 5,
+      "active_known": 5,
       "active_unknown": 0,
       "by_power": {
         "lenta": 8,
@@ -96,8 +96,8 @@
     {
       "name": "Electra Italia s.r.l.",
       "count": 6,
-      "active": 6,
-      "active_known": 6,
+      "active": 3,
+      "active_known": 3,
       "active_unknown": 0,
       "by_power": {
         "lenta": 0,
@@ -108,8 +108,8 @@
     {
       "name": "Go Electric Stations SRLS",
       "count": 6,
-      "active": 4,
-      "active_known": 4,
+      "active": 3,
+      "active_known": 3,
       "active_unknown": 0,
       "by_power": {
         "lenta": 3,
@@ -120,8 +120,8 @@
     {
       "name": "IONITY GMBH",
       "count": 6,
-      "active": 4,
-      "active_known": 4,
+      "active": 5,
+      "active_known": 5,
       "active_unknown": 0,
       "by_power": {
         "lenta": 0,
@@ -132,8 +132,8 @@
     {
       "name": "Plenitude On The Road S.r.l.",
       "count": 6,
-      "active": 4,
-      "active_known": 4,
+      "active": 0,
+      "active_known": 0,
       "active_unknown": 0,
       "by_power": {
         "lenta": 0,
