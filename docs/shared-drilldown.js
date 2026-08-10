@@ -126,8 +126,10 @@ window.EVDrilldown = (() => {
     const monitorabili = counts.monitorabili || 0;
     const quotaInUso = ratio(inUso, monitorabili);
 
+    const a22 = counts.a22 || 0;
     container.innerHTML = `
       <div class="fw-semibold mb-1"><strong>${totale}</strong> colonnine in totale</div>
+      ${a22 ? `<div class="text-muted small mb-1">di cui <strong>${a22}</strong> in autostrada (A22)</div>` : ''}
       <p class="text-muted small mb-3">Le colonnine stimate sono quelle attive ma di cui non si ha informazione se sono in uso.</p>
       <div class="drilldown-bar-top"></div>
       <div class="drilldown-connector"><svg role="presentation"></svg></div>

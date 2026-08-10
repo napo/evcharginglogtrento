@@ -117,7 +117,7 @@ function countUp(el, target, { duration = 900, decimals = 0, suffix = '' } = {})
 
 // --- Gauge + stacked bar ------------------------------------------------
 
-function renderGaugeOccupied(cityPoints) {
+function renderGaugeOccupied(points) {
   const el = document.getElementById('gauge-occupied');
   if (!el || typeof echarts === 'undefined') return;
   // "monitorabili" = colonnine che ADESSO dicono se sono libere o occupate
@@ -125,7 +125,7 @@ function renderGaugeOccupied(cityPoints) {
   // occupata da libera, sia quelle "Non Attivo" in questo momento (spente/
   // guaste, né libere né occupate) — altrimenti la quota risulterebbe
   // artificialmente bassa.
-  const { inUso: occupate, monitorabili } = summarize(cityPoints);
+  const { inUso: occupate, monitorabili } = summarize(points);
   const quota = EVDrilldown.ratio(occupate, monitorabili);
 
   const chart = echarts.init(el, 'evtrento-dark');
@@ -168,10 +168,11 @@ function renderGaugeOccupied(cityPoints) {
   el.parentElement.appendChild(caption);
 }
 
-function renderColonnineTotali(cityPoints) {
+function renderColonnineTotali(points) {
   const el = document.getElementById('drilldown-totali');
   if (!el || !window.EVDrilldown) return;
-  window.EVDrilldown.render(el, summarize(cityPoints));
+  const a22 = points.filter((p) => p.is_a22).length;
+  window.EVDrilldown.render(el, { ...summarize(points), a22 });
 }
 
 function renderTopUsage(city) {
@@ -723,11 +724,12 @@ function createMap(snapshot) {
 function renderMapLayers(points) {
   if (!map) return;
 
-  // Nessuno split per is_a22 qui: sulla mappa l'A22 è trattata come
-  // qualunque altra colonnina, colorata solo in base a stato/occupazione
-  // osservabile (isKnownOccupancy). Resta invece esclusa dalle statistiche
-  // cittadine (gauge, stacked bar, riepilogo, tabella) che continuano a
-  // filtrare !p.is_a22 più sotto.
+  // Nessuno split per is_a22 qui, né altrove: l'A22 è trattata come
+  // qualunque altra colonnina in mappa, gauge, stacked bar, riepilogo e
+  // tabella, colorata solo in base a stato/occupazione osservabile
+  // (isKnownOccupancy). La sola distinzione mostrata è il conteggio "di cui
+  // N in autostrada (A22)" nel riquadro "Colonnine totali" (vedi
+  // renderColonnineTotali/shared-drilldown.js).
   const chargingPoints = points.filter((p) => p.stato_raw === 'CHARGING');
   const activeKnownPoints = points.filter(
     (p) => pointState(p) === 'Attivo' && p.stato_raw !== 'CHARGING' && isKnownOccupancy(p)
@@ -772,12 +774,11 @@ function renderUsageHeadline(points, generatedAt) {
 
   const headline = document.getElementById('usage-headline');
   if (!headline) return;
-  const cityPoints = points.filter((p) => !p.is_a22);
   // "monitorabili" = colonnine che ADESSO dicono se sono libere o occupate
   // (vedi renderGaugeOccupied/summarize, stessa distinzione): esclude sia
   // gli operatori che non distinguono mai occupata da libera, sia le
   // "Non Attivo" in questo momento (spente/guaste).
-  const { inUso: occupate, monitorabili } = summarize(cityPoints);
+  const { inUso: occupate, monitorabili } = summarize(points);
   // "Oggi" = dalle 00:00 di oggi ora italiana, non ultime 24h: stessa
   // definizione di calendario usata ovunque compaia questo dato (popup,
   // pagina Statistiche — vedi generate_station_usage.py).
@@ -793,7 +794,7 @@ function renderUsageHeadline(points, generatedAt) {
 
   countUp(document.getElementById('hl-occupate'), occupate, { duration: 700 });
   countUp(document.getElementById('hl-monitorabili'), monitorabili, { duration: 900 });
-  countUp(document.getElementById('hl-totale'), cityPoints.length, { duration: 900 });
+  countUp(document.getElementById('hl-totale'), points.length, { duration: 900 });
   if (kwhOggi != null) countUp(document.getElementById('hl-kwh-oggi'), Math.round(kwhOggi), { duration: 1100 });
 }
 
@@ -822,10 +823,8 @@ async function loadDashboard() {
     if (window.EVUsage) EVUsage.setData(stationsUsage);
   }
 
-  const cityPoints = snapshot.points.filter((p) => !p.is_a22);
-
-  renderGaugeOccupied(cityPoints);
-  renderColonnineTotali(cityPoints);
+  renderGaugeOccupied(snapshot.points);
+  renderColonnineTotali(snapshot.points);
   renderTopUsage(stationsUsage && stationsUsage.city);
   renderUsageHeadline(snapshot.points, snapshot.generated_at);
   renderTable(snapshot.points);
