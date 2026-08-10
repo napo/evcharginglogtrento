@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-10T17:33:50+00:00",
+  "generated_at": "2026-08-10T17:38:56+00:00",
   "stats": {
     "total": 213,
     "active": 194,
     "inactive": 19,
-    "charging": 13
+    "charging": 12
   },
   "points": [
     {
@@ -1321,7 +1321,7 @@
     {
       "id_evse": "IT*TSL*EA4UBEZ",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -3715,7 +3715,7 @@
     {
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENEL X WAY ITALIA SRL",
@@ -3791,7 +3791,7 @@
     {
       "id_evse": "IT*IOY*E421705",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
