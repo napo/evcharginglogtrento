@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-09T04:00:45.123143+00:00",
+  "generated_at": "2026-08-10T04:14:51.753122+00:00",
   "fonte_poi": "OpenStreetMap contributors, via Overpass API (ODbL)",
   "soglia_metri": 300,
   "pois": [
@@ -193,11 +193,11 @@
       "lat": 46.076833,
       "lon": 11.141931,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 2,
+      "n_colonnine_usate": 3,
       "n_usate_by_power": {
         "lenta": 0,
         "rapida": 1,
-        "ultra": 1
+        "ultra": 2
       },
       "esempio": {
         "colonnina_indirizzo": "Via Carlo e Valeria Jülg, 11-1",
@@ -382,13 +382,16 @@
       "lat": 46.066815,
       "lon": 11.129067,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 0,
+      "n_colonnine_usate": 1,
       "n_usate_by_power": {
         "lenta": 0,
         "rapida": 0,
-        "ultra": 0
+        "ultra": 1
       },
-      "esempio": null
+      "esempio": {
+        "colonnina_indirizzo": "Via Grazioli",
+        "distanza_m": 59
+      }
     },
     {
       "name": "Poli",
@@ -631,10 +634,10 @@
       "lat": 46.079493,
       "lon": 11.122753,
       "n_colonnine_entro_soglia": 6,
-      "n_colonnine_usate": 5,
+      "n_colonnine_usate": 6,
       "n_usate_by_power": {
         "lenta": 1,
-        "rapida": 2,
+        "rapida": 3,
         "ultra": 2
       },
       "esempio": {
@@ -850,9 +853,9 @@
       "lat": 46.083257,
       "lon": 11.114918,
       "n_colonnine_entro_soglia": 4,
-      "n_colonnine_usate": 2,
+      "n_colonnine_usate": 3,
       "n_usate_by_power": {
-        "lenta": 1,
+        "lenta": 2,
         "rapida": 0,
         "ultra": 1
       },
@@ -1084,9 +1087,9 @@
       "lat": 46.082978,
       "lon": 11.114035,
       "n_colonnine_entro_soglia": 4,
-      "n_colonnine_usate": 2,
+      "n_colonnine_usate": 3,
       "n_usate_by_power": {
-        "lenta": 1,
+        "lenta": 2,
         "rapida": 0,
         "ultra": 1
       },
@@ -1147,11 +1150,11 @@
       "lat": 46.0586,
       "lon": 11.114521,
       "n_colonnine_entro_soglia": 5,
-      "n_colonnine_usate": 4,
+      "n_colonnine_usate": 5,
       "n_usate_by_power": {
         "lenta": 3,
         "rapida": 0,
-        "ultra": 1
+        "ultra": 2
       },
       "esempio": {
         "colonnina_indirizzo": "Via Roberto da Sanseverino, 97",
@@ -1351,11 +1354,11 @@
       "lat": 46.076473,
       "lon": 11.141931,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 2,
+      "n_colonnine_usate": 3,
       "n_usate_by_power": {
         "lenta": 0,
         "rapida": 1,
-        "ultra": 1
+        "ultra": 2
       },
       "esempio": {
         "colonnina_indirizzo": "Via Carlo e Valeria Jülg, 11-1",
@@ -1477,13 +1480,16 @@
       "lat": 46.06815,
       "lon": 11.125724,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 0,
+      "n_colonnine_usate": 1,
       "n_usate_by_power": {
         "lenta": 0,
         "rapida": 0,
-        "ultra": 0
+        "ultra": 1
       },
-      "esempio": null
+      "esempio": {
+        "colonnina_indirizzo": "Via Grazioli",
+        "distanza_m": 250
+      }
     },
     {
       "name": "Cassa di Risparmio - Sparkasse",
@@ -1525,13 +1531,16 @@
       "lat": 46.067037,
       "lon": 11.127872,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 0,
+      "n_colonnine_usate": 1,
       "n_usate_by_power": {
         "lenta": 0,
         "rapida": 0,
-        "ultra": 0
+        "ultra": 1
       },
-      "esempio": null
+      "esempio": {
+        "colonnina_indirizzo": "Via Grazioli",
+        "distanza_m": 71
+      }
     },
     {
       "name": "Banca per il Trentino Alto Adige",
@@ -1540,13 +1549,16 @@
       "lat": 46.066675,
       "lon": 11.129426,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 0,
+      "n_colonnine_usate": 1,
       "n_usate_by_power": {
         "lenta": 0,
         "rapida": 0,
-        "ultra": 0
+        "ultra": 1
       },
-      "esempio": null
+      "esempio": {
+        "colonnina_indirizzo": "Via Grazioli",
+        "distanza_m": 88
+      }
     },
     {
       "name": "Monte dei Paschi di Siena",
@@ -1903,10 +1915,10 @@
       "lat": 46.083032,
       "lon": 11.120529,
       "n_colonnine_entro_soglia": 6,
-      "n_colonnine_usate": 5,
+      "n_colonnine_usate": 6,
       "n_usate_by_power": {
         "lenta": 1,
-        "rapida": 2,
+        "rapida": 3,
         "ultra": 2
       },
       "esempio": {
@@ -2107,11 +2119,11 @@
       "lat": 46.061091,
       "lon": 11.11492,
       "n_colonnine_entro_soglia": 5,
-      "n_colonnine_usate": 4,
+      "n_colonnine_usate": 5,
       "n_usate_by_power": {
         "lenta": 3,
         "rapida": 0,
-        "ultra": 1
+        "ultra": 2
       },
       "esempio": {
         "colonnina_indirizzo": "Via Roberto da Sanseverino, 97",
@@ -2206,11 +2218,11 @@
       "lat": 46.061059,
       "lon": 11.114666,
       "n_colonnine_entro_soglia": 5,
-      "n_colonnine_usate": 4,
+      "n_colonnine_usate": 5,
       "n_usate_by_power": {
         "lenta": 3,
         "rapida": 0,
-        "ultra": 1
+        "ultra": 2
       },
       "esempio": {
         "colonnina_indirizzo": "Via Roberto da Sanseverino, 97",
@@ -2308,13 +2320,16 @@
       "lat": 46.068287,
       "lon": 11.125451,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 0,
+      "n_colonnine_usate": 1,
       "n_usate_by_power": {
         "lenta": 0,
         "rapida": 0,
-        "ultra": 0
+        "ultra": 1
       },
-      "esempio": null
+      "esempio": {
+        "colonnina_indirizzo": "Via Grazioli",
+        "distanza_m": 275
+      }
     },
     {
       "name": "Intesa San Paolo",
@@ -3652,9 +3667,9 @@
       "lat": 46.083002,
       "lon": 11.112882,
       "n_colonnine_entro_soglia": 4,
-      "n_colonnine_usate": 2,
+      "n_colonnine_usate": 3,
       "n_usate_by_power": {
-        "lenta": 1,
+        "lenta": 2,
         "rapida": 0,
         "ultra": 1
       },
