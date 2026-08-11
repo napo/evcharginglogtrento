@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-10T04:14:53.225498+00:00",
+  "generated_at": "2026-08-11T04:02:23.782849+00:00",
   "label": "Trento città",
   "modello": "profilo giorno-settimana x ora, corretto con lo scostamento più recente",
   "nota": "Previsione sperimentale e non ufficiale. La fonte dei dati è la PUN (GSE/MASE), la previsione no. Sotto i 14 giorni di storico non viene emessa.",
   "available": false,
-  "days_collected": 7,
+  "days_collected": 8,
   "days_needed": 14
 }
