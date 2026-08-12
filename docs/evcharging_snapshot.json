@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-12T21:47:39+00:00",
+  "generated_at": "2026-08-12T21:56:59+00:00",
   "stats": {
     "total": 213,
-    "active": 186,
-    "inactive": 27,
-    "charging": 6
+    "active": 184,
+    "inactive": 29,
+    "charging": 7
   },
   "points": [
     {
@@ -560,8 +560,8 @@
     },
     {
       "id_evse": "IT*ENX*E25XP22T3QQ2DA00020*1",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENEL X WAY ITALIA SRL",
@@ -579,8 +579,8 @@
     },
     {
       "id_evse": "IT*ENX*E25XP22T3QQ2DA00020*2",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENEL X WAY ITALIA SRL",
@@ -2727,7 +2727,7 @@
     {
       "id_evse": "IT*ATE*E00273*2",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Atlante S.r.l",
