@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-12T00:28:40+00:00",
+  "generated_at": "2026-08-12T02:20:54+00:00",
   "stats": {
     "total": 213,
-    "active": 184,
-    "inactive": 29,
-    "charging": 6
+    "active": 186,
+    "inactive": 27,
+    "charging": 5
   },
   "points": [
     {
@@ -959,8 +959,8 @@
     },
     {
       "id_evse": "IT*PLN*EH001186*3",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Plenitude On The Road S.r.l.",
@@ -1340,7 +1340,7 @@
     {
       "id_evse": "IT*TSL*EA6M1PM",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -2897,8 +2897,8 @@
     },
     {
       "id_evse": "IT*PLN*EH000118*3",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Plenitude On The Road S.r.l.",
