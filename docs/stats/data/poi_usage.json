@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T04:27:08.515447+00:00",
+  "generated_at": "2026-08-14T04:24:42.207357+00:00",
   "fonte_poi": "OpenStreetMap contributors, via Overpass API (ODbL)",
   "soglia_metri": 300,
   "pois": [
@@ -259,13 +259,16 @@
       "lat": 46.040605,
       "lon": 11.133085,
       "n_colonnine_entro_soglia": 2,
-      "n_colonnine_usate": 0,
+      "n_colonnine_usate": 1,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 0,
+        "rapida": 1,
         "ultra": 0
       },
-      "esempio": null
+      "esempio": {
+        "colonnina_indirizzo": "Via Bettini",
+        "distanza_m": 126
+      }
     },
     {
       "name": "MiniPoli",
@@ -583,10 +586,10 @@
       "lat": 46.077137,
       "lon": 11.120088,
       "n_colonnine_entro_soglia": 2,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 1,
+        "rapida": 2,
         "ultra": 0
       },
       "esempio": {
@@ -1387,13 +1390,16 @@
       "lat": 46.04064,
       "lon": 11.133373,
       "n_colonnine_entro_soglia": 2,
-      "n_colonnine_usate": 0,
+      "n_colonnine_usate": 1,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 0,
+        "rapida": 1,
         "ultra": 0
       },
-      "esempio": null
+      "esempio": {
+        "colonnina_indirizzo": "Via Bettini",
+        "distanza_m": 108
+      }
     },
     {
       "name": "Banca per il Trentino Alto Adige",
@@ -1462,10 +1468,10 @@
       "lat": 46.076665,
       "lon": 11.119419,
       "n_colonnine_entro_soglia": 2,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 1,
+        "rapida": 2,
         "ultra": 0
       },
       "esempio": {
@@ -1993,10 +1999,10 @@
       "lat": 46.076808,
       "lon": 11.11873,
       "n_colonnine_entro_soglia": 2,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 1,
+        "rapida": 2,
         "ultra": 0
       },
       "esempio": {
@@ -3028,10 +3034,10 @@
       "lat": 46.08054,
       "lon": 11.116574,
       "n_colonnine_entro_soglia": 2,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 1,
+        "rapida": 2,
         "ultra": 0
       },
       "esempio": {
@@ -3904,13 +3910,16 @@
       "lat": 46.039801,
       "lon": 11.137385,
       "n_colonnine_entro_soglia": 2,
-      "n_colonnine_usate": 0,
+      "n_colonnine_usate": 1,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 0,
+        "rapida": 1,
         "ultra": 0
       },
-      "esempio": null
+      "esempio": {
+        "colonnina_indirizzo": "Via Bettini",
+        "distanza_m": 300
+      }
     },
     {
       "name": "Incrocio Tangenziale Sud",
