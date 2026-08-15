@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T04:24:42.207357+00:00",
+  "generated_at": "2026-08-15T03:19:29.176414+00:00",
   "fonte_poi": "OpenStreetMap contributors, via Overpass API (ODbL)",
   "soglia_metri": 300,
   "pois": [
@@ -385,11 +385,11 @@
       "lat": 46.066815,
       "lon": 11.129067,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 3,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 0,
-        "ultra": 1
+        "rapida": 1,
+        "ultra": 2
       },
       "esempio": {
         "colonnina_indirizzo": "Via Grazioli",
@@ -1486,11 +1486,11 @@
       "lat": 46.06815,
       "lon": 11.125724,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 3,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 0,
-        "ultra": 1
+        "rapida": 1,
+        "ultra": 2
       },
       "esempio": {
         "colonnina_indirizzo": "Via Grazioli",
@@ -1537,11 +1537,11 @@
       "lat": 46.067037,
       "lon": 11.127872,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 3,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 0,
-        "ultra": 1
+        "rapida": 1,
+        "ultra": 2
       },
       "esempio": {
         "colonnina_indirizzo": "Via Grazioli",
@@ -1555,11 +1555,11 @@
       "lat": 46.066675,
       "lon": 11.129426,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 3,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 0,
-        "ultra": 1
+        "rapida": 1,
+        "ultra": 2
       },
       "esempio": {
         "colonnina_indirizzo": "Via Grazioli",
@@ -2326,11 +2326,11 @@
       "lat": 46.068287,
       "lon": 11.125451,
       "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 3,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 0,
-        "ultra": 1
+        "rapida": 1,
+        "ultra": 2
       },
       "esempio": {
         "colonnina_indirizzo": "Via Grazioli",
