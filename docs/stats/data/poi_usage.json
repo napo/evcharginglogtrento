@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T03:28:11.264107+00:00",
+  "generated_at": "2026-08-17T03:28:27.398880+00:00",
   "fonte_poi": "OpenStreetMap contributors, via Overpass API (ODbL)",
   "soglia_metri": 300,
   "pois": [
@@ -603,7 +603,7 @@
       "categoria_label": "Supermercati",
       "lat": 46.091554,
       "lon": 11.117959,
-      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_entro_soglia": 4,
       "n_colonnine_usate": 2,
       "n_usate_by_power": {
         "lenta": 0,
@@ -777,16 +777,16 @@
       "categoria_label": "Supermercati",
       "lat": 46.074683,
       "lon": 11.125225,
-      "n_colonnine_entro_soglia": 5,
-      "n_colonnine_usate": 5,
+      "n_colonnine_entro_soglia": 7,
+      "n_colonnine_usate": 6,
       "n_usate_by_power": {
         "lenta": 2,
-        "rapida": 1,
+        "rapida": 2,
         "ultra": 2
       },
       "esempio": {
-        "colonnina_indirizzo": "Via Jacopo Aconcio",
-        "distanza_m": 156
+        "colonnina_indirizzo": "Via Francesco Petrarca, 38122 Trento TN",
+        "distanza_m": 91
       }
     },
     {
@@ -888,7 +888,7 @@
       "categoria_label": "Supermercati",
       "lat": 46.092341,
       "lon": 11.114317,
-      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_entro_soglia": 2,
       "n_colonnine_usate": 0,
       "n_usate_by_power": {
         "lenta": 0,
@@ -1170,7 +1170,7 @@
       "categoria_label": "Supermercati",
       "lat": 46.091505,
       "lon": 11.112373,
-      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_entro_soglia": 2,
       "n_colonnine_usate": 0,
       "n_usate_by_power": {
         "lenta": 0,
@@ -1290,16 +1290,16 @@
       "categoria_label": "Banche",
       "lat": 46.074491,
       "lon": 11.124553,
-      "n_colonnine_entro_soglia": 5,
-      "n_colonnine_usate": 5,
+      "n_colonnine_entro_soglia": 7,
+      "n_colonnine_usate": 6,
       "n_usate_by_power": {
         "lenta": 2,
-        "rapida": 1,
+        "rapida": 2,
         "ultra": 2
       },
       "esempio": {
-        "colonnina_indirizzo": "Via Jacopo Aconcio",
-        "distanza_m": 101
+        "colonnina_indirizzo": "Via Francesco Petrarca, 38122 Trento TN",
+        "distanza_m": 70
       }
     },
     {
@@ -1518,11 +1518,11 @@
       "categoria_label": "Banche",
       "lat": 46.073153,
       "lon": 11.125053,
-      "n_colonnine_entro_soglia": 5,
-      "n_colonnine_usate": 5,
+      "n_colonnine_entro_soglia": 7,
+      "n_colonnine_usate": 6,
       "n_usate_by_power": {
         "lenta": 2,
-        "rapida": 1,
+        "rapida": 2,
         "ultra": 2
       },
       "esempio": {
@@ -1635,16 +1635,16 @@
       "categoria_label": "Banche",
       "lat": 46.076991,
       "lon": 11.123557,
-      "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 3,
+      "n_colonnine_entro_soglia": 5,
+      "n_colonnine_usate": 4,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 1,
+        "rapida": 2,
         "ultra": 2
       },
       "esempio": {
-        "colonnina_indirizzo": "Via Jacopo Aconcio",
-        "distanza_m": 294
+        "colonnina_indirizzo": "Via Francesco Petrarca, 38122 Trento TN",
+        "distanza_m": 220
       }
     },
     {
@@ -1668,11 +1668,11 @@
       "categoria_label": "Banche",
       "lat": 46.073506,
       "lon": 11.122245,
-      "n_colonnine_entro_soglia": 5,
-      "n_colonnine_usate": 3,
+      "n_colonnine_entro_soglia": 7,
+      "n_colonnine_usate": 4,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 1,
+        "rapida": 2,
         "ultra": 2
       },
       "esempio": {
@@ -1809,11 +1809,11 @@
       "categoria_label": "Banche",
       "lat": 46.073887,
       "lon": 11.124374,
-      "n_colonnine_entro_soglia": 5,
-      "n_colonnine_usate": 5,
+      "n_colonnine_entro_soglia": 7,
+      "n_colonnine_usate": 6,
       "n_usate_by_power": {
         "lenta": 2,
-        "rapida": 1,
+        "rapida": 2,
         "ultra": 2
       },
       "esempio": {
@@ -2016,7 +2016,7 @@
       "categoria_label": "Banche",
       "lat": 46.090211,
       "lon": 11.116843,
-      "n_colonnine_entro_soglia": 2,
+      "n_colonnine_entro_soglia": 4,
       "n_colonnine_usate": 2,
       "n_usate_by_power": {
         "lenta": 0,
@@ -2157,16 +2157,16 @@
       "categoria_label": "Banche",
       "lat": 46.075465,
       "lon": 11.124026,
-      "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 3,
+      "n_colonnine_entro_soglia": 5,
+      "n_colonnine_usate": 4,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 1,
+        "rapida": 2,
         "ultra": 2
       },
       "esempio": {
-        "colonnina_indirizzo": "Via Jacopo Aconcio",
-        "distanza_m": 137
+        "colonnina_indirizzo": "Via Francesco Petrarca, 38122 Trento TN",
+        "distanza_m": 47
       }
     },
     {
@@ -2259,11 +2259,11 @@
       "categoria_label": "Banche",
       "lat": 46.072492,
       "lon": 11.123665,
-      "n_colonnine_entro_soglia": 7,
-      "n_colonnine_usate": 5,
+      "n_colonnine_entro_soglia": 9,
+      "n_colonnine_usate": 6,
       "n_usate_by_power": {
         "lenta": 2,
-        "rapida": 1,
+        "rapida": 2,
         "ultra": 2
       },
       "esempio": {
@@ -2436,11 +2436,11 @@
       "categoria_label": "Banche",
       "lat": 46.075066,
       "lon": 11.122836,
-      "n_colonnine_entro_soglia": 3,
-      "n_colonnine_usate": 3,
+      "n_colonnine_entro_soglia": 5,
+      "n_colonnine_usate": 4,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 1,
+        "rapida": 2,
         "ultra": 2
       },
       "esempio": {
@@ -2730,7 +2730,7 @@
       "categoria_label": "Ambulatori",
       "lat": 46.09316,
       "lon": 11.115457,
-      "n_colonnine_entro_soglia": 0,
+      "n_colonnine_entro_soglia": 2,
       "n_colonnine_usate": 0,
       "n_usate_by_power": {
         "lenta": 0,
@@ -3135,11 +3135,11 @@
       "categoria_label": "Ambulatori",
       "lat": 46.073898,
       "lon": 11.125814,
-      "n_colonnine_entro_soglia": 5,
-      "n_colonnine_usate": 5,
+      "n_colonnine_entro_soglia": 7,
+      "n_colonnine_usate": 6,
       "n_usate_by_power": {
         "lenta": 2,
-        "rapida": 1,
+        "rapida": 2,
         "ultra": 2
       },
       "esempio": {
