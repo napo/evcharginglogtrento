@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T02:18:31+00:00",
+  "generated_at": "2026-08-17T02:23:38+00:00",
   "stats": {
     "total": 213,
     "active": 178,
@@ -978,8 +978,8 @@
     },
     {
       "id_evse": "IT*PLN*EH001740*1",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -997,8 +997,8 @@
     },
     {
       "id_evse": "IT*PLN*EH001740*3",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -1111,8 +1111,8 @@
     },
     {
       "id_evse": "IT*PLN*EH003157*1",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -2935,8 +2935,8 @@
     },
     {
       "id_evse": "IT*PLN*EH001740*2",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
