@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-17T08:54:57+00:00",
+  "generated_at": "2026-08-17T09:00:03+00:00",
   "stats": {
     "total": 213,
-    "active": 182,
-    "inactive": 31,
-    "charging": 13
+    "active": 184,
+    "inactive": 29,
+    "charging": 20
   },
   "points": [
     {
@@ -618,7 +618,7 @@
     {
       "id_evse": "IT*EWI*EEW0307S1*1",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "EWIVA SRL",
@@ -674,8 +674,8 @@
     },
     {
       "id_evse": "IT*IOY*E421706",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
@@ -846,7 +846,7 @@
     {
       "id_evse": "IT*PLN*EE008040*2",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -883,8 +883,8 @@
     },
     {
       "id_evse": "IT*PLN*EH000114*1",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -1283,7 +1283,7 @@
     {
       "id_evse": "IT*TSL*EA4STCL",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -1302,7 +1302,7 @@
     {
       "id_evse": "IT*TSL*EA4UB06",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -4019,7 +4019,7 @@
     {
       "id_evse": "IT*TSL*EA4RR91",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
