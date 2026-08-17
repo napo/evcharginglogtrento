@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T16:54:35+00:00",
+  "generated_at": "2026-08-17T17:04:45+00:00",
   "stats": {
     "total": 213,
     "active": 182,
@@ -997,8 +997,8 @@
     },
     {
       "id_evse": "IT*PLN*EH001740*3",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -3145,7 +3145,7 @@
     {
       "id_evse": "ITGESE800369566",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Go Electric Stations SRLS",
@@ -3752,8 +3752,8 @@
     },
     {
       "id_evse": "IT*IOY*E421701",
-      "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato": "Non Attivo",
+      "stato_raw": "BLOCKED",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
