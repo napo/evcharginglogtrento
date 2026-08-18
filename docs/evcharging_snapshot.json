@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T14:48:08+00:00",
+  "generated_at": "2026-08-18T14:53:14+00:00",
   "stats": {
     "total": 213,
     "active": 184,
@@ -371,7 +371,7 @@
     {
       "id_evse": "IT*ATE*E00271*2",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Atlante S.r.l",
@@ -390,7 +390,7 @@
     {
       "id_evse": "IT*ATE*E00273*1",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Atlante S.r.l",
