@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-19T13:31:15+00:00",
+  "generated_at": "2026-08-19T13:36:22+00:00",
   "stats": {
     "total": 213,
     "active": 190,
     "inactive": 23,
-    "charging": 11
+    "charging": 10
   },
   "points": [
     {
@@ -428,7 +428,7 @@
     {
       "id_evse": "IT*ELC*EYB5B",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Electra Italia s.r.l.",
@@ -1055,7 +1055,7 @@
     {
       "id_evse": "IT*PLN*EH003148*3",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -1530,7 +1530,7 @@
     {
       "id_evse": "ITGESE868971885",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Go Electric Stations SRLS",
@@ -3107,7 +3107,7 @@
     {
       "id_evse": "IT*TSL*EA6J63Q",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -3791,7 +3791,7 @@
     {
       "id_evse": "IT*IOY*E421705",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
