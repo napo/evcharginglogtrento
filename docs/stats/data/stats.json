@@ -1,13 +1,13 @@
 {
   "summary": {
     "total": 201,
-    "active": 165,
-    "active_known": 66,
+    "active": 170,
+    "active_known": 71,
     "active_unknown": 99,
-    "inactive": 30,
-    "charging": 6,
-    "share_active": 82.1,
-    "generated_at": "2026-08-19T03:22:08+00:00",
+    "inactive": 27,
+    "charging": 4,
+    "share_active": 84.6,
+    "generated_at": "2026-08-20T03:11:05+00:00",
     "raccolta_dati_dal": "2026-08-04T20:41:09+00:00"
   },
   "a22": {
@@ -48,8 +48,8 @@
     {
       "name": "BEC",
       "count": 34,
-      "active": 24,
-      "active_known": 24,
+      "active": 28,
+      "active_known": 28,
       "active_unknown": 0,
       "by_power": {
         "lenta": 0,
@@ -72,8 +72,8 @@
     {
       "name": "ENEL X WAY ITALIA SRL",
       "count": 12,
-      "active": 6,
-      "active_known": 6,
+      "active": 4,
+      "active_known": 4,
       "active_unknown": 0,
       "by_power": {
         "lenta": 8,
@@ -96,8 +96,8 @@
     {
       "name": "Electra Italia s.r.l.",
       "count": 6,
-      "active": 6,
-      "active_known": 6,
+      "active": 5,
+      "active_known": 5,
       "active_unknown": 0,
       "by_power": {
         "lenta": 0,
@@ -120,8 +120,8 @@
     {
       "name": "IONITY GMBH",
       "count": 6,
-      "active": 4,
-      "active_known": 4,
+      "active": 6,
+      "active_known": 6,
       "active_unknown": 0,
       "by_power": {
         "lenta": 0,
