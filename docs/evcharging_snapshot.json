@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-20T08:52:12+00:00",
+  "generated_at": "2026-08-20T08:57:18+00:00",
   "stats": {
     "total": 213,
-    "active": 185,
-    "inactive": 28,
-    "charging": 16
+    "active": 192,
+    "inactive": 21,
+    "charging": 19
   },
   "points": [
     {
@@ -636,8 +636,8 @@
     },
     {
       "id_evse": "IT*IOY*E421703",
-      "stato": "Non Attivo",
-      "stato_raw": "UNKNOWN",
+      "stato": "Attivo",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
@@ -655,8 +655,8 @@
     },
     {
       "id_evse": "IT*IOY*E421704",
-      "stato": "Non Attivo",
-      "stato_raw": "UNKNOWN",
+      "stato": "Attivo",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
@@ -674,8 +674,8 @@
     },
     {
       "id_evse": "IT*IOY*E421706",
-      "stato": "Non Attivo",
-      "stato_raw": "UNKNOWN",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
@@ -1054,8 +1054,8 @@
     },
     {
       "id_evse": "IT*PLN*EH003148*3",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -3752,8 +3752,8 @@
     },
     {
       "id_evse": "IT*IOY*E421701",
-      "stato": "Non Attivo",
-      "stato_raw": "UNKNOWN",
+      "stato": "Attivo",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
@@ -3771,8 +3771,8 @@
     },
     {
       "id_evse": "IT*IOY*E421702",
-      "stato": "Non Attivo",
-      "stato_raw": "UNKNOWN",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
@@ -3790,8 +3790,8 @@
     },
     {
       "id_evse": "IT*IOY*E421705",
-      "stato": "Non Attivo",
-      "stato_raw": "UNKNOWN",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
@@ -4019,7 +4019,7 @@
     {
       "id_evse": "IT*TSL*EA4RR91",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
