@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-21T15:00:24+00:00",
+  "generated_at": "2026-08-21T15:05:31+00:00",
   "stats": {
     "total": 213,
-    "active": 191,
-    "inactive": 22,
+    "active": 192,
+    "inactive": 21,
     "charging": 18
   },
   "points": [
@@ -466,7 +466,7 @@
     {
       "id_evse": "IT*EMO*E857*2",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "EMOBITALY S.r.l.",
@@ -883,8 +883,8 @@
     },
     {
       "id_evse": "IT*PLN*EH000114*1",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -1283,7 +1283,7 @@
     {
       "id_evse": "IT*TSL*EA4STCL",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
