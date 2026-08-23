@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-23T12:54:39+00:00",
+  "generated_at": "2026-08-23T12:59:45+00:00",
   "stats": {
     "total": 213,
-    "active": 182,
-    "inactive": 31,
+    "active": 181,
+    "inactive": 32,
     "charging": 20
   },
   "points": [
@@ -618,7 +618,7 @@
     {
       "id_evse": "IT*EWI*EEW0307S1*1",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "EWIVA SRL",
@@ -959,8 +959,8 @@
     },
     {
       "id_evse": "IT*PLN*EH001186*3",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "BLOCKED",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Plenitude On The Road S.r.l.",
@@ -3069,7 +3069,7 @@
     {
       "id_evse": "IT*TSL*EA4TAJR",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -4019,7 +4019,7 @@
     {
       "id_evse": "IT*TSL*EA4RR91",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -4038,7 +4038,7 @@
     {
       "id_evse": "IT*TSL*EA4TANN",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
