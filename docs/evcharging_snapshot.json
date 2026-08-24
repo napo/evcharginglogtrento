@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-24T07:18:03+00:00",
+  "generated_at": "2026-08-24T07:23:11+00:00",
   "stats": {
     "total": 213,
-    "active": 180,
-    "inactive": 33,
+    "active": 179,
+    "inactive": 34,
     "charging": 11
   },
   "points": [
@@ -637,7 +637,7 @@
     {
       "id_evse": "IT*IOY*E421703",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
@@ -1035,8 +1035,8 @@
     },
     {
       "id_evse": "IT*PLN*EH003148*2",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "BLOCKED",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -2765,7 +2765,7 @@
     {
       "id_evse": "IT*ELC*EYMGB",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Electra Italia s.r.l.",
