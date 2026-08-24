@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-24T16:36:04+00:00",
+  "generated_at": "2026-08-24T16:41:11+00:00",
   "stats": {
     "total": 213,
-    "active": 184,
-    "inactive": 29,
-    "charging": 11
+    "active": 181,
+    "inactive": 32,
+    "charging": 12
   },
   "points": [
     {
@@ -408,8 +408,8 @@
     },
     {
       "id_evse": "IT*ELC*EXCGE",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "INOPERATIVE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Electra Italia s.r.l.",
@@ -427,8 +427,8 @@
     },
     {
       "id_evse": "IT*ELC*EYB5B",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "INOPERATIVE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Electra Italia s.r.l.",
@@ -1093,7 +1093,7 @@
     {
       "id_evse": "IT*PLN*EH003152*3",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -3638,8 +3638,8 @@
     },
     {
       "id_evse": "IT*ELC*EKNQE",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "INOPERATIVE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Electra Italia s.r.l.",
