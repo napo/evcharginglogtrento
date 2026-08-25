@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T17:00:06+00:00",
+  "generated_at": "2026-08-25T17:10:17+00:00",
   "stats": {
     "total": 213,
     "active": 183,
@@ -940,8 +940,8 @@
     },
     {
       "id_evse": "IT*PLN*EH001186*1",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Plenitude On The Road S.r.l.",
@@ -1054,8 +1054,8 @@
     },
     {
       "id_evse": "IT*PLN*EH003148*3",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "BLOCKED",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
