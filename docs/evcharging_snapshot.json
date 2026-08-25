@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-25T19:11:12+00:00",
+  "generated_at": "2026-08-25T19:47:12+00:00",
   "stats": {
     "total": 213,
     "active": 183,
     "inactive": 30,
-    "charging": 13
+    "charging": 14
   },
   "points": [
     {
@@ -4038,7 +4038,7 @@
     {
       "id_evse": "IT*TSL*EA4TANN",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
