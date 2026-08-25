@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-25T15:53:23+00:00",
+  "generated_at": "2026-08-25T15:58:30+00:00",
   "stats": {
     "total": 213,
-    "active": 184,
-    "inactive": 29,
+    "active": 185,
+    "inactive": 28,
     "charging": 12
   },
   "points": [
@@ -902,8 +902,8 @@
     },
     {
       "id_evse": "IT*PLN*EH000114*2",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
