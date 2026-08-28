@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T13:02:09.782909+00:00",
+  "generated_at": "2026-08-28T14:32:48.531936+00:00",
   "fonte_poi": "OpenStreetMap contributors, via Overpass API (ODbL)",
   "soglia_metri": 300,
   "pois": [
@@ -778,10 +778,10 @@
       "lat": 46.074683,
       "lon": 11.125225,
       "n_colonnine_entro_soglia": 7,
-      "n_colonnine_usate": 6,
+      "n_colonnine_usate": 7,
       "n_usate_by_power": {
         "lenta": 2,
-        "rapida": 2,
+        "rapida": 3,
         "ultra": 2
       },
       "esempio": {
@@ -1291,10 +1291,10 @@
       "lat": 46.074491,
       "lon": 11.124553,
       "n_colonnine_entro_soglia": 7,
-      "n_colonnine_usate": 6,
+      "n_colonnine_usate": 7,
       "n_usate_by_power": {
         "lenta": 2,
-        "rapida": 2,
+        "rapida": 3,
         "ultra": 2
       },
       "esempio": {
@@ -1519,10 +1519,10 @@
       "lat": 46.073153,
       "lon": 11.125053,
       "n_colonnine_entro_soglia": 7,
-      "n_colonnine_usate": 6,
+      "n_colonnine_usate": 7,
       "n_usate_by_power": {
         "lenta": 2,
-        "rapida": 2,
+        "rapida": 3,
         "ultra": 2
       },
       "esempio": {
@@ -1636,10 +1636,10 @@
       "lat": 46.076991,
       "lon": 11.123557,
       "n_colonnine_entro_soglia": 5,
-      "n_colonnine_usate": 4,
+      "n_colonnine_usate": 5,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 2,
+        "rapida": 3,
         "ultra": 2
       },
       "esempio": {
@@ -1669,10 +1669,10 @@
       "lat": 46.073506,
       "lon": 11.122245,
       "n_colonnine_entro_soglia": 7,
-      "n_colonnine_usate": 4,
+      "n_colonnine_usate": 5,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 2,
+        "rapida": 3,
         "ultra": 2
       },
       "esempio": {
@@ -1810,10 +1810,10 @@
       "lat": 46.073887,
       "lon": 11.124374,
       "n_colonnine_entro_soglia": 7,
-      "n_colonnine_usate": 6,
+      "n_colonnine_usate": 7,
       "n_usate_by_power": {
         "lenta": 2,
-        "rapida": 2,
+        "rapida": 3,
         "ultra": 2
       },
       "esempio": {
@@ -2158,10 +2158,10 @@
       "lat": 46.075465,
       "lon": 11.124026,
       "n_colonnine_entro_soglia": 5,
-      "n_colonnine_usate": 4,
+      "n_colonnine_usate": 5,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 2,
+        "rapida": 3,
         "ultra": 2
       },
       "esempio": {
@@ -2260,10 +2260,10 @@
       "lat": 46.072492,
       "lon": 11.123665,
       "n_colonnine_entro_soglia": 9,
-      "n_colonnine_usate": 6,
+      "n_colonnine_usate": 7,
       "n_usate_by_power": {
         "lenta": 2,
-        "rapida": 2,
+        "rapida": 3,
         "ultra": 2
       },
       "esempio": {
@@ -2437,10 +2437,10 @@
       "lat": 46.075066,
       "lon": 11.122836,
       "n_colonnine_entro_soglia": 5,
-      "n_colonnine_usate": 4,
+      "n_colonnine_usate": 5,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 2,
+        "rapida": 3,
         "ultra": 2
       },
       "esempio": {
@@ -3136,10 +3136,10 @@
       "lat": 46.073898,
       "lon": 11.125814,
       "n_colonnine_entro_soglia": 7,
-      "n_colonnine_usate": 6,
+      "n_colonnine_usate": 7,
       "n_usate_by_power": {
         "lenta": 2,
-        "rapida": 2,
+        "rapida": 3,
         "ultra": 2
       },
       "esempio": {
