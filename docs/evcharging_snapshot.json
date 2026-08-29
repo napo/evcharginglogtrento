@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T07:12:18+00:00",
+  "generated_at": "2026-08-29T07:17:24+00:00",
   "stats": {
     "total": 213,
     "active": 196,
@@ -561,7 +561,7 @@
     {
       "id_evse": "IT*ENX*E25XP22T3QQ2DA00020*1",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENEL X WAY ITALIA SRL",
@@ -2746,7 +2746,7 @@
     {
       "id_evse": "IT*ELC*EKLF6",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Electra Italia s.r.l.",
