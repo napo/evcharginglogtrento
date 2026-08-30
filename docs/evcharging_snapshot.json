@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-30T19:48:30+00:00",
+  "generated_at": "2026-08-30T19:53:37+00:00",
   "stats": {
     "total": 213,
     "active": 188,
     "inactive": 25,
-    "charging": 10
+    "charging": 8
   },
   "points": [
     {
@@ -371,7 +371,7 @@
     {
       "id_evse": "IT*ATE*E00271*2",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Atlante S.r.l",
@@ -4019,7 +4019,7 @@
     {
       "id_evse": "IT*TSL*EA4RR91",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
