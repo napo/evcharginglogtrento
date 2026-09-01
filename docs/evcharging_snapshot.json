@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T14:00:45+00:00",
+  "generated_at": "2026-09-01T14:05:53+00:00",
   "stats": {
     "total": 213,
     "active": 179,
@@ -618,7 +618,7 @@
     {
       "id_evse": "IT*EWI*EEW0307S1*1",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "EWIVA SRL",
@@ -808,7 +808,7 @@
     {
       "id_evse": "IT*PLN*EE007295*1",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -3791,7 +3791,7 @@
     {
       "id_evse": "IT*IOY*E421705",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
@@ -4000,7 +4000,7 @@
     {
       "id_evse": "IT*TSL*EA4RQEH",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
