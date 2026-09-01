@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T08:51:44.177563+00:00",
+  "generated_at": "2026-09-01T07:57:34.463804+00:00",
   "fonte_poi": "OpenStreetMap contributors, via Overpass API (ODbL)",
   "soglia_metri": 300,
   "pois": [
@@ -259,10 +259,10 @@
       "lat": 46.040605,
       "lon": 11.133085,
       "n_colonnine_entro_soglia": 2,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 1,
+        "rapida": 2,
         "ultra": 0
       },
       "esempio": {
@@ -1390,10 +1390,10 @@
       "lat": 46.04064,
       "lon": 11.133373,
       "n_colonnine_entro_soglia": 2,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 1,
+        "rapida": 2,
         "ultra": 0
       },
       "esempio": {
@@ -3910,10 +3910,10 @@
       "lat": 46.039801,
       "lon": 11.137385,
       "n_colonnine_entro_soglia": 2,
-      "n_colonnine_usate": 1,
+      "n_colonnine_usate": 2,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 1,
+        "rapida": 2,
         "ultra": 0
       },
       "esempio": {
