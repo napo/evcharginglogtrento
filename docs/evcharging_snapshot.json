@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T08:53:54+00:00",
+  "generated_at": "2026-09-02T08:59:01+00:00",
   "stats": {
     "total": 213,
     "active": 184,
@@ -3753,7 +3753,7 @@
     {
       "id_evse": "IT*IOY*E421701",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
@@ -3924,7 +3924,7 @@
     {
       "id_evse": "IT*PLN*EH003158*2",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
