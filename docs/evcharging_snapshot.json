@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-04T13:50:56+00:00",
+  "generated_at": "2026-09-04T13:56:02+00:00",
   "stats": {
     "total": 213,
     "active": 166,
     "inactive": 47,
-    "charging": 16
+    "charging": 18
   },
   "points": [
     {
@@ -1283,7 +1283,7 @@
     {
       "id_evse": "IT*TSL*EA4STCL",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -1340,7 +1340,7 @@
     {
       "id_evse": "IT*TSL*EA6M1PM",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -1530,7 +1530,7 @@
     {
       "id_evse": "ITGESE868971885",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Go Electric Stations SRLS",
@@ -4038,7 +4038,7 @@
     {
       "id_evse": "IT*TSL*EA4TANN",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
