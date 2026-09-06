@@ -1,13 +1,13 @@
 {
   "summary": {
     "total": 201,
-    "active": 146,
-    "active_known": 47,
+    "active": 142,
+    "active_known": 43,
     "active_unknown": 99,
-    "inactive": 37,
-    "charging": 18,
-    "share_active": 72.6,
-    "generated_at": "2026-09-05T06:23:06+00:00",
+    "inactive": 48,
+    "charging": 11,
+    "share_active": 70.6,
+    "generated_at": "2026-09-06T04:44:45+00:00",
     "raccolta_dati_dal": "2026-08-04T20:41:09+00:00"
   },
   "a22": {
@@ -48,8 +48,8 @@
     {
       "name": "BEC",
       "count": 34,
-      "active": 15,
-      "active_known": 15,
+      "active": 14,
+      "active_known": 14,
       "active_unknown": 0,
       "by_power": {
         "lenta": 0,
@@ -60,8 +60,8 @@
     {
       "name": "Tesla Italia Srl.",
       "count": 16,
-      "active": 4,
-      "active_known": 4,
+      "active": 9,
+      "active_known": 9,
       "active_unknown": 0,
       "by_power": {
         "lenta": 6,
@@ -72,8 +72,8 @@
     {
       "name": "ENEL X WAY ITALIA SRL",
       "count": 12,
-      "active": 6,
-      "active_known": 6,
+      "active": 2,
+      "active_known": 2,
       "active_unknown": 0,
       "by_power": {
         "lenta": 8,
@@ -96,8 +96,8 @@
     {
       "name": "Electra Italia s.r.l.",
       "count": 6,
-      "active": 4,
-      "active_known": 4,
+      "active": 3,
+      "active_known": 3,
       "active_unknown": 0,
       "by_power": {
         "lenta": 0,
@@ -132,8 +132,8 @@
     {
       "name": "Plenitude On The Road S.r.l.",
       "count": 6,
-      "active": 5,
-      "active_known": 5,
+      "active": 2,
+      "active_known": 2,
       "active_unknown": 0,
       "by_power": {
         "lenta": 0,
