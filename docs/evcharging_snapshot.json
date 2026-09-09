@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-09T22:09:10+00:00",
+  "generated_at": "2026-09-09T22:14:17+00:00",
   "stats": {
     "total": 213,
-    "active": 163,
-    "inactive": 50,
-    "charging": 5
+    "active": 170,
+    "inactive": 43,
+    "charging": 6
   },
   "points": [
     {
@@ -1301,8 +1301,8 @@
     },
     {
       "id_evse": "IT*TSL*EA4UB06",
-      "stato": "Non Attivo",
-      "stato_raw": "UNKNOWN",
+      "stato": "Attivo",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -1339,8 +1339,8 @@
     },
     {
       "id_evse": "IT*TSL*EA6M1PM",
-      "stato": "Non Attivo",
-      "stato_raw": "UNKNOWN",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -3068,8 +3068,8 @@
     },
     {
       "id_evse": "IT*TSL*EA4TAJR",
-      "stato": "Non Attivo",
-      "stato_raw": "UNKNOWN",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -3087,8 +3087,8 @@
     },
     {
       "id_evse": "IT*TSL*EA6H0AV",
-      "stato": "Non Attivo",
-      "stato_raw": "UNKNOWN",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -3106,8 +3106,8 @@
     },
     {
       "id_evse": "IT*TSL*EA6J63Q",
-      "stato": "Non Attivo",
-      "stato_raw": "UNKNOWN",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -3999,8 +3999,8 @@
     },
     {
       "id_evse": "IT*TSL*EA4RQEH",
-      "stato": "Non Attivo",
-      "stato_raw": "UNKNOWN",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -4018,8 +4018,8 @@
     },
     {
       "id_evse": "IT*TSL*EA4RR91",
-      "stato": "Non Attivo",
-      "stato_raw": "UNKNOWN",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
