@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T22:20:19+00:00",
+  "generated_at": "2026-09-10T22:25:27+00:00",
   "stats": {
     "total": 213,
     "active": 172,
@@ -807,8 +807,8 @@
     },
     {
       "id_evse": "IT*PLN*EE007295*1",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "BLOCKED",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -3847,8 +3847,8 @@
     },
     {
       "id_evse": "IT*PLN*EE000256*2",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
