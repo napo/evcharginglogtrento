@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-10T21:49:36+00:00",
+  "generated_at": "2026-09-10T21:54:44+00:00",
   "stats": {
     "total": 213,
-    "active": 172,
-    "inactive": 41,
+    "active": 173,
+    "inactive": 40,
     "charging": 11
   },
   "points": [
@@ -409,7 +409,7 @@
     {
       "id_evse": "IT*ELC*EXCGE",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Electra Italia s.r.l.",
@@ -807,8 +807,8 @@
     },
     {
       "id_evse": "IT*PLN*EE007295*1",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -1340,7 +1340,7 @@
     {
       "id_evse": "IT*TSL*EA6M1PM",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
