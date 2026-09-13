@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T21:23:48+00:00",
+  "generated_at": "2026-09-13T21:28:55+00:00",
   "stats": {
     "total": 213,
     "active": 183,
@@ -1321,7 +1321,7 @@
     {
       "id_evse": "IT*TSL*EA4UBEZ",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -4000,7 +4000,7 @@
     {
       "id_evse": "IT*TSL*EA4RQEH",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
