@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T19:38:09+00:00",
+  "generated_at": "2026-09-13T21:18:41+00:00",
   "stats": {
     "total": 213,
     "active": 184,
@@ -656,7 +656,7 @@
     {
       "id_evse": "IT*IOY*E421704",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
@@ -675,7 +675,7 @@
     {
       "id_evse": "IT*IOY*E421706",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
@@ -751,7 +751,7 @@
     {
       "id_evse": "IT*PLN*EE006443*2",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -808,7 +808,7 @@
     {
       "id_evse": "IT*PLN*EE007295*1",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -1093,7 +1093,7 @@
     {
       "id_evse": "IT*PLN*EH003152*3",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -2841,7 +2841,7 @@
     {
       "id_evse": "IT*PLN*EE007293*1",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -2898,7 +2898,7 @@
     {
       "id_evse": "IT*PLN*EH000118*3",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Plenitude On The Road S.r.l.",
@@ -3069,7 +3069,7 @@
     {
       "id_evse": "IT*TSL*EA4TAJR",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -4000,7 +4000,7 @@
     {
       "id_evse": "IT*TSL*EA4RQEH",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -4038,7 +4038,7 @@
     {
       "id_evse": "IT*TSL*EA4TANN",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
