@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-14T21:34:57+00:00",
+  "generated_at": "2026-09-14T23:45:51+00:00",
   "stats": {
     "total": 213,
-    "active": 182,
-    "inactive": 31,
-    "charging": 4
+    "active": 179,
+    "inactive": 34,
+    "charging": 5
   },
   "points": [
     {
@@ -484,8 +484,8 @@
     },
     {
       "id_evse": "IT*ENX*E20XM32T7KK3AR00101*2",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENEL X WAY ITALIA SRL",
@@ -522,8 +522,8 @@
     },
     {
       "id_evse": "IT*ENX*E20XP22T3KK4AL00176*2",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENEL X WAY ITALIA SRL",
@@ -808,7 +808,7 @@
     {
       "id_evse": "IT*PLN*EE007295*1",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -1283,7 +1283,7 @@
     {
       "id_evse": "IT*TSL*EA4STCL",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -2859,8 +2859,8 @@
     },
     {
       "id_evse": "IT*PLN*EE007295*2",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "BLOCKED",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -3657,8 +3657,8 @@
     },
     {
       "id_evse": "IT*ENX*E20XM32T7KK3AR00101*1",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENEL X WAY ITALIA SRL",
@@ -3676,8 +3676,8 @@
     },
     {
       "id_evse": "IT*ENX*E20XM32T7KK3AR00101*3",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENEL X WAY ITALIA SRL",
