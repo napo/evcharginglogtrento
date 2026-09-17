@@ -1,234 +1,84 @@
 {
-  "generated_at": "2026-09-16T07:52:18.086174+00:00",
+  "generated_at": "2026-09-17T07:57:15.531586+00:00",
   "label": "Trento città",
   "modello": "profilo giorno-settimana x ora, corretto con lo scostamento più recente",
   "nota": "Previsione sperimentale e non ufficiale. La fonte dei dati è la PUN (GSE/MASE), la previsione no. Sotto i 14 giorni di storico non viene emessa.",
   "available": true,
-  "days_collected": 44,
+  "days_collected": 45,
   "mae_storico": 2.5,
-  "scarto_attuale": 1.7,
+  "scarto_attuale": 0.1,
   "orizzonte_ore": 48,
   "punti": [
     {
-      "ts": "2026-09-16T07:00",
-      "share_charging": 14.3,
-      "min": 11.8,
-      "max": 16.9
-    },
-    {
-      "ts": "2026-09-16T08:00",
-      "share_charging": 14.4,
-      "min": 11.8,
-      "max": 16.9
-    },
-    {
-      "ts": "2026-09-16T09:00",
-      "share_charging": 14.4,
-      "min": 11.9,
-      "max": 16.9
-    },
-    {
-      "ts": "2026-09-16T10:00",
-      "share_charging": 14.9,
-      "min": 12.4,
-      "max": 17.5
-    },
-    {
-      "ts": "2026-09-16T11:00",
-      "share_charging": 16.6,
-      "min": 14.0,
-      "max": 19.1
-    },
-    {
-      "ts": "2026-09-16T12:00",
-      "share_charging": 13.7,
-      "min": 11.1,
-      "max": 16.2
-    },
-    {
-      "ts": "2026-09-16T13:00",
-      "share_charging": 12.8,
-      "min": 10.3,
-      "max": 15.3
-    },
-    {
-      "ts": "2026-09-16T14:00",
-      "share_charging": 14.7,
-      "min": 12.2,
-      "max": 17.3
-    },
-    {
-      "ts": "2026-09-16T15:00",
-      "share_charging": 15.9,
-      "min": 13.3,
-      "max": 18.4
-    },
-    {
-      "ts": "2026-09-16T16:00",
-      "share_charging": 14.2,
-      "min": 11.7,
-      "max": 16.7
-    },
-    {
-      "ts": "2026-09-16T17:00",
-      "share_charging": 11.4,
-      "min": 8.9,
-      "max": 14.0
-    },
-    {
-      "ts": "2026-09-16T18:00",
-      "share_charging": 11.3,
-      "min": 8.8,
-      "max": 13.9
-    },
-    {
-      "ts": "2026-09-16T19:00",
-      "share_charging": 10.4,
-      "min": 7.8,
-      "max": 12.9
-    },
-    {
-      "ts": "2026-09-16T20:00",
-      "share_charging": 9.6,
-      "min": 7.1,
-      "max": 12.2
-    },
-    {
-      "ts": "2026-09-16T21:00",
-      "share_charging": 9.8,
-      "min": 7.2,
-      "max": 12.3
-    },
-    {
-      "ts": "2026-09-16T22:00",
-      "share_charging": 6.1,
-      "min": 3.5,
-      "max": 8.6
-    },
-    {
-      "ts": "2026-09-16T23:00",
-      "share_charging": 6.7,
-      "min": 4.1,
-      "max": 9.2
-    },
-    {
-      "ts": "2026-09-17T00:00",
-      "share_charging": 6.2,
-      "min": 3.7,
-      "max": 8.8
-    },
-    {
-      "ts": "2026-09-17T01:00",
-      "share_charging": 6.7,
-      "min": 4.2,
-      "max": 9.2
-    },
-    {
-      "ts": "2026-09-17T02:00",
-      "share_charging": 5.2,
-      "min": 2.7,
-      "max": 7.7
-    },
-    {
-      "ts": "2026-09-17T03:00",
-      "share_charging": 4.9,
-      "min": 2.3,
-      "max": 7.4
-    },
-    {
-      "ts": "2026-09-17T04:00",
-      "share_charging": 5.3,
-      "min": 2.7,
-      "max": 7.8
-    },
-    {
-      "ts": "2026-09-17T05:00",
-      "share_charging": 5.9,
-      "min": 3.4,
-      "max": 8.5
-    },
-    {
-      "ts": "2026-09-17T06:00",
-      "share_charging": 10.7,
-      "min": 8.2,
-      "max": 13.2
-    },
-    {
-      "ts": "2026-09-17T07:00",
-      "share_charging": 15.3,
-      "min": 12.8,
-      "max": 17.8
-    },
-    {
       "ts": "2026-09-17T08:00",
-      "share_charging": 15.7,
-      "min": 13.2,
-      "max": 18.2
+      "share_charging": 15.6,
+      "min": 13.1,
+      "max": 18.1
     },
     {
       "ts": "2026-09-17T09:00",
-      "share_charging": 17.9,
-      "min": 15.4,
+      "share_charging": 17.8,
+      "min": 15.3,
       "max": 20.4
     },
     {
       "ts": "2026-09-17T10:00",
       "share_charging": 17.5,
-      "min": 15.0,
-      "max": 20.1
+      "min": 14.9,
+      "max": 20.0
     },
     {
       "ts": "2026-09-17T11:00",
-      "share_charging": 20.4,
-      "min": 17.9,
+      "share_charging": 20.3,
+      "min": 17.8,
       "max": 22.9
     },
     {
       "ts": "2026-09-17T12:00",
       "share_charging": 19.5,
-      "min": 17.0,
-      "max": 22.1
+      "min": 16.9,
+      "max": 22.0
     },
     {
       "ts": "2026-09-17T13:00",
-      "share_charging": 15.4,
+      "share_charging": 15.3,
       "min": 12.8,
-      "max": 17.9
+      "max": 17.8
     },
     {
       "ts": "2026-09-17T14:00",
-      "share_charging": 13.9,
-      "min": 11.4,
+      "share_charging": 13.8,
+      "min": 11.3,
       "max": 16.4
     },
     {
       "ts": "2026-09-17T15:00",
-      "share_charging": 16.4,
+      "share_charging": 16.3,
       "min": 13.8,
-      "max": 18.9
+      "max": 18.8
     },
     {
       "ts": "2026-09-17T16:00",
       "share_charging": 14.7,
-      "min": 12.2,
+      "min": 12.1,
       "max": 17.2
     },
     {
       "ts": "2026-09-17T17:00",
-      "share_charging": 13.7,
+      "share_charging": 13.6,
       "min": 11.1,
       "max": 16.2
     },
     {
       "ts": "2026-09-17T18:00",
-      "share_charging": 11.9,
+      "share_charging": 11.8,
       "min": 9.3,
       "max": 14.4
     },
     {
       "ts": "2026-09-17T19:00",
       "share_charging": 10.4,
-      "min": 7.9,
+      "min": 7.8,
       "max": 12.9
     },
     {
@@ -240,38 +90,38 @@
     {
       "ts": "2026-09-17T21:00",
       "share_charging": 9.4,
-      "min": 6.9,
+      "min": 6.8,
       "max": 11.9
     },
     {
       "ts": "2026-09-17T22:00",
-      "share_charging": 7.3,
+      "share_charging": 7.2,
       "min": 4.7,
       "max": 9.8
     },
     {
       "ts": "2026-09-17T23:00",
       "share_charging": 7.4,
-      "min": 4.9,
+      "min": 4.8,
       "max": 9.9
     },
     {
       "ts": "2026-09-18T00:00",
-      "share_charging": 7.6,
+      "share_charging": 7.5,
       "min": 5.0,
       "max": 10.1
     },
     {
       "ts": "2026-09-18T01:00",
       "share_charging": 6.2,
-      "min": 3.7,
+      "min": 3.6,
       "max": 8.7
     },
     {
       "ts": "2026-09-18T02:00",
       "share_charging": 5.0,
       "min": 2.5,
-      "max": 7.6
+      "max": 7.5
     },
     {
       "ts": "2026-09-18T03:00",
@@ -281,7 +131,7 @@
     },
     {
       "ts": "2026-09-18T04:00",
-      "share_charging": 7.3,
+      "share_charging": 7.2,
       "min": 4.7,
       "max": 9.8
     },
@@ -296,6 +146,156 @@
       "share_charging": 11.1,
       "min": 8.5,
       "max": 13.6
+    },
+    {
+      "ts": "2026-09-18T07:00",
+      "share_charging": 13.1,
+      "min": 10.6,
+      "max": 15.6
+    },
+    {
+      "ts": "2026-09-18T08:00",
+      "share_charging": 14.4,
+      "min": 11.9,
+      "max": 17.0
+    },
+    {
+      "ts": "2026-09-18T09:00",
+      "share_charging": 15.0,
+      "min": 12.5,
+      "max": 17.6
+    },
+    {
+      "ts": "2026-09-18T10:00",
+      "share_charging": 17.8,
+      "min": 15.3,
+      "max": 20.3
+    },
+    {
+      "ts": "2026-09-18T11:00",
+      "share_charging": 20.4,
+      "min": 17.8,
+      "max": 22.9
+    },
+    {
+      "ts": "2026-09-18T12:00",
+      "share_charging": 19.1,
+      "min": 16.6,
+      "max": 21.7
+    },
+    {
+      "ts": "2026-09-18T13:00",
+      "share_charging": 18.4,
+      "min": 15.9,
+      "max": 21.0
+    },
+    {
+      "ts": "2026-09-18T14:00",
+      "share_charging": 17.0,
+      "min": 14.5,
+      "max": 19.6
+    },
+    {
+      "ts": "2026-09-18T15:00",
+      "share_charging": 16.7,
+      "min": 14.2,
+      "max": 19.2
+    },
+    {
+      "ts": "2026-09-18T16:00",
+      "share_charging": 16.5,
+      "min": 14.0,
+      "max": 19.0
+    },
+    {
+      "ts": "2026-09-18T17:00",
+      "share_charging": 14.9,
+      "min": 12.4,
+      "max": 17.4
+    },
+    {
+      "ts": "2026-09-18T18:00",
+      "share_charging": 13.2,
+      "min": 10.7,
+      "max": 15.8
+    },
+    {
+      "ts": "2026-09-18T19:00",
+      "share_charging": 11.7,
+      "min": 9.1,
+      "max": 14.2
+    },
+    {
+      "ts": "2026-09-18T20:00",
+      "share_charging": 10.4,
+      "min": 7.8,
+      "max": 12.9
+    },
+    {
+      "ts": "2026-09-18T21:00",
+      "share_charging": 11.3,
+      "min": 8.8,
+      "max": 13.9
+    },
+    {
+      "ts": "2026-09-18T22:00",
+      "share_charging": 10.3,
+      "min": 7.8,
+      "max": 12.8
+    },
+    {
+      "ts": "2026-09-18T23:00",
+      "share_charging": 9.3,
+      "min": 6.7,
+      "max": 11.8
+    },
+    {
+      "ts": "2026-09-19T00:00",
+      "share_charging": 8.6,
+      "min": 6.0,
+      "max": 11.1
+    },
+    {
+      "ts": "2026-09-19T01:00",
+      "share_charging": 8.0,
+      "min": 5.5,
+      "max": 10.5
+    },
+    {
+      "ts": "2026-09-19T02:00",
+      "share_charging": 8.5,
+      "min": 6.0,
+      "max": 11.1
+    },
+    {
+      "ts": "2026-09-19T03:00",
+      "share_charging": 9.6,
+      "min": 7.1,
+      "max": 12.1
+    },
+    {
+      "ts": "2026-09-19T04:00",
+      "share_charging": 12.9,
+      "min": 10.3,
+      "max": 15.4
+    },
+    {
+      "ts": "2026-09-19T05:00",
+      "share_charging": 14.4,
+      "min": 11.9,
+      "max": 16.9
+    },
+    {
+      "ts": "2026-09-19T06:00",
+      "share_charging": 15.2,
+      "min": 12.6,
+      "max": 17.7
+    },
+    {
+      "ts": "2026-09-19T07:00",
+      "share_charging": 16.5,
+      "min": 14.0,
+      "max": 19.0
     }
   ]
 }
