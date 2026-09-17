@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-17T22:15:23+00:00",
+  "generated_at": "2026-09-17T22:20:31+00:00",
   "stats": {
     "total": 213,
-    "active": 188,
-    "inactive": 25,
+    "active": 189,
+    "inactive": 24,
     "charging": 3
   },
   "points": [
@@ -636,8 +636,8 @@
     },
     {
       "id_evse": "IT*IOY*E421703",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
