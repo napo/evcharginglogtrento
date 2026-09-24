@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-24T15:11:44+00:00",
+  "generated_at": "2026-09-24T15:16:51+00:00",
   "stats": {
     "total": 213,
     "active": 194,
     "inactive": 19,
-    "charging": 19
+    "charging": 20
   },
   "points": [
     {
@@ -371,7 +371,7 @@
     {
       "id_evse": "IT*ATE*E00271*2",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Atlante S.r.l",
