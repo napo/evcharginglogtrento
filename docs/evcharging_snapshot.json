@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-02T16:17:09+00:00",
+  "generated_at": "2026-10-02T16:22:17+00:00",
   "stats": {
     "total": 213,
-    "active": 182,
-    "inactive": 31,
+    "active": 183,
+    "inactive": 30,
     "charging": 12
   },
   "points": [
@@ -1073,8 +1073,8 @@
     },
     {
       "id_evse": "IT*PLN*EH003152*2",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "BLOCKED",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -1530,7 +1530,7 @@
     {
       "id_evse": "ITGESE868971885",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Go Electric Stations SRLS",
@@ -2954,8 +2954,8 @@
     },
     {
       "id_evse": "IT*PLN*EH003152*1",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -3885,8 +3885,8 @@
     },
     {
       "id_evse": "IT*PLN*EH000118*1",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Plenitude On The Road S.r.l.",
