@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T15:56:08+00:00",
+  "generated_at": "2026-10-13T16:01:17+00:00",
   "stats": {
     "total": 213,
     "active": 175,
@@ -2879,7 +2879,7 @@
     {
       "id_evse": "IT*PLN*EE008108*1",
       "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato_raw": "BLOCKED",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
