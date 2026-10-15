@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-15T00:42:28+00:00",
+  "generated_at": "2026-10-15T05:43:01+00:00",
   "stats": {
     "total": 213,
-    "active": 169,
-    "inactive": 44,
-    "charging": 9
+    "active": 163,
+    "inactive": 50,
+    "charging": 10
   },
   "points": [
     {
@@ -484,8 +484,8 @@
     },
     {
       "id_evse": "IT*ENX*E20XM32T7KK3AR00101*2",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENEL X WAY ITALIA SRL",
@@ -617,8 +617,8 @@
     },
     {
       "id_evse": "IT*EWI*EEW0307S1*1",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "EWIVA SRL",
@@ -731,8 +731,8 @@
     },
     {
       "id_evse": "IT*PLN*EE006443*1",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -750,8 +750,8 @@
     },
     {
       "id_evse": "IT*PLN*EE006443*2",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -770,7 +770,7 @@
     {
       "id_evse": "IT*PLN*EE006452*1",
       "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -788,8 +788,8 @@
     },
     {
       "id_evse": "IT*PLN*EE006452*2",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -845,8 +845,8 @@
     },
     {
       "id_evse": "IT*PLN*EE008040*2",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "BLOCKED",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -1149,8 +1149,8 @@
     },
     {
       "id_evse": "IT*PLN*EH003158*3",
-      "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato": "Non Attivo",
+      "stato_raw": "BLOCKED",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -1321,7 +1321,7 @@
     {
       "id_evse": "IT*TSL*EA4UBEZ",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -2822,7 +2822,7 @@
     {
       "id_evse": "IT*PLN*EE000256*1",
       "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -2840,8 +2840,8 @@
     },
     {
       "id_evse": "IT*PLN*EE007293*1",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -2859,8 +2859,8 @@
     },
     {
       "id_evse": "IT*PLN*EE007295*2",
-      "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato": "Non Attivo",
+      "stato_raw": "BLOCKED",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -2897,8 +2897,8 @@
     },
     {
       "id_evse": "IT*PLN*EH000118*3",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Plenitude On The Road S.r.l.",
@@ -3088,7 +3088,7 @@
     {
       "id_evse": "IT*TSL*EA6H0AV",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -3752,8 +3752,8 @@
     },
     {
       "id_evse": "IT*IOY*E421701",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
@@ -3790,8 +3790,8 @@
     },
     {
       "id_evse": "IT*IOY*E421705",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "BLOCKED",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
@@ -3809,8 +3809,8 @@
     },
     {
       "id_evse": "IT*PLN*EE000255*1",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -3847,8 +3847,8 @@
     },
     {
       "id_evse": "IT*PLN*EE000256*2",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -3867,7 +3867,7 @@
     {
       "id_evse": "IT*PLN*EE007293*2",
       "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
