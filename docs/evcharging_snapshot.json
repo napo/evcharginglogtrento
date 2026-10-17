@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-17T22:04:42+00:00",
+  "generated_at": "2026-10-17T22:14:55+00:00",
   "stats": {
     "total": 213,
     "active": 180,
     "inactive": 33,
-    "charging": 12
+    "charging": 11
   },
   "points": [
     {
@@ -655,8 +655,8 @@
     },
     {
       "id_evse": "IT*IOY*E421704",
-      "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato": "Non Attivo",
+      "stato_raw": "BLOCKED",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
@@ -2897,8 +2897,8 @@
     },
     {
       "id_evse": "IT*PLN*EH000118*3",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Plenitude On The Road S.r.l.",
