@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-16T07:28:01.171901+00:00",
+  "generated_at": "2026-10-17T07:09:06.293674+00:00",
   "label": "Trento città",
   "n_colonnine_usage_observable": 100,
-  "days_collected": 74,
+  "days_collected": 75,
   "andamento_giornaliero": {
     "available": true,
     "kind": "andamento_giornaliero",
-    "days_collected": 74,
+    "days_collected": 75,
     "points": [
       {
         "date": "2026-08-04",
@@ -448,16 +448,22 @@
       },
       {
         "date": "2026-10-16",
-        "share_active": 66.5,
-        "share_charging": 9.5,
-        "n_snapshots": 2
+        "share_active": 61.1,
+        "share_charging": 12.0,
+        "n_snapshots": 33
+      },
+      {
+        "date": "2026-10-17",
+        "share_active": 63.1,
+        "share_charging": 9.2,
+        "n_snapshots": 8
       }
     ]
   },
   "profilo_settimanale": {
     "available": true,
     "kind": "profilo_settimanale",
-    "days_collected": 74,
+    "days_collected": 75,
     "weekday_labels": [
       "Lun",
       "Mar",
@@ -581,29 +587,29 @@
         80.0,
         84.4,
         83.4,
-        78.3,
-        76.5,
+        77.9,
+        75.1,
         81.7,
         81.3,
         82.3,
-        75.6,
-        76.3,
+        75.3,
+        72.6,
         80.3,
         78.3,
-        76.5,
-        73.5,
+        75.3,
+        71.2,
         79.0,
-        69.5,
-        73.8,
+        69.0,
+        73.0,
         75.6,
-        73.9
+        73.0
       ],
       [
-        75.1,
+        74.4,
         78.0,
         77.7,
-        74.6,
-        72.1,
+        73.7,
+        69.9,
         74.2,
         76.5,
         81.1,
@@ -765,29 +771,29 @@
         7.5,
         11.1,
         12.8,
-        13.5,
-        15.0,
+        13.3,
+        14.7,
         16.8,
         20.4,
         16.9,
-        18.4,
-        16.9,
+        18.2,
+        15.8,
         14.9,
         16.9,
         13.8,
-        14.2,
+        14.1,
         12.8,
-        11.0,
+        10.9,
         10.9,
         8.7,
-        8.7
+        8.8
       ],
       [
-        7.7,
+        7.8,
         7.3,
         9.5,
-        8.0,
-        14.5,
+        8.1,
+        13.1,
         13.3,
         10.5,
         15.7,
@@ -839,7 +845,7 @@
   "profilo_mensile": {
     "available": true,
     "kind": "profilo_mensile",
-    "days_collected": 74,
+    "days_collected": 75,
     "points": [
       {
         "month": "2026-08",
@@ -855,16 +861,16 @@
       },
       {
         "month": "2026-10",
-        "share_active": 71.3,
-        "share_charging": 12.5,
-        "n_days": 16
+        "share_active": 70.5,
+        "share_charging": 12.4,
+        "n_days": 17
       }
     ]
   },
   "andamento_conteggio_giornaliero": {
     "available": true,
     "kind": "andamento_conteggio_giornaliero",
-    "days_collected": 74,
+    "days_collected": 75,
     "points": [
       {
         "date": "2026-08-04",
@@ -1306,8 +1312,14 @@
       },
       {
         "date": "2026-10-16",
-        "n_attive": 165,
-        "n_non_attive": 36,
+        "n_attive": 161,
+        "n_non_attive": 40,
+        "n_totale": 201
+      },
+      {
+        "date": "2026-10-17",
+        "n_attive": 163,
+        "n_non_attive": 38,
         "n_totale": 201
       }
     ]
@@ -1315,7 +1327,7 @@
   "colonnine_monitorabili_giornaliero": {
     "available": true,
     "kind": "colonnine_monitorabili_giornaliero",
-    "days_collected": 74,
+    "days_collected": 75,
     "points": [
       {
         "date": "2026-08-04",
@@ -1611,6 +1623,10 @@
       },
       {
         "date": "2026-10-16",
+        "n_monitorabili": 100
+      },
+      {
+        "date": "2026-10-17",
         "n_monitorabili": 100
       }
     ]
