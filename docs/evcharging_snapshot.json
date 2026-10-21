@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-21T10:00:09+00:00",
+  "generated_at": "2026-10-21T10:05:17+00:00",
   "stats": {
     "total": 213,
-    "active": 191,
-    "inactive": 22,
+    "active": 193,
+    "inactive": 20,
     "charging": 13
   },
   "points": [
@@ -1530,7 +1530,7 @@
     {
       "id_evse": "ITGESE868971885",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Go Electric Stations SRLS",
@@ -2898,7 +2898,7 @@
     {
       "id_evse": "IT*PLN*EH000118*3",
       "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato_raw": "BLOCKED",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Plenitude On The Road S.r.l.",
@@ -3772,7 +3772,7 @@
     {
       "id_evse": "IT*IOY*E421702",
       "stato": "Non Attivo",
-      "stato_raw": "INOPERATIVE",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
@@ -3885,8 +3885,8 @@
     },
     {
       "id_evse": "IT*PLN*EH000118*1",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Plenitude On The Road S.r.l.",
@@ -3904,8 +3904,8 @@
     },
     {
       "id_evse": "IT*PLN*EH000118*2",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Plenitude On The Road S.r.l.",
@@ -4019,7 +4019,7 @@
     {
       "id_evse": "IT*TSL*EA4RR91",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
