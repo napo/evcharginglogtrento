@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-21T10:05:17+00:00",
+  "generated_at": "2026-10-21T10:10:25+00:00",
   "stats": {
     "total": 213,
-    "active": 193,
-    "inactive": 20,
+    "active": 194,
+    "inactive": 19,
     "charging": 13
   },
   "points": [
@@ -675,7 +675,7 @@
     {
       "id_evse": "IT*IOY*E421706",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
@@ -1340,7 +1340,7 @@
     {
       "id_evse": "IT*TSL*EA6M1PM",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -3771,8 +3771,8 @@
     },
     {
       "id_evse": "IT*IOY*E421702",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
