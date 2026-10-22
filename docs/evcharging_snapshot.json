@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-22T14:58:41+00:00",
+  "generated_at": "2026-10-22T15:03:50+00:00",
   "stats": {
     "total": 213,
-    "active": 195,
-    "inactive": 18,
+    "active": 194,
+    "inactive": 19,
     "charging": 14
   },
   "points": [
@@ -618,7 +618,7 @@
     {
       "id_evse": "IT*EWI*EEW0307S1*1",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "EWIVA SRL",
@@ -636,8 +636,8 @@
     },
     {
       "id_evse": "IT*IOY*E421703",
-      "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato": "Non Attivo",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
