@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-22T15:24:24+00:00",
+  "generated_at": "2026-10-22T15:29:32+00:00",
   "stats": {
     "total": 213,
-    "active": 195,
-    "inactive": 18,
+    "active": 196,
+    "inactive": 17,
     "charging": 16
   },
   "points": [
@@ -618,7 +618,7 @@
     {
       "id_evse": "IT*EWI*EEW0307S1*1",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "EWIVA SRL",
@@ -3107,7 +3107,7 @@
     {
       "id_evse": "IT*TSL*EA6J63Q",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
@@ -3923,8 +3923,8 @@
     },
     {
       "id_evse": "IT*PLN*EH003158*2",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
