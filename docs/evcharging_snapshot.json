@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-23T15:33:37+00:00",
+  "generated_at": "2026-10-23T15:38:44+00:00",
   "stats": {
     "total": 213,
     "active": 194,
     "inactive": 19,
-    "charging": 14
+    "charging": 15
   },
   "points": [
     {
@@ -546,7 +546,7 @@
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENX",
-      "indirizzo": "Via Roberto da Sanseverino, 97",
+      "indirizzo": "Via Roberto da Sanseverino 97",
       "citta": "Trento",
       "cap": "38121",
       "lat": 46.058495,
@@ -2807,7 +2807,7 @@
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENX",
-      "indirizzo": "Via Roberto da Sanseverino, 97",
+      "indirizzo": "Via Roberto da Sanseverino 97",
       "citta": "Trento",
       "cap": "38121",
       "lat": 46.058495,
@@ -2879,7 +2879,7 @@
     {
       "id_evse": "IT*PLN*EE008108*1",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -3700,7 +3700,7 @@
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENX",
-      "indirizzo": "Via Roberto da Sanseverino, 97",
+      "indirizzo": "Via Roberto da Sanseverino 97",
       "citta": "Trento",
       "cap": "38121",
       "lat": 46.058495,
