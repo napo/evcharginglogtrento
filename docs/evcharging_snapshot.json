@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-23T15:18:20+00:00",
+  "generated_at": "2026-10-23T15:28:30+00:00",
   "stats": {
     "total": 213,
     "active": 193,
     "inactive": 20,
-    "charging": 12
+    "charging": 13
   },
   "points": [
     {
@@ -545,7 +545,7 @@
       "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
-      "cpo": "ENEL X WAY ITALIA SRL",
+      "cpo": "ENX",
       "indirizzo": "Via Roberto da Sanseverino, 97",
       "citta": "Trento",
       "cap": "38121",
@@ -2806,7 +2806,7 @@
       "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
-      "cpo": "ENEL X WAY ITALIA SRL",
+      "cpo": "ENX",
       "indirizzo": "Via Roberto da Sanseverino, 97",
       "citta": "Trento",
       "cap": "38121",
@@ -3699,7 +3699,7 @@
       "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
-      "cpo": "ENEL X WAY ITALIA SRL",
+      "cpo": "ENX",
       "indirizzo": "Via Roberto da Sanseverino, 97",
       "citta": "Trento",
       "cap": "38121",
@@ -4038,7 +4038,7 @@
     {
       "id_evse": "IT*TSL*EA4TANN",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Tesla Italia Srl.",
