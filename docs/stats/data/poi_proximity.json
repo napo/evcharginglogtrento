@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T07:52:01.159202+00:00",
+  "generated_at": "2026-10-24T07:33:11.557342+00:00",
   "fonte_poi": "OpenStreetMap contributors, via Overpass API (ODbL)",
   "poi_generated_at": "2026-08-05T20:18:36Z",
   "soglia_metri": 300,
@@ -22,7 +22,7 @@
       "count_entro_soglia": 124,
       "share": 61.7,
       "esempio": {
-        "colonnina_indirizzo": "Via Roberto da Sanseverino, 97",
+        "colonnina_indirizzo": "Via Roberto da Sanseverino 97",
         "poi_nome": "Conad",
         "distanza_m": 12
       }

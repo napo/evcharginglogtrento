@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T07:52:10.627150+00:00",
+  "generated_at": "2026-10-24T07:33:26.808589+00:00",
   "fonte_poi": "OpenStreetMap contributors, via Overpass API (ODbL)",
   "soglia_metri": 300,
   "pois": [
@@ -1160,7 +1160,7 @@
         "ultra": 2
       },
       "esempio": {
-        "colonnina_indirizzo": "Via Roberto da Sanseverino, 97",
+        "colonnina_indirizzo": "Via Roberto da Sanseverino 97",
         "distanza_m": 12
       }
     },
@@ -2132,7 +2132,7 @@
         "ultra": 2
       },
       "esempio": {
-        "colonnina_indirizzo": "Via Roberto da Sanseverino, 97",
+        "colonnina_indirizzo": "Roberto Da Sanseverino",
         "distanza_m": 259
       }
     },
@@ -2231,7 +2231,7 @@
         "ultra": 2
       },
       "esempio": {
-        "colonnina_indirizzo": "Via Roberto da Sanseverino, 97",
+        "colonnina_indirizzo": "Roberto Da Sanseverino",
         "distanza_m": 251
       }
     },
