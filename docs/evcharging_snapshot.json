@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-28T11:43:19+00:00",
+  "generated_at": "2026-10-28T11:53:30+00:00",
   "stats": {
     "total": 213,
-    "active": 180,
-    "inactive": 33,
+    "active": 179,
+    "inactive": 34,
     "charging": 12
   },
   "points": [
@@ -2727,7 +2727,7 @@
     {
       "id_evse": "IT*ATE*E00273*2",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Atlante S.r.l",
@@ -3790,8 +3790,8 @@
     },
     {
       "id_evse": "IT*IOY*E421705",
-      "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato": "Non Attivo",
+      "stato_raw": "BLOCKED",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
