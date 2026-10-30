@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-30T18:29:20+00:00",
+  "generated_at": "2026-10-30T18:44:38+00:00",
   "stats": {
     "total": 213,
-    "active": 174,
-    "inactive": 39,
-    "charging": 10
+    "active": 173,
+    "inactive": 40,
+    "charging": 11
   },
   "points": [
     {
@@ -2803,7 +2803,7 @@
     {
       "id_evse": "IT*ENX*E21BZ1518A*1",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENX",
@@ -3695,8 +3695,8 @@
     },
     {
       "id_evse": "IT*ENX*E21BZ1518A*2",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENX",
