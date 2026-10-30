@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-29T23:50:37+00:00",
+  "generated_at": "2026-10-30T05:08:29+00:00",
   "stats": {
     "total": 213,
-    "active": 169,
-    "inactive": 44,
-    "charging": 7
+    "active": 172,
+    "inactive": 41,
+    "charging": 8
   },
   "points": [
     {
@@ -560,8 +560,8 @@
     },
     {
       "id_evse": "IT*ENX*E25XP22T3QQ2DA00020*1",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENEL X WAY ITALIA SRL",
@@ -808,7 +808,7 @@
     {
       "id_evse": "IT*PLN*EE007295*1",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -826,8 +826,8 @@
     },
     {
       "id_evse": "IT*PLN*EE008040*1",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "BLOCKED",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -978,8 +978,8 @@
     },
     {
       "id_evse": "IT*PLN*EH001740*1",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -997,8 +997,8 @@
     },
     {
       "id_evse": "IT*PLN*EH001740*3",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -2897,8 +2897,8 @@
     },
     {
       "id_evse": "IT*PLN*EH000118*3",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Plenitude On The Road S.r.l.",
@@ -3676,8 +3676,8 @@
     },
     {
       "id_evse": "IT*ENX*E20XM32T7KK3AR00101*3",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENEL X WAY ITALIA SRL",
@@ -3772,7 +3772,7 @@
     {
       "id_evse": "IT*IOY*E421702",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "IONITY GMBH",
@@ -3885,8 +3885,8 @@
     },
     {
       "id_evse": "IT*PLN*EH000118*1",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Plenitude On The Road S.r.l.",
@@ -3905,7 +3905,7 @@
     {
       "id_evse": "IT*PLN*EH000118*2",
       "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato_raw": "OUTOFORDER",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Plenitude On The Road S.r.l.",
