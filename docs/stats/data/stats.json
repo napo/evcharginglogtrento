@@ -1,13 +1,13 @@
 {
   "summary": {
     "total": 201,
-    "active": 168,
-    "active_known": 69,
+    "active": 154,
+    "active_known": 55,
     "active_unknown": 99,
-    "inactive": 32,
-    "charging": 1,
-    "share_active": 83.6,
-    "generated_at": "2026-10-29T05:34:10+00:00",
+    "inactive": 40,
+    "charging": 7,
+    "share_active": 76.6,
+    "generated_at": "2026-10-30T06:04:26+00:00",
     "raccolta_dati_dal": "2026-08-04T20:41:09+00:00"
   },
   "a22": {
@@ -48,8 +48,8 @@
     {
       "name": "BEC",
       "count": 34,
-      "active": 29,
-      "active_known": 29,
+      "active": 24,
+      "active_known": 24,
       "active_unknown": 0,
       "by_power": {
         "lenta": 0,
@@ -72,8 +72,8 @@
     {
       "name": "ENEL X WAY ITALIA SRL",
       "count": 7,
-      "active": 6,
-      "active_known": 6,
+      "active": 3,
+      "active_known": 3,
       "active_unknown": 0,
       "by_power": {
         "lenta": 5,
@@ -120,8 +120,8 @@
     {
       "name": "IONITY GMBH",
       "count": 6,
-      "active": 6,
-      "active_known": 6,
+      "active": 4,
+      "active_known": 4,
       "active_unknown": 0,
       "by_power": {
         "lenta": 0,
@@ -144,8 +144,8 @@
     {
       "name": "ENX",
       "count": 5,
-      "active": 4,
-      "active_known": 4,
+      "active": 2,
+      "active_known": 2,
       "active_unknown": 0,
       "by_power": {
         "lenta": 3,
