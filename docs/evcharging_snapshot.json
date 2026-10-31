@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-31T23:39:01+00:00",
+  "generated_at": "2026-10-31T23:44:10+00:00",
   "stats": {
     "total": 213,
-    "active": 166,
-    "inactive": 47,
+    "active": 169,
+    "inactive": 44,
     "charging": 8
   },
   "points": [
@@ -541,8 +541,8 @@
     },
     {
       "id_evse": "IT*ENX*E21BZ1518A*3",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENX",
@@ -2802,8 +2802,8 @@
     },
     {
       "id_evse": "IT*ENX*E21BZ1518A*1",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENX",
@@ -3695,8 +3695,8 @@
     },
     {
       "id_evse": "IT*ENX*E21BZ1518A*2",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENX",
