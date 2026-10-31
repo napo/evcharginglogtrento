@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T08:54:04.703429+00:00",
+  "generated_at": "2026-10-31T08:44:53.078475+00:00",
   "soglia_metri_poi": 300,
   "nota": "Una riga per colonnina monitorabile e giorno. energia/durata coprono solo le sessioni chiuse quel giorno (stessa stima per difetto di stations_usage.json); ore_charging segna invece qualunque ora con almeno una rilevazione in carica, inclusa un'eventuale sessione ancora in corso.",
   "rows": [
@@ -3030,6 +3030,82 @@
         0,
         1,
         1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "id_evse": "IT*ATE*E00273*2",
+      "cpo": "Atlante S.r.l",
+      "fascia_potenza": "ultra",
+      "poi_categorie": [
+        "supermercati"
+      ],
+      "n_sessioni": 2,
+      "kwh_stimato": 22.95,
+      "durata_totale_minuti": 15.3,
+      "ore_charging": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "id_evse": "IT*ATE*E00273*2",
+      "cpo": "Atlante S.r.l",
+      "fascia_potenza": "ultra",
+      "poi_categorie": [
+        "supermercati"
+      ],
+      "n_sessioni": 1,
+      "kwh_stimato": 7.8,
+      "durata_totale_minuti": 5.2,
+      "ore_charging": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -16579,7 +16655,7 @@
       "poi_categorie": [
         "supermercati"
       ],
-      "n_sessioni": 1,
+      "n_sessioni": 2,
       "kwh_stimato": 1.91,
       "durata_totale_minuti": 5.2,
       "ore_charging": [
@@ -19533,6 +19609,84 @@
       ]
     },
     {
+      "date": "2026-10-30",
+      "id_evse": "IT*ENX*E20XM32T7KK3AR00101*1",
+      "cpo": "ENEL X WAY ITALIA SRL",
+      "fascia_potenza": "rapida",
+      "poi_categorie": [
+        "supermercati",
+        "banche"
+      ],
+      "n_sessioni": 3,
+      "kwh_stimato": 59.75,
+      "durata_totale_minuti": 71.7,
+      "ore_charging": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "id_evse": "IT*ENX*E20XM32T7KK3AR00101*1",
+      "cpo": "ENEL X WAY ITALIA SRL",
+      "fascia_potenza": "rapida",
+      "poi_categorie": [
+        "supermercati",
+        "banche"
+      ],
+      "n_sessioni": 1,
+      "kwh_stimato": 4.33,
+      "durata_totale_minuti": 5.2,
+      "ore_charging": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
       "date": "2026-08-09",
       "id_evse": "IT*ENX*E20XM32T7KK3AR00101*2",
       "cpo": "ENEL X WAY ITALIA SRL",
@@ -21764,9 +21918,9 @@
         "supermercati",
         "banche"
       ],
-      "n_sessioni": 1,
-      "kwh_stimato": 1.91,
-      "durata_totale_minuti": 5.2,
+      "n_sessioni": 6,
+      "kwh_stimato": 37.47,
+      "durata_totale_minuti": 102.2,
       "ore_charging": [
         0,
         0,
@@ -21775,6 +21929,45 @@
         0,
         1,
         1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "id_evse": "IT*ENX*E20XM32T7KK3AR00101*3",
+      "cpo": "ENEL X WAY ITALIA SRL",
+      "fascia_potenza": "lenta",
+      "poi_categorie": [
+        "supermercati",
+        "banche"
+      ],
+      "n_sessioni": 1,
+      "kwh_stimato": 1.91,
+      "durata_totale_minuti": 5.2,
+      "ore_charging": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -23459,6 +23652,84 @@
         0,
         1,
         1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "id_evse": "IT*ENX*E20XP22T3KK4AL00176*1",
+      "cpo": "ENEL X WAY ITALIA SRL",
+      "fascia_potenza": "lenta",
+      "poi_categorie": [
+        "banche",
+        "ambulatori"
+      ],
+      "n_sessioni": 3,
+      "kwh_stimato": 5.2,
+      "durata_totale_minuti": 15.3,
+      "ore_charging": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "id_evse": "IT*ENX*E20XP22T3KK4AL00176*1",
+      "cpo": "ENEL X WAY ITALIA SRL",
+      "fascia_potenza": "lenta",
+      "poi_categorie": [
+        "banche",
+        "ambulatori"
+      ],
+      "n_sessioni": 1,
+      "kwh_stimato": 1.77,
+      "durata_totale_minuti": 5.2,
+      "ore_charging": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -26132,9 +26403,9 @@
         "banche",
         "ambulatori"
       ],
-      "n_sessioni": 1,
-      "kwh_stimato": 1.77,
-      "durata_totale_minuti": 5.2,
+      "n_sessioni": 6,
+      "kwh_stimato": 34.75,
+      "durata_totale_minuti": 102.2,
       "ore_charging": [
         0,
         0,
@@ -26143,6 +26414,45 @@
         0,
         1,
         1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "id_evse": "IT*ENX*E20XP22T3KK4AL00176*2",
+      "cpo": "ENEL X WAY ITALIA SRL",
+      "fascia_potenza": "lenta",
+      "poi_categorie": [
+        "banche",
+        "ambulatori"
+      ],
+      "n_sessioni": 1,
+      "kwh_stimato": 1.77,
+      "durata_totale_minuti": 5.2,
+      "ore_charging": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -28620,6 +28930,45 @@
       ]
     },
     {
+      "date": "2026-10-30",
+      "id_evse": "IT*ENX*E21BZ1518A*1",
+      "cpo": "ENX",
+      "fascia_potenza": "ultra",
+      "poi_categorie": [
+        "supermercati",
+        "banche"
+      ],
+      "n_sessioni": 2,
+      "kwh_stimato": 83.0,
+      "durata_totale_minuti": 66.4,
+      "ore_charging": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
       "date": "2026-08-09",
       "id_evse": "IT*ENX*E21BZ1518A*2",
       "cpo": "ENX",
@@ -30968,9 +31317,9 @@
         "supermercati",
         "banche"
       ],
-      "n_sessioni": 1,
-      "kwh_stimato": 1.91,
-      "durata_totale_minuti": 5.2,
+      "n_sessioni": 6,
+      "kwh_stimato": 37.47,
+      "durata_totale_minuti": 102.2,
       "ore_charging": [
         0,
         0,
@@ -30979,6 +31328,45 @@
         0,
         1,
         1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "id_evse": "IT*ENX*E21BZ1518A*3",
+      "cpo": "ENX",
+      "fascia_potenza": "lenta",
+      "poi_categorie": [
+        "supermercati",
+        "banche"
+      ],
+      "n_sessioni": 1,
+      "kwh_stimato": 1.91,
+      "durata_totale_minuti": 5.2,
+      "ore_charging": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -31001,7 +31389,7 @@
     {
       "date": "2026-08-05",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31040,7 +31428,7 @@
     {
       "date": "2026-08-06",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31079,7 +31467,7 @@
     {
       "date": "2026-08-10",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31118,7 +31506,7 @@
     {
       "date": "2026-08-12",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31157,7 +31545,7 @@
     {
       "date": "2026-08-13",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31196,7 +31584,7 @@
     {
       "date": "2026-08-14",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31235,7 +31623,7 @@
     {
       "date": "2026-08-17",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31274,7 +31662,7 @@
     {
       "date": "2026-08-18",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31313,7 +31701,7 @@
     {
       "date": "2026-08-20",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31352,7 +31740,7 @@
     {
       "date": "2026-08-21",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31391,7 +31779,7 @@
     {
       "date": "2026-08-22",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31430,7 +31818,7 @@
     {
       "date": "2026-08-27",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31469,7 +31857,7 @@
     {
       "date": "2026-08-28",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31508,7 +31896,7 @@
     {
       "date": "2026-08-29",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31547,7 +31935,7 @@
     {
       "date": "2026-09-03",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31586,7 +31974,7 @@
     {
       "date": "2026-09-11",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31625,7 +32013,7 @@
     {
       "date": "2026-09-16",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31664,7 +32052,7 @@
     {
       "date": "2026-09-24",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31703,7 +32091,7 @@
     {
       "date": "2026-10-15",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31742,7 +32130,7 @@
     {
       "date": "2026-10-16",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31781,7 +32169,7 @@
     {
       "date": "2026-10-20",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31820,7 +32208,7 @@
     {
       "date": "2026-10-22",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31859,7 +32247,7 @@
     {
       "date": "2026-10-24",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31898,7 +32286,7 @@
     {
       "date": "2026-10-29",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -31937,15 +32325,15 @@
     {
       "date": "2026-10-30",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
         "banche"
       ],
-      "n_sessioni": 1,
-      "kwh_stimato": 0.95,
-      "durata_totale_minuti": 5.2,
+      "n_sessioni": 3,
+      "kwh_stimato": 5.61,
+      "durata_totale_minuti": 30.6,
       "ore_charging": [
         0,
         0,
@@ -31959,7 +32347,7 @@
         0,
         0,
         0,
-        0,
+        1,
         0,
         0,
         0,
@@ -31976,7 +32364,7 @@
     {
       "date": "2026-08-05",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32015,7 +32403,7 @@
     {
       "date": "2026-08-11",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32054,7 +32442,7 @@
     {
       "date": "2026-08-14",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32093,7 +32481,7 @@
     {
       "date": "2026-08-15",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32132,7 +32520,7 @@
     {
       "date": "2026-08-17",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32171,7 +32559,7 @@
     {
       "date": "2026-08-18",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32210,7 +32598,7 @@
     {
       "date": "2026-08-20",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32249,7 +32637,7 @@
     {
       "date": "2026-08-21",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32288,7 +32676,7 @@
     {
       "date": "2026-08-22",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32327,7 +32715,7 @@
     {
       "date": "2026-08-25",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32366,7 +32754,7 @@
     {
       "date": "2026-08-26",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32405,7 +32793,7 @@
     {
       "date": "2026-08-30",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32444,7 +32832,7 @@
     {
       "date": "2026-09-04",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32483,7 +32871,7 @@
     {
       "date": "2026-09-05",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32522,7 +32910,7 @@
     {
       "date": "2026-09-09",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32561,7 +32949,7 @@
     {
       "date": "2026-09-13",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32600,7 +32988,7 @@
     {
       "date": "2026-09-14",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32639,7 +33027,7 @@
     {
       "date": "2026-09-16",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32678,7 +33066,7 @@
     {
       "date": "2026-09-20",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32717,7 +33105,7 @@
     {
       "date": "2026-09-22",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32756,7 +33144,7 @@
     {
       "date": "2026-09-24",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32795,7 +33183,7 @@
     {
       "date": "2026-09-25",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32834,7 +33222,7 @@
     {
       "date": "2026-10-03",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32873,7 +33261,7 @@
     {
       "date": "2026-10-04",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32912,7 +33300,7 @@
     {
       "date": "2026-10-06",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32951,7 +33339,7 @@
     {
       "date": "2026-10-07",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -32990,7 +33378,7 @@
     {
       "date": "2026-10-11",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -33029,7 +33417,7 @@
     {
       "date": "2026-10-13",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -33068,7 +33456,7 @@
     {
       "date": "2026-10-14",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -33107,7 +33495,7 @@
     {
       "date": "2026-10-15",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -33146,7 +33534,7 @@
     {
       "date": "2026-10-16",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -33185,7 +33573,7 @@
     {
       "date": "2026-10-17",
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*2",
-      "cpo": "ENX",
+      "cpo": "ENEL X WAY ITALIA SRL",
       "fascia_potenza": "lenta",
       "poi_categorie": [
         "supermercati",
@@ -34060,6 +34448,84 @@
         0,
         0,
         1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "id_evse": "IT*ENX*E25XP22T3QQ2DA00020*1",
+      "cpo": "ENEL X WAY ITALIA SRL",
+      "fascia_potenza": "lenta",
+      "poi_categorie": [
+        "supermercati",
+        "incroci_primarie"
+      ],
+      "n_sessioni": 2,
+      "kwh_stimato": 5.61,
+      "durata_totale_minuti": 15.3,
+      "ore_charging": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "id_evse": "IT*ENX*E25XP22T3QQ2DA00020*1",
+      "cpo": "ENEL X WAY ITALIA SRL",
+      "fascia_potenza": "lenta",
+      "poi_categorie": [
+        "supermercati",
+        "incroci_primarie"
+      ],
+      "n_sessioni": 1,
+      "kwh_stimato": 1.91,
+      "durata_totale_minuti": 5.2,
+      "ore_charging": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -37442,7 +37908,7 @@
         "supermercati",
         "incroci_primarie"
       ],
-      "n_sessioni": 1,
+      "n_sessioni": 2,
       "kwh_stimato": 8.67,
       "durata_totale_minuti": 5.2,
       "ore_charging": [
@@ -41736,9 +42202,9 @@
       "poi_categorie": [
         "incroci_primarie"
       ],
-      "n_sessioni": 1,
-      "kwh_stimato": 0.0,
-      "durata_totale_minuti": 0.0,
+      "n_sessioni": 4,
+      "kwh_stimato": 536.08,
+      "durata_totale_minuti": 91.9,
       "ore_charging": [
         0,
         0,
@@ -41752,18 +42218,18 @@
         0,
         0,
         0,
+        1,
         0,
         0,
         0,
         0,
         0,
+        1,
+        1,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0
+        1,
+        1
       ]
     },
     {
@@ -47961,6 +48427,82 @@
       ]
     },
     {
+      "date": "2026-10-30",
+      "id_evse": "IT*IOY*E421704",
+      "cpo": "IONITY GMBH",
+      "fascia_potenza": "ultra",
+      "poi_categorie": [
+        "incroci_primarie"
+      ],
+      "n_sessioni": 2,
+      "kwh_stimato": 63.75,
+      "durata_totale_minuti": 15.3,
+      "ore_charging": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "id_evse": "IT*IOY*E421704",
+      "cpo": "IONITY GMBH",
+      "fascia_potenza": "ultra",
+      "poi_categorie": [
+        "incroci_primarie"
+      ],
+      "n_sessioni": 1,
+      "kwh_stimato": 21.67,
+      "durata_totale_minuti": 5.2,
+      "ore_charging": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
       "date": "2026-08-05",
       "id_evse": "IT*IOY*E421705",
       "cpo": "IONITY GMBH",
@@ -51077,6 +51619,44 @@
       ]
     },
     {
+      "date": "2026-10-30",
+      "id_evse": "IT*IOY*E421705",
+      "cpo": "IONITY GMBH",
+      "fascia_potenza": "ultra",
+      "poi_categorie": [
+        "incroci_primarie"
+      ],
+      "n_sessioni": 1,
+      "kwh_stimato": 105.83,
+      "durata_totale_minuti": 25.4,
+      "ore_charging": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
       "date": "2026-08-05",
       "id_evse": "IT*IOY*E421706",
       "cpo": "IONITY GMBH",
@@ -53990,6 +54570,44 @@
         0,
         1,
         1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "id_evse": "IT*IOY*E421706",
+      "cpo": "IONITY GMBH",
+      "fascia_potenza": "ultra",
+      "poi_categorie": [
+        "incroci_primarie"
+      ],
+      "n_sessioni": 1,
+      "kwh_stimato": 21.67,
+      "durata_totale_minuti": 5.2,
+      "ore_charging": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -63143,6 +63761,42 @@
       ]
     },
     {
+      "date": "2026-10-31",
+      "id_evse": "IT*PLN*EE006452*2",
+      "cpo": "BEC",
+      "fascia_potenza": "rapida",
+      "poi_categorie": [],
+      "n_sessioni": 1,
+      "kwh_stimato": 0.0,
+      "durata_totale_minuti": 0.0,
+      "ore_charging": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
       "date": "2026-08-18",
       "id_evse": "IT*PLN*EE007293*1",
       "cpo": "BEC",
@@ -67140,6 +67794,46 @@
         0,
         0,
         1
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "id_evse": "IT*PLN*EE007295*1",
+      "cpo": "BEC",
+      "fascia_potenza": "rapida",
+      "poi_categorie": [
+        "supermercati",
+        "banche",
+        "ambulatori"
+      ],
+      "n_sessioni": 2,
+      "kwh_stimato": 20.78,
+      "durata_totale_minuti": 56.3,
+      "ore_charging": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0
       ]
     },
     {
@@ -73655,6 +74349,46 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "id_evse": "IT*PLN*EE008040*2",
+      "cpo": "BEC",
+      "fascia_potenza": "rapida",
+      "poi_categorie": [
+        "supermercati",
+        "banche",
+        "ambulatori"
+      ],
+      "n_sessioni": 1,
+      "kwh_stimato": 11.29,
+      "durata_totale_minuti": 30.6,
+      "ore_charging": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
         0,
         0,
         0,
@@ -83398,6 +84132,45 @@
       ]
     },
     {
+      "date": "2026-10-30",
+      "id_evse": "IT*PLN*EH000118*3",
+      "cpo": "Plenitude On The Road S.r.l.",
+      "fascia_potenza": "rapida",
+      "poi_categorie": [
+        "supermercati",
+        "banche"
+      ],
+      "n_sessioni": 1,
+      "kwh_stimato": 9.37,
+      "durata_totale_minuti": 25.4,
+      "ore_charging": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
       "date": "2026-08-05",
       "id_evse": "IT*PLN*EH001186*1",
       "cpo": "Plenitude On The Road S.r.l.",
@@ -92934,6 +93707,84 @@
       ]
     },
     {
+      "date": "2026-10-30",
+      "id_evse": "IT*PLN*EH003148*1",
+      "cpo": "BEC",
+      "fascia_potenza": "ultra",
+      "poi_categorie": [
+        "supermercati",
+        "banche"
+      ],
+      "n_sessioni": 2,
+      "kwh_stimato": 28.05,
+      "durata_totale_minuti": 15.3,
+      "ore_charging": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "id_evse": "IT*PLN*EH003148*1",
+      "cpo": "BEC",
+      "fascia_potenza": "ultra",
+      "poi_categorie": [
+        "supermercati",
+        "banche"
+      ],
+      "n_sessioni": 1,
+      "kwh_stimato": 9.53,
+      "durata_totale_minuti": 5.2,
+      "ore_charging": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
       "date": "2026-08-14",
       "id_evse": "IT*PLN*EH003148*2",
       "cpo": "BEC",
@@ -94502,9 +95353,9 @@
         "supermercati",
         "banche"
       ],
-      "n_sessioni": 1,
-      "kwh_stimato": 9.53,
-      "durata_totale_minuti": 5.2,
+      "n_sessioni": 4,
+      "kwh_stimato": 130.9,
+      "durata_totale_minuti": 71.4,
       "ore_charging": [
         0,
         0,
@@ -94518,14 +95369,14 @@
         0,
         0,
         0,
+        1,
         0,
         0,
         0,
         0,
         0,
-        0,
-        0,
-        0,
+        1,
+        1,
         0,
         0,
         0,
@@ -98316,6 +99167,84 @@
       ]
     },
     {
+      "date": "2026-10-30",
+      "id_evse": "IT*PLN*EH003152*1",
+      "cpo": "BEC",
+      "fascia_potenza": "ultra",
+      "poi_categorie": [
+        "supermercati",
+        "banche"
+      ],
+      "n_sessioni": 2,
+      "kwh_stimato": 28.05,
+      "durata_totale_minuti": 15.3,
+      "ore_charging": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "id_evse": "IT*PLN*EH003152*1",
+      "cpo": "BEC",
+      "fascia_potenza": "ultra",
+      "poi_categorie": [
+        "supermercati",
+        "banche"
+      ],
+      "n_sessioni": 1,
+      "kwh_stimato": 9.53,
+      "durata_totale_minuti": 5.2,
+      "ore_charging": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
       "date": "2026-08-09",
       "id_evse": "IT*PLN*EH003152*2",
       "cpo": "BEC",
@@ -100394,6 +101323,45 @@
       "n_sessioni": 1,
       "kwh_stimato": 20.93,
       "durata_totale_minuti": 56.7,
+      "ore_charging": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "id_evse": "IT*PLN*EH003152*3",
+      "cpo": "BEC",
+      "fascia_potenza": "rapida",
+      "poi_categorie": [
+        "supermercati",
+        "banche"
+      ],
+      "n_sessioni": 1,
+      "kwh_stimato": 16.98,
+      "durata_totale_minuti": 46.0,
       "ore_charging": [
         0,
         0,
@@ -107831,6 +108799,84 @@
         0,
         1,
         1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "id_evse": "IT*PLN*EH003158*3",
+      "cpo": "BEC",
+      "fascia_potenza": "rapida",
+      "poi_categorie": [
+        "banche",
+        "ambulatori"
+      ],
+      "n_sessioni": 3,
+      "kwh_stimato": 26.46,
+      "durata_totale_minuti": 71.7,
+      "ore_charging": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "id_evse": "IT*PLN*EH003158*3",
+      "cpo": "BEC",
+      "fascia_potenza": "rapida",
+      "poi_categorie": [
+        "banche",
+        "ambulatori"
+      ],
+      "n_sessioni": 1,
+      "kwh_stimato": 1.92,
+      "durata_totale_minuti": 5.2,
+      "ore_charging": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
