@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-31T15:39:31+00:00",
+  "generated_at": "2026-10-31T15:54:47+00:00",
   "stats": {
     "total": 213,
-    "active": 165,
-    "inactive": 48,
+    "active": 167,
+    "inactive": 46,
     "charging": 9
   },
   "points": [
@@ -731,8 +731,8 @@
     },
     {
       "id_evse": "IT*PLN*EE006443*1",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -2802,8 +2802,8 @@
     },
     {
       "id_evse": "IT*ENX*E21BZ1518A*1",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENX",
