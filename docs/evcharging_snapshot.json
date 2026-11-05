@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T10:40:10+00:00",
+  "generated_at": "2026-11-05T10:45:18+00:00",
   "stats": {
     "total": 213,
     "active": 180,
@@ -751,7 +751,7 @@
     {
       "id_evse": "IT*PLN*EE006443*2",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -3715,7 +3715,7 @@
     {
       "id_evse": "IT*ENX*E21XP22T3KKJAK00663*1",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENEL X WAY ITALIA SRL",
