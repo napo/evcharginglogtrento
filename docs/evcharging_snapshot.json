@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-06T14:52:47+00:00",
+  "generated_at": "2026-11-06T14:57:55+00:00",
   "stats": {
     "total": 213,
-    "active": 170,
-    "inactive": 43,
+    "active": 171,
+    "inactive": 42,
     "charging": 9
   },
   "points": [
@@ -2916,8 +2916,8 @@
     },
     {
       "id_evse": "IT*PLN*EH001186*2",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Plenitude On The Road S.r.l.",
