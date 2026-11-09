@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-09T08:07:38+00:00",
+  "generated_at": "2026-11-09T08:12:45+00:00",
   "stats": {
     "total": 213,
-    "active": 167,
-    "inactive": 46,
+    "active": 166,
+    "inactive": 47,
     "charging": 10
   },
   "points": [
@@ -1529,8 +1529,8 @@
     },
     {
       "id_evse": "ITGESE868971885",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "INOPERATIVE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Go Electric Stations SRLS",
