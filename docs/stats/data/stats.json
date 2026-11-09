@@ -4,10 +4,10 @@
     "active": 144,
     "active_known": 45,
     "active_unknown": 99,
-    "inactive": 52,
-    "charging": 5,
+    "inactive": 46,
+    "charging": 11,
     "share_active": 71.6,
-    "generated_at": "2026-11-08T03:06:32+00:00",
+    "generated_at": "2026-11-09T08:43:23+00:00",
     "raccolta_dati_dal": "2026-08-04T20:41:09+00:00"
   },
   "a22": {
@@ -48,8 +48,8 @@
     {
       "name": "BEC",
       "count": 34,
-      "active": 18,
-      "active_known": 18,
+      "active": 12,
+      "active_known": 12,
       "active_unknown": 0,
       "by_power": {
         "lenta": 0,
@@ -120,8 +120,8 @@
     {
       "name": "IONITY GMBH",
       "count": 6,
-      "active": 1,
-      "active_known": 1,
+      "active": 5,
+      "active_known": 5,
       "active_unknown": 0,
       "by_power": {
         "lenta": 0,
@@ -132,8 +132,8 @@
     {
       "name": "Plenitude On The Road S.r.l.",
       "count": 6,
-      "active": 2,
-      "active_known": 2,
+      "active": 3,
+      "active_known": 3,
       "active_unknown": 0,
       "by_power": {
         "lenta": 0,
