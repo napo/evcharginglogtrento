@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-10T09:56:28+00:00",
+  "generated_at": "2026-11-10T10:01:35+00:00",
   "stats": {
     "total": 213,
-    "active": 175,
-    "inactive": 38,
+    "active": 176,
+    "inactive": 37,
     "charging": 9
   },
   "points": [
@@ -351,8 +351,8 @@
     },
     {
       "id_evse": "IT*ATE*E00271*1",
-      "stato": "Non Attivo",
-      "stato_raw": "UNKNOWN",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Atlante S.r.l",
@@ -370,8 +370,8 @@
     },
     {
       "id_evse": "IT*ATE*E00271*2",
-      "stato": "Non Attivo",
-      "stato_raw": "UNKNOWN",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Atlante S.r.l",
@@ -826,8 +826,8 @@
     },
     {
       "id_evse": "IT*PLN*EE008040*1",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "BLOCKED",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
