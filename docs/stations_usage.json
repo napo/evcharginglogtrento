@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-13T09:53:55.171041+00:00",
+  "generated_at": "2026-11-14T09:17:40.916593+00:00",
   "nota": "Le durate delle sessioni sono una stima per difetto, vincolata alla cadenza di polling: la ricarica reale può essere iniziata/finita in un punto qualsiasi tra due rilevazioni consecutive. L'energia (kWh) è una stima ulteriore (durata × potenza nominale del connettore), non una lettura reale: probabile sovrastima, specie sulla ricarica rapida DC.",
   "city": {
-    "n_osservazioni": 538024,
+    "n_osservazioni": 539524,
     "n_colonnine_usage_observable": 100,
-    "days_collected": 102,
+    "days_collected": 103,
     "profilo_orario": [
       {
         "ora": 0,
@@ -107,33 +107,33 @@
       "giorno": "sabato",
       "quota_charging": 13.4
     },
-    "n_sessioni": 13786,
+    "n_sessioni": 13824,
     "durata_media_minuti": 27.8,
     "giorno_record": {
       "data": "2026-08-08",
       "minuti_ricarica_totali": 12657.5
     },
-    "n_sessioni_in_corso": 8,
+    "n_sessioni_in_corso": 5,
     "energia": {
-      "totale_kwh_stimato": 560091.07,
-      "ultima_ora_kwh": 9.38,
-      "ultime_24h_kwh": 909.75,
-      "ultimi_7_giorni_kwh": 5533.06,
-      "ultimi_30_giorni_kwh": 54495.91,
-      "oggi_kwh": 44.62
+      "totale_kwh_stimato": 560984.97,
+      "ultima_ora_kwh": 0.0,
+      "ultime_24h_kwh": 903.28,
+      "ultimi_7_giorni_kwh": 5973.37,
+      "ultimi_30_giorni_kwh": 54134.68,
+      "oggi_kwh": 0.0
     },
     "veicoli_serviti": {
-      "ultima_ora": 2,
-      "ultime_24h": 48,
-      "ultimi_7_giorni": 335,
-      "ultimi_30_giorni": 2253
+      "ultima_ora": 5,
+      "ultime_24h": 40,
+      "ultimi_7_giorni": 340,
+      "ultimi_30_giorni": 2212
     },
     "colonnina_top": {
       "id_evse": "IT*IOY*E421703",
       "indirizzo": "Via Ezio Maccani 157",
       "cpo": "IONITY GMBH",
-      "n_sessioni": 417,
-      "energia_totale_kwh_stimata": 37940.17,
+      "n_sessioni": 418,
+      "energia_totale_kwh_stimata": 38030.1,
       "lat": 46.08704,
       "lon": 11.1111
     },
@@ -143,84 +143,84 @@
         "n_colonnine": 16,
         "n_sessioni": 3639,
         "energia_totale_kwh_stimata": 140943.66,
-        "media_sessioni_giornaliere": 35.68
+        "media_sessioni_giornaliere": 35.33
       },
       {
         "cpo": "BEC",
         "n_colonnine": 34,
-        "n_sessioni": 2971,
-        "energia_totale_kwh_stimata": 53713.25,
-        "media_sessioni_giornaliere": 29.13
+        "n_sessioni": 2984,
+        "energia_totale_kwh_stimata": 53900.87,
+        "media_sessioni_giornaliere": 28.97
       },
       {
         "cpo": "IONITY GMBH",
         "n_colonnine": 6,
-        "n_sessioni": 2275,
-        "energia_totale_kwh_stimata": 171803.01,
-        "media_sessioni_giornaliere": 22.3
+        "n_sessioni": 2280,
+        "energia_totale_kwh_stimata": 172304.01,
+        "media_sessioni_giornaliere": 22.14
       },
       {
         "cpo": "ENEL X WAY ITALIA SRL",
         "n_colonnine": 9,
-        "n_sessioni": 1217,
-        "energia_totale_kwh_stimata": 13360.77,
-        "media_sessioni_giornaliere": 11.93
+        "n_sessioni": 1222,
+        "energia_totale_kwh_stimata": 13407.38,
+        "media_sessioni_giornaliere": 11.86
       },
       {
         "cpo": "Electra Italia s.r.l.",
         "n_colonnine": 6,
         "n_sessioni": 1154,
         "energia_totale_kwh_stimata": 110185.48,
-        "media_sessioni_giornaliere": 11.31
+        "media_sessioni_giornaliere": 11.2
       },
       {
         "cpo": "Plenitude On The Road S.r.l.",
         "n_colonnine": 6,
-        "n_sessioni": 619,
-        "energia_totale_kwh_stimata": 14344.32,
+        "n_sessioni": 625,
+        "energia_totale_kwh_stimata": 14383.92,
         "media_sessioni_giornaliere": 6.07
       },
       {
         "cpo": "Go Electric Stations SRLS",
         "n_colonnine": 6,
-        "n_sessioni": 539,
-        "energia_totale_kwh_stimata": 6337.44,
+        "n_sessioni": 544,
+        "energia_totale_kwh_stimata": 6365.54,
         "media_sessioni_giornaliere": 5.28
       },
       {
         "cpo": "EMOBITALY S.r.l.",
         "n_colonnine": 2,
-        "n_sessioni": 371,
-        "energia_totale_kwh_stimata": 4673.92,
-        "media_sessioni_giornaliere": 3.64
+        "n_sessioni": 373,
+        "energia_totale_kwh_stimata": 4677.66,
+        "media_sessioni_giornaliere": 3.62
       },
       {
         "cpo": "Atlante S.r.l",
         "n_colonnine": 4,
-        "n_sessioni": 299,
-        "energia_totale_kwh_stimata": 12111.88,
-        "media_sessioni_giornaliere": 2.93
+        "n_sessioni": 300,
+        "energia_totale_kwh_stimata": 12134.88,
+        "media_sessioni_giornaliere": 2.91
       },
       {
         "cpo": "ENX",
         "n_colonnine": 3,
-        "n_sessioni": 277,
-        "energia_totale_kwh_stimata": 6592.32,
-        "media_sessioni_giornaliere": 2.72
+        "n_sessioni": 278,
+        "energia_totale_kwh_stimata": 6656.55,
+        "media_sessioni_giornaliere": 2.7
       },
       {
         "cpo": "EWIVA SRL",
         "n_colonnine": 2,
         "n_sessioni": 277,
         "energia_totale_kwh_stimata": 11226.09,
-        "media_sessioni_giornaliere": 2.72
+        "media_sessioni_giornaliere": 2.69
       },
       {
         "cpo": "IPLANET SPA",
         "n_colonnine": 2,
         "n_sessioni": 116,
         "energia_totale_kwh_stimata": 13749.74,
-        "media_sessioni_giornaliere": 1.14
+        "media_sessioni_giornaliere": 1.13
       },
       {
         "cpo": "TheF Charging S.r.l.",
@@ -233,7 +233,7 @@
   },
   "stazioni": {
     "IT*ATE*E00271*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -245,7 +245,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 10.7
+          "quota_charging": 10.5
         },
         {
           "ora": 3,
@@ -297,11 +297,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 5.4
+          "quota_charging": 5.8
         },
         {
           "ora": 16,
-          "quota_charging": 5.9
+          "quota_charging": 6.2
         },
         {
           "ora": 17,
@@ -325,7 +325,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 4.3
+          "quota_charging": 4.2
         },
         {
           "ora": 23,
@@ -336,20 +336,20 @@
         "giorno": "sabato",
         "quota_charging": 13.9
       },
-      "n_sessioni": 42,
-      "durata_media_minuti": 47.6,
+      "n_sessioni": 43,
+      "durata_media_minuti": 46.7,
       "giorno_record": {
         "data": "2026-08-08",
         "minuti_ricarica_totali": 715.6
       },
-      "ultimo_uso": "2026-11-11T13:58:09+00:00",
-      "energia_totale_kwh_stimata": 2570.65,
+      "ultimo_uso": "2026-11-13T16:04:57+00:00",
+      "energia_totale_kwh_stimata": 2593.65,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 0,
-        "ultimi_7_giorni": 2,
-        "ultimi_30_giorni": 4
+        "ultime_24h": 1,
+        "ultimi_7_giorni": 3,
+        "ultimi_30_giorni": 5
       },
       "indirizzo": "Strada di Cadine 13",
       "cpo": "Atlante S.r.l",
@@ -357,7 +357,7 @@
       "lon": 11.065753
     },
     "IT*ATE*E00271*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -421,11 +421,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 6.3
+          "quota_charging": 6.1
         },
         {
           "ora": 16,
-          "quota_charging": 20.7
+          "quota_charging": 20.5
         },
         {
           "ora": 17,
@@ -458,7 +458,7 @@
       ],
       "giorno_settimana_piu_usato": {
         "giorno": "sabato",
-        "quota_charging": 11.8
+        "quota_charging": 11.7
       },
       "n_sessioni": 85,
       "durata_media_minuti": 35.4,
@@ -481,7 +481,7 @@
       "lon": 11.065753
     },
     "IT*ATE*E00273*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -545,7 +545,7 @@
         },
         {
           "ora": 15,
-          "quota_charging": 5.4
+          "quota_charging": 5.2
         },
         {
           "ora": 16,
@@ -605,7 +605,7 @@
       "lon": 11.065753
     },
     "IT*ATE*E00273*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -617,7 +617,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 8.3
+          "quota_charging": 8.1
         },
         {
           "ora": 3,
@@ -669,11 +669,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 5.0
+          "quota_charging": 4.9
         },
         {
           "ora": 16,
-          "quota_charging": 5.5
+          "quota_charging": 5.4
         },
         {
           "ora": 17,
@@ -721,7 +721,7 @@
         "ultima_ora": 0,
         "ultime_24h": 0,
         "ultimi_7_giorni": 2,
-        "ultimi_30_giorni": 51
+        "ultimi_30_giorni": 47
       },
       "indirizzo": "Strada di Cadine 13",
       "cpo": "Atlante S.r.l",
@@ -729,7 +729,7 @@
       "lon": 11.065753
     },
     "IT*ELC*EKLF6": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -741,7 +741,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 2.4
+          "quota_charging": 2.3
         },
         {
           "ora": 3,
@@ -793,11 +793,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 12.9
+          "quota_charging": 12.6
         },
         {
           "ora": 16,
-          "quota_charging": 10.2
+          "quota_charging": 10.1
         },
         {
           "ora": 17,
@@ -817,7 +817,7 @@
         },
         {
           "ora": 21,
-          "quota_charging": 6.2
+          "quota_charging": 6.1
         },
         {
           "ora": 22,
@@ -840,10 +840,10 @@
       },
       "ultimo_uso": "2026-11-13T00:51:07+00:00",
       "energia_totale_kwh_stimata": 13725.52,
-      "energia_oggi_kwh": 25.75,
+      "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 5,
+        "ultime_24h": 0,
         "ultimi_7_giorni": 5,
         "ultimi_30_giorni": 12
       },
@@ -853,7 +853,7 @@
       "lon": 11.127442
     },
     "IT*ELC*EKNQE": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -865,7 +865,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 2.4
+          "quota_charging": 2.3
         },
         {
           "ora": 3,
@@ -917,11 +917,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 12.3
+          "quota_charging": 12.0
         },
         {
           "ora": 16,
-          "quota_charging": 19.1
+          "quota_charging": 19.0
         },
         {
           "ora": 17,
@@ -941,11 +941,11 @@
         },
         {
           "ora": 21,
-          "quota_charging": 14.3
+          "quota_charging": 14.2
         },
         {
           "ora": 22,
-          "quota_charging": 12.8
+          "quota_charging": 12.7
         },
         {
           "ora": 23,
@@ -977,7 +977,7 @@
       "lon": 11.127442
     },
     "IT*ELC*EXCGE": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -989,7 +989,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 3.6
+          "quota_charging": 3.5
         },
         {
           "ora": 3,
@@ -1041,11 +1041,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 15.8
+          "quota_charging": 15.3
         },
         {
           "ora": 16,
-          "quota_charging": 14.8
+          "quota_charging": 14.7
         },
         {
           "ora": 17,
@@ -1069,7 +1069,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 8.0
+          "quota_charging": 7.9
         },
         {
           "ora": 23,
@@ -1101,7 +1101,7 @@
       "lon": 11.127442
     },
     "IT*ELC*EYB5B": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -1113,7 +1113,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 4.8
+          "quota_charging": 4.7
         },
         {
           "ora": 3,
@@ -1165,11 +1165,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 18.0
+          "quota_charging": 17.5
         },
         {
           "ora": 16,
-          "quota_charging": 9.4
+          "quota_charging": 9.3
         },
         {
           "ora": 17,
@@ -1193,7 +1193,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 11.2
+          "quota_charging": 11.1
         },
         {
           "ora": 23,
@@ -1225,7 +1225,7 @@
       "lon": 11.127442
     },
     "IT*ELC*EYBYR": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -1237,7 +1237,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 4.8
+          "quota_charging": 4.7
         },
         {
           "ora": 3,
@@ -1289,11 +1289,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 13.2
+          "quota_charging": 12.9
         },
         {
           "ora": 16,
-          "quota_charging": 19.5
+          "quota_charging": 19.4
         },
         {
           "ora": 17,
@@ -1349,7 +1349,7 @@
       "lon": 11.127442
     },
     "IT*ELC*EYMGB": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -1361,7 +1361,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 6.0
+          "quota_charging": 5.8
         },
         {
           "ora": 3,
@@ -1413,11 +1413,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 15.8
+          "quota_charging": 15.3
         },
         {
           "ora": 16,
-          "quota_charging": 19.1
+          "quota_charging": 19.0
         },
         {
           "ora": 17,
@@ -1437,11 +1437,11 @@
         },
         {
           "ora": 21,
-          "quota_charging": 8.8
+          "quota_charging": 8.7
         },
         {
           "ora": 22,
-          "quota_charging": 11.2
+          "quota_charging": 11.1
         },
         {
           "ora": 23,
@@ -1473,7 +1473,7 @@
       "lon": 11.127442
     },
     "IT*EMO*E857*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -1485,7 +1485,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 13.1
+          "quota_charging": 15.1
         },
         {
           "ora": 3,
@@ -1537,11 +1537,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 28.7
+          "quota_charging": 27.9
         },
         {
           "ora": 16,
-          "quota_charging": 26.6
+          "quota_charging": 26.4
         },
         {
           "ora": 17,
@@ -1561,11 +1561,11 @@
         },
         {
           "ora": 21,
-          "quota_charging": 25.3
+          "quota_charging": 25.6
         },
         {
           "ora": 22,
-          "quota_charging": 20.7
+          "quota_charging": 21.2
         },
         {
           "ora": 23,
@@ -1576,28 +1576,32 @@
         "giorno": "martedì",
         "quota_charging": 37.0
       },
-      "n_sessioni": 203,
-      "durata_media_minuti": 42.3,
+      "n_sessioni": 205,
+      "durata_media_minuti": 42.1,
       "giorno_record": {
         "data": "2026-08-25",
         "minuti_ricarica_totali": 658.0
       },
-      "ultimo_uso": "2026-11-10T10:32:13+00:00",
-      "energia_totale_kwh_stimata": 2497.8,
-      "energia_oggi_kwh": null,
+      "ultimo_uso": "2026-11-14T02:26:08+00:00",
+      "energia_totale_kwh_stimata": 2501.54,
+      "energia_oggi_kwh": 0.0,
       "veicoli_serviti": {
-        "ultima_ora": 0,
-        "ultime_24h": 0,
-        "ultimi_7_giorni": 5,
-        "ultimi_30_giorni": 25
+        "ultima_ora": 1,
+        "ultime_24h": 2,
+        "ultimi_7_giorni": 7,
+        "ultimi_30_giorni": 27
       },
       "indirizzo": "Strada di Vason, 70",
       "cpo": "EMOBITALY S.r.l.",
       "lat": 46.040879,
-      "lon": 11.058332
+      "lon": 11.058332,
+      "sessione_in_corso": {
+        "da": "2026-11-14T02:26:08+00:00",
+        "minuti_finora": 0.0
+      }
     },
     "IT*EMOE1273": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -1609,7 +1613,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 9.5
+          "quota_charging": 9.3
         },
         {
           "ora": 3,
@@ -1661,11 +1665,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 36.3
+          "quota_charging": 35.3
         },
         {
           "ora": 16,
-          "quota_charging": 23.4
+          "quota_charging": 23.3
         },
         {
           "ora": 17,
@@ -1712,7 +1716,7 @@
       "veicoli_serviti": {
         "ultima_ora": 0,
         "ultime_24h": 0,
-        "ultimi_7_giorni": 7,
+        "ultimi_7_giorni": 6,
         "ultimi_30_giorni": 25
       },
       "indirizzo": "Strada di Vason, 70",
@@ -1721,7 +1725,7 @@
       "lon": 11.058332
     },
     "IT*ENX*E20XM32T7KK3AR00101*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -1733,7 +1737,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 9.5
+          "quota_charging": 9.3
         },
         {
           "ora": 3,
@@ -1789,7 +1793,7 @@
         },
         {
           "ora": 16,
-          "quota_charging": 7.4
+          "quota_charging": 8.1
         },
         {
           "ora": 17,
@@ -1809,7 +1813,7 @@
         },
         {
           "ora": 21,
-          "quota_charging": 8.8
+          "quota_charging": 8.7
         },
         {
           "ora": 22,
@@ -1824,20 +1828,20 @@
         "giorno": "lunedì",
         "quota_charging": 23.6
       },
-      "n_sessioni": 112,
-      "durata_media_minuti": 33.6,
+      "n_sessioni": 113,
+      "durata_media_minuti": 33.4,
       "giorno_record": {
         "data": "2026-08-08",
         "minuti_ricarica_totali": 547.6
       },
-      "ultimo_uso": "2026-11-12T11:24:13+00:00",
-      "energia_totale_kwh_stimata": 2690.85,
+      "ultimo_uso": "2026-11-13T16:10:06+00:00",
+      "energia_totale_kwh_stimata": 2699.42,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
         "ultime_24h": 1,
-        "ultimi_7_giorni": 5,
-        "ultimi_30_giorni": 19
+        "ultimi_7_giorni": 6,
+        "ultimi_30_giorni": 20
       },
       "indirizzo": "Via del Brennero",
       "cpo": "ENEL X WAY ITALIA SRL",
@@ -1845,7 +1849,7 @@
       "lon": 11.121372
     },
     "IT*ENX*E20XM32T7KK3AR00101*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -1969,7 +1973,7 @@
       "lon": 11.121372
     },
     "IT*ENX*E20XM32T7KK3AR00101*3": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -1981,7 +1985,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 38.1
+          "quota_charging": 37.2
         },
         {
           "ora": 3,
@@ -2033,11 +2037,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 26.5
+          "quota_charging": 25.8
         },
         {
           "ora": 16,
-          "quota_charging": 39.1
+          "quota_charging": 38.8
         },
         {
           "ora": 17,
@@ -2057,11 +2061,11 @@
         },
         {
           "ora": 21,
-          "quota_charging": 37.7
+          "quota_charging": 37.5
         },
         {
           "ora": 22,
-          "quota_charging": 37.2
+          "quota_charging": 37.0
         },
         {
           "ora": 23,
@@ -2084,8 +2088,8 @@
       "veicoli_serviti": {
         "ultima_ora": 0,
         "ultime_24h": 0,
-        "ultimi_7_giorni": 14,
-        "ultimi_30_giorni": 136
+        "ultimi_7_giorni": 12,
+        "ultimi_30_giorni": 130
       },
       "indirizzo": "Via del Brennero",
       "cpo": "ENEL X WAY ITALIA SRL",
@@ -2093,7 +2097,7 @@
       "lon": 11.121372
     },
     "IT*ENX*E20XP22T3KK4AL00176*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -2105,7 +2109,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 16.7
+          "quota_charging": 16.3
         },
         {
           "ora": 3,
@@ -2157,11 +2161,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 25.6
+          "quota_charging": 25.5
         },
         {
           "ora": 16,
-          "quota_charging": 31.2
+          "quota_charging": 31.8
         },
         {
           "ora": 17,
@@ -2181,7 +2185,7 @@
         },
         {
           "ora": 21,
-          "quota_charging": 15.6
+          "quota_charging": 15.5
         },
         {
           "ora": 22,
@@ -2194,22 +2198,22 @@
       ],
       "giorno_settimana_piu_usato": {
         "giorno": "sabato",
-        "quota_charging": 31.1
+        "quota_charging": 31.0
       },
-      "n_sessioni": 152,
-      "durata_media_minuti": 41.9,
+      "n_sessioni": 153,
+      "durata_media_minuti": 41.7,
       "giorno_record": {
         "data": "2026-08-08",
         "minuti_ricarica_totali": 649.5
       },
-      "ultimo_uso": "2026-11-11T14:49:44+00:00",
-      "energia_totale_kwh_stimata": 1666.83,
+      "ultimo_uso": "2026-11-13T16:10:06+00:00",
+      "energia_totale_kwh_stimata": 1673.8,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 0,
-        "ultimi_7_giorni": 17,
-        "ultimi_30_giorni": 52
+        "ultime_24h": 1,
+        "ultimi_7_giorni": 15,
+        "ultimi_30_giorni": 53
       },
       "indirizzo": "Via Dietro le Mura A, 25",
       "cpo": "ENEL X WAY ITALIA SRL",
@@ -2217,7 +2221,7 @@
       "lon": 11.12448
     },
     "IT*ENX*E20XP22T3KK4AL00176*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -2229,7 +2233,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 16.7
+          "quota_charging": 16.3
         },
         {
           "ora": 3,
@@ -2281,11 +2285,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 29.3
+          "quota_charging": 28.5
         },
         {
           "ora": 16,
-          "quota_charging": 20.7
+          "quota_charging": 20.5
         },
         {
           "ora": 17,
@@ -2305,11 +2309,11 @@
         },
         {
           "ora": 21,
-          "quota_charging": 22.4
+          "quota_charging": 22.3
         },
         {
           "ora": 22,
-          "quota_charging": 13.3
+          "quota_charging": 13.2
         },
         {
           "ora": 23,
@@ -2332,8 +2336,8 @@
       "veicoli_serviti": {
         "ultima_ora": 0,
         "ultime_24h": 0,
-        "ultimi_7_giorni": 9,
-        "ultimi_30_giorni": 64
+        "ultimi_7_giorni": 6,
+        "ultimi_30_giorni": 60
       },
       "indirizzo": "Via Dietro le Mura A, 25",
       "cpo": "ENEL X WAY ITALIA SRL",
@@ -2341,7 +2345,7 @@
       "lon": 11.12448
     },
     "IT*ENX*E21BZ1518A*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -2405,11 +2409,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 25.6
+          "quota_charging": 27.3
         },
         {
           "ora": 16,
-          "quota_charging": 36.3
+          "quota_charging": 36.8
         },
         {
           "ora": 17,
@@ -2444,20 +2448,20 @@
         "giorno": "martedì",
         "quota_charging": 23.5
       },
-      "n_sessioni": 142,
-      "durata_media_minuti": 33.7,
+      "n_sessioni": 143,
+      "durata_media_minuti": 33.8,
       "giorno_record": {
         "data": "2026-08-25",
         "minuti_ricarica_totali": 408.1
       },
-      "ultimo_uso": "2026-11-12T10:53:15+00:00",
-      "energia_totale_kwh_stimata": 5007.31,
+      "ultimo_uso": "2026-11-13T16:10:06+00:00",
+      "energia_totale_kwh_stimata": 5071.54,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
         "ultime_24h": 1,
-        "ultimi_7_giorni": 12,
-        "ultimi_30_giorni": 37
+        "ultimi_7_giorni": 13,
+        "ultimi_30_giorni": 35
       },
       "indirizzo": "Via Roberto da Sanseverino 97",
       "cpo": "ENX",
@@ -2465,7 +2469,7 @@
       "lon": 11.114552
     },
     "IT*ENX*E21BZ1518A*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -2589,7 +2593,7 @@
       "lon": 11.114552
     },
     "IT*ENX*E21BZ1518A*3": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -2601,7 +2605,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 3.6
+          "quota_charging": 3.5
         },
         {
           "ora": 3,
@@ -2653,11 +2657,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 23.3
+          "quota_charging": 22.7
         },
         {
           "ora": 16,
-          "quota_charging": 29.3
+          "quota_charging": 29.1
         },
         {
           "ora": 17,
@@ -2704,7 +2708,7 @@
       "veicoli_serviti": {
         "ultima_ora": 0,
         "ultime_24h": 0,
-        "ultimi_7_giorni": 3,
+        "ultimi_7_giorni": 2,
         "ultimi_30_giorni": 50
       },
       "indirizzo": "Via Roberto da Sanseverino 97",
@@ -2713,7 +2717,7 @@
       "lon": 11.114552
     },
     "IT*ENX*E21XP22T3KKJAK00663*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -2725,7 +2729,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 4.8
+          "quota_charging": 4.7
         },
         {
           "ora": 3,
@@ -2777,11 +2781,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 4.1
+          "quota_charging": 6.7
         },
         {
           "ora": 16,
-          "quota_charging": 9.4
+          "quota_charging": 10.1
         },
         {
           "ora": 17,
@@ -2816,20 +2820,20 @@
         "giorno": "giovedì",
         "quota_charging": 18.0
       },
-      "n_sessioni": 76,
-      "durata_media_minuti": 39.9,
+      "n_sessioni": 77,
+      "durata_media_minuti": 40.2,
       "giorno_record": {
         "data": "2026-08-17",
         "minuti_ricarica_totali": 410.9
       },
-      "ultimo_uso": "2026-11-12T11:39:36+00:00",
-      "energia_totale_kwh_stimata": 439.22,
+      "ultimo_uso": "2026-11-13T16:10:06+00:00",
+      "energia_totale_kwh_stimata": 449.59,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
         "ultime_24h": 1,
-        "ultimi_7_giorni": 1,
-        "ultimi_30_giorni": 38
+        "ultimi_7_giorni": 2,
+        "ultimi_30_giorni": 39
       },
       "indirizzo": "Roberto Da Sanseverino",
       "cpo": "ENEL X WAY ITALIA SRL",
@@ -2837,7 +2841,7 @@
       "lon": 11.114058
     },
     "IT*ENX*E21XP22T3KKJAK00663*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -2849,7 +2853,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 6.0
+          "quota_charging": 5.8
         },
         {
           "ora": 3,
@@ -2901,11 +2905,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 18.9
+          "quota_charging": 18.4
         },
         {
           "ora": 16,
-          "quota_charging": 23.8
+          "quota_charging": 23.6
         },
         {
           "ora": 17,
@@ -2951,9 +2955,9 @@
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 1,
-        "ultimi_7_giorni": 21,
-        "ultimi_30_giorni": 55
+        "ultime_24h": 0,
+        "ultimi_7_giorni": 18,
+        "ultimi_30_giorni": 50
       },
       "indirizzo": "Roberto Da Sanseverino",
       "cpo": "ENEL X WAY ITALIA SRL",
@@ -2961,7 +2965,7 @@
       "lon": 11.114058
     },
     "IT*ENX*E25XP22T3QQ2DA00020*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -2973,7 +2977,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 7.1
+          "quota_charging": 7.0
         },
         {
           "ora": 3,
@@ -3025,11 +3029,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 10.1
+          "quota_charging": 11.3
         },
         {
           "ora": 16,
-          "quota_charging": 22.3
+          "quota_charging": 22.9
         },
         {
           "ora": 17,
@@ -3064,20 +3068,20 @@
         "giorno": "mercoledì",
         "quota_charging": 17.7
       },
-      "n_sessioni": 71,
-      "durata_media_minuti": 41.2,
+      "n_sessioni": 72,
+      "durata_media_minuti": 41.1,
       "giorno_record": {
         "data": "2026-08-26",
         "minuti_ricarica_totali": 491.6
       },
-      "ultimo_uso": "2026-10-31T02:54:40+00:00",
-      "energia_totale_kwh_stimata": 816.25,
+      "ultimo_uso": "2026-11-13T16:10:06+00:00",
+      "energia_totale_kwh_stimata": 829.44,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 0,
-        "ultimi_7_giorni": 0,
-        "ultimi_30_giorni": 13
+        "ultime_24h": 1,
+        "ultimi_7_giorni": 1,
+        "ultimi_30_giorni": 14
       },
       "indirizzo": "Ezio Maccani",
       "cpo": "ENEL X WAY ITALIA SRL",
@@ -3085,7 +3089,7 @@
       "lon": 11.114357
     },
     "IT*ENX*E25XP22T3QQ2DA00020*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -3097,7 +3101,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 15.5
+          "quota_charging": 15.1
         },
         {
           "ora": 3,
@@ -3149,11 +3153,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 12.6
+          "quota_charging": 12.3
         },
         {
           "ora": 16,
-          "quota_charging": 13.3
+          "quota_charging": 13.2
         },
         {
           "ora": 17,
@@ -3173,7 +3177,7 @@
         },
         {
           "ora": 21,
-          "quota_charging": 8.8
+          "quota_charging": 8.7
         },
         {
           "ora": 22,
@@ -3188,32 +3192,28 @@
         "giorno": "sabato",
         "quota_charging": 18.8
       },
-      "n_sessioni": 85,
-      "durata_media_minuti": 44.1,
+      "n_sessioni": 86,
+      "durata_media_minuti": 43.8,
       "giorno_record": {
         "data": "2026-08-08",
         "minuti_ricarica_totali": 715.6
       },
       "ultimo_uso": "2026-11-13T07:14:02+00:00",
-      "energia_totale_kwh_stimata": 1115.43,
+      "energia_totale_kwh_stimata": 1122.94,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 0,
-        "ultimi_7_giorni": 0,
-        "ultimi_30_giorni": 20
+        "ultime_24h": 1,
+        "ultimi_7_giorni": 1,
+        "ultimi_30_giorni": 21
       },
       "indirizzo": "Ezio Maccani",
       "cpo": "ENEL X WAY ITALIA SRL",
       "lat": 46.083114,
-      "lon": 11.114357,
-      "sessione_in_corso": {
-        "da": "2026-11-13T06:53:33+00:00",
-        "minuti_finora": 20.5
-      }
+      "lon": 11.114357
     },
     "IT*EWI*E22BZ3668A*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -3331,7 +3331,7 @@
       "lon": 11.11428
     },
     "IT*EWI*EEW0307S1*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -3343,7 +3343,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 15.5
+          "quota_charging": 15.1
         },
         {
           "ora": 3,
@@ -3395,11 +3395,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 30.6
+          "quota_charging": 29.8
         },
         {
           "ora": 16,
-          "quota_charging": 33.6
+          "quota_charging": 33.3
         },
         {
           "ora": 17,
@@ -3419,7 +3419,7 @@
         },
         {
           "ora": 21,
-          "quota_charging": 19.8
+          "quota_charging": 19.7
         },
         {
           "ora": 22,
@@ -3445,9 +3445,9 @@
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 1,
+        "ultime_24h": 0,
         "ultimi_7_giorni": 9,
-        "ultimi_30_giorni": 51
+        "ultimi_30_giorni": 47
       },
       "indirizzo": "Via Ezio Maccani, 133",
       "cpo": "EWIVA SRL",
@@ -3455,7 +3455,7 @@
       "lon": 11.11428
     },
     "IT*IOY*E421701": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -3519,11 +3519,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 23.3
+          "quota_charging": 22.7
         },
         {
           "ora": 16,
-          "quota_charging": 38.3
+          "quota_charging": 38.0
         },
         {
           "ora": 17,
@@ -3547,7 +3547,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 6.4
+          "quota_charging": 6.3
         },
         {
           "ora": 23,
@@ -3569,9 +3569,9 @@
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 1,
+        "ultime_24h": 0,
         "ultimi_7_giorni": 2,
-        "ultimi_30_giorni": 36
+        "ultimi_30_giorni": 35
       },
       "indirizzo": "Via Ezio Maccani 157",
       "cpo": "IONITY GMBH",
@@ -3579,7 +3579,7 @@
       "lon": 11.1111
     },
     "IT*IOY*E421702": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -3591,7 +3591,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 8.3
+          "quota_charging": 8.1
         },
         {
           "ora": 3,
@@ -3643,11 +3643,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 13.6
+          "quota_charging": 15.0
         },
         {
           "ora": 16,
-          "quota_charging": 10.2
+          "quota_charging": 10.9
         },
         {
           "ora": 17,
@@ -3680,22 +3680,22 @@
       ],
       "giorno_settimana_piu_usato": {
         "giorno": "venerdì",
-        "quota_charging": 14.3
+        "quota_charging": 15.1
       },
-      "n_sessioni": 147,
-      "durata_media_minuti": 21.1,
+      "n_sessioni": 148,
+      "durata_media_minuti": 21.3,
       "giorno_record": {
         "data": "2026-08-09",
         "minuti_ricarica_totali": 216.6
       },
-      "ultimo_uso": "2026-11-12T11:24:13+00:00",
-      "energia_totale_kwh_stimata": 14062.75,
+      "ultimo_uso": "2026-11-13T16:10:06+00:00",
+      "energia_totale_kwh_stimata": 14302.5,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
         "ultime_24h": 1,
         "ultimi_7_giorni": 7,
-        "ultimi_30_giorni": 22
+        "ultimi_30_giorni": 23
       },
       "indirizzo": "Via Ezio Maccani 157",
       "cpo": "IONITY GMBH",
@@ -3703,7 +3703,7 @@
       "lon": 11.1111
     },
     "IT*IOY*E421703": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -3767,11 +3767,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 30.3
+          "quota_charging": 30.7
         },
         {
           "ora": 16,
-          "quota_charging": 39.1
+          "quota_charging": 38.8
         },
         {
           "ora": 17,
@@ -3791,11 +3791,11 @@
         },
         {
           "ora": 21,
-          "quota_charging": 6.2
+          "quota_charging": 6.1
         },
         {
           "ora": 22,
-          "quota_charging": 4.3
+          "quota_charging": 4.2
         },
         {
           "ora": 23,
@@ -3804,20 +3804,20 @@
       ],
       "giorno_settimana_piu_usato": {
         "giorno": "sabato",
-        "quota_charging": 36.7
+        "quota_charging": 36.6
       },
-      "n_sessioni": 417,
+      "n_sessioni": 418,
       "durata_media_minuti": 19.1,
       "giorno_record": {
         "data": "2026-08-26",
         "minuti_ricarica_totali": 251.5
       },
-      "ultimo_uso": "2026-11-12T03:26:51+00:00",
-      "energia_totale_kwh_stimata": 37940.17,
+      "ultimo_uso": "2026-11-13T15:34:08+00:00",
+      "energia_totale_kwh_stimata": 38030.1,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 0,
+        "ultime_24h": 1,
         "ultimi_7_giorni": 5,
         "ultimi_30_giorni": 45
       },
@@ -3827,7 +3827,7 @@
       "lon": 11.1111
     },
     "IT*IOY*E421704": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -3839,7 +3839,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 8.3
+          "quota_charging": 8.1
         },
         {
           "ora": 3,
@@ -3891,11 +3891,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 24.9
+          "quota_charging": 25.2
         },
         {
           "ora": 16,
-          "quota_charging": 28.9
+          "quota_charging": 29.5
         },
         {
           "ora": 17,
@@ -3919,7 +3919,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 12.8
+          "quota_charging": 12.7
         },
         {
           "ora": 23,
@@ -3930,20 +3930,20 @@
         "giorno": "sabato",
         "quota_charging": 31.7
       },
-      "n_sessioni": 376,
+      "n_sessioni": 377,
       "durata_media_minuti": 19.5,
       "giorno_record": {
         "data": "2026-08-22",
         "minuti_ricarica_totali": 275.6
       },
-      "ultimo_uso": "2026-11-10T10:01:35+00:00",
-      "energia_totale_kwh_stimata": 24528.16,
+      "ultimo_uso": "2026-11-13T16:10:06+00:00",
+      "energia_totale_kwh_stimata": 24635.17,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 0,
-        "ultimi_7_giorni": 7,
-        "ultimi_30_giorni": 43
+        "ultime_24h": 1,
+        "ultimi_7_giorni": 8,
+        "ultimi_30_giorni": 44
       },
       "indirizzo": "Via Ezio Maccani 157",
       "cpo": "IONITY GMBH",
@@ -3951,7 +3951,7 @@
       "lon": 11.1111
     },
     "IT*IOY*E421705": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -3963,7 +3963,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 9.5
+          "quota_charging": 9.3
         },
         {
           "ora": 3,
@@ -4015,11 +4015,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 40.4
+          "quota_charging": 40.2
         },
         {
           "ora": 16,
-          "quota_charging": 25.4
+          "quota_charging": 25.2
         },
         {
           "ora": 17,
@@ -4043,7 +4043,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 6.4
+          "quota_charging": 6.3
         },
         {
           "ora": 23,
@@ -4054,32 +4054,28 @@
         "giorno": "sabato",
         "quota_charging": 33.7
       },
-      "n_sessioni": 458,
-      "durata_media_minuti": 18.9,
+      "n_sessioni": 460,
+      "durata_media_minuti": 18.8,
       "giorno_record": {
         "data": "2026-08-14",
         "minuti_ricarica_totali": 271.1
       },
-      "ultimo_uso": "2026-11-13T07:14:02+00:00",
-      "energia_totale_kwh_stimata": 29550.29,
+      "ultimo_uso": "2026-11-13T15:23:51+00:00",
+      "energia_totale_kwh_stimata": 29614.6,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 1,
-        "ultimi_7_giorni": 6,
-        "ultimi_30_giorni": 61
+        "ultime_24h": 2,
+        "ultimi_7_giorni": 7,
+        "ultimi_30_giorni": 63
       },
       "indirizzo": "Via Ezio Maccani 157",
       "cpo": "IONITY GMBH",
       "lat": 46.08704,
-      "lon": 11.1111,
-      "sessione_in_corso": {
-        "da": "2026-11-13T07:08:55+00:00",
-        "minuti_finora": 5.1
-      }
+      "lon": 11.1111
     },
     "IT*IOY*E421706": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -4091,7 +4087,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 16.7
+          "quota_charging": 16.3
         },
         {
           "ora": 3,
@@ -4143,11 +4139,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 35.6
+          "quota_charging": 34.7
         },
         {
           "ora": 16,
-          "quota_charging": 38.3
+          "quota_charging": 38.0
         },
         {
           "ora": 17,
@@ -4167,7 +4163,7 @@
         },
         {
           "ora": 21,
-          "quota_charging": 11.4
+          "quota_charging": 11.3
         },
         {
           "ora": 22,
@@ -4194,7 +4190,7 @@
       "veicoli_serviti": {
         "ultima_ora": 0,
         "ultime_24h": 0,
-        "ultimi_7_giorni": 13,
+        "ultimi_7_giorni": 11,
         "ultimi_30_giorni": 54
       },
       "indirizzo": "Via Ezio Maccani 157",
@@ -4203,7 +4199,7 @@
       "lon": 11.1111
     },
     "IT*IPE*EDC001386*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -4215,7 +4211,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 8.3
+          "quota_charging": 8.1
         },
         {
           "ora": 3,
@@ -4267,7 +4263,7 @@
         },
         {
           "ora": 15,
-          "quota_charging": 7.6
+          "quota_charging": 7.4
         },
         {
           "ora": 16,
@@ -4327,7 +4323,7 @@
       "lon": 11.11388
     },
     "IT*IPE*EDC001386*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -4339,7 +4335,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 2.4
+          "quota_charging": 2.3
         },
         {
           "ora": 3,
@@ -4391,11 +4387,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 6.9
+          "quota_charging": 6.7
         },
         {
           "ora": 16,
-          "quota_charging": 2.0
+          "quota_charging": 1.9
         },
         {
           "ora": 17,
@@ -4419,7 +4415,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 5.9
+          "quota_charging": 5.8
         },
         {
           "ora": 23,
@@ -4451,7 +4447,7 @@
       "lon": 11.11388
     },
     "IT*PLN*EE000255*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -4543,7 +4539,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 2.7
+          "quota_charging": 2.6
         },
         {
           "ora": 23,
@@ -4575,7 +4571,7 @@
       "lon": 11.114323
     },
     "IT*PLN*EE000255*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -4667,7 +4663,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 2.7
+          "quota_charging": 2.6
         },
         {
           "ora": 23,
@@ -4675,7 +4671,7 @@
         }
       ],
       "giorno_settimana_piu_usato": {
-        "giorno": "venerdì",
+        "giorno": "giovedì",
         "quota_charging": 4.2
       },
       "n_sessioni": 19,
@@ -4699,7 +4695,7 @@
       "lon": 11.114323
     },
     "IT*PLN*EE000256*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -4791,7 +4787,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 2.7
+          "quota_charging": 2.6
         },
         {
           "ora": 23,
@@ -4799,7 +4795,7 @@
         }
       ],
       "giorno_settimana_piu_usato": {
-        "giorno": "venerdì",
+        "giorno": "giovedì",
         "quota_charging": 4.2
       },
       "n_sessioni": 19,
@@ -4823,7 +4819,7 @@
       "lon": 11.114323
     },
     "IT*PLN*EE000256*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -4835,7 +4831,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 10.7
+          "quota_charging": 10.5
         },
         {
           "ora": 3,
@@ -4887,11 +4883,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 7.9
+          "quota_charging": 10.4
         },
         {
           "ora": 16,
-          "quota_charging": 3.5
+          "quota_charging": 4.3
         },
         {
           "ora": 17,
@@ -4923,23 +4919,23 @@
         }
       ],
       "giorno_settimana_piu_usato": {
-        "giorno": "martedì",
-        "quota_charging": 8.3
+        "giorno": "venerdì",
+        "quota_charging": 9.4
       },
-      "n_sessioni": 46,
-      "durata_media_minuti": 38.3,
+      "n_sessioni": 47,
+      "durata_media_minuti": 38.8,
       "giorno_record": {
         "data": "2026-08-25",
         "minuti_ricarica_totali": 237.7
       },
-      "ultimo_uso": "2026-11-09T08:43:23+00:00",
-      "energia_totale_kwh_stimata": 523.58,
+      "ultimo_uso": "2026-11-13T16:10:06+00:00",
+      "energia_totale_kwh_stimata": 544.46,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 0,
-        "ultimi_7_giorni": 2,
-        "ultimi_30_giorni": 6
+        "ultime_24h": 1,
+        "ultimi_7_giorni": 3,
+        "ultimi_30_giorni": 7
       },
       "indirizzo": "Via Stella, 9/l",
       "cpo": "BEC",
@@ -4947,7 +4943,7 @@
       "lon": 11.114323
     },
     "IT*PLN*EE006443*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -4959,7 +4955,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 10.7
+          "quota_charging": 10.5
         },
         {
           "ora": 3,
@@ -5011,11 +5007,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 40.7
+          "quota_charging": 42.3
         },
         {
           "ora": 16,
-          "quota_charging": 35.5
+          "quota_charging": 36.0
         },
         {
           "ora": 17,
@@ -5048,22 +5044,22 @@
       ],
       "giorno_settimana_piu_usato": {
         "giorno": "venerdì",
-        "quota_charging": 48.0
+        "quota_charging": 48.6
       },
-      "n_sessioni": 211,
-      "durata_media_minuti": 39.9,
+      "n_sessioni": 212,
+      "durata_media_minuti": 40.0,
       "giorno_record": {
         "data": "2026-08-14",
         "minuti_ricarica_totali": 712.5
       },
-      "ultimo_uso": "2026-11-12T19:26:18+00:00",
-      "energia_totale_kwh_stimata": 2648.12,
+      "ultimo_uso": "2026-11-13T16:10:06+00:00",
+      "energia_totale_kwh_stimata": 2669.0,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 2,
-        "ultimi_7_giorni": 12,
-        "ultimi_30_giorni": 51
+        "ultime_24h": 1,
+        "ultimi_7_giorni": 11,
+        "ultimi_30_giorni": 52
       },
       "indirizzo": "Via del Travai",
       "cpo": "BEC",
@@ -5071,7 +5067,7 @@
       "lon": 11.119838
     },
     "IT*PLN*EE006443*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -5135,11 +5131,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 32.8
+          "quota_charging": 34.7
         },
         {
           "ora": 16,
-          "quota_charging": 28.5
+          "quota_charging": 29.1
         },
         {
           "ora": 17,
@@ -5163,7 +5159,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 2.7
+          "quota_charging": 2.6
         },
         {
           "ora": 23,
@@ -5172,22 +5168,22 @@
       ],
       "giorno_settimana_piu_usato": {
         "giorno": "sabato",
-        "quota_charging": 30.2
+        "quota_charging": 30.1
       },
-      "n_sessioni": 166,
-      "durata_media_minuti": 36.6,
+      "n_sessioni": 167,
+      "durata_media_minuti": 36.7,
       "giorno_record": {
         "data": "2026-08-22",
         "minuti_ricarica_totali": 250.1
       },
-      "ultimo_uso": "2026-11-12T19:26:18+00:00",
-      "energia_totale_kwh_stimata": 2092.75,
+      "ultimo_uso": "2026-11-13T16:10:06+00:00",
+      "energia_totale_kwh_stimata": 2113.63,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 2,
-        "ultimi_7_giorni": 5,
-        "ultimi_30_giorni": 32
+        "ultime_24h": 1,
+        "ultimi_7_giorni": 6,
+        "ultimi_30_giorni": 33
       },
       "indirizzo": "Via del Travai",
       "cpo": "BEC",
@@ -5195,7 +5191,7 @@
       "lon": 11.119838
     },
     "IT*PLN*EE006452*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -5259,11 +5255,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 7.6
+          "quota_charging": 10.1
         },
         {
           "ora": 16,
-          "quota_charging": 14.8
+          "quota_charging": 15.1
         },
         {
           "ora": 17,
@@ -5298,20 +5294,20 @@
         "giorno": "mercoledì",
         "quota_charging": 8.1
       },
-      "n_sessioni": 48,
-      "durata_media_minuti": 34.2,
+      "n_sessioni": 49,
+      "durata_media_minuti": 34.7,
       "giorno_record": {
         "data": "2026-08-12",
         "minuti_ricarica_totali": 182.4
       },
-      "ultimo_uso": "2026-11-03T18:59:47+00:00",
-      "energia_totale_kwh_stimata": 505.56,
+      "ultimo_uso": "2026-11-13T16:04:57+00:00",
+      "energia_totale_kwh_stimata": 524.54,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 0,
-        "ultimi_7_giorni": 0,
-        "ultimi_30_giorni": 11
+        "ultime_24h": 1,
+        "ultimi_7_giorni": 1,
+        "ultimi_30_giorni": 12
       },
       "indirizzo": "Via delle Sugarine",
       "cpo": "BEC",
@@ -5319,7 +5315,7 @@
       "lon": 11.116816
     },
     "IT*PLN*EE006452*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -5383,11 +5379,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 15.1
+          "quota_charging": 16.9
         },
         {
           "ora": 16,
-          "quota_charging": 22.3
+          "quota_charging": 22.9
         },
         {
           "ora": 17,
@@ -5419,23 +5415,23 @@
         }
       ],
       "giorno_settimana_piu_usato": {
-        "giorno": "giovedì",
-        "quota_charging": 8.7
+        "giorno": "venerdì",
+        "quota_charging": 9.1
       },
-      "n_sessioni": 33,
-      "durata_media_minuti": 43.1,
+      "n_sessioni": 34,
+      "durata_media_minuti": 43.2,
       "giorno_record": {
         "data": "2026-08-19",
         "minuti_ricarica_totali": 260.6
       },
-      "ultimo_uso": "2026-11-06T07:20:37+00:00",
-      "energia_totale_kwh_stimata": 461.48,
+      "ultimo_uso": "2026-11-13T16:10:06+00:00",
+      "energia_totale_kwh_stimata": 478.55,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 0,
-        "ultimi_7_giorni": 0,
-        "ultimi_30_giorni": 8
+        "ultime_24h": 1,
+        "ultimi_7_giorni": 1,
+        "ultimi_30_giorni": 9
       },
       "indirizzo": "Via delle Sugarine",
       "cpo": "BEC",
@@ -5443,7 +5439,7 @@
       "lon": 11.116816
     },
     "IT*PLN*EE007293*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -5507,7 +5503,7 @@
         },
         {
           "ora": 15,
-          "quota_charging": 3.2
+          "quota_charging": 3.1
         },
         {
           "ora": 16,
@@ -5535,7 +5531,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 5.9
+          "quota_charging": 5.8
         },
         {
           "ora": 23,
@@ -5567,7 +5563,7 @@
       "lon": 11.124857
     },
     "IT*PLN*EE007293*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -5635,7 +5631,7 @@
         },
         {
           "ora": 16,
-          "quota_charging": 9.4
+          "quota_charging": 9.3
         },
         {
           "ora": 17,
@@ -5691,7 +5687,7 @@
       "lon": 11.124857
     },
     "IT*PLN*EE007295*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -5703,7 +5699,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 21.4
+          "quota_charging": 20.9
         },
         {
           "ora": 3,
@@ -5755,11 +5751,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 59.3
+          "quota_charging": 57.7
         },
         {
           "ora": 16,
-          "quota_charging": 36.3
+          "quota_charging": 36.0
         },
         {
           "ora": 17,
@@ -5779,11 +5775,11 @@
         },
         {
           "ora": 21,
-          "quota_charging": 37.3
+          "quota_charging": 37.2
         },
         {
           "ora": 22,
-          "quota_charging": 34.0
+          "quota_charging": 33.9
         },
         {
           "ora": 23,
@@ -5802,12 +5798,12 @@
       },
       "ultimo_uso": "2026-11-13T00:51:07+00:00",
       "energia_totale_kwh_stimata": 3525.95,
-      "energia_oggi_kwh": 1.9,
+      "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 4,
-        "ultimi_7_giorni": 16,
-        "ultimi_30_giorni": 60
+        "ultime_24h": 0,
+        "ultimi_7_giorni": 15,
+        "ultimi_30_giorni": 58
       },
       "indirizzo": "Via Pranzelores",
       "cpo": "BEC",
@@ -5815,7 +5811,7 @@
       "lon": 11.118607
     },
     "IT*PLN*EE007295*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -5827,7 +5823,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 29.8
+          "quota_charging": 31.4
         },
         {
           "ora": 3,
@@ -5879,11 +5875,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 38.2
+          "quota_charging": 37.1
         },
         {
           "ora": 16,
-          "quota_charging": 24.6
+          "quota_charging": 24.4
         },
         {
           "ora": 17,
@@ -5903,11 +5899,11 @@
         },
         {
           "ora": 21,
-          "quota_charging": 39.0
+          "quota_charging": 38.8
         },
         {
           "ora": 22,
-          "quota_charging": 44.1
+          "quota_charging": 44.4
         },
         {
           "ora": 23,
@@ -5918,28 +5914,32 @@
         "giorno": "martedì",
         "quota_charging": 35.0
       },
-      "n_sessioni": 301,
+      "n_sessioni": 303,
       "durata_media_minuti": 37.4,
       "giorno_record": {
         "data": "2026-08-25",
         "minuti_ricarica_totali": 607.1
       },
-      "ultimo_uso": "2026-11-13T00:51:07+00:00",
+      "ultimo_uso": "2026-11-14T02:26:08+00:00",
       "energia_totale_kwh_stimata": 2942.25,
-      "energia_oggi_kwh": 1.9,
+      "energia_oggi_kwh": 0.0,
       "veicoli_serviti": {
-        "ultima_ora": 0,
-        "ultime_24h": 4,
+        "ultima_ora": 1,
+        "ultime_24h": 2,
         "ultimi_7_giorni": 13,
-        "ultimi_30_giorni": 71
+        "ultimi_30_giorni": 72
       },
       "indirizzo": "Via Pranzelores",
       "cpo": "BEC",
       "lat": 46.090044,
-      "lon": 11.118607
+      "lon": 11.118607,
+      "sessione_in_corso": {
+        "da": "2026-11-14T02:26:08+00:00",
+        "minuti_finora": 0.0
+      }
     },
     "IT*PLN*EE008040*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -5951,7 +5951,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 3.6
+          "quota_charging": 3.5
         },
         {
           "ora": 3,
@@ -6003,11 +6003,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 10.7
+          "quota_charging": 10.4
         },
         {
           "ora": 16,
-          "quota_charging": 9.4
+          "quota_charging": 9.3
         },
         {
           "ora": 17,
@@ -6031,7 +6031,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 11.7
+          "quota_charging": 11.6
         },
         {
           "ora": 23,
@@ -6054,8 +6054,8 @@
       "veicoli_serviti": {
         "ultima_ora": 0,
         "ultime_24h": 0,
-        "ultimi_7_giorni": 11,
-        "ultimi_30_giorni": 33
+        "ultimi_7_giorni": 10,
+        "ultimi_30_giorni": 30
       },
       "indirizzo": "Corso degli Alpini, 9",
       "cpo": "BEC",
@@ -6063,7 +6063,7 @@
       "lon": 11.118232
     },
     "IT*PLN*EE008040*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -6075,7 +6075,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 10.7
+          "quota_charging": 10.5
         },
         {
           "ora": 3,
@@ -6127,11 +6127,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 15.8
+          "quota_charging": 15.3
         },
         {
           "ora": 16,
-          "quota_charging": 18.0
+          "quota_charging": 17.8
         },
         {
           "ora": 17,
@@ -6155,7 +6155,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 9.6
+          "quota_charging": 9.5
         },
         {
           "ora": 23,
@@ -6179,7 +6179,7 @@
         "ultima_ora": 0,
         "ultime_24h": 0,
         "ultimi_7_giorni": 0,
-        "ultimi_30_giorni": 31
+        "ultimi_30_giorni": 30
       },
       "indirizzo": "Corso degli Alpini, 9",
       "cpo": "BEC",
@@ -6187,7 +6187,7 @@
       "lon": 11.118232
     },
     "IT*PLN*EE008108*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -6251,7 +6251,7 @@
         },
         {
           "ora": 15,
-          "quota_charging": 1.6
+          "quota_charging": 1.5
         },
         {
           "ora": 16,
@@ -6303,7 +6303,7 @@
         "ultima_ora": 0,
         "ultime_24h": 0,
         "ultimi_7_giorni": 0,
-        "ultimi_30_giorni": 12
+        "ultimi_30_giorni": 10
       },
       "indirizzo": "Via Bettini",
       "cpo": "BEC",
@@ -6311,7 +6311,7 @@
       "lon": 11.134251
     },
     "IT*PLN*EE008108*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -6379,7 +6379,7 @@
         },
         {
           "ora": 16,
-          "quota_charging": 2.0
+          "quota_charging": 1.9
         },
         {
           "ora": 17,
@@ -6435,7 +6435,7 @@
       "lon": 11.134251
     },
     "IT*PLN*EH000114*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -6499,7 +6499,7 @@
         },
         {
           "ora": 15,
-          "quota_charging": 6.0
+          "quota_charging": 5.8
         },
         {
           "ora": 16,
@@ -6536,7 +6536,7 @@
       ],
       "giorno_settimana_piu_usato": {
         "giorno": "venerdì",
-        "quota_charging": 5.3
+        "quota_charging": 5.2
       },
       "n_sessioni": 59,
       "durata_media_minuti": 18.7,
@@ -6550,7 +6550,7 @@
       "veicoli_serviti": {
         "ultima_ora": 0,
         "ultime_24h": 0,
-        "ultimi_7_giorni": 3,
+        "ultimi_7_giorni": 1,
         "ultimi_30_giorni": 8
       },
       "indirizzo": "Viale Verona, 210",
@@ -6559,7 +6559,7 @@
       "lon": 11.130874
     },
     "IT*PLN*EH000114*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -6571,7 +6571,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 8.3
+          "quota_charging": 8.1
         },
         {
           "ora": 3,
@@ -6623,7 +6623,7 @@
         },
         {
           "ora": 15,
-          "quota_charging": 9.1
+          "quota_charging": 8.9
         },
         {
           "ora": 16,
@@ -6647,7 +6647,7 @@
         },
         {
           "ora": 21,
-          "quota_charging": 7.5
+          "quota_charging": 7.4
         },
         {
           "ora": 22,
@@ -6660,7 +6660,7 @@
       ],
       "giorno_settimana_piu_usato": {
         "giorno": "sabato",
-        "quota_charging": 13.6
+        "quota_charging": 13.5
       },
       "n_sessioni": 94,
       "durata_media_minuti": 29.0,
@@ -6673,7 +6673,7 @@
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 1,
+        "ultime_24h": 0,
         "ultimi_7_giorni": 1,
         "ultimi_30_giorni": 36
       },
@@ -6683,7 +6683,7 @@
       "lon": 11.130874
     },
     "IT*PLN*EH000114*3": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -6747,7 +6747,7 @@
         },
         {
           "ora": 15,
-          "quota_charging": 13.2
+          "quota_charging": 12.9
         },
         {
           "ora": 16,
@@ -6807,7 +6807,7 @@
       "lon": 11.130874
     },
     "IT*PLN*EH000118*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -6819,7 +6819,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 4.8
+          "quota_charging": 4.7
         },
         {
           "ora": 3,
@@ -6871,11 +6871,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 11.4
+          "quota_charging": 11.0
         },
         {
           "ora": 16,
-          "quota_charging": 8.6
+          "quota_charging": 8.5
         },
         {
           "ora": 17,
@@ -6921,8 +6921,8 @@
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 1,
-        "ultimi_7_giorni": 3,
+        "ultime_24h": 0,
+        "ultimi_7_giorni": 2,
         "ultimi_30_giorni": 14
       },
       "indirizzo": "Via del Brennero, 154",
@@ -6931,7 +6931,7 @@
       "lon": 11.121708
     },
     "IT*PLN*EH000118*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -6995,7 +6995,7 @@
         },
         {
           "ora": 15,
-          "quota_charging": 4.7
+          "quota_charging": 4.6
         },
         {
           "ora": 16,
@@ -7032,34 +7032,30 @@
       ],
       "giorno_settimana_piu_usato": {
         "giorno": "venerdì",
-        "quota_charging": 10.2
+        "quota_charging": 10.0
       },
-      "n_sessioni": 61,
-      "durata_media_minuti": 24.4,
+      "n_sessioni": 62,
+      "durata_media_minuti": 24.1,
       "giorno_record": {
         "data": "2026-08-07",
         "minuti_ricarica_totali": 148.0
       },
       "ultimo_uso": "2026-11-13T07:14:02+00:00",
-      "energia_totale_kwh_stimata": 2285.24,
+      "energia_totale_kwh_stimata": 2294.62,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 0,
-        "ultimi_7_giorni": 1,
-        "ultimi_30_giorni": 9
+        "ultime_24h": 1,
+        "ultimi_7_giorni": 2,
+        "ultimi_30_giorni": 10
       },
       "indirizzo": "Via del Brennero, 154",
       "cpo": "Plenitude On The Road S.r.l.",
       "lat": 46.080995,
-      "lon": 11.121708,
-      "sessione_in_corso": {
-        "da": "2026-11-13T07:08:55+00:00",
-        "minuti_finora": 5.1
-      }
+      "lon": 11.121708
     },
     "IT*PLN*EH000118*3": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -7071,7 +7067,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 8.3
+          "quota_charging": 8.1
         },
         {
           "ora": 3,
@@ -7123,11 +7119,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 10.4
+          "quota_charging": 10.1
         },
         {
           "ora": 16,
-          "quota_charging": 16.8
+          "quota_charging": 16.7
         },
         {
           "ora": 17,
@@ -7147,11 +7143,11 @@
         },
         {
           "ora": 21,
-          "quota_charging": 23.1
+          "quota_charging": 23.0
         },
         {
           "ora": 22,
-          "quota_charging": 22.3
+          "quota_charging": 22.2
         },
         {
           "ora": 23,
@@ -7162,7 +7158,7 @@
         "giorno": "lunedì",
         "quota_charging": 20.0
       },
-      "n_sessioni": 159,
+      "n_sessioni": 160,
       "durata_media_minuti": 31.6,
       "giorno_record": {
         "data": "2026-08-10",
@@ -7173,21 +7169,17 @@
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 0,
-        "ultimi_7_giorni": 0,
-        "ultimi_30_giorni": 10
+        "ultime_24h": 1,
+        "ultimi_7_giorni": 1,
+        "ultimi_30_giorni": 11
       },
       "indirizzo": "Via del Brennero, 154",
       "cpo": "Plenitude On The Road S.r.l.",
       "lat": 46.080995,
-      "lon": 11.121708,
-      "sessione_in_corso": {
-        "da": "2026-11-13T07:14:02+00:00",
-        "minuti_finora": 0.0
-      }
+      "lon": 11.121708
     },
     "IT*PLN*EH001186*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -7251,11 +7243,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 4.1
+          "quota_charging": 4.6
         },
         {
           "ora": 16,
-          "quota_charging": 9.4
+          "quota_charging": 9.3
         },
         {
           "ora": 17,
@@ -7290,20 +7282,20 @@
         "giorno": "venerdì",
         "quota_charging": 11.1
       },
-      "n_sessioni": 59,
-      "durata_media_minuti": 24.3,
+      "n_sessioni": 60,
+      "durata_media_minuti": 23.9,
       "giorno_record": {
         "data": "2026-08-14",
         "minuti_ricarica_totali": 135.3
       },
-      "ultimo_uso": "2026-11-13T06:53:33+00:00",
-      "energia_totale_kwh_stimata": 2134.7,
-      "energia_oggi_kwh": 9.38,
+      "ultimo_uso": "2026-11-13T15:18:43+00:00",
+      "energia_totale_kwh_stimata": 2144.2,
+      "energia_oggi_kwh": null,
       "veicoli_serviti": {
-        "ultima_ora": 1,
-        "ultime_24h": 1,
-        "ultimi_7_giorni": 2,
-        "ultimi_30_giorni": 12
+        "ultima_ora": 0,
+        "ultime_24h": 2,
+        "ultimi_7_giorni": 3,
+        "ultimi_30_giorni": 13
       },
       "indirizzo": "Via Jacopo Aconcio",
       "cpo": "Plenitude On The Road S.r.l.",
@@ -7311,7 +7303,7 @@
       "lon": 11.123253
     },
     "IT*PLN*EH001186*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -7375,7 +7367,7 @@
         },
         {
           "ora": 15,
-          "quota_charging": 3.5
+          "quota_charging": 3.4
         },
         {
           "ora": 16,
@@ -7435,7 +7427,7 @@
       "lon": 11.123253
     },
     "IT*PLN*EH001186*3": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -7447,7 +7439,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 17.9
+          "quota_charging": 19.8
         },
         {
           "ora": 3,
@@ -7499,11 +7491,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 20.8
+          "quota_charging": 20.2
         },
         {
           "ora": 16,
-          "quota_charging": 19.5
+          "quota_charging": 19.4
         },
         {
           "ora": 17,
@@ -7523,11 +7515,11 @@
         },
         {
           "ora": 21,
-          "quota_charging": 7.5
+          "quota_charging": 7.8
         },
         {
           "ora": 22,
-          "quota_charging": 8.0
+          "quota_charging": 8.5
         },
         {
           "ora": 23,
@@ -7538,32 +7530,32 @@
         "giorno": "giovedì",
         "quota_charging": 28.0
       },
-      "n_sessioni": 167,
-      "durata_media_minuti": 34.5,
+      "n_sessioni": 170,
+      "durata_media_minuti": 34.4,
       "giorno_record": {
         "data": "2026-08-15",
         "minuti_ricarica_totali": 250.0
       },
-      "ultimo_uso": "2026-11-13T07:14:02+00:00",
-      "energia_totale_kwh_stimata": 1730.69,
-      "energia_oggi_kwh": 1.9,
+      "ultimo_uso": "2026-11-14T02:26:08+00:00",
+      "energia_totale_kwh_stimata": 1751.41,
+      "energia_oggi_kwh": 0.0,
       "veicoli_serviti": {
-        "ultima_ora": 0,
-        "ultime_24h": 5,
-        "ultimi_7_giorni": 20,
-        "ultimi_30_giorni": 84
+        "ultima_ora": 1,
+        "ultime_24h": 3,
+        "ultimi_7_giorni": 22,
+        "ultimi_30_giorni": 85
       },
       "indirizzo": "Via Jacopo Aconcio",
       "cpo": "Plenitude On The Road S.r.l.",
       "lat": 46.074355,
       "lon": 11.123253,
       "sessione_in_corso": {
-        "da": "2026-11-13T06:28:04+00:00",
-        "minuti_finora": 46.0
+        "da": "2026-11-14T02:26:08+00:00",
+        "minuti_finora": 0.0
       }
     },
     "IT*PLN*EH001740*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -7627,7 +7619,7 @@
         },
         {
           "ora": 15,
-          "quota_charging": 6.6
+          "quota_charging": 6.4
         },
         {
           "ora": 16,
@@ -7655,7 +7647,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 2.7
+          "quota_charging": 2.6
         },
         {
           "ora": 23,
@@ -7664,7 +7656,7 @@
       ],
       "giorno_settimana_piu_usato": {
         "giorno": "venerdì",
-        "quota_charging": 8.4
+        "quota_charging": 8.2
       },
       "n_sessioni": 38,
       "durata_media_minuti": 29.6,
@@ -7679,7 +7671,7 @@
         "ultima_ora": 0,
         "ultime_24h": 0,
         "ultimi_7_giorni": 0,
-        "ultimi_30_giorni": 6
+        "ultimi_30_giorni": 5
       },
       "indirizzo": "Via Valnigra",
       "cpo": "BEC",
@@ -7687,7 +7679,7 @@
       "lon": 11.144943
     },
     "IT*PLN*EH001740*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -7751,7 +7743,7 @@
         },
         {
           "ora": 15,
-          "quota_charging": 9.1
+          "quota_charging": 8.9
         },
         {
           "ora": 16,
@@ -7803,7 +7795,7 @@
         "ultima_ora": 0,
         "ultime_24h": 0,
         "ultimi_7_giorni": 2,
-        "ultimi_30_giorni": 14
+        "ultimi_30_giorni": 13
       },
       "indirizzo": "Via Valnigra",
       "cpo": "BEC",
@@ -7811,7 +7803,7 @@
       "lon": 11.144943
     },
     "IT*PLN*EH001740*3": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -7823,7 +7815,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 9.5
+          "quota_charging": 9.3
         },
         {
           "ora": 3,
@@ -7875,11 +7867,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 12.6
+          "quota_charging": 14.1
         },
         {
           "ora": 16,
-          "quota_charging": 19.9
+          "quota_charging": 19.8
         },
         {
           "ora": 17,
@@ -7899,11 +7891,11 @@
         },
         {
           "ora": 21,
-          "quota_charging": 10.1
+          "quota_charging": 10.0
         },
         {
           "ora": 22,
-          "quota_charging": 4.3
+          "quota_charging": 4.2
         },
         {
           "ora": 23,
@@ -7914,20 +7906,20 @@
         "giorno": "domenica",
         "quota_charging": 30.2
       },
-      "n_sessioni": 77,
-      "durata_media_minuti": 39.7,
+      "n_sessioni": 78,
+      "durata_media_minuti": 39.4,
       "giorno_record": {
         "data": "2026-08-09",
         "minuti_ricarica_totali": 654.2
       },
-      "ultimo_uso": "2026-11-11T21:30:28+00:00",
-      "energia_totale_kwh_stimata": 878.29,
+      "ultimo_uso": "2026-11-13T15:39:16+00:00",
+      "energia_totale_kwh_stimata": 887.79,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 0,
-        "ultimi_7_giorni": 11,
-        "ultimi_30_giorni": 22
+        "ultime_24h": 1,
+        "ultimi_7_giorni": 10,
+        "ultimi_30_giorni": 23
       },
       "indirizzo": "Via Valnigra",
       "cpo": "BEC",
@@ -7935,7 +7927,7 @@
       "lon": 11.144943
     },
     "IT*PLN*EH003148*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -7947,7 +7939,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 3.6
+          "quota_charging": 3.5
         },
         {
           "ora": 3,
@@ -7999,11 +7991,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 8.2
+          "quota_charging": 8.0
         },
         {
           "ora": 16,
-          "quota_charging": 15.2
+          "quota_charging": 15.1
         },
         {
           "ora": 17,
@@ -8027,7 +8019,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 4.3
+          "quota_charging": 4.2
         },
         {
           "ora": 23,
@@ -8049,7 +8041,7 @@
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 1,
+        "ultime_24h": 0,
         "ultimi_7_giorni": 4,
         "ultimi_30_giorni": 21
       },
@@ -8059,7 +8051,7 @@
       "lon": 11.128719
     },
     "IT*PLN*EH003148*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -8123,11 +8115,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 2.2
+          "quota_charging": 3.1
         },
         {
           "ora": 16,
-          "quota_charging": 8.2
+          "quota_charging": 8.1
         },
         {
           "ora": 17,
@@ -8151,7 +8143,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 2.7
+          "quota_charging": 2.6
         },
         {
           "ora": 23,
@@ -8162,20 +8154,20 @@
         "giorno": "martedì",
         "quota_charging": 10.3
       },
-      "n_sessioni": 84,
-      "durata_media_minuti": 26.8,
+      "n_sessioni": 85,
+      "durata_media_minuti": 26.5,
       "giorno_record": {
         "data": "2026-09-08",
         "minuti_ricarica_totali": 163.7
       },
-      "ultimo_uso": "2026-11-12T19:05:54+00:00",
-      "energia_totale_kwh_stimata": 3534.01,
+      "ultimo_uso": "2026-11-13T15:23:51+00:00",
+      "energia_totale_kwh_stimata": 3552.92,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
         "ultime_24h": 1,
-        "ultimi_7_giorni": 3,
-        "ultimi_30_giorni": 29
+        "ultimi_7_giorni": 4,
+        "ultimi_30_giorni": 24
       },
       "indirizzo": "Via Grazioli",
       "cpo": "BEC",
@@ -8183,7 +8175,7 @@
       "lon": 11.128719
     },
     "IT*PLN*EH003148*3": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -8195,7 +8187,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 7.1
+          "quota_charging": 7.0
         },
         {
           "ora": 3,
@@ -8247,11 +8239,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 30.9
+          "quota_charging": 32.5
         },
         {
           "ora": 16,
-          "quota_charging": 32.0
+          "quota_charging": 31.8
         },
         {
           "ora": 17,
@@ -8275,7 +8267,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 11.7
+          "quota_charging": 11.6
         },
         {
           "ora": 23,
@@ -8284,34 +8276,30 @@
       ],
       "giorno_settimana_piu_usato": {
         "giorno": "venerdì",
-        "quota_charging": 26.8
+        "quota_charging": 27.3
       },
-      "n_sessioni": 194,
-      "durata_media_minuti": 35.2,
+      "n_sessioni": 196,
+      "durata_media_minuti": 35.1,
       "giorno_record": {
         "data": "2026-08-24",
         "minuti_ricarica_totali": 570.1
       },
-      "ultimo_uso": "2026-11-13T07:14:02+00:00",
-      "energia_totale_kwh_stimata": 2037.48,
+      "ultimo_uso": "2026-11-13T15:49:37+00:00",
+      "energia_totale_kwh_stimata": 2058.36,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
         "ultime_24h": 2,
-        "ultimi_7_giorni": 5,
-        "ultimi_30_giorni": 51
+        "ultimi_7_giorni": 7,
+        "ultimi_30_giorni": 49
       },
       "indirizzo": "Via Grazioli",
       "cpo": "BEC",
       "lat": 46.067292,
-      "lon": 11.128719,
-      "sessione_in_corso": {
-        "da": "2026-11-13T06:53:33+00:00",
-        "minuti_finora": 20.5
-      }
+      "lon": 11.128719
     },
     "IT*PLN*EH003152*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -8323,7 +8311,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 8.3
+          "quota_charging": 8.1
         },
         {
           "ora": 3,
@@ -8375,11 +8363,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 6.9
+          "quota_charging": 6.7
         },
         {
           "ora": 16,
-          "quota_charging": 11.3
+          "quota_charging": 11.2
         },
         {
           "ora": 17,
@@ -8399,7 +8387,7 @@
         },
         {
           "ora": 21,
-          "quota_charging": 7.5
+          "quota_charging": 7.4
         },
         {
           "ora": 22,
@@ -8414,32 +8402,28 @@
         "giorno": "martedì",
         "quota_charging": 18.7
       },
-      "n_sessioni": 92,
-      "durata_media_minuti": 34.1,
+      "n_sessioni": 93,
+      "durata_media_minuti": 33.8,
       "giorno_record": {
         "data": "2026-08-19",
         "minuti_ricarica_totali": 594.8
       },
       "ultimo_uso": "2026-11-13T07:14:02+00:00",
-      "energia_totale_kwh_stimata": 4562.0,
+      "energia_totale_kwh_stimata": 4580.76,
       "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 0,
-        "ultimi_7_giorni": 1,
-        "ultimi_30_giorni": 9
+        "ultime_24h": 1,
+        "ultimi_7_giorni": 2,
+        "ultimi_30_giorni": 10
       },
       "indirizzo": "Via Carlo e Valeria Jülg, 11-1",
       "cpo": "BEC",
       "lat": 46.07705,
-      "lon": 11.142221,
-      "sessione_in_corso": {
-        "da": "2026-11-13T07:03:48+00:00",
-        "minuti_finora": 10.2
-      }
+      "lon": 11.142221
     },
     "IT*PLN*EH003152*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -8563,7 +8547,7 @@
       "lon": 11.142221
     },
     "IT*PLN*EH003152*3": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -8627,11 +8611,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 13.2
+          "quota_charging": 12.9
         },
         {
           "ora": 16,
-          "quota_charging": 17.6
+          "quota_charging": 17.4
         },
         {
           "ora": 17,
@@ -8687,7 +8671,7 @@
       "lon": 11.142221
     },
     "IT*PLN*EH003157*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -8751,7 +8735,7 @@
         },
         {
           "ora": 15,
-          "quota_charging": 3.5
+          "quota_charging": 3.4
         },
         {
           "ora": 16,
@@ -8811,7 +8795,7 @@
       "lon": 11.131209
     },
     "IT*PLN*EH003157*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -8823,7 +8807,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 8.3
+          "quota_charging": 8.1
         },
         {
           "ora": 3,
@@ -8875,11 +8859,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 12.3
+          "quota_charging": 12.0
         },
         {
           "ora": 16,
-          "quota_charging": 20.3
+          "quota_charging": 20.2
         },
         {
           "ora": 17,
@@ -8899,7 +8883,7 @@
         },
         {
           "ora": 21,
-          "quota_charging": 10.1
+          "quota_charging": 10.0
         },
         {
           "ora": 22,
@@ -8912,7 +8896,7 @@
       ],
       "giorno_settimana_piu_usato": {
         "giorno": "sabato",
-        "quota_charging": 18.4
+        "quota_charging": 18.3
       },
       "n_sessioni": 85,
       "durata_media_minuti": 31.3,
@@ -8935,7 +8919,7 @@
       "lon": 11.131209
     },
     "IT*PLN*EH003157*3": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -8947,7 +8931,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 10.7
+          "quota_charging": 10.5
         },
         {
           "ora": 3,
@@ -8999,11 +8983,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 8.5
+          "quota_charging": 8.3
         },
         {
           "ora": 16,
-          "quota_charging": 10.2
+          "quota_charging": 10.1
         },
         {
           "ora": 17,
@@ -9023,11 +9007,11 @@
         },
         {
           "ora": 21,
-          "quota_charging": 6.2
+          "quota_charging": 6.1
         },
         {
           "ora": 22,
-          "quota_charging": 6.4
+          "quota_charging": 6.3
         },
         {
           "ora": 23,
@@ -9036,7 +9020,7 @@
       ],
       "giorno_settimana_piu_usato": {
         "giorno": "sabato",
-        "quota_charging": 20.2
+        "quota_charging": 20.1
       },
       "n_sessioni": 73,
       "durata_media_minuti": 36.2,
@@ -9059,7 +9043,7 @@
       "lon": 11.131209
     },
     "IT*PLN*EH003158*1": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -9071,7 +9055,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 8.3
+          "quota_charging": 8.1
         },
         {
           "ora": 3,
@@ -9151,7 +9135,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 4.3
+          "quota_charging": 4.2
         },
         {
           "ora": 23,
@@ -9183,7 +9167,7 @@
       "lon": 11.112965
     },
     "IT*PLN*EH003158*2": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -9247,7 +9231,7 @@
         },
         {
           "ora": 15,
-          "quota_charging": 1.6
+          "quota_charging": 1.5
         },
         {
           "ora": 16,
@@ -9307,7 +9291,7 @@
       "lon": 11.112965
     },
     "IT*PLN*EH003158*3": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -9319,7 +9303,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 36.9
+          "quota_charging": 36.0
         },
         {
           "ora": 3,
@@ -9371,11 +9355,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 33.8
+          "quota_charging": 35.6
         },
         {
           "ora": 16,
-          "quota_charging": 27.3
+          "quota_charging": 27.9
         },
         {
           "ora": 17,
@@ -9395,11 +9379,11 @@
         },
         {
           "ora": 21,
-          "quota_charging": 54.9
+          "quota_charging": 54.7
         },
         {
           "ora": 22,
-          "quota_charging": 56.4
+          "quota_charging": 56.1
         },
         {
           "ora": 23,
@@ -9410,20 +9394,20 @@
         "giorno": "domenica",
         "quota_charging": 35.0
       },
-      "n_sessioni": 342,
-      "durata_media_minuti": 37.9,
+      "n_sessioni": 343,
+      "durata_media_minuti": 38.0,
       "giorno_record": {
         "data": "2026-08-15",
         "minuti_ricarica_totali": 479.6
       },
-      "ultimo_uso": "2026-11-13T00:51:07+00:00",
-      "energia_totale_kwh_stimata": 3345.03,
-      "energia_oggi_kwh": 1.9,
+      "ultimo_uso": "2026-11-13T16:10:06+00:00",
+      "energia_totale_kwh_stimata": 3365.91,
+      "energia_oggi_kwh": null,
       "veicoli_serviti": {
         "ultima_ora": 0,
-        "ultime_24h": 4,
-        "ultimi_7_giorni": 23,
-        "ultimi_30_giorni": 120
+        "ultime_24h": 1,
+        "ultimi_7_giorni": 24,
+        "ultimi_30_giorni": 117
       },
       "indirizzo": "Piazzale Lionello Groff 3",
       "cpo": "BEC",
@@ -9431,7 +9415,7 @@
       "lon": 11.112965
     },
     "IT*PWY*EA0198*01*01": {
-      "n_osservazioni": 4714,
+      "n_osservazioni": 4729,
       "profilo_orario": [
         {
           "ora": 0,
@@ -9443,7 +9427,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 9.0
+          "quota_charging": 8.7
         },
         {
           "ora": 3,
@@ -9495,7 +9479,7 @@
         },
         {
           "ora": 15,
-          "quota_charging": 3.0
+          "quota_charging": 2.9
         },
         {
           "ora": 16,
@@ -9555,7 +9539,7 @@
       "lon": 11.124178
     },
     "IT*PWY*EA0198*01*02": {
-      "n_osservazioni": 4714,
+      "n_osservazioni": 4729,
       "profilo_orario": [
         {
           "ora": 0,
@@ -9623,7 +9607,7 @@
         },
         {
           "ora": 16,
-          "quota_charging": 6.6
+          "quota_charging": 6.5
         },
         {
           "ora": 17,
@@ -9647,7 +9631,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 3.0
+          "quota_charging": 2.9
         },
         {
           "ora": 23,
@@ -9679,7 +9663,7 @@
       "lon": 11.124178
     },
     "IT*PWY*EC0125*01*01": {
-      "n_osservazioni": 4714,
+      "n_osservazioni": 4729,
       "profilo_orario": [
         {
           "ora": 0,
@@ -9797,7 +9781,7 @@
       "lon": 11.114453
     },
     "IT*PWY*EC0125*01*02": {
-      "n_osservazioni": 4714,
+      "n_osservazioni": 4729,
       "profilo_orario": [
         {
           "ora": 0,
@@ -9915,7 +9899,7 @@
       "lon": 11.114453
     },
     "IT*TSL*E0C4VTM": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -10033,7 +10017,7 @@
       "lon": 11.058439
     },
     "IT*TSL*E0C4WN5": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -10151,7 +10135,7 @@
       "lon": 11.121669
     },
     "IT*TSL*E0DYERF": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -10269,7 +10253,7 @@
       "lon": 11.121669
     },
     "IT*TSL*E0DYGIP": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -10387,7 +10371,7 @@
       "lon": 11.058439
     },
     "IT*TSL*E0DYGIQ": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -10505,7 +10489,7 @@
       "lon": 11.058439
     },
     "IT*TSL*E0DYGIR": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -10623,7 +10607,7 @@
       "lon": 11.058439
     },
     "IT*TSL*EA4RQEH": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -10687,11 +10671,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 26.2
+          "quota_charging": 25.5
         },
         {
           "ora": 16,
-          "quota_charging": 27.3
+          "quota_charging": 27.1
         },
         {
           "ora": 17,
@@ -10747,7 +10731,7 @@
       "lon": 11.090941
     },
     "IT*TSL*EA4RR91": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -10759,7 +10743,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 8.3
+          "quota_charging": 8.1
         },
         {
           "ora": 3,
@@ -10811,11 +10795,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 38.2
+          "quota_charging": 37.1
         },
         {
           "ora": 16,
-          "quota_charging": 38.3
+          "quota_charging": 38.0
         },
         {
           "ora": 17,
@@ -10835,11 +10819,11 @@
         },
         {
           "ora": 21,
-          "quota_charging": 17.9
+          "quota_charging": 17.8
         },
         {
           "ora": 22,
-          "quota_charging": 14.4
+          "quota_charging": 14.3
         },
         {
           "ora": 23,
@@ -10848,7 +10832,7 @@
       ],
       "giorno_settimana_piu_usato": {
         "giorno": "sabato",
-        "quota_charging": 31.1
+        "quota_charging": 31.0
       },
       "n_sessioni": 389,
       "durata_media_minuti": 20.3,
@@ -10863,7 +10847,7 @@
         "ultima_ora": 0,
         "ultime_24h": 0,
         "ultimi_7_giorni": 0,
-        "ultimi_30_giorni": 38
+        "ultimi_30_giorni": 33
       },
       "indirizzo": "11, Via Innsbruck",
       "cpo": "Tesla Italia Srl.",
@@ -10871,7 +10855,7 @@
       "lon": 11.090941
     },
     "IT*TSL*EA4STCL": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -10883,7 +10867,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 13.1
+          "quota_charging": 12.8
         },
         {
           "ora": 3,
@@ -10935,11 +10919,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 43.8
+          "quota_charging": 42.6
         },
         {
           "ora": 16,
-          "quota_charging": 32.0
+          "quota_charging": 31.8
         },
         {
           "ora": 17,
@@ -10959,11 +10943,11 @@
         },
         {
           "ora": 21,
-          "quota_charging": 23.1
+          "quota_charging": 23.0
         },
         {
           "ora": 22,
-          "quota_charging": 17.0
+          "quota_charging": 16.9
         },
         {
           "ora": 23,
@@ -10987,7 +10971,7 @@
         "ultima_ora": 0,
         "ultime_24h": 0,
         "ultimi_7_giorni": 0,
-        "ultimi_30_giorni": 33
+        "ultimi_30_giorni": 31
       },
       "indirizzo": "11, Via Innsbruck",
       "cpo": "Tesla Italia Srl.",
@@ -10995,7 +10979,7 @@
       "lon": 11.090941
     },
     "IT*TSL*EA4TAJR": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -11007,7 +10991,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 9.5
+          "quota_charging": 9.3
         },
         {
           "ora": 3,
@@ -11059,11 +11043,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 35.3
+          "quota_charging": 34.4
         },
         {
           "ora": 16,
-          "quota_charging": 25.8
+          "quota_charging": 25.6
         },
         {
           "ora": 17,
@@ -11087,7 +11071,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 12.8
+          "quota_charging": 12.7
         },
         {
           "ora": 23,
@@ -11096,7 +11080,7 @@
       ],
       "giorno_settimana_piu_usato": {
         "giorno": "sabato",
-        "quota_charging": 30.4
+        "quota_charging": 30.3
       },
       "n_sessioni": 371,
       "durata_media_minuti": 18.9,
@@ -11111,7 +11095,7 @@
         "ultima_ora": 0,
         "ultime_24h": 0,
         "ultimi_7_giorni": 0,
-        "ultimi_30_giorni": 28
+        "ultimi_30_giorni": 27
       },
       "indirizzo": "11, Via Innsbruck",
       "cpo": "Tesla Italia Srl.",
@@ -11119,7 +11103,7 @@
       "lon": 11.090941
     },
     "IT*TSL*EA4TANN": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -11183,11 +11167,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 32.2
+          "quota_charging": 31.3
         },
         {
           "ora": 16,
-          "quota_charging": 18.4
+          "quota_charging": 18.2
         },
         {
           "ora": 17,
@@ -11211,7 +11195,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 6.4
+          "quota_charging": 6.3
         },
         {
           "ora": 23,
@@ -11243,7 +11227,7 @@
       "lon": 11.090941
     },
     "IT*TSL*EA4UB06": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -11255,7 +11239,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 10.7
+          "quota_charging": 10.5
         },
         {
           "ora": 3,
@@ -11307,11 +11291,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 35.0
+          "quota_charging": 34.0
         },
         {
           "ora": 16,
-          "quota_charging": 16.0
+          "quota_charging": 15.9
         },
         {
           "ora": 17,
@@ -11331,11 +11315,11 @@
         },
         {
           "ora": 21,
-          "quota_charging": 19.2
+          "quota_charging": 19.1
         },
         {
           "ora": 22,
-          "quota_charging": 11.7
+          "quota_charging": 11.6
         },
         {
           "ora": 23,
@@ -11359,7 +11343,7 @@
         "ultima_ora": 0,
         "ultime_24h": 0,
         "ultimi_7_giorni": 0,
-        "ultimi_30_giorni": 33
+        "ultimi_30_giorni": 30
       },
       "indirizzo": "11, Via Innsbruck",
       "cpo": "Tesla Italia Srl.",
@@ -11367,7 +11351,7 @@
       "lon": 11.090941
     },
     "IT*TSL*EA4UBEZ": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -11379,7 +11363,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 3.6
+          "quota_charging": 3.5
         },
         {
           "ora": 3,
@@ -11431,11 +11415,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 44.8
+          "quota_charging": 43.6
         },
         {
           "ora": 16,
-          "quota_charging": 28.5
+          "quota_charging": 28.3
         },
         {
           "ora": 17,
@@ -11459,7 +11443,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 13.3
+          "quota_charging": 13.2
         },
         {
           "ora": 23,
@@ -11483,7 +11467,7 @@
         "ultima_ora": 0,
         "ultime_24h": 0,
         "ultimi_7_giorni": 0,
-        "ultimi_30_giorni": 31
+        "ultimi_30_giorni": 29
       },
       "indirizzo": "11, Via Innsbruck",
       "cpo": "Tesla Italia Srl.",
@@ -11491,7 +11475,7 @@
       "lon": 11.090941
     },
     "IT*TSL*EA6H0AV": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -11555,11 +11539,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 30.9
+          "quota_charging": 30.1
         },
         {
           "ora": 16,
-          "quota_charging": 33.2
+          "quota_charging": 32.9
         },
         {
           "ora": 17,
@@ -11583,7 +11567,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 16.5
+          "quota_charging": 16.4
         },
         {
           "ora": 23,
@@ -11607,7 +11591,7 @@
         "ultima_ora": 0,
         "ultime_24h": 0,
         "ultimi_7_giorni": 0,
-        "ultimi_30_giorni": 45
+        "ultimi_30_giorni": 43
       },
       "indirizzo": "11, Via Innsbruck",
       "cpo": "Tesla Italia Srl.",
@@ -11615,7 +11599,7 @@
       "lon": 11.090941
     },
     "IT*TSL*EA6J63Q": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -11679,11 +11663,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 34.4
+          "quota_charging": 33.4
         },
         {
           "ora": 16,
-          "quota_charging": 24.6
+          "quota_charging": 24.4
         },
         {
           "ora": 17,
@@ -11703,11 +11687,11 @@
         },
         {
           "ora": 21,
-          "quota_charging": 19.5
+          "quota_charging": 19.4
         },
         {
           "ora": 22,
-          "quota_charging": 12.8
+          "quota_charging": 12.7
         },
         {
           "ora": 23,
@@ -11731,7 +11715,7 @@
         "ultima_ora": 0,
         "ultime_24h": 0,
         "ultimi_7_giorni": 0,
-        "ultimi_30_giorni": 23
+        "ultimi_30_giorni": 22
       },
       "indirizzo": "11, Via Innsbruck",
       "cpo": "Tesla Italia Srl.",
@@ -11739,7 +11723,7 @@
       "lon": 11.090941
     },
     "IT*TSL*EA6M1PM": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -11751,7 +11735,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 4.8
+          "quota_charging": 4.7
         },
         {
           "ora": 3,
@@ -11803,11 +11787,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 30.9
+          "quota_charging": 30.1
         },
         {
           "ora": 16,
-          "quota_charging": 22.7
+          "quota_charging": 22.5
         },
         {
           "ora": 17,
@@ -11827,11 +11811,11 @@
         },
         {
           "ora": 21,
-          "quota_charging": 19.8
+          "quota_charging": 19.7
         },
         {
           "ora": 22,
-          "quota_charging": 14.9
+          "quota_charging": 14.8
         },
         {
           "ora": 23,
@@ -11840,7 +11824,7 @@
       ],
       "giorno_settimana_piu_usato": {
         "giorno": "venerdì",
-        "quota_charging": 28.4
+        "quota_charging": 28.0
       },
       "n_sessioni": 354,
       "durata_media_minuti": 20.1,
@@ -11863,7 +11847,7 @@
       "lon": 11.090941
     },
     "ITGESE797904073": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -11875,7 +11859,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 36.9
+          "quota_charging": 38.4
         },
         {
           "ora": 3,
@@ -11927,11 +11911,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 11.0
+          "quota_charging": 11.3
         },
         {
           "ora": 16,
-          "quota_charging": 14.5
+          "quota_charging": 15.1
         },
         {
           "ora": 17,
@@ -11951,11 +11935,11 @@
         },
         {
           "ora": 21,
-          "quota_charging": 21.8
+          "quota_charging": 22.0
         },
         {
           "ora": 22,
-          "quota_charging": 22.3
+          "quota_charging": 22.8
         },
         {
           "ora": 23,
@@ -11963,31 +11947,35 @@
         }
       ],
       "giorno_settimana_piu_usato": {
-        "giorno": "lunedì",
+        "giorno": "sabato",
         "quota_charging": 17.1
       },
-      "n_sessioni": 164,
-      "durata_media_minuti": 33.2,
+      "n_sessioni": 167,
+      "durata_media_minuti": 32.9,
       "giorno_record": {
         "data": "2026-08-16",
         "minuti_ricarica_totali": 326.2
       },
-      "ultimo_uso": "2026-11-13T06:28:04+00:00",
-      "energia_totale_kwh_stimata": 1448.68,
-      "energia_oggi_kwh": 1.89,
+      "ultimo_uso": "2026-11-14T02:26:08+00:00",
+      "energia_totale_kwh_stimata": 1459.93,
+      "energia_oggi_kwh": 0.0,
       "veicoli_serviti": {
         "ultima_ora": 1,
-        "ultime_24h": 5,
-        "ultimi_7_giorni": 10,
-        "ultimi_30_giorni": 42
+        "ultime_24h": 4,
+        "ultimi_7_giorni": 12,
+        "ultimi_30_giorni": 45
       },
       "indirizzo": "Via Ponte Alto",
       "cpo": "Go Electric Stations SRLS",
       "lat": 46.072481,
-      "lon": 11.148556
+      "lon": 11.148556,
+      "sessione_in_corso": {
+        "da": "2026-11-14T02:26:08+00:00",
+        "minuti_finora": 0.0
+      }
     },
     "ITGESE800369566": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -11999,7 +11987,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 1.2
+          "quota_charging": 3.5
         },
         {
           "ora": 3,
@@ -12051,11 +12039,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 6.0
+          "quota_charging": 5.8
         },
         {
           "ora": 16,
-          "quota_charging": 11.3
+          "quota_charging": 11.2
         },
         {
           "ora": 17,
@@ -12079,7 +12067,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 5.9
+          "quota_charging": 5.8
         },
         {
           "ora": 23,
@@ -12090,32 +12078,32 @@
         "giorno": "martedì",
         "quota_charging": 17.6
       },
-      "n_sessioni": 54,
-      "durata_media_minuti": 38.9,
+      "n_sessioni": 56,
+      "durata_media_minuti": 39.1,
       "giorno_record": {
         "data": "2026-08-11",
         "minuti_ricarica_totali": 285.6
       },
-      "ultimo_uso": "2026-11-13T07:14:02+00:00",
-      "energia_totale_kwh_stimata": 728.3,
+      "ultimo_uso": "2026-11-14T02:26:08+00:00",
+      "energia_totale_kwh_stimata": 745.15,
       "energia_oggi_kwh": 0.0,
       "veicoli_serviti": {
-        "ultima_ora": 0,
+        "ultima_ora": 1,
         "ultime_24h": 2,
-        "ultimi_7_giorni": 3,
-        "ultimi_30_giorni": 10
+        "ultimi_7_giorni": 5,
+        "ultimi_30_giorni": 12
       },
       "indirizzo": "Via della Pontara",
       "cpo": "Go Electric Stations SRLS",
       "lat": 46.073287,
       "lon": 11.126621,
       "sessione_in_corso": {
-        "da": "2026-11-13T06:28:04+00:00",
-        "minuti_finora": 46.0
+        "da": "2026-11-14T02:26:08+00:00",
+        "minuti_finora": 0.0
       }
     },
     "ITGESE800370391": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -12127,7 +12115,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 11.9
+          "quota_charging": 11.6
         },
         {
           "ora": 3,
@@ -12179,11 +12167,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 7.3
+          "quota_charging": 7.1
         },
         {
           "ora": 16,
-          "quota_charging": 28.9
+          "quota_charging": 28.7
         },
         {
           "ora": 17,
@@ -12207,7 +12195,7 @@
         },
         {
           "ora": 22,
-          "quota_charging": 18.6
+          "quota_charging": 18.5
         },
         {
           "ora": 23,
@@ -12216,7 +12204,7 @@
       ],
       "giorno_settimana_piu_usato": {
         "giorno": "sabato",
-        "quota_charging": 22.8
+        "quota_charging": 22.7
       },
       "n_sessioni": 139,
       "durata_media_minuti": 37.2,
@@ -12231,7 +12219,7 @@
         "ultima_ora": 0,
         "ultime_24h": 0,
         "ultimi_7_giorni": 0,
-        "ultimi_30_giorni": 34
+        "ultimi_30_giorni": 28
       },
       "indirizzo": "Via della Pontara",
       "cpo": "Go Electric Stations SRLS",
@@ -12239,7 +12227,7 @@
       "lon": 11.12666
     },
     "ITGESE833251627": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -12357,7 +12345,7 @@
       "lon": 11.091643
     },
     "ITGESE833251628": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -12475,7 +12463,7 @@
       "lon": 11.091643
     },
     "ITGESE868971885": {
-      "n_osservazioni": 5408,
+      "n_osservazioni": 5423,
       "profilo_orario": [
         {
           "ora": 0,
@@ -12487,7 +12475,7 @@
         },
         {
           "ora": 2,
-          "quota_charging": 4.8
+          "quota_charging": 4.7
         },
         {
           "ora": 3,
@@ -12539,11 +12527,11 @@
         },
         {
           "ora": 15,
-          "quota_charging": 25.6
+          "quota_charging": 24.8
         },
         {
           "ora": 16,
-          "quota_charging": 20.7
+          "quota_charging": 20.5
         },
         {
           "ora": 17,
@@ -12590,8 +12578,8 @@
       "veicoli_serviti": {
         "ultima_ora": 0,
         "ultime_24h": 0,
-        "ultimi_7_giorni": 6,
-        "ultimi_30_giorni": 53
+        "ultimi_7_giorni": 4,
+        "ultimi_30_giorni": 51
       },
       "indirizzo": "Via Ezio Maccani",
       "cpo": "Go Electric Stations SRLS",
