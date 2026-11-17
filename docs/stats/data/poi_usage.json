@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T10:05:25.665966+00:00",
+  "generated_at": "2026-11-17T11:01:43.282744+00:00",
   "fonte_poi": "OpenStreetMap contributors, via Overpass API (ODbL)",
   "soglia_metri": 300,
   "pois": [
@@ -4063,13 +4063,16 @@
       "lat": 46.11818,
       "lon": 11.088705,
       "n_colonnine_entro_soglia": 2,
-      "n_colonnine_usate": 0,
+      "n_colonnine_usate": 1,
       "n_usate_by_power": {
         "lenta": 0,
-        "rapida": 0,
+        "rapida": 1,
         "ultra": 0
       },
-      "esempio": null
+      "esempio": {
+        "colonnina_indirizzo": "via di spini 4",
+        "distanza_m": 283
+      }
     },
     {
       "name": "Incrocio Tangenziale Ovest",
