@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-17T22:35:41+00:00",
+  "generated_at": "2026-11-18T03:28:54+00:00",
   "stats": {
     "total": 213,
-    "active": 187,
-    "inactive": 26,
+    "active": 182,
+    "inactive": 31,
     "charging": 5
   },
   "points": [
@@ -408,8 +408,8 @@
     },
     {
       "id_evse": "IT*ELC*EXCGE",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "INOPERATIVE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Electra Italia s.r.l.",
@@ -427,8 +427,8 @@
     },
     {
       "id_evse": "IT*ELC*EYB5B",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "INOPERATIVE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Electra Italia s.r.l.",
@@ -446,8 +446,8 @@
     },
     {
       "id_evse": "IT*ELC*EYBYR",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "INOPERATIVE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Electra Italia s.r.l.",
@@ -2745,8 +2745,8 @@
     },
     {
       "id_evse": "IT*ELC*EKLF6",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "INOPERATIVE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Electra Italia s.r.l.",
@@ -2764,8 +2764,8 @@
     },
     {
       "id_evse": "IT*ELC*EYMGB",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "INOPERATIVE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Electra Italia s.r.l.",
@@ -3638,8 +3638,8 @@
     },
     {
       "id_evse": "IT*ELC*EKNQE",
-      "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato": "Non Attivo",
+      "stato_raw": "INOPERATIVE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Electra Italia s.r.l.",
@@ -3676,8 +3676,8 @@
     },
     {
       "id_evse": "IT*ENX*E20XM32T7KK3AR00101*3",
-      "stato": "Non Attivo",
-      "stato_raw": "OUTOFORDER",
+      "stato": "Attivo",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "ENEL X WAY ITALIA SRL",
@@ -3886,7 +3886,7 @@
     {
       "id_evse": "IT*PLN*EH000118*1",
       "stato": "Attivo",
-      "stato_raw": "CHARGING",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "Plenitude On The Road S.r.l.",
