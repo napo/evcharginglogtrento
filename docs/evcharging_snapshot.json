@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-20T11:23:42+00:00",
+  "generated_at": "2026-11-20T11:28:50+00:00",
   "stats": {
     "total": 213,
-    "active": 183,
-    "inactive": 30,
-    "charging": 10
+    "active": 184,
+    "inactive": 29,
+    "charging": 14
   },
   "points": [
     {
@@ -751,7 +751,7 @@
     {
       "id_evse": "IT*PLN*EE006443*2",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -789,7 +789,7 @@
     {
       "id_evse": "IT*PLN*EE006452*2",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -1016,8 +1016,8 @@
     },
     {
       "id_evse": "IT*PLN*EH003148*1",
-      "stato": "Non Attivo",
-      "stato_raw": "BLOCKED",
+      "stato": "Attivo",
+      "stato_raw": "AVAILABLE",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -1036,7 +1036,7 @@
     {
       "id_evse": "IT*PLN*EH003148*2",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
@@ -3867,7 +3867,7 @@
     {
       "id_evse": "IT*PLN*EE007293*2",
       "stato": "Attivo",
-      "stato_raw": "AVAILABLE",
+      "stato_raw": "CHARGING",
       "real_time": true,
       "usage_observable": true,
       "cpo": "BEC",
